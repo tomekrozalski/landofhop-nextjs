@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  background-color: var(--color-black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--index-header);
+  transform: translateY(0);
+  transition: transform var(--transition-default);
+}
+
+.header.navbar {
+  transform: translateY(var(--size-navbar-height));
+}
+
+.header.loginbar {
+  transform: translateY(
+    calc(var(--size-navbar-height) + var(--size-loginbar-height))
+  );
+}
+
+.header div {
+  display: grid;
+  grid-template-columns: minmax(5rem, auto) 1fr minmax(5rem, auto);
+  grid-template-areas: 'search logo more';
+  grid-template-rows: var(--size-header-height);
+  width: 100%;
+  max-width: var(--size-container-max-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .header div {
+    grid-template-columns: minmax(10rem, auto) 1fr minmax(10rem, auto);
+  }
+}

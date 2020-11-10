@@ -1,0 +1,27 @@
+.logo {
+  grid-area: logo;
+  display: flex;
+  justify-content: center;
+}
+
+.logo:hover svg {
+  transform: scale(1.1);
+}
+
+.logo h1 {
+  display: flex;
+}
+
+.logo svg {
+  fill: var(--color-white);
+  width: 4rem;
+  transform: scale(1);
+  transform-origin: center;
+  transition: transform var(--transition-default);
+}
+
+@media (min-width: 1600px) {
+  .logo svg {
+    width: 6rem;
+  }
+}

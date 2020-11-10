@@ -1,0 +1,36 @@
+.searchBar {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-black);
+  transform: translateX(calc(5rem - 100%));
+  transition: transform var(--transition-default);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.searchBar.active {
+  transform: translateX(0);
+}
+
+.searchBar button {
+  width: 5rem;
+  height: 100%;
+  opacity: 1;
+  transition: opacity var(--transition-default);
+}
+
+.searchBar button:hover {
+  opacity: 0.5;
+}
+
+@media (min-width: 768px) {
+  .searchBar {
+    transform: translateX(calc(10rem - 100%));
+  }
+
+  .searchBar button {
+    width: 10rem;
+  }
+}
