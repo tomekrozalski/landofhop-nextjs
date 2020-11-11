@@ -54,34 +54,6 @@
   --transition-default: 0.2s cubic-bezier(0.42, 0, 1, 1);
 }
 
-@media (min-width: 560px) {
-  :root {
-    --size-loginbar-height: 12rem;
-  }
-}
-
-@media (min-width: 768px) {
-  :root {
-    --size-header-height: 6rem;
-    --size-navbar-height: 6rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --size-container-max-width: 1030px;
-    --size-loginbar-height: 8rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  :root {
-    --size-container-max-width: 1160px;
-    --size-header-height: 12rem;
-    --size-navbar-height: 8rem;
-  }
-}
-
 html {
   font-size: 10px;
   box-sizing: border-box;
@@ -153,4 +125,63 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+/* -------------------------
+ * Error
+ */
+
+div.error-wrapper {
+  max-width: var(--size-container-max-width);
+  margin: 0 auto;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+div.error-wrapper h1 {
+  margin: 4rem;
+  font: var(--font-weight-medium) 4rem / 1.2 var(--font-primary);
+  text-shadow: 1px 1px 1px var(--color-brighter), 0 0 0 var(--color-darker),
+    1px 1px 1px var(--color-brighter);
+  color: transparent;
+}
+
+/* -------------------------
+ * Media queries
+ */
+
+@media (min-width: 560px) {
+  :root {
+    --size-loginbar-height: 12rem;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --size-header-height: 6rem;
+    --size-navbar-height: 6rem;
+  }
+
+  div.error-wrapper h1 {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --size-container-max-width: 1030px;
+    --size-loginbar-height: 8rem;
+  }
+
+  div.error-wrapper h1 {
+    font-size: 8rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --size-container-max-width: 1160px;
+    --size-header-height: 12rem;
+    --size-navbar-height: 8rem;
+  }
 }

@@ -1,13 +1,25 @@
-import Head from 'next/head';
-import styles from 'utils/theme/Home.module.css';
+import { HeadTitle } from 'elements';
 
-const Home: React.FC = () => (
-  <div>
-    <Head>
-      <title>Land of Hop</title>
-    </Head>
-    Bum
-  </div>
-);
+const Home: React.FC = props => {
+  console.log('props', props);
+
+  return (
+    <div>
+      <HeadTitle title="main" />
+      Bum
+    </div>
+  );
+};
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:4000/beverage');
+  const beverages = await res.json();
+
+  return {
+    props: {
+      beverages,
+    },
+  };
+}
 
 export default Home;

@@ -1,11 +1,8 @@
-import Head from 'next/head';
-import { FormattedMessage } from 'react-intl';
+import { HeadTitle } from 'elements';
 
 const About: React.FC = () => (
   <div>
-    <Head>
-      <title>O stronie</title>
-    </Head>
+    <HeadTitle title="about" />
     About
   </div>
 );

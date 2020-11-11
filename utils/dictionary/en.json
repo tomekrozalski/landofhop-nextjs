@@ -3,5 +3,13 @@
   "global.close": "Close",
   "global.open": "Open",
   "global.search": "Search",
-  "global.stats": "Statistics"
+  "global.stats": "Statistics",
+  "notFound.body": "Redirecting to the home page in { seconds, plural, one {# second} other {# seconds}}",
+  "notFound.title": "404 Not Found",
+  "titles.about": "About the site",
+  "titles.beverageDetails": "🍻 {brand}, {name}",
+  "titles.main": "Land of Hop XXX",
+  "titles.ingredients": "Ingredients 🔥",
+  "titles.notFound": "404 Not Found",
+  "titles.stats": "📈 Statistics"
 }
