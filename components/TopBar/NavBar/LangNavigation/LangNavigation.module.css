@@ -1,0 +1,25 @@
+.langNavigation {
+  display: flex;
+  margin: 0 0.5rem;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.langNavigation li {
+  display: flex;
+}
+
+.langNavigation a {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transition: color var(--transition-default),
+    background-color var(--transition-default);
+}
+
+.langNavigation a:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

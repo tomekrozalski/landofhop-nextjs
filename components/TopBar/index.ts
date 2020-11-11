@@ -1,5 +1,3 @@
-import Header from './Header';
-// import LoginBar from './LoginBar';
-// import NavBar from './NavBar';
+import TopBar from './TopBar';
 
-export { Header };
+export default TopBar;

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 import { TopBarContext } from 'utils/contexts';
 import styles from './SearchBar.module.css';
@@ -19,7 +19,7 @@ const Searchbar = () => {
           aria-label={formatMessage({
             id: searchbarActive ? 'global.close' : 'global.search',
           })}
-          className={classnames(styles.icon, {
+          className={clsx(styles.icon, {
             [styles.active]: searchbarActive,
           })}
         />

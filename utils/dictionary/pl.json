@@ -1,5 +1,7 @@
 {
+  "global.about": "O stronie",
   "global.close": "Zamknij",
   "global.open": "Otwórz",
-  "global.search": "Szukaj"
+  "global.search": "Szukaj",
+  "global.stats": "Statystyki"
 }

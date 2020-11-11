@@ -1,5 +1,7 @@
 {
+  "global.about": "About",
   "global.close": "Close",
   "global.open": "Open",
-  "global.search": "Search"
+  "global.search": "Search",
+  "global.stats": "Statistics"
 }

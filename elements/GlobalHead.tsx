@@ -1,7 +1,8 @@
 import Head from 'next/head';
 
-const Favicons = () => (
+const GlobalHead: React.FC = () => (
   <Head>
+    <link rel="stylesheet" href="https://use.typekit.net/hlt6lgk.css" />
     <link
       rel="apple-touch-icon"
       sizes="57x57"
@@ -78,4 +79,4 @@ const Favicons = () => (
   </Head>
 );
 
-export default Favicons;
+export default GlobalHead;

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { FormattedMessage } from 'react-intl';
 
-const About = () => (
+const About: React.FC = () => (
   <div>
     <Head>
       <title>O stronie</title>

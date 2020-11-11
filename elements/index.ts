@@ -1,3 +1,3 @@
-import Favicons from './Favicons';
+import GlobalHead from './GlobalHead';
 
-export { Favicons };
+export { GlobalHead };

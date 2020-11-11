@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import classNames from 'classNames';
+import clsx from 'clsx';
 
 import { TopBarContext } from 'utils/contexts';
 import { Logo, NavigationSwitcher, SearchBar } from '.';
@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header
-      className={classNames(
+      className={clsx(
         styles.header,
         { [styles.loginbar]: loginbar },
         { [styles.navbar]: navbar },
