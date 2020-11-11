@@ -4,24 +4,44 @@
   justify-content: center;
 }
 
-.logo:hover svg {
-  transform: scale(1.1);
-}
-
 .logo h1 {
   display: flex;
 }
 
 .logo svg {
+  width: 8rem;
+}
+
+.logo .h,
+.logo .p {
+  fill: var(--color-black);
+  transition: fill var(--transition-default);
+}
+
+.logo:hover .h,
+.logo:hover .p {
   fill: var(--color-white);
-  width: 4rem;
-  transform: scale(1);
-  transform-origin: center;
-  transition: transform var(--transition-default);
+}
+
+@keyframes smoothColor {
+  0% {
+    fill: var(--color-brand-4);
+  }
+  50% {
+    fill: var(--color-brand-5);
+  }
+  100% {
+    fill: var(--color-brand-4);
+  }
+}
+
+.logo .o {
+  fill: var(--color-brand-4);
+  animation: smoothColor 15s infinite;
 }
 
 @media (min-width: 1600px) {
   .logo svg {
-    width: 6rem;
+    width: 12rem;
   }
 }

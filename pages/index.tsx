@@ -4,8 +4,7 @@ import styles from 'utils/theme/Home.module.css';
 const Home = () => (
   <div>
     <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
+      <title>Land of Hop</title>
     </Head>
     Bum
   </div>

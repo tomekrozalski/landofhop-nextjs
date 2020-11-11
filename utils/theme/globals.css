@@ -1,6 +1,16 @@
 :root {
   --color-black: #222;
   --color-white: #fff;
+  --color-grey: #999;
+
+  --color-brand-1: #f94144;
+  --color-brand-2: #f3722c;
+  --color-brand-3: #f8961e;
+  --color-brand-4: #f9c74f;
+  --color-brand-5: #90be6d;
+  --color-brand-6: #43aa8b;
+  --color-brand-7: #577590;
+
   --color-brightest: #f5f5f5; /* ? */
   --color-brighter: #eee; /* ? */
   --color-bright: #ddd; /* ? */
@@ -92,6 +102,10 @@ body {
 
 body.scroll-lock {
   overflow: hidden;
+}
+
+main {
+  margin-top: var(--size-header-height);
 }
 
 h1 {

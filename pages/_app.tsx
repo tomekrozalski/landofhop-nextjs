@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 
@@ -7,6 +6,7 @@ import en from 'utils/dictionary/en.json';
 import pl from 'utils/dictionary/pl.json';
 import 'utils/theme/globals.css';
 
+import { Favicons } from 'elements';
 import { Header } from 'components/TopBar';
 
 const App = ({ Component, pageProps }) => {
@@ -16,8 +16,11 @@ const App = ({ Component, pageProps }) => {
   return (
     <GlobalStateProvider>
       <IntlProvider locale={locale} messages={dictionary[locale]}>
+        <Favicons />
         <Header />
-        <Component {...pageProps} />
+        <main>
+          <Component {...pageProps} />
+        </main>
       </IntlProvider>
     </GlobalStateProvider>
   );

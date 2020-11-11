@@ -19,7 +19,7 @@
   );
 }
 
-.header div {
+.grid {
   display: grid;
   grid-template-columns: minmax(5rem, auto) 1fr minmax(5rem, auto);
   grid-template-areas: 'search logo more';
@@ -31,7 +31,7 @@
 }
 
 @media (min-width: 768px) {
-  .header div {
+  .grid {
     grid-template-columns: minmax(10rem, auto) 1fr minmax(10rem, auto);
   }
 }

@@ -9,16 +9,15 @@
   display: block;
   width: 2rem;
   height: 0.4rem;
-  opacity: 1;
-  transition: opacity var(--transition-default);
-}
-
-.navigationSwitcher:hover svg {
-  opacity: 0.5;
 }
 
 .navigationSwitcher svg circle {
   fill: var(--color-white);
+  transition: fill var(--transition-default);
+}
+
+.navigationSwitcher:hover svg circle {
+  fill: var(--color-grey);
 }
 
 @media (min-width: 1600px) {
