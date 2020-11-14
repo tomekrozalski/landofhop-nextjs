@@ -17,7 +17,7 @@
 }
 
 .navigationSwitcher:hover svg circle {
-  fill: var(--color-grey);
+  fill: var(--color-grey-1);
 }
 
 @media (min-width: 1600px) {

@@ -1,4 +1,5 @@
+import BeverageCoverImage from './BeverageCoverImage';
 import GlobalHead from './GlobalHead';
 import HeadTitle from './HeadTitle';
 
-export { GlobalHead, HeadTitle };
+export { BeverageCoverImage, GlobalHead, HeadTitle };

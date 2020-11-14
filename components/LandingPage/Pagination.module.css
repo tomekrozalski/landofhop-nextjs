@@ -1,0 +1,49 @@
+.list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: var(--size-container-max-width);
+  margin: 6rem auto;
+}
+
+.list li {
+  margin: 0.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-grey-2);
+  background-color: var(--color-grey-2);
+  font: var(--font-weight-regular) 1.6rem / 1 var(--font-primary);
+  color: var(--color-white);
+}
+
+.button:hover:not('.inactive') {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.button.active {
+  background-color: var(--color-grey-4);
+  color: var(--color-grey-1);
+
+  transition: background-color var(--transition-default),
+    color var(--transition-default);
+}
+
+.button.inactive {
+  cursor: not-allowed;
+}
+
+.button.current {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+@media (min-width: 1600px) {
+  .list {
+    margin: 12rem auto 8rem auto;
+  }
+}

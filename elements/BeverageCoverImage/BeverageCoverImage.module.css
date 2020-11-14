@@ -1,0 +1,29 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper.wrapperLoaded svg {
+  opacity: 0 !important;
+}
+
+.stretcher {
+  width: 100%;
+}
+
+.cover {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transition: opacity var(--transition-default);
+}
+
+.cover.coverLoaded {
+  opacity: 1;
+}

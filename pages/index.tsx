@@ -1,25 +1,20 @@
-import { HeadTitle } from 'elements';
-
-const Home: React.FC = props => {
-  console.log('props', props);
-
-  return (
-    <div>
-      <HeadTitle title="main" />
-      Bum
-    </div>
-  );
-};
+import LandingPage from 'components/LandingPage';
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:4000/beverage');
-  const beverages = await res.json();
+  const getTotal = await fetch(`${process.env.API_SERVER}/beverage/total`);
+  const total = await getTotal.json();
+
+  const getBasics = await fetch(
+    `${process.env.API_SERVER}/beverage/basics/0/60`,
+  );
+  const basics = await getBasics.json();
 
   return {
     props: {
-      beverages,
+      basics,
+      total,
     },
   };
 }
 
-export default Home;
+export default LandingPage;

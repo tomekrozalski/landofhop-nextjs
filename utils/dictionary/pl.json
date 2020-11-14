@@ -6,6 +6,7 @@
   "global.stats": "Statystyki",
   "notFound.body": "Przekierowanie do strony głównej za { seconds, plural, one {# sekundę} other {# sekundy} }",
   "notFound.title": "404 Nie znaleziono",
+  "tileImageNotFound": "Nie znaleziono zdjęcia",
   "titles.about": "O stronie",
   "titles.beverageDetails": "🍻 {brand}, {name}",
   "titles.main": "Land of Hop XXX",
