@@ -10,10 +10,11 @@ import styles from './LandingPage.module.css';
 
 type Props = {
   basics: Basics[];
+  current: number;
   total: number;
 };
 
-const LandingPage: React.FC<Props> = ({ basics, total }) => {
+const LandingPage: React.FC<Props> = ({ basics, current, total }) => {
   const { formatMessage, locale } = useIntl();
 
   const getAltText = ({ brand, name }) => {
@@ -26,7 +27,7 @@ const LandingPage: React.FC<Props> = ({ basics, total }) => {
   return (
     <>
       <ul className={styles.list}>
-        <HeadTitle title="main" />
+        <HeadTitle title="main" values={{ page: current }} />
         {basics.map(
           ({ badge, brand, container, id, name, photos, shortId }) => (
             <li key={id}>
@@ -55,7 +56,7 @@ const LandingPage: React.FC<Props> = ({ basics, total }) => {
           ),
         )}
       </ul>
-      <Pagination current={1} pages={Math.ceil(total / 60)} />
+      <Pagination current={current} pages={Math.ceil(total / 60)} />
     </>
   );
 };

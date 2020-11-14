@@ -9,7 +9,7 @@
   "tileImageNotFound": "Tile image not found",
   "titles.about": "About the site",
   "titles.beverageDetails": "🍻 {brand}, {name}",
-  "titles.main": "Land of Hop XXX",
+  "titles.main": "Land of Hop{page, plural, one {} other {, 📄 #} }",
   "titles.ingredients": "Ingredients 🔥",
   "titles.notFound": "404 Not Found",
   "titles.stats": "📈 Statistics"

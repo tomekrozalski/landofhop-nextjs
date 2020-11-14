@@ -12,6 +12,7 @@ export async function getStaticProps() {
   return {
     props: {
       basics,
+      current: 1,
       total,
     },
   };

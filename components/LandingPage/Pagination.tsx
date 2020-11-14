@@ -10,7 +10,7 @@ type Props = {
 
 const Pagination: React.FC<Props> = ({ current, pages }) => {
   const getStartingPoint = () => {
-    if (current <= 3) {
+    if (current <= 5) {
       return 1;
     }
 
@@ -22,7 +22,7 @@ const Pagination: React.FC<Props> = ({ current, pages }) => {
   };
 
   const getPages = () =>
-    new Array(4)
+    new Array(current === 5 || current === pages - 4 ? 5 : 4)
       .fill('')
       .reduce(acc => [...acc, acc.pop() + 1], [getStartingPoint()]);
 
@@ -32,16 +32,16 @@ const Pagination: React.FC<Props> = ({ current, pages }) => {
         {current === 1 ? (
           <span className={clsx(styles.button, styles.inactive)}>←</span>
         ) : (
-          <Link href="">
+          <Link href={current > 2 ? `/list/${current - 1}` : '/'}>
             <a className={clsx(styles.button, styles.active)}>←</a>
           </Link>
         )}
       </li>
-      {current > 4 && (
+      {current > 5 && (
         <>
           <li>
             <Link href="/">
-              <a className={clsx(styles.button, styles.active)}>←</a>
+              <a className={clsx(styles.button, styles.active)}>1</a>
             </Link>
           </li>
           <li>
@@ -62,23 +62,23 @@ const Pagination: React.FC<Props> = ({ current, pages }) => {
           </Link>
         </li>
       ))}
-      {pages > current + 3 && (
-        <>
-          <li>
-            <span className={clsx(styles.button, styles.inactive)}>…</span>
-          </li>
-          <li>
-            <Link href={`/list/${pages}`}>
-              <a className={clsx(styles.button, styles.active)}>{pages}</a>
-            </Link>
-          </li>
-        </>
+      {pages > current + 4 && (
+        <li>
+          <span className={clsx(styles.button, styles.inactive)}>…</span>
+        </li>
+      )}
+      {pages > current + 2 && (
+        <li>
+          <Link href={`/list/${pages}`}>
+            <a className={clsx(styles.button, styles.active)}>{pages}</a>
+          </Link>
+        </li>
       )}
       <li>
         {pages === current ? (
           <span className={clsx(styles.button, styles.inactive)}>→</span>
         ) : (
-          <Link href={`/list/${pages}`}>
+          <Link href={`/list/${current + 1}`}>
             <a className={clsx(styles.button, styles.active)}>→</a>
           </Link>
         )}
