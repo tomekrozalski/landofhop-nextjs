@@ -1,8 +1,9 @@
+import { Basics } from 'utils/types/Beverage';
 import LandingPage from 'components/LandingPage';
 
 export async function getStaticPaths() {
   const getTotal = await fetch(`${process.env.API_SERVER}/beverage/total`);
-  const total = await getTotal.json();
+  const total: number = await getTotal.json();
 
   const paths = new Array(Math.ceil(total / 60))
     .fill('')
@@ -14,13 +15,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const id = +params.id;
   const getTotal = await fetch(`${process.env.API_SERVER}/beverage/total`);
-  const total = await getTotal.json();
+  const total: number = await getTotal.json();
   const skip = id * 60 - 60;
 
   const getBasics = await fetch(
     `${process.env.API_SERVER}/beverage/basics/${skip}/60`,
   );
-  const basics = await getBasics.json();
+  const basics: Basics[] = await getBasics.json();
 
   return {
     props: {
