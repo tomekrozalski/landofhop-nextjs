@@ -1,0 +1,15 @@
+.gallery {
+  grid-area: gallery;
+  width: 220px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.brokenContainer {
+  height: 28rem;
+  margin: 4rem 0;
+  transform: scale(1);
+  transition: transform var(--transition-default);
+  fill: var(--color-bright);
+}

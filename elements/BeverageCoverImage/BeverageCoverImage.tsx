@@ -1,7 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useIntl } from 'react-intl';
 import clsx from 'clsx';
 
 import { ImageType } from 'utils/enums/Beverage';
+import { LanguageValue } from 'utils/types/common';
+import { getValueByLanguage } from 'utils/helpers';
 import styles from './BeverageCoverImage.module.css';
 
 const inImageCache = (src: string) => {
@@ -12,26 +15,41 @@ const inImageCache = (src: string) => {
 };
 
 type Props = {
-  alt: string;
+  badge: string;
+  brand: {
+    badge: string;
+    name: LanguageValue[];
+  };
+  name: LanguageValue[];
   outline: string;
-  path: string;
   ratio: number;
+  shortId: string;
   type: ImageType;
 };
 
 const BeverageCoverImage: React.FC<Props> = ({
-  alt,
+  badge,
+  brand,
+  name,
   outline,
-  path,
   ratio,
+  shortId,
   type,
 }) => {
   const container = useRef(null);
   const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const { locale } = useIntl();
+
+  const getAltText = () => {
+    const beverageName = getValueByLanguage(name, locale).value;
+    const brandName = getValueByLanguage(brand.name, locale).value;
+
+    return `${beverageName}, ${brandName}`;
+  };
 
   const getPath = (format: 'webp' | 'jpg', size: 1 | 2) => {
-    const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${path}`;
+    const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}`;
 
     return type === ImageType.cover
       ? `${basicPath}/${type}/${format}/${size}x.${format}`
@@ -64,6 +82,9 @@ const BeverageCoverImage: React.FC<Props> = ({
     }
   }, []);
 
+  console.log('seenBefore', seenBefore());
+  console.log('loaded', loaded);
+
   return (
     <div
       className={clsx(styles.wrapper, { [styles.wrapperLoaded]: loaded })}
@@ -94,7 +115,7 @@ const BeverageCoverImage: React.FC<Props> = ({
             })}
             srcSet={`${getPath('jpg', 1)} 1x, ${getPath('jpg', 2)} 2x`}
             src={getPath('jpg', 1)}
-            alt={loaded ? alt : ''}
+            alt={loaded ? getAltText() : ''}
             onLoad={() => setLoaded(true)}
           />
         </picture>

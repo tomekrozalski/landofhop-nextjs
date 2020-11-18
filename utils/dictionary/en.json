@@ -1,4 +1,5 @@
 {
+  "errors.imageNotFound": "Image not found",
   "global.about": "About",
   "global.close": "Close",
   "global.open": "Open",
@@ -6,7 +7,6 @@
   "global.stats": "Statistics",
   "notFound.body": "Redirecting to the home page in { seconds, plural, one {# second} other {# seconds}}",
   "notFound.title": "404 Not Found",
-  "tileImageNotFound": "Tile image not found",
   "titles.about": "About the site",
   "titles.beverageDetails": "🍻 {brand}, {name}",
   "titles.main": "Land of Hop{page, plural, one {} other {, 📄 #} }",

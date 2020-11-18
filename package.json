@@ -12,7 +12,8 @@
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "react-intl": "^5.9.4"
+    "react-intl": "^5.9.4",
+    "react-three-fiber": "^5.3.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
