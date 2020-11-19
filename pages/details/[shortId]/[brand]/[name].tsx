@@ -1,28 +1,22 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { AugmentedDetails, Basics } from 'utils/types/Beverage';
 import BeverageDetails from 'components/BeverageDetails';
 
-export async function getStaticPaths() {
-  const getBasics = await fetch(`${process.env.API_SERVER}/beverage/basics`);
-  const basics: Basics[] = await getBasics.json();
-
-  const paths = basics.map(({ badge, brand, shortId }) => ({
-    params: {
-      name: badge,
-      brand: brand.badge,
-      shortId,
-    },
-  }));
-
-  return { paths, fallback: true };
-}
-
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps<AugmentedDetails> = async ({
+  params,
+}) => {
+  const { brand, name, shortId } = params;
   const getDetails = await fetch(
-    `${process.env.API_SERVER}/beverage/details/${params.shortId}/${params.brand}/${params.name}`,
+    `${process.env.API_SERVER}/beverage/details/${shortId}/${brand}/${name}`,
   );
   const props: AugmentedDetails = await getDetails.json();
 
   return { props };
-}
+};
+
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: [],
+  fallback: true,
+});
 
 export default BeverageDetails;

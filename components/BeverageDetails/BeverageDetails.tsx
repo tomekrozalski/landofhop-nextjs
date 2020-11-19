@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
+
 import { Basics, Details } from 'utils/types/Beverage';
+import { Spinner } from 'elements';
 import styles from './BeverageDetails.module.css';
 import { Gallery } from '.';
 
@@ -10,10 +12,10 @@ type Props = {
 };
 
 const BeverageDetails: React.FC<Props> = ({ details, next, previous }) => {
-  const router = useRouter();
+  const { isFallback } = useRouter();
 
-  if (router.isFallback) {
-    return <div>Loading...</div>;
+  if (isFallback) {
+    return <Spinner />;
   }
 
   return (

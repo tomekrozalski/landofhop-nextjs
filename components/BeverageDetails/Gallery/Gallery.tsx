@@ -1,20 +1,12 @@
-import { Suspense, useContext } from 'react';
+import { Suspense } from 'react';
 import { useIntl } from 'react-intl';
 import { Canvas } from 'react-three-fiber';
 
 import { Details } from 'utils/types/Beverage';
 import { ImageType } from 'utils/enums/Beverage';
 import { BeverageCoverImage } from 'elements';
+import { GalleryContent, Icon360, Spinner } from '.';
 import styles from './Gallery.module.css';
-
-// import {
-//   BrokenContainer,
-//   CanvasWrapper,
-//   GalleryContent,
-//   Icon360,
-//   Spinner,
-//   Wrapper,
-// } from '.';
 
 const Gallery: React.FC<{ details: Details }> = ({ details }) => {
   const { badge, brand, container, name, photos, shortId } = details;
@@ -36,8 +28,8 @@ const Gallery: React.FC<{ details: Details }> = ({ details }) => {
             shortId={shortId}
             type={ImageType.container}
           />
-          {/* {typeof window !== `undefined` && (
-            <CanvasWrapper>
+          {process.browser && (
+            <div className={styles.canvasWrapper}>
               <Canvas orthographic pixelRatio={window.devicePixelRatio}>
                 <ambientLight />
                 <Suspense fallback={<Spinner />}>
@@ -50,8 +42,8 @@ const Gallery: React.FC<{ details: Details }> = ({ details }) => {
                   />
                 </Suspense>
               </Canvas>
-            </CanvasWrapper>
-          )} */}
+            </div>
+          )}
         </>
       ) : (
         <img

@@ -1,7 +1,13 @@
+import { GetStaticProps } from 'next';
+
 import { Basics } from 'utils/types/Beverage';
 import LandingPage from 'components/LandingPage';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<{
+  basics: Basics[];
+  current: number;
+  total: number;
+}> = async () => {
   const getTotal = await fetch(`${process.env.API_SERVER}/beverage/total`);
   const total: number = await getTotal.json();
 
@@ -17,6 +23,6 @@ export async function getStaticProps() {
       total,
     },
   };
-}
+};
 
 export default LandingPage;

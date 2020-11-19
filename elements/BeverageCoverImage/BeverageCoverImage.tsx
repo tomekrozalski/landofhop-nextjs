@@ -7,13 +7,6 @@ import { LanguageValue } from 'utils/types/common';
 import { getValueByLanguage } from 'utils/helpers';
 import styles from './BeverageCoverImage.module.css';
 
-const inImageCache = (src: string) => {
-  const image = new Image();
-  image.src = src;
-
-  return image.complete;
-};
-
 type Props = {
   badge: string;
   brand: {
@@ -26,6 +19,13 @@ type Props = {
   shortId: string;
   type: ImageType;
 };
+
+function isCached(src) {
+  var image = new Image();
+  image.src = src;
+
+  return image.complete;
+}
 
 const BeverageCoverImage: React.FC<Props> = ({
   badge,
@@ -41,13 +41,6 @@ const BeverageCoverImage: React.FC<Props> = ({
   const [loaded, setLoaded] = useState(false);
   const { locale } = useIntl();
 
-  const getAltText = () => {
-    const beverageName = getValueByLanguage(name, locale).value;
-    const brandName = getValueByLanguage(brand.name, locale).value;
-
-    return `${beverageName}, ${brandName}`;
-  };
-
   const getPath = (format: 'webp' | 'jpg', size: 1 | 2) => {
     const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}`;
 
@@ -56,9 +49,18 @@ const BeverageCoverImage: React.FC<Props> = ({
       : `${basicPath}/${type}/${format}/${size}x/01.${format}`;
   };
 
-  const seenBefore = () => {
-    return process.browser ? inImageCache(getPath('webp', 1)) : null;
+  const getAltText = () => {
+    const beverageName = getValueByLanguage(name, locale).value;
+    const brandName = getValueByLanguage(brand.name, locale).value;
+
+    return `${beverageName}, ${brandName}`;
   };
+
+  const seenBefore = () =>
+    isCached(getPath('webp', 2)) ||
+    isCached(getPath('webp', 1)) ||
+    isCached(getPath('jpg', 2)) ||
+    isCached(getPath('jpg', 1));
 
   const enhanceOutlineWithStyles = (value: string) =>
     value.replace(
@@ -82,26 +84,19 @@ const BeverageCoverImage: React.FC<Props> = ({
     }
   }, []);
 
-  console.log('seenBefore', seenBefore());
-  console.log('loaded', loaded);
-
   return (
     <div
       className={clsx(styles.wrapper, { [styles.wrapperLoaded]: loaded })}
       ref={container}
     >
-      <>
-        <div
-          className={styles.stretcher}
-          style={{ paddingBottom: `${ratio}%` }}
-        />
-        <div
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: outline ? enhanceOutlineWithStyles(outline) : '',
-          }}
-        />
-      </>
+      <div
+        className={styles.stretcher}
+        style={{ paddingBottom: `${ratio}%` }}
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{
+          __html: outline ? enhanceOutlineWithStyles(outline) : '',
+        }}
+      />
       {process.browser && visible && (
         <picture>
           <source
@@ -121,13 +116,13 @@ const BeverageCoverImage: React.FC<Props> = ({
         </picture>
       )}
       {!process.browser ? (
-        <picture
+        <noscript
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
-            __html: `<img src="${getPath(
+            __html: `<picture><img src="${getPath(
               'jpg',
               1,
-            )}" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center;" />`,
+            )}" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center;" /></picture>`,
           }}
         />
       ) : null}

@@ -11,5 +11,13 @@
   margin: 4rem 0;
   transform: scale(1);
   transition: transform var(--transition-default);
-  fill: var(--color-bright);
+  fill: var(--color-grey-3);
+}
+
+.canvasWrapper {
+  width: 220px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
