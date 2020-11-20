@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 import clsx from 'clsx';
 
 import { ImageType } from 'utils/enums/Beverage';
@@ -40,6 +41,11 @@ const BeverageCoverImage: React.FC<Props> = ({
   const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const { locale } = useIntl();
+  const router = useRouter();
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', () => setLoaded(false));
+  });
 
   const getPath = (format: 'webp' | 'jpg', size: 1 | 2) => {
     const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}`;

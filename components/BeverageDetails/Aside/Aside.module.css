@@ -1,0 +1,42 @@
+.aside {
+  grid-area: aside;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.aside a,
+.aside span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+  border-radius: 50%;
+  border: 0.5rem solid var(--color-white);
+  transition: border-color var(--transition-default);
+  position: relative;
+}
+
+.aside svg {
+  width: 2.6rem;
+  fill: var(--color-brand-5);
+  transition: fill var(--transition-default);
+}
+
+.aside a:hover {
+  border: 0.5rem solid var(--color-brand-3);
+}
+
+@media (min-width: 768px) {
+  .aside {
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aside {
+    justify-content: center;
+  }
+}

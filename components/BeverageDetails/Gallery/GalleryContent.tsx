@@ -11,8 +11,16 @@ type Props = {
 
 const GalleryContent: React.FC<Props> = ({ badge, brand, shortId, photos }) => {
   const { viewport } = useThree();
+  const [img, setImg] = useState(0);
+  const [rotatable, setRotatable] = useState(false);
+  const [dragData, setDragData] = useState({
+    beforeXPosition: 0,
+    currentXPosition: 0,
+  });
 
   const galleryPath = useMemo(() => {
+    setImg(0);
+
     const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${brand}/${badge}/${shortId}/container`;
     const specificPath =
       window.devicePixelRatio && window.devicePixelRatio >= 2
@@ -20,37 +28,32 @@ const GalleryContent: React.FC<Props> = ({ badge, brand, shortId, photos }) => {
         : `${basicPath}/jpg/1x`;
 
     return specificPath;
-  }, []);
+  }, [badge, brand, shortId]);
 
-  const textureLinks = useMemo(() => {
-    return new Array(photos).fill('').map((_, i) => {
-      const index = i + 1;
-      return index < 10
-        ? `${galleryPath}/0${index}.jpg`
-        : `${galleryPath}/${index}.jpg`;
-    });
-  }, []);
+  const textureLinks = useMemo(
+    () =>
+      new Array(photos).fill('').map((_, i) => {
+        const index = i + 1;
+        return index < 10
+          ? `${galleryPath}/0${index}.jpg`
+          : `${galleryPath}/${index}.jpg`;
+      }),
+    [galleryPath],
+  );
 
   const rawTextures = textureLinks.map(link => useLoader(TextureLoader, link));
+
   const textures = useMemo(
     () =>
       rawTextures.map(
         // eslint-disable-next-line no-return-assign, no-param-reassign, no-sequences
         (texture: any) => {
-          //console.log('texture', texture);
-          //texture.minFilter = LinearFilter;
+          texture.minFilter = LinearFilter;
           return texture;
         },
       ),
     [rawTextures],
   );
-
-  const [rotatable, setRotatable] = useState(false);
-  const [dragData, setDragData] = useState({
-    beforeXPosition: 0,
-    currentXPosition: 0,
-  });
-  const [img, setImg] = useState(0);
 
   useEffect(() => {
     const direction =

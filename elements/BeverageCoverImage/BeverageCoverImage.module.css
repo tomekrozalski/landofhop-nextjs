@@ -21,9 +21,9 @@
   object-fit: cover;
   object-position: center center;
   opacity: 0;
-  transition: opacity var(--transition-default);
 }
 
 .cover.coverLoaded {
   opacity: 1;
+  transition: opacity var(--transition-default);
 }

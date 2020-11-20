@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { AugmentedDetails, Basics } from 'utils/types/Beverage';
+import { AugmentedDetails } from 'utils/types/Beverage';
 import BeverageDetails from 'components/BeverageDetails';
 
 export const getStaticProps: GetStaticProps<AugmentedDetails> = async ({
