@@ -5,7 +5,7 @@ import { AugmentedDetails } from 'utils/types/Beverage';
 import { translate } from 'utils/helpers';
 import { HeadTitle, Spinner } from 'elements';
 import styles from './BeverageDetails.module.css';
-import { Aside, Gallery } from '.';
+import { Aside, Gallery, Header } from '.';
 
 const BeverageDetails: React.FC<AugmentedDetails> = ({
   details,
@@ -22,7 +22,7 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
   return (
     <article className={styles.beverageDetails}>
       <Gallery details={details} />
-      {/* <Header details={details} /> */}
+      <Header details={details} />
       {/* <Tale /> */}
       {/* <Testimony /> */}
       {/* <Impressions /> */}
