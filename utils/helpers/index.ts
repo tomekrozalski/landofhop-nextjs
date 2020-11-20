@@ -1,3 +1,3 @@
-import getValueByLanguage from './getValueByLanguage';
+import translate from './translate';
 
-export { getValueByLanguage };
+export { translate };

@@ -18,9 +18,27 @@ const GalleryContent: React.FC<Props> = ({ badge, brand, shortId, photos }) => {
     currentXPosition: 0,
   });
 
-  const galleryPath = useMemo(() => {
-    setImg(0);
+  const rotate = useCallback(val => {
+    let timeout;
 
+    if (val === 23) {
+      setImg(0);
+      clearTimeout(timeout);
+    } else {
+      setImg(val);
+
+      timeout = setTimeout(() => {
+        rotate(val + 1);
+      }, 10);
+    }
+  }, []);
+
+  useEffect(() => {
+    setImg(0);
+    rotate(1);
+  }, [badge, brand, shortId]);
+
+  const galleryPath = useMemo(() => {
     const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${brand}/${badge}/${shortId}/container`;
     const specificPath =
       window.devicePixelRatio && window.devicePixelRatio >= 2
@@ -82,25 +100,6 @@ const GalleryContent: React.FC<Props> = ({ badge, brand, shortId, photos }) => {
 
     setImg(nextImg);
   };
-
-  const rotate = useCallback(val => {
-    let timeout;
-
-    if (val === 23) {
-      setImg(0);
-      clearTimeout(timeout);
-    } else {
-      setImg(val);
-
-      timeout = setTimeout(() => {
-        rotate(val + 1);
-      }, 10);
-    }
-  }, []);
-
-  useEffect(() => {
-    rotate(1);
-  }, []);
 
   return (
     <mesh

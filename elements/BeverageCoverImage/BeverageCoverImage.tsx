@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import { ImageType } from 'utils/enums/Beverage';
 import { LanguageValue } from 'utils/types/common';
-import { getValueByLanguage } from 'utils/helpers';
+import { translate } from 'utils/helpers';
 import styles from './BeverageCoverImage.module.css';
 
 type Props = {
@@ -56,8 +56,8 @@ const BeverageCoverImage: React.FC<Props> = ({
   };
 
   const getAltText = () => {
-    const beverageName = getValueByLanguage(name, locale).value;
-    const brandName = getValueByLanguage(brand.name, locale).value;
+    const beverageName = translate(name, locale);
+    const brandName = translate(brand.name, locale);
 
     return `${beverageName}, ${brandName}`;
   };

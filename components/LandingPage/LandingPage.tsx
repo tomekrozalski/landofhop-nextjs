@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 import { BeverageCoverImage, HeadTitle } from 'elements';
 import { ImageType } from 'utils/enums/Beverage';
 import { Basics } from 'utils/types/Beverage';
-import { getValueByLanguage } from 'utils/helpers';
 import Pagination from './Pagination';
 import styles from './LandingPage.module.css';
 
@@ -15,7 +14,7 @@ type Props = {
 };
 
 const LandingPage: React.FC<Props> = ({ basics, current, total }) => {
-  const { formatMessage, locale } = useIntl();
+  const { formatMessage } = useIntl();
 
   return (
     <>

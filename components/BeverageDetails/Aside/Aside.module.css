@@ -14,19 +14,33 @@
   height: 5rem;
   margin: 1rem;
   border-radius: 50%;
-  border: 0.5rem solid var(--color-white);
-  transition: border-color var(--transition-default);
+  overflow: hidden;
+  background-color: var(--color-white);
+  transition: background-color var(--transition-default);
   position: relative;
 }
 
 .aside svg {
   width: 2.6rem;
+  transition: fill var(--transition-default),
+    transform var(--transition-default);
+}
+
+.aside a svg {
   fill: var(--color-brand-5);
-  transition: fill var(--transition-default);
+}
+
+.aside span svg {
+  fill: var(--color-grey-2);
 }
 
 .aside a:hover {
-  border: 0.5rem solid var(--color-brand-3);
+  background-color: var(--color-brand-4);
+}
+
+.aside a:hover svg {
+  fill: var(--color-white);
+  transform: scale(2.5);
 }
 
 @media (min-width: 768px) {
