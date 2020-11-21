@@ -4,11 +4,12 @@ import { useIntl } from 'react-intl';
 import { LanguageValue } from 'utils/types/common';
 
 type Props = {
+  className?: string;
   tag?: string;
   values: LanguageValue[];
 };
 
-const Translated: React.FC<Props> = ({ tag = 'span', values }) => {
+const Translated: React.FC<Props> = ({ className, tag = 'span', values }) => {
   const { locale } = useIntl();
 
   const { language, value } =
@@ -16,6 +17,7 @@ const Translated: React.FC<Props> = ({ tag = 'span', values }) => {
 
   return React.createElement(tag, {
     children: value,
+    className,
     ...(language !== locale && { lang: language }),
   });
 };

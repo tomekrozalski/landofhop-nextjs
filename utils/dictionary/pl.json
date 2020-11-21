@@ -1,10 +1,13 @@
 {
+  "beverage.series": ", w serii {series}",
   "beverage.next": "Zobacz następne piwo",
   "beverage.previous": "Zobacz poprzednie piwo",
   "errors.imageNotFound": "Nie znaleziono zdjęcia",
   "global.about": "O stronie",
   "global.brewed": "Uwarzono",
   "global.close": "Zamknij",
+  "global.conjunction.short": " i ",
+  "global.conjunction.long": " oraz ",
   "global.open": "Otwórz",
   "global.search": "Szukaj",
   "global.stats": "Statystyki",
