@@ -1,0 +1,18 @@
+.article {
+  height: 0;
+  transition: height var(--transition-default);
+  overflow: hidden;
+}
+
+.button {
+  padding: 0;
+  color: var(--color-brand-5);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-default),
+    border-color var(--transition-default);
+}
+
+.button:hover {
+  color: var(--color-black);
+  border-color: var(--color-brand-5);
+}

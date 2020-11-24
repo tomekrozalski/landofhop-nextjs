@@ -4,8 +4,8 @@ import { useIntl } from 'react-intl';
 import { AugmentedDetails } from 'utils/types/Beverage';
 import { translate } from 'utils/helpers';
 import { HeadTitle, Spinner } from 'elements';
+import { Aside, Gallery, Header, Tale, Testimony } from '.';
 import styles from './BeverageDetails.module.css';
-import { Aside, Gallery, Header } from '.';
 
 const BeverageDetails: React.FC<AugmentedDetails> = ({
   details,
@@ -23,8 +23,8 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
     <article className={styles.beverageDetails}>
       <Gallery details={details} />
       <Header details={details} />
-      {/* <Tale /> */}
-      {/* <Testimony /> */}
+      <Tale details={details} />
+      <Testimony details={details} />
       {/* <Impressions /> */}
       {/* <FootNotes /> */}
       {/* <AdminBar /> */}

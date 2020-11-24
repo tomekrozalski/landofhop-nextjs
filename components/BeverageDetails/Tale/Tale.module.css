@@ -1,0 +1,16 @@
+.taleWrapper {
+  grid-area: tale;
+}
+
+.taleItem {
+  position: relative;
+}
+
+.taleItem + .taleItem {
+  margin-top: 1rem;
+}
+
+.taleItem.producer {
+  border-left: 1rem solid var(--color-brand-7);
+  padding-left: 2rem;
+}

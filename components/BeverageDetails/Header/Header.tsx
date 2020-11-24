@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { Translated } from 'elements';
 import { Details } from 'utils/types/Beverage';
-import { Remark, Series } from '.';
+import { Brand, Contract, Cooperation, Remark, Series } from '.';
 import styles from './Header.module.css';
 
 const Header: React.FC<{ details: Details }> = ({ details }) => (
@@ -11,8 +11,8 @@ const Header: React.FC<{ details: Details }> = ({ details }) => (
     <Translated values={details.name} tag="h1" />
     <p>
       <FormattedMessage id="global.brewed" /> <Remark details={details} />
-      {/* <Contract />  <Cooperation /> */}
-      {/* <Brand /> */}
+      <Contract details={details} /> <Cooperation details={details} />
+      <Brand details={details} />
       <Series details={details} />
     </p>
   </header>

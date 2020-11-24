@@ -11,12 +11,10 @@ type Props = {
 
 const Aside: React.FC<Props> = ({ next, previous }) => (
   <aside className={styles.aside}>
-    {previous ? (
-      <Link
-        href={`/details/${previous.shortId}/${previous.brand.badge}/${previous.badge}`}
-      >
+    {next ? (
+      <Link href={`/details/${next.shortId}/${next.brand.badge}/${next.badge}`}>
         <a>
-          <LeftIcon message="beverage.previous" />
+          <LeftIcon message="beverage.next" />
         </a>
       </Link>
     ) : (
@@ -24,10 +22,12 @@ const Aside: React.FC<Props> = ({ next, previous }) => (
         <LeftIcon />
       </span>
     )}
-    {next ? (
-      <Link href={`/details/${next.shortId}/${next.brand.badge}/${next.badge}`}>
+    {previous ? (
+      <Link
+        href={`/details/${previous.shortId}/${previous.brand.badge}/${previous.badge}`}
+      >
         <a>
-          <RightIcon message="beverage.next" />
+          <RightIcon message="beverage.previous" />
         </a>
       </Link>
     ) : (

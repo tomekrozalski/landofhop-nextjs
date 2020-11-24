@@ -148,6 +148,36 @@ div.error-wrapper h1 {
 }
 
 /* -------------------------
+ * Details
+ */
+
+.source-item + .source-item:not(.noSeparator)::before {
+  content: ' / ';
+}
+
+.source-item + .source-item.noSeparator::before {
+  content: ' ';
+}
+
+.label {
+  background-position: 0px 0.8em;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(#fef8e9, #fef8e9);
+}
+
+.producer {
+  background-position: 0px 0.8em;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(#fee7e7, #fee7e7);
+}
+
+.editorial {
+  background-position: 0px 0.8em;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(#abbac7, #abbac7);
+}
+
+/* -------------------------
  * Media queries
  */
 
