@@ -19,7 +19,10 @@ const FormattedList: React.FC<Props> = ({ children, className, mode }) => {
   }
 
   const formattedArray = values
-    .reduce((acc, item) => [...acc, item, ', '], [])
+    .reduce<(React.ReactNode | string)[]>(
+      (acc, item) => [...acc, item, ', '],
+      [],
+    )
     .slice(0, -1);
 
   if (mode === 'narrow') {
