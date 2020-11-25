@@ -11,37 +11,43 @@ const Filtration: React.FC<{ details: Details }> = ({ details }) =>
       </dt>
       <dd>
         {isBoolean(details.filtration.label) && (
-          <em className="source-item label">
-            <FormattedMessage
-              id={
-                details.filtration.label
-                  ? 'global.confirmation'
-                  : 'global.denial'
-              }
-            />
-          </em>
+          <span className="source-item">
+            <em className="label">
+              <FormattedMessage
+                id={
+                  details.filtration.label
+                    ? 'global.confirmation'
+                    : 'global.denial'
+                }
+              />
+            </em>
+          </span>
         )}
         {isBoolean(details.filtration.producer) && (
-          <em className="source-item producer">
-            <FormattedMessage
-              id={
-                details.filtration.producer
-                  ? 'global.confirmation'
-                  : 'global.denial'
-              }
-            />
-          </em>
+          <span className="source-item">
+            <em className="producer">
+              <FormattedMessage
+                id={
+                  details.filtration.producer
+                    ? 'global.confirmation'
+                    : 'global.denial'
+                }
+              />
+            </em>
+          </span>
         )}
         {isBoolean(details.filtration.editorial) && (
-          <em className="source-item editorial">
-            <FormattedMessage
-              id={
-                details.filtration.editorial
-                  ? 'global.confirmation'
-                  : 'global.denial'
-              }
-            />
-          </em>
+          <span className="source-item">
+            <em className="editorial">
+              <FormattedMessage
+                id={
+                  details.filtration.editorial
+                    ? 'global.confirmation'
+                    : 'global.denial'
+                }
+              />
+            </em>
+          </span>
         )}
       </dd>
     </>

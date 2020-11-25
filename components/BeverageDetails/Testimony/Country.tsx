@@ -11,25 +11,31 @@ const Country: React.FC<{ details: Details }> = ({ details }) =>
       </dt>
       <dd>
         {details.place.label && (
-          <Translated
-            className="source-item label"
-            tag="em"
-            values={details.place.label.country}
-          />
+          <span className="source-item">
+            <Translated
+              className="label"
+              tag="em"
+              values={details.place.label.country}
+            />
+          </span>
         )}
         {details.place.producer && (
-          <Translated
-            className="source-item producer"
-            tag="em"
-            values={details.place.producer.country}
-          />
+          <span className="source-item">
+            <Translated
+              className="producer"
+              tag="em"
+              values={details.place.producer.country}
+            />
+          </span>
         )}
         {details.place.editorial && (
-          <Translated
-            className="source-item editorial"
-            tag="em"
-            values={details.place.editorial.country}
-          />
+          <span className="source-item">
+            <Translated
+              className="editorial"
+              tag="em"
+              values={details.place.editorial.country}
+            />
+          </span>
         )}
       </dd>
     </>

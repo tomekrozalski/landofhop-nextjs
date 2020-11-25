@@ -11,25 +11,31 @@ const City: React.FC<{ details: Details }> = ({ details }) =>
       </dt>
       <dd>
         {details.place.label && (
-          <Translated
-            className="source-item label"
-            tag="em"
-            values={details.place.label.city}
-          />
+          <span className="source-item">
+            <Translated
+              className="label"
+              tag="em"
+              values={details.place.label.city}
+            />
+          </span>
         )}
         {details.place.producer && (
-          <Translated
-            className="source-item producer"
-            tag="em"
-            values={details.place.producer.city}
-          />
+          <span className="source-item">
+            <Translated
+              className="producer"
+              tag="em"
+              values={details.place.producer.city}
+            />
+          </span>
         )}
         {details.place.editorial && (
-          <Translated
-            className="source-item editorial"
-            tag="em"
-            values={details.place.editorial.city}
-          />
+          <span className="source-item">
+            <Translated
+              className="editorial"
+              tag="em"
+              values={details.place.editorial.city}
+            />
+          </span>
         )}
       </dd>
     </>

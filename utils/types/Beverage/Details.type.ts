@@ -13,7 +13,15 @@ import {
   IngredientType,
   TemperatureUnit,
 } from 'utils/enums/Beverage';
-import { Aged, Container, Institution, Price, Tale } from './fragments';
+import {
+  Aged,
+  Container,
+  DryHopped,
+  IngredientDescription,
+  Institution,
+  Price,
+  Tale,
+} from './fragments';
 
 export type Details = {
   id: string;
@@ -132,9 +140,9 @@ export type Details = {
     editorial?: boolean;
   };
   dryHopped?: {
-    label?: Array<LanguageValue[]>;
-    producer?: Array<LanguageValue[]>;
-    editorial?: Array<LanguageValue[]>;
+    label?: DryHopped[];
+    producer?: DryHopped[];
+    editorial?: DryHopped[];
   };
   hopRate?: {
     label?: {
@@ -157,16 +165,8 @@ export type Details = {
     };
   };
   ingredientsDescription?: {
-    label?: {
-      complete: boolean;
-      language: string;
-      value: string;
-    }[];
-    producer?: {
-      complete: boolean;
-      language: string;
-      value: string;
-    }[];
+    label?: IngredientDescription[];
+    producer?: IngredientDescription[];
   };
   ingredientsList?: {
     label?: {

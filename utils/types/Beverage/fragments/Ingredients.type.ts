@@ -1,11 +1,7 @@
-import { Ingredient } from '.';
+import { Ingredient, IngredientsDescription } from '.';
 
 export type Ingredients = {
-  description?: {
-    complete: boolean;
-    language: string;
-    value: string;
-  }[];
+  description?: IngredientsDescription[];
   list?: Ingredient[];
   smokedMalt?: boolean;
 };

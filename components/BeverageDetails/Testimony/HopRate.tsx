@@ -2,29 +2,29 @@ import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
 
-const Extract: React.FC<{ details: Details }> = ({ details }) =>
-  details.extract ? (
+const HopRate: React.FC<{ details: Details }> = ({ details }) =>
+  details.hopRate ? (
     <>
       <dt>
-        <FormattedMessage id="global.extract" />
+        <FormattedMessage id="global.hopRate" />
       </dt>
       <dd>
-        {details.extract.label && (
+        {details.hopRate.label && (
           <span className="source-item">
             <em className="label">
               <FormattedMessage
-                id="beverage.extractValue"
-                values={details.extract.label}
+                id="beverage.hopRate.value"
+                values={details.hopRate.label}
               />
             </em>
           </span>
         )}
-        {details.extract.producer && (
+        {details.hopRate.producer && (
           <span className="source-item">
             <em className="producer">
               <FormattedMessage
-                id="beverage.extractValue"
-                values={details.extract.producer}
+                id="beverage.hopRate.value"
+                values={details.hopRate.producer}
               />
             </em>
           </span>
@@ -33,4 +33,4 @@ const Extract: React.FC<{ details: Details }> = ({ details }) =>
     </>
   ) : null;
 
-export default Extract;
+export default HopRate;

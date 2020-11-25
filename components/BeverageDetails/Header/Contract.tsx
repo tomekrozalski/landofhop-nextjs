@@ -11,25 +11,31 @@ const Contact: React.FC<{ details: Details }> = ({ details }) =>
         brands: (
           <>
             {details.contract.label && (
-              <Translated
-                className="source-item label"
-                tag="span"
-                values={details.contract.label.name}
-              />
+              <span className="source-item">
+                <Translated
+                  className="label"
+                  tag="span"
+                  values={details.contract.label.name}
+                />
+              </span>
             )}
             {details.contract.producer && (
-              <Translated
-                className="source-item producer"
-                tag="span"
-                values={details.contract.producer.name}
-              />
+              <span className="source-item">
+                <Translated
+                  className="producer"
+                  tag="span"
+                  values={details.contract.producer.name}
+                />
+              </span>
             )}
             {details.contract.editorial && (
-              <Translated
-                className="source-item editorial"
-                tag="span"
-                values={details.contract.editorial.name}
-              />
+              <span className="source-item">
+                <Translated
+                  className="editorial"
+                  tag="span"
+                  values={details.contract.editorial.name}
+                />
+              </span>
             )}
           </>
         ),

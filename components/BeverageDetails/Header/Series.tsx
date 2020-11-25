@@ -14,28 +14,32 @@ const Series: React.FC<{ details: Details }> = ({ details }) => {
         series: (
           <>
             {series.label && (
-              <FormattedList className="source-item label" mode="short">
-                {series.label.map(({ language, value }) => (
-                  <span
-                    lang={locale !== language ? language : null}
-                    key={value}
-                  >
-                    {value}
-                  </span>
-                ))}
-              </FormattedList>
+              <span className="source-item">
+                <FormattedList className="label" mode="short">
+                  {series.label.map(({ language, value }) => (
+                    <span
+                      lang={locale !== language ? language : null}
+                      key={value}
+                    >
+                      {value}
+                    </span>
+                  ))}
+                </FormattedList>
+              </span>
             )}
             {series.producer && (
-              <FormattedList className="source-item producer" mode="short">
-                {series.producer.map(({ language, value }) => (
-                  <span
-                    lang={locale !== language ? language : null}
-                    key={value}
-                  >
-                    {value}
-                  </span>
-                ))}
-              </FormattedList>
+              <span className="source-item">
+                <FormattedList className="producer" mode="short">
+                  {series.producer.map(({ language, value }) => (
+                    <span
+                      lang={locale !== language ? language : null}
+                      key={value}
+                    >
+                      {value}
+                    </span>
+                  ))}
+                </FormattedList>
+              </span>
             )}
           </>
         ),

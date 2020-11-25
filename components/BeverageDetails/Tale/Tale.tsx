@@ -32,6 +32,7 @@ const Tale: React.FC<{ details: Details }> = ({ details }) => {
           {tale.label &&
             tale.label.map(({ article, language, lead }) => (
               <div
+                key={lead}
                 className={styles.taleItem}
                 lang={language !== locale ? language : null}
               >

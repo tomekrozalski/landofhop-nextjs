@@ -6,10 +6,15 @@ import {
   BeverageType,
   City,
   Country,
+  DryHopped,
+  ExpirationTime,
   Extract,
   Fermentation,
   Filtration,
+  HopRate,
+  Ingredients,
   Pasteurization,
+  Style,
 } from '.';
 import styles from './Testimony.module.css';
 
@@ -25,11 +30,11 @@ const Testimony: React.FC<{ details: Details }> = ({ details }) => (
     <Filtration details={details} />
     <Pasteurization details={details} />
     <Aged details={details} />
-    {/* <Style /> */}
-    {/* <DryHopped /> */}
-    {/* <HopRate /> */}
-    {/* <ExpirationDate /> */}
-    {/* <Ingredients /> */}
+    <Style details={details} />
+    <DryHopped details={details} />
+    <HopRate details={details} />
+    <ExpirationTime details={details} />
+    <Ingredients details={details} />
     {/* <SmokedMalt /> */}
     {/* <Temperature /> */}
     {/* <Container /> */}

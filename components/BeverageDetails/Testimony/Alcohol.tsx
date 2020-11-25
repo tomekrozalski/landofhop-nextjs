@@ -10,37 +10,49 @@ const Alcohol: React.FC<{ details: Details }> = ({ details }) =>
       </dt>
       <dd>
         {details.alcohol.label && (
-          <em className="source-item label">
-            <FormattedMessage
-              id="beverage.alcoholValue"
-              values={details.alcohol.label}
-            />
-            {details.alcohol.label.scope && (
+          <span className="source-item">
+            <em className="label">
               <FormattedMessage
-                id={`beverage.alcoholScopeValues.${details.alcohol.label.scope}`}
+                id="beverage.alcoholValue"
+                values={details.alcohol.label}
               />
-            )}
-          </em>
+              {details.alcohol.label.scope && (
+                <>
+                  {' '}
+                  <FormattedMessage
+                    id={`beverage.alcoholScopeValues.${details.alcohol.label.scope}`}
+                  />
+                </>
+              )}
+            </em>
+          </span>
         )}
         {details.alcohol.producer && (
-          <em className="source-item producer">
-            <FormattedMessage
-              id="beverage.alcoholValue"
-              values={details.alcohol.producer}
-            />
-            {details.alcohol.producer.scope && (
+          <span className="source-item">
+            <em className="producer">
               <FormattedMessage
-                id={`beverage.alcoholScopeValues.${details.alcohol.producer.scope}`}
+                id="beverage.alcoholValue"
+                values={details.alcohol.producer}
               />
-            )}
-          </em>
+              {details.alcohol.producer.scope && (
+                <>
+                  {' '}
+                  <FormattedMessage
+                    id={`beverage.alcoholScopeValues.${details.alcohol.producer.scope}`}
+                  />
+                </>
+              )}
+            </em>
+          </span>
         )}
         {details.alcohol.editorial && (
-          <em className="source-item noSeparator editorial">
-            <FormattedMessage
-              id={`beverage.alcoholScopeValues.${details.alcohol.editorial.scope}`}
-            />
-          </em>
+          <span className="source-item noSeparator">
+            <em className="editorial">
+              <FormattedMessage
+                id={`beverage.alcoholScopeValues.${details.alcohol.editorial.scope}`}
+              />
+            </em>
+          </span>
         )}
       </dd>
     </>

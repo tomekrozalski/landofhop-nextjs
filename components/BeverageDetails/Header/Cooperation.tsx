@@ -11,25 +11,31 @@ const Cooperation: React.FC<{ details: Details }> = ({ details }) =>
         cooperation: (
           <>
             {details.cooperation.label && (
-              <FormattedList className="source-item label" mode="short">
-                {details.cooperation.label.map(({ name }) => (
-                  <Translated tag="span" values={name} />
-                ))}
-              </FormattedList>
+              <span className="source-item">
+                <FormattedList className="label" mode="short">
+                  {details.cooperation.label.map(({ id, name }) => (
+                    <Translated key={id} tag="span" values={name} />
+                  ))}
+                </FormattedList>
+              </span>
             )}
             {details.cooperation.producer && (
-              <FormattedList className="source-item producer" mode="short">
-                {details.cooperation.producer.map(({ name }) => (
-                  <Translated tag="span" values={name} />
-                ))}
-              </FormattedList>
+              <span className="source-item">
+                <FormattedList className="producer" mode="short">
+                  {details.cooperation.producer.map(({ id, name }) => (
+                    <Translated key={id} tag="span" values={name} />
+                  ))}
+                </FormattedList>
+              </span>
             )}
             {details.cooperation.editorial && (
-              <FormattedList className="source-item editorial" mode="short">
-                {details.cooperation.editorial.map(({ name }) => (
-                  <Translated tag="span" values={name} />
-                ))}
-              </FormattedList>
+              <span className="source-item">
+                <FormattedList className="editorial" mode="short">
+                  {details.cooperation.editorial.map(({ id, name }) => (
+                    <Translated key={id} tag="span" values={name} />
+                  ))}
+                </FormattedList>
+              </span>
             )}
           </>
         ),

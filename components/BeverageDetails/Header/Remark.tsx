@@ -5,18 +5,22 @@ const Remark: React.FC<{ details: Details }> = ({ details }) =>
   details.remark ? (
     <>
       {details.remark.label && (
-        <Translated
-          className="source-item label"
-          tag="em"
-          values={details.remark.label}
-        />
+        <span className="source-item">
+          <Translated
+            className="label"
+            tag="em"
+            values={details.remark.label}
+          />
+        </span>
       )}
       {details.remark.producer && (
-        <Translated
-          className="source-item producer"
-          tag="em"
-          values={details.remark.producer}
-        />
+        <span className="source-item">
+          <Translated
+            className="producer"
+            tag="em"
+            values={details.remark.producer}
+          />
+        </span>
       )}
     </>
   ) : null;

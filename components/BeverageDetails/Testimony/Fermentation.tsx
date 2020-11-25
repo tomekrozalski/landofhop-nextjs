@@ -11,31 +11,37 @@ const Fermentation: React.FC<{ details: Details }> = ({ details }) =>
       </dt>
       <dd>
         {details.fermentation.label && (
-          <FormattedList className="source-item label" mode="short">
-            {details.fermentation.label.map(type => (
-              <em key={type}>
-                <FormattedMessage id={`beverage.fermentationType.${type}`} />
-              </em>
-            ))}
-          </FormattedList>
+          <span className="source-item">
+            <FormattedList className="label" mode="short">
+              {details.fermentation.label.map(type => (
+                <em key={type}>
+                  <FormattedMessage id={`beverage.fermentationType.${type}`} />
+                </em>
+              ))}
+            </FormattedList>
+          </span>
         )}
         {details.fermentation.producer && (
-          <FormattedList className="source-item producer" mode="short">
-            {details.fermentation.producer.map(type => (
-              <em key={type}>
-                <FormattedMessage id={`beverage.fermentationType.${type}`} />
-              </em>
-            ))}
-          </FormattedList>
+          <span className="source-item">
+            <FormattedList className="producer" mode="short">
+              {details.fermentation.producer.map(type => (
+                <em key={type}>
+                  <FormattedMessage id={`beverage.fermentationType.${type}`} />
+                </em>
+              ))}
+            </FormattedList>
+          </span>
         )}
         {details.fermentation.editorial && (
-          <FormattedList className="source-item editorial" mode="short">
-            {details.fermentation.editorial.map(type => (
-              <em key={type}>
-                <FormattedMessage id={`beverage.fermentationType.${type}`} />
-              </em>
-            ))}
-          </FormattedList>
+          <span className="source-item">
+            <FormattedList className="editorial" mode="short">
+              {details.fermentation.editorial.map(type => (
+                <em key={type}>
+                  <FormattedMessage id={`beverage.fermentationType.${type}`} />
+                </em>
+              ))}
+            </FormattedList>
+          </span>
         )}
       </dd>
     </>

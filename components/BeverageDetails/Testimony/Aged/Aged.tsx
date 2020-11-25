@@ -12,11 +12,11 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
       </dt>
       <dd>
         {details.isAged && details.isAged.label && (
-          <>
+          <span className="source-item">
             {details.aged && details.aged.label ? (
               <FormattedList mode="long">
                 {details.aged.label.map((props, i) => (
-                  <em className="source-item label">
+                  <em className="label">
                     <AgedItem {...props} key={i} />
                   </em>
                 ))}
@@ -24,14 +24,14 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
             ) : (
               <FormattedMessage id="global.confirmation" />
             )}
-          </>
+          </span>
         )}
         {details.isAged && details.isAged.producer && (
-          <>
+          <span className="source-item">
             {details.aged && details.aged.producer ? (
               <FormattedList mode="long">
                 {details.aged.producer.map((props, i) => (
-                  <em className="source-item producer">
+                  <em className="producer">
                     <AgedItem {...props} key={i} />
                   </em>
                 ))}
@@ -39,14 +39,14 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
             ) : (
               <FormattedMessage id="global.confirmation" />
             )}
-          </>
+          </span>
         )}
         {details.isAged && details.isAged.editorial && (
-          <>
+          <span className="source-item">
             {details.aged && details.aged.editorial ? (
               <FormattedList mode="long">
                 {details.aged.editorial.map((props, i) => (
-                  <em className="source-item editorial">
+                  <em className="editorial">
                     <AgedItem {...props} key={i} />
                   </em>
                 ))}
@@ -54,7 +54,7 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
             ) : (
               <FormattedMessage id="global.confirmation" />
             )}
-          </>
+          </span>
         )}
       </dd>
     </>
