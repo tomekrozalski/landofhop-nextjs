@@ -5,6 +5,7 @@ import {
   Barcode,
   BeverageType,
   City,
+  Container,
   Country,
   DryHopped,
   ExpirationTime,
@@ -14,7 +15,10 @@ import {
   HopRate,
   Ingredients,
   Pasteurization,
+  Price,
+  SmokedMalt,
   Style,
+  Temperature,
 } from '.';
 import styles from './Testimony.module.css';
 
@@ -35,10 +39,10 @@ const Testimony: React.FC<{ details: Details }> = ({ details }) => (
     <HopRate details={details} />
     <ExpirationTime details={details} />
     <Ingredients details={details} />
-    {/* <SmokedMalt /> */}
-    {/* <Temperature /> */}
-    {/* <Container /> */}
-    {/* <Price /> */}
+    <SmokedMalt details={details} />
+    <Temperature details={details} />
+    <Container details={details} />
+    <Price details={details} />
   </dl>
 );
 
