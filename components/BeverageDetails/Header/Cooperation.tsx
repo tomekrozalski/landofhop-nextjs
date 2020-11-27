@@ -11,31 +11,25 @@ const Cooperation: React.FC<{ details: Details }> = ({ details }) =>
         cooperation: (
           <>
             {details.cooperation.label && (
-              <span className="source-item">
-                <FormattedList className="label" mode="short">
-                  {details.cooperation.label.map(({ id, name }) => (
-                    <Translated key={id} tag="span" values={name} />
-                  ))}
-                </FormattedList>
-              </span>
+              <FormattedList className="label" mode="short">
+                {details.cooperation.label.map(({ id, name }) => (
+                  <Translated key={id} tag="span" values={name} />
+                ))}
+              </FormattedList>
             )}
             {details.cooperation.producer && (
-              <span className="source-item">
-                <FormattedList className="producer" mode="short">
-                  {details.cooperation.producer.map(({ id, name }) => (
-                    <Translated key={id} tag="span" values={name} />
-                  ))}
-                </FormattedList>
-              </span>
+              <FormattedList className="producer" mode="short">
+                {details.cooperation.producer.map(({ id, name }) => (
+                  <Translated key={id} tag="span" values={name} />
+                ))}
+              </FormattedList>
             )}
             {details.cooperation.editorial && (
-              <span className="source-item">
-                <FormattedList className="editorial" mode="short">
-                  {details.cooperation.editorial.map(({ id, name }) => (
-                    <Translated key={id} tag="span" values={name} />
-                  ))}
-                </FormattedList>
-              </span>
+              <FormattedList className="editorial" mode="short">
+                {details.cooperation.editorial.map(({ id, name }) => (
+                  <Translated key={id} tag="span" values={name} />
+                ))}
+              </FormattedList>
             )}
           </>
         ),

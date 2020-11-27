@@ -20,10 +20,9 @@ import {
   Style,
   Temperature,
 } from '.';
-import styles from './Testimony.module.css';
 
 const Testimony: React.FC<{ details: Details }> = ({ details }) => (
-  <dl className={styles.testimony}>
+  <dl style={{ gridArea: 'testimony' }}>
     <City details={details} />
     <Country details={details} />
     <Barcode details={details} />

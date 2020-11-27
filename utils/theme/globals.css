@@ -16,17 +16,18 @@
   --color-grey-4: #eee; /* brighter */
   --color-grey-5: #f5f5f5; /* brightest */
 
+  --color-success-strong: var(--color-brand-5); /* previous: #4cb231; */
+  /* --color-success-light: #beddb5; */
+  --color-warning-strong: var(--color-brand-4); /* previous: #d0be26; */
+  --color-danger-strong: var(--color-brand-1); /* previous: #be5656; */
+  /* --color-danger-light: #dec1c1; */
+  /* --color-producer-lightest: #fef6f7; */
+  /* --color-producer-light: #ffe6ea; */
+  --color-producer-strong: var(--color-brand-3); /* previous #c67e89; */
+  /* --color-editorial-light: #c1d5f8; */
+  --color-editorial-strong: var(--color-brand-7); /* previous #577dc0; */
+
   /*
-  --color-success-strong: #4cb231;
-  --color-success-light: #beddb5;
-  --color-warning-strong: #d0be26;
-  --color-danger-strong: #be5656;
-  --color-danger-light: #dec1c1;
-  --color-producer-lightest: #fef6f7;
-  --color-producer-light: #ffe6ea;
-  --color-producer-strong: #c67e89;
-  --color-editorial-light: #c1d5f8;
-  --color-editorial-strong: #577dc0;
   --color-ingredients-hop: #2a9d8f;
   --color-ingredients-malt: #264653;
   --color-ingredients-yeast: #e9c46a;
@@ -126,6 +127,32 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+dl {
+  margin: 1rem 0;
+}
+
+dl::first-letter {
+  text-transform: uppercase;
+}
+
+dt {
+  display: inline;
+}
+
+dt::after {
+  content: ': ';
+}
+
+dd {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+dd:not(:last-of-type)::after {
+  content: ', ';
 }
 
 /* -------------------------

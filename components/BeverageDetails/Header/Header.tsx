@@ -10,7 +10,7 @@ const Header: React.FC<{ details: Details }> = ({ details }) => (
   <header className={styles.header}>
     <Translated values={details.name} tag="h1" />
     <p>
-      <FormattedMessage id="global.brewed" /> <Remark details={details} />
+      <FormattedMessage id="global.brewed" /> <Remark details={details} />{' '}
       <Contract details={details} /> <Cooperation details={details} />
       <Brand details={details} />
       <Series details={details} />

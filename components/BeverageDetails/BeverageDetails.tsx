@@ -4,7 +4,16 @@ import { useIntl } from 'react-intl';
 import { AugmentedDetails } from 'utils/types/Beverage';
 import { translate } from 'utils/helpers';
 import { HeadTitle, Spinner } from 'elements';
-import { Aside, Gallery, Header, Tale, Testimony } from '.';
+import {
+  AdminBar,
+  Aside,
+  FootNotes,
+  Gallery,
+  Header,
+  Impressions,
+  Tale,
+  Testimony,
+} from '.';
 import styles from './BeverageDetails.module.css';
 
 const BeverageDetails: React.FC<AugmentedDetails> = ({
@@ -25,9 +34,9 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
       <Header details={details} />
       <Tale details={details} />
       <Testimony details={details} />
-      {/* <Impressions /> */}
-      {/* <FootNotes /> */}
-      {/* <AdminBar /> */}
+      <Impressions details={details} />
+      <FootNotes details={details} />
+      <AdminBar details={details} />
       <Aside next={next} previous={previous} />
       <HeadTitle
         title="beverageDetails"

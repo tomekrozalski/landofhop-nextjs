@@ -22,6 +22,7 @@ export const getStaticProps: GetStaticProps<{
       current: 1,
       total,
     },
+    //revalidate: 5,
   };
 };
 
