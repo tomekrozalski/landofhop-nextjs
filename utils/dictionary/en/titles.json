@@ -1,0 +1,8 @@
+{
+  "about": "About the site",
+  "beverageDetails": "🍻 {brand}, {name}",
+  "main": "Land of Hop{page, plural, one {} other {, 📄 #} }",
+  "ingredients": "Ingredients 🔥",
+  "notFound": "404 Not Found",
+  "stats": "📈 Statistics"
+}

@@ -24,10 +24,10 @@ const NotFoundPage: React.FC = () => {
     <div className="error-wrapper">
       <HeadTitle title="notFound" />
       <h1>
-        <FormattedMessage id="notFound.title" />
+        <FormattedMessage id="errors.notFound.title" />
       </h1>
       <p>
-        <FormattedMessage id="notFound.body" values={{ seconds }} />
+        <FormattedMessage id="errors.notFound.body" values={{ seconds }} />
       </p>
     </div>
   );

@@ -6,7 +6,7 @@ const SmokedMalt: React.FC<{ details: Details }> = ({ details }) =>
   details.smokedMalt ? (
     <>
       <dt>
-        <FormattedMessage id="global.smokedMalt" />
+        <FormattedMessage id="beverage.smokedMalt" />
       </dt>
       <dd>
         {details.smokedMalt.label && (

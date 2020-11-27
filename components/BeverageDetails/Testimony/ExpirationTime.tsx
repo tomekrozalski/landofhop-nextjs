@@ -6,14 +6,14 @@ const ExpirationTime: React.FC<{ details: Details }> = ({ details }) =>
   details.expirationDate ? (
     <>
       <dt>
-        <FormattedMessage id="global.expirationTime" />
+        <FormattedMessage id="beverage.expirationTime" />
       </dt>
       <dd>
         {details.expirationDate.label && (
           <span className="source-item">
             <span className="label">
               <FormattedMessage
-                id={`global.time.${details.expirationDate.label.unit}`}
+                id={`beverage.time.${details.expirationDate.label.unit}`}
                 values={{ value: details.expirationDate.label.value }}
               />
             </span>
@@ -23,7 +23,7 @@ const ExpirationTime: React.FC<{ details: Details }> = ({ details }) =>
           <span className="source-item">
             <span className="producer">
               <FormattedMessage
-                id={`global.time.${details.expirationDate.producer.unit}`}
+                id={`beverage.time.${details.expirationDate.producer.unit}`}
                 values={{ value: details.expirationDate.producer.value }}
               />
             </span>

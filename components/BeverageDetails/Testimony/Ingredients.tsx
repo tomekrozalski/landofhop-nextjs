@@ -15,7 +15,7 @@ const IngredientsContent: React.FC<{
     <>
       <dt>
         <FormattedMessage
-          id={`global.${values.complete ? 'ingredients' : 'contains'}`}
+          id={`beverage.${values.complete ? 'ingredients' : 'contains'}`}
         />
       </dt>
       <dd>

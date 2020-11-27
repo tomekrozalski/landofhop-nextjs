@@ -7,7 +7,7 @@ const DryHopped: React.FC<{ details: Details }> = ({ details }) =>
   details.isDryHopped ? (
     <>
       <dt>
-        <FormattedMessage id="global.dryHopped" />
+        <FormattedMessage id="beverage.dryHopped" />
       </dt>
       <dd>
         {details.isDryHopped?.label && (
