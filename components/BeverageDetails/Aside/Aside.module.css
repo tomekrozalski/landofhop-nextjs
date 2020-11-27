@@ -27,7 +27,7 @@
 }
 
 .aside a svg {
-  fill: var(--color-brand-5);
+  fill: var(--color-success);
 }
 
 .aside span svg {
@@ -35,7 +35,7 @@
 }
 
 .aside a:hover {
-  background-color: var(--color-brand-4);
+  background-color: var(---color-warning);
 }
 
 .aside a:hover svg {

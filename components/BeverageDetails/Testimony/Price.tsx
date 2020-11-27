@@ -15,12 +15,12 @@ const PriceContent: React.FC<{
       <span className={type}>
         <FormattedList mode="narrow">
           {values.map(({ currency, date, value }) => (
-            <span key={date.toString()}>
+            <em key={date.toString()}>
               {new Intl.NumberFormat(locale, {
                 style: 'currency',
                 currency,
               }).format(value)}
-            </span>
+            </em>
           ))}
         </FormattedList>
       </span>

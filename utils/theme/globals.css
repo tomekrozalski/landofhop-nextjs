@@ -3,12 +3,19 @@
   --color-white: #fff;
 
   --color-brand-1: #f94144;
+  --color-brand-1-light: #fee7e7;
   --color-brand-2: #f3722c;
+  --color-brand-2-light: #fdede4;
   --color-brand-3: #f8961e;
+  --color-brand-3-light: #fef1e2;
   --color-brand-4: #f9c74f;
+  --color-brand-4-light: #fef8e9;
   --color-brand-5: #90be6d;
+  --color-brand-5-light: #f1f6ec;
   --color-brand-6: #43aa8b;
+  --color-brand-6-light: #e7f4f0;
   --color-brand-7: #577590;
+  --color-brand-7-light: #abbac7;
 
   --color-grey-1: #aaa; /* darker */
   --color-grey-2: #ccc; /* dark */
@@ -16,16 +23,17 @@
   --color-grey-4: #eee; /* brighter */
   --color-grey-5: #f5f5f5; /* brightest */
 
-  --color-success-strong: var(--color-brand-5); /* previous: #4cb231; */
+  --color-success: var(--color-brand-5); /* previous: #4cb231; */
   /* --color-success-light: #beddb5; */
-  --color-warning-strong: var(--color-brand-4); /* previous: #d0be26; */
-  --color-danger-strong: var(--color-brand-1); /* previous: #be5656; */
+  --color-warning: var(--color-brand-4); /* previous: #d0be26; */
+  --color-danger: var(--color-brand-1); /* previous: #be5656; */
   /* --color-danger-light: #dec1c1; */
-  /* --color-producer-lightest: #fef6f7; */
-  /* --color-producer-light: #ffe6ea; */
-  --color-producer-strong: var(--color-brand-3); /* previous #c67e89; */
-  /* --color-editorial-light: #c1d5f8; */
-  --color-editorial-strong: var(--color-brand-7); /* previous #577dc0; */
+  --color-label: var(--color-brand-3);
+  --color-label-light: var(--color-brand-3-light);
+  --color-producer: var(--color-brand-3); /* previous #c67e89; */
+  --color-producer-light: var(--color-brand-3-light); /* previous #ffe6ea; */
+  --color-editorial: var(--color-brand-7); /* previous #577dc0; */
+  --color-editorial-light: var(--color-brand-7-light); /* previous  #c1d5f8; */
 
   /*
   --color-ingredients-hop: #2a9d8f;
@@ -189,19 +197,28 @@ div.error-wrapper h1 {
 .label {
   background-position: 0px 0.8em;
   background-repeat: repeat-x;
-  background-image: linear-gradient(#fef8e9, #fef8e9);
+  background-image: linear-gradient(
+    var(--color-label-light),
+    var(--color-label-light)
+  );
 }
 
 .producer {
   background-position: 0px 0.8em;
   background-repeat: repeat-x;
-  background-image: linear-gradient(#fee7e7, #fee7e7);
+  background-image: linear-gradient(
+    var(--color-producer-light),
+    var(--color-producer-light)
+  );
 }
 
 .editorial {
   background-position: 0px 0.8em;
   background-repeat: repeat-x;
-  background-image: linear-gradient(#abbac7, #abbac7);
+  background-image: linear-gradient(
+    var(--color-editorial-light),
+    var(--color-editorial-light)
+  );
 }
 
 /* -------------------------

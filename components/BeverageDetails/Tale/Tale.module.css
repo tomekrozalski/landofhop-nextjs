@@ -11,6 +11,6 @@
 }
 
 .taleItem.producer {
-  border-left: 1rem solid var(--color-brand-7);
+  border-left: 1rem solid var(--color-producer);
   padding-left: 2rem;
 }
