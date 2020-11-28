@@ -13,35 +13,32 @@ import {
   IngredientType,
   TemperatureUnit,
 } from 'utils/enums/Beverage';
-import {
-  Aged,
-  Container,
-  DryHopped,
-  IngredientDescription,
-  Institution,
-  Price,
-  Tale,
-} from './fragments';
+import { Aged, Container, Price, Tale } from './fragments';
 
 export type Details = {
   id: string;
   shortId: string;
   badge: string;
-  name: LanguageValue[];
+  name: LanguageValue;
   series?: {
     label?: LanguageValue[];
     producer?: LanguageValue[];
   };
-  brand: Institution;
+  brand: {
+    badge: string;
+    name: LanguageValue;
+    consortium?: LanguageValue;
+    shortId: string;
+  };
   cooperation?: {
-    label?: Institution[];
-    producer?: Institution[];
-    editorial?: Institution[];
+    label?: LanguageValue[];
+    producer?: LanguageValue[];
+    editorial?: LanguageValue[];
   };
   contract?: {
-    label?: Institution;
-    producer?: Institution;
-    editorial?: Institution;
+    label?: LanguageValue;
+    producer?: LanguageValue;
+    editorial?: LanguageValue;
   };
   isContract?: {
     label?: boolean;
@@ -50,25 +47,25 @@ export type Details = {
   };
   place?: {
     label?: {
-      city: LanguageValue[];
-      country: LanguageValue[];
+      city: LanguageValue;
+      country: LanguageValue;
     };
     producer?: {
-      city: LanguageValue[];
-      country: LanguageValue[];
+      city: LanguageValue;
+      country: LanguageValue;
     };
     editorial?: {
-      city: LanguageValue[];
-      country: LanguageValue[];
+      city: LanguageValue;
+      country: LanguageValue;
     };
   };
   remark?: {
-    label?: LanguageValue[];
-    producer?: LanguageValue[];
+    label?: LanguageValue;
+    producer?: LanguageValue;
   };
   tale?: {
-    label?: Tale[];
-    producer?: Tale[];
+    label?: Tale;
+    producer?: Tale;
   };
   barcode?: string;
   beverageType?: {
@@ -140,9 +137,9 @@ export type Details = {
     editorial?: boolean;
   };
   dryHopped?: {
-    label?: DryHopped[];
-    producer?: DryHopped[];
-    editorial?: DryHopped[];
+    label?: LanguageValue[];
+    producer?: LanguageValue[];
+    editorial?: LanguageValue[];
   };
   hopRate?: {
     label?: {
@@ -165,20 +162,24 @@ export type Details = {
     };
   };
   ingredientsDescription?: {
-    label?: IngredientDescription[];
-    producer?: IngredientDescription[];
+    label?: {
+      complete: boolean;
+      language: string;
+      value: string;
+    };
+    producer?: {
+      complete: boolean;
+      language: string;
+      value: string;
+    };
   };
   ingredientsList?: {
     label?: {
-      id: string;
-      badge: string;
-      name: LanguageValue[];
+      name: LanguageValue;
       type: IngredientType;
     }[];
     producer?: {
-      id: string;
-      badge: string;
-      name: LanguageValue[];
+      name: LanguageValue;
       type: IngredientType;
     }[];
   };
@@ -232,17 +233,11 @@ export type Details = {
   };
   photos?: {
     cap?: boolean;
-    cover?: {
-      height: number;
-      width: number;
-    };
     gallery?: number;
     outlines?: {
-      cover?: string;
       gallery?: string;
     };
   };
-  notes?: string;
   added: Date;
   updated?: Date;
 };

@@ -7,14 +7,14 @@ export const getStaticProps: GetStaticProps<{
   basics: Basics[];
   current: number;
   total: number;
-}> = async ({ params }) => {
+}> = async ({ locale, params }) => {
   const id = +params.id;
   const getTotal = await fetch(`${process.env.API_SERVER}/beverage/total`);
   const total: number = await getTotal.json();
   const skip = id * 60 - 60;
 
   const getBasics = await fetch(
-    `${process.env.API_SERVER}/beverage/basics/${skip}/60`,
+    `${process.env.API_SERVER}/beverage/basics/${locale}/${skip}/60`,
   );
   const basics: Basics[] = await getBasics.json();
 

@@ -1,10 +1,9 @@
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
-import { FormattedList } from 'elements';
+import { FormattedList, MarkLang } from 'elements';
 import { Details } from 'utils/types/Beverage';
 
 const Series: React.FC<{ details: Details }> = ({ details }) => {
-  const { locale } = useIntl();
   const { series } = details;
 
   return series ? (
@@ -16,13 +15,8 @@ const Series: React.FC<{ details: Details }> = ({ details }) => {
             {series.label && (
               <span className="source-item">
                 <FormattedList className="label" mode="short">
-                  {series.label.map(({ language, value }) => (
-                    <span
-                      lang={locale !== language ? language : null}
-                      key={value}
-                    >
-                      {value}
-                    </span>
+                  {series.label.map(name => (
+                    <MarkLang key={name.value} name={name} />
                   ))}
                 </FormattedList>
               </span>
@@ -30,13 +24,8 @@ const Series: React.FC<{ details: Details }> = ({ details }) => {
             {series.producer && (
               <span className="source-item">
                 <FormattedList className="producer" mode="short">
-                  {series.producer.map(({ language, value }) => (
-                    <span
-                      lang={locale !== language ? language : null}
-                      key={value}
-                    >
-                      {value}
-                    </span>
+                  {series.producer.map(name => (
+                    <MarkLang key={name.value} name={name} />
                   ))}
                 </FormattedList>
               </span>

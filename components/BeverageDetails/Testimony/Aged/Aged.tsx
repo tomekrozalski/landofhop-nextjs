@@ -16,8 +16,8 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
             {details.aged && details.aged.label ? (
               <FormattedList mode="long">
                 {details.aged.label.map((props, i) => (
-                  <em className="label">
-                    <AgedItem {...props} key={i} />
+                  <em key={i} className="label">
+                    <AgedItem {...props} />
                   </em>
                 ))}
               </FormattedList>
@@ -31,8 +31,8 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
             {details.aged && details.aged.producer ? (
               <FormattedList mode="long">
                 {details.aged.producer.map((props, i) => (
-                  <em className="producer">
-                    <AgedItem {...props} key={i} />
+                  <em key={i} className="producer">
+                    <AgedItem {...props} />
                   </em>
                 ))}
               </FormattedList>
@@ -46,8 +46,8 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
             {details.aged && details.aged.editorial ? (
               <FormattedList mode="long">
                 {details.aged.editorial.map((props, i) => (
-                  <em className="editorial">
-                    <AgedItem {...props} key={i} />
+                  <em key={i} className="editorial">
+                    <AgedItem {...props} />
                   </em>
                 ))}
               </FormattedList>

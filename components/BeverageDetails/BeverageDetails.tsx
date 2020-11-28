@@ -1,8 +1,6 @@
 import { useRouter } from 'next/router';
-import { useIntl } from 'react-intl';
 
 import { AugmentedDetails } from 'utils/types/Beverage';
-import { translate } from 'utils/helpers';
 import { HeadTitle, Spinner } from 'elements';
 import {
   AdminBar,
@@ -22,7 +20,6 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
   previous,
 }) => {
   const { isFallback } = useRouter();
-  const { locale } = useIntl();
 
   if (isFallback) {
     return <Spinner />;
@@ -41,8 +38,8 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
       <HeadTitle
         title="beverageDetails"
         values={{
-          brand: translate(details.brand.name, locale),
-          name: translate(details.name, locale),
+          brand: details.brand.name.value,
+          name: details.name.value,
         }}
       />
     </article>

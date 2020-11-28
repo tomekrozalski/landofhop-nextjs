@@ -1,47 +1,38 @@
-import { FormattedMessage, useIntl } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
-import { FormattedList } from 'elements';
+import { MarkLang, FormattedList } from 'elements';
 
-const Style: React.FC<{ details: Details }> = ({ details }) => {
-  const { locale } = useIntl();
-  const { style } = details;
-
-  return style ? (
+const Style: React.FC<{ details: Details }> = ({ details }) =>
+  details.style ? (
     <>
       <dt>
         <FormattedMessage id="global.style" />
       </dt>
       <dd>
-        {style.label && (
+        {details.style.label && (
           <span className="source-item">
             <FormattedList className="label" mode="narrow">
-              {style.label.map(({ language, value }) => (
-                <em lang={language !== locale ? language : null} key={value}>
-                  {value}
-                </em>
+              {details.style.label.map(name => (
+                <MarkLang key={name.value} name={name} tag="em" />
               ))}
             </FormattedList>
           </span>
         )}
-        {style.producer && (
+        {details.style.producer && (
           <span className="source-item">
             <FormattedList className="producer" mode="narrow">
-              {style.producer.map(({ language, value }) => (
-                <em lang={language !== locale ? language : null} key={value}>
-                  {value}
-                </em>
+              {details.style.producer.map(name => (
+                <MarkLang key={name.value} name={name} tag="em" />
               ))}
             </FormattedList>
           </span>
         )}
-        {style.editorial && (
+        {details.style.editorial && (
           <span className="source-item">
             <FormattedList className="editorial" mode="narrow">
-              {style.editorial.map(({ language, value }) => (
-                <em lang={language !== locale ? language : null} key={value}>
-                  {value}
-                </em>
+              {details.style.editorial.map(name => (
+                <MarkLang key={name.value} name={name} tag="em" />
               ))}
             </FormattedList>
           </span>
@@ -49,6 +40,5 @@ const Style: React.FC<{ details: Details }> = ({ details }) => {
       </dd>
     </>
   ) : null;
-};
 
 export default Style;

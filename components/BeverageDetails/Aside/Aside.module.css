@@ -35,7 +35,7 @@
 }
 
 .aside a:hover {
-  background-color: var(---color-warning);
+  background-color: var(--color-warning);
 }
 
 .aside a:hover svg {

@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-import { FormattedList, Translated } from 'elements';
+import { FormattedList, MarkLang } from 'elements';
 import { Details } from 'utils/types/Beverage';
 
 const Cooperation: React.FC<{ details: Details }> = ({ details }) =>
@@ -12,22 +12,22 @@ const Cooperation: React.FC<{ details: Details }> = ({ details }) =>
           <>
             {details.cooperation.label && (
               <FormattedList className="label" mode="short">
-                {details.cooperation.label.map(({ id, name }) => (
-                  <Translated key={id} tag="span" values={name} />
+                {details.cooperation.label.map(name => (
+                  <MarkLang key={name.value} name={name} tag="span" />
                 ))}
               </FormattedList>
             )}
             {details.cooperation.producer && (
               <FormattedList className="producer" mode="short">
-                {details.cooperation.producer.map(({ id, name }) => (
-                  <Translated key={id} tag="span" values={name} />
+                {details.cooperation.producer.map(name => (
+                  <MarkLang key={name.value} name={name} tag="span" />
                 ))}
               </FormattedList>
             )}
             {details.cooperation.editorial && (
               <FormattedList className="editorial" mode="short">
-                {details.cooperation.editorial.map(({ id, name }) => (
-                  <Translated key={id} tag="span" values={name} />
+                {details.cooperation.editorial.map(name => (
+                  <MarkLang key={name.value} name={name} tag="span" />
                 ))}
               </FormattedList>
             )}

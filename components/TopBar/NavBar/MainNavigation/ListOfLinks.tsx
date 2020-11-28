@@ -34,7 +34,7 @@ const ListOfLinks: React.FC = () => {
           </a>
         </Link>
         {/* <Link href="/ingredients">
-           <a><FormattedMessage id="global.ingredients" /></a>
+           <a><FormattedMessage id="beverage.ingredients" /></a>
         </Link> */}
       </li>
       {/* {isLoggedIn && (

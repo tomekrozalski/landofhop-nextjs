@@ -7,9 +7,9 @@ export type Basics = {
   badge: string;
   brand: {
     badge: string;
-    name: LanguageValue[];
+    name: LanguageValue;
   };
-  name: LanguageValue[];
+  name: LanguageValue;
   photos?: {
     cover?: {
       height: number;

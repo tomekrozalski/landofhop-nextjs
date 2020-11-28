@@ -1,20 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 
 import { ImageType } from 'utils/enums/Beverage';
 import { LanguageValue } from 'utils/types/common';
-import { translate } from 'utils/helpers';
 import styles from './BeverageCoverImage.module.css';
 
 type Props = {
   badge: string;
   brand: {
     badge: string;
-    name: LanguageValue[];
+    name: LanguageValue;
   };
-  name: LanguageValue[];
+  name: LanguageValue;
   outline: string;
   ratio: number;
   shortId: string;
@@ -40,11 +38,9 @@ const BeverageCoverImage: React.FC<Props> = ({
   const container = useRef(null);
   const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const { locale } = useIntl();
-  const router = useRouter();
 
   useEffect(() => {
-    router.events.on('routeChangeStart', () => setLoaded(false));
+    setLoaded(false);
   });
 
   const getPath = (format: 'webp' | 'jpg', size: 1 | 2) => {
@@ -53,13 +49,6 @@ const BeverageCoverImage: React.FC<Props> = ({
     return type === ImageType.cover
       ? `${basicPath}/${type}/${format}/${size}x.${format}`
       : `${basicPath}/${type}/${format}/${size}x/01.${format}`;
-  };
-
-  const getAltText = () => {
-    const beverageName = translate(name, locale);
-    const brandName = translate(brand.name, locale);
-
-    return `${beverageName}, ${brandName}`;
   };
 
   const seenBefore = () =>
@@ -116,7 +105,7 @@ const BeverageCoverImage: React.FC<Props> = ({
             })}
             srcSet={`${getPath('jpg', 1)} 1x, ${getPath('jpg', 2)} 2x`}
             src={getPath('jpg', 1)}
-            alt={loaded ? getAltText() : ''}
+            alt={loaded ? `${name.value}, ${brand.name.value}` : ''}
             onLoad={() => setLoaded(true)}
           />
         </picture>

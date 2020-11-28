@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-import { Translated } from 'elements';
+import { MarkLang } from 'elements';
 import { Details } from 'utils/types/Beverage';
 
 const Contact: React.FC<{ details: Details }> = ({ details }) =>
@@ -11,24 +11,24 @@ const Contact: React.FC<{ details: Details }> = ({ details }) =>
         brands: (
           <>
             {details.contract.label && (
-              <Translated
+              <MarkLang
                 className="label"
+                name={details.contract.label}
                 tag="span"
-                values={details.contract.label.name}
               />
             )}
             {details.contract.producer && (
-              <Translated
+              <MarkLang
                 className="producer"
+                name={details.contract.producer}
                 tag="span"
-                values={details.contract.producer.name}
               />
             )}
             {details.contract.editorial && (
-              <Translated
+              <MarkLang
                 className="editorial"
+                name={details.contract.editorial}
                 tag="span"
-                values={details.contract.editorial.name}
               />
             )}
           </>

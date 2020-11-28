@@ -10,37 +10,34 @@ const Tale: React.FC<{ details: Details }> = ({ details }) => {
   const { locale } = useIntl();
   const { tale } = details;
 
-  const getProducerTale = () => {
-    const { article, language, lead } =
-      tale.producer.find(item => item?.language === locale) || tale.producer[0];
-
-    return (
-      <div
-        className={clsx(styles.taleItem, styles.producer)}
-        lang={language !== locale ? language : null}
-      >
-        <Markdown>{lead}</Markdown>
-        {article && <Article content={article} />}
-      </div>
-    );
-  };
-
   return (
     <div className={styles.taleWrapper}>
       {tale && (
         <>
-          {tale.label &&
-            tale.label.map(({ article, language, lead }) => (
-              <div
-                key={lead}
-                className={styles.taleItem}
-                lang={language !== locale ? language : null}
-              >
-                <Markdown>{lead}</Markdown>
-                {article && <Article content={article} />}
-              </div>
-            ))}
-          {tale.producer && getProducerTale()}
+          {tale.label && (
+            <div
+              className={styles.taleItem}
+              lang={tale.label.language !== locale ? tale.label.language : null}
+            >
+              <Markdown>{tale.label.lead}</Markdown>
+              {tale.label.article && <Article content={tale.label.article} />}
+            </div>
+          )}
+          {tale.producer && (
+            <div
+              className={clsx(styles.taleItem, styles.producer)}
+              lang={
+                tale.producer.language !== locale
+                  ? tale.producer.language
+                  : null
+              }
+            >
+              <Markdown>{tale.producer.lead}</Markdown>
+              {tale.producer.article && (
+                <Article content={tale.producer.article} />
+              )}
+            </div>
+          )}
         </>
       )}
     </div>

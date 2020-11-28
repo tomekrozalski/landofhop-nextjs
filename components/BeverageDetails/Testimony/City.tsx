@@ -1,7 +1,7 @@
 import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
-import { Translated } from 'elements';
+import { MarkLang } from 'elements';
 
 const City: React.FC<{ details: Details }> = ({ details }) =>
   details.place ? (
@@ -12,28 +12,28 @@ const City: React.FC<{ details: Details }> = ({ details }) =>
       <dd>
         {details.place.label && (
           <span className="source-item">
-            <Translated
+            <MarkLang
               className="label"
+              name={details.place.label.city}
               tag="em"
-              values={details.place.label.city}
             />
           </span>
         )}
         {details.place.producer && (
           <span className="source-item">
-            <Translated
+            <MarkLang
               className="producer"
+              name={details.place.producer.city}
               tag="em"
-              values={details.place.producer.city}
             />
           </span>
         )}
         {details.place.editorial && (
           <span className="source-item">
-            <Translated
+            <MarkLang
               className="editorial"
+              name={details.place.editorial.city}
               tag="em"
-              values={details.place.editorial.city}
             />
           </span>
         )}

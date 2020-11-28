@@ -1,7 +1,7 @@
 import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
-import { FormattedList, Translated } from 'elements';
+import { FormattedList, MarkLang } from 'elements';
 
 const DryHopped: React.FC<{ details: Details }> = ({ details }) =>
   details.isDryHopped ? (
@@ -15,8 +15,8 @@ const DryHopped: React.FC<{ details: Details }> = ({ details }) =>
             <span className="label">
               {details.dryHopped?.label ? (
                 <FormattedList mode="short">
-                  {details.dryHopped.label.map(({ name }) => (
-                    <Translated tag="em" values={name} />
+                  {details.dryHopped.label.map(name => (
+                    <MarkLang key={name.value} name={name} tag="em" />
                   ))}
                 </FormattedList>
               ) : (
@@ -32,8 +32,8 @@ const DryHopped: React.FC<{ details: Details }> = ({ details }) =>
             <span className="producer">
               {details.dryHopped?.producer ? (
                 <FormattedList mode="short">
-                  {details.dryHopped.producer.map(({ name }) => (
-                    <Translated tag="em" values={name} />
+                  {details.dryHopped.producer.map(name => (
+                    <MarkLang key={name.value} name={name} tag="em" />
                   ))}
                 </FormattedList>
               ) : (

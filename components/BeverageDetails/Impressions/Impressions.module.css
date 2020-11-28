@@ -47,13 +47,13 @@
 
 .impressions progress[value]::-webkit-progress-value,
 .impressions progress[value]::-moz-progress-bar {
-  background-color: var(--color-success-strong);
+  background-color: var(--color-success);
   border-radius: 2px;
 }
 
 .impressions progress.producer[value]::-webkit-progress-value,
 .impressions progress.producer[value]::-moz-progress-bar {
-  background-color: var(--color-producer-strong);
+  background-color: var(--color-producer);
 }
 
 @media (min-width: 1024px) {

@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-import { Translated } from 'elements';
+import { MarkLang } from 'elements';
 import { Details } from 'utils/types/Beverage';
 
 const Brand: React.FC<{ details: Details }> = ({ details }) => {
@@ -11,7 +11,7 @@ const Brand: React.FC<{ details: Details }> = ({ details }) => {
       id="beverage.brand"
       values={{
         prefix: contract || isContract ? 'contract' : '',
-        brand: <Translated className="label" tag="em" values={brand.name} />,
+        brand: <MarkLang className="label" name={brand.name} tag="em" />,
       }}
     />
   );
