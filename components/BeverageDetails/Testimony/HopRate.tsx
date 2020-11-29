@@ -6,7 +6,7 @@ const HopRate: React.FC<{ details: Details }> = ({ details }) =>
   details.hopRate ? (
     <>
       <dt>
-        <FormattedMessage id="global.hopRate" />
+        <FormattedMessage id="beverage.hopRate" />
       </dt>
       <dd>
         {details.hopRate.label && (

@@ -7,7 +7,7 @@ const Filtration: React.FC<{ details: Details }> = ({ details }) =>
   details.filtration ? (
     <>
       <dt>
-        <FormattedMessage id="global.filtration" />
+        <FormattedMessage id="beverage.filtration" />
       </dt>
       <dd>
         {isBoolean(details.filtration.label) && (

@@ -1,13 +1,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import styles from './LangNavigation.module.css';
-
 const LangNavigation: React.FC = props => {
   const { locales, route, query } = useRouter();
 
   return (
-    <ul className={styles.langNavigation}>
+    <ul>
       {locales.map(locale => (
         <li key={locale}>
           <Link href={{ pathname: route, query }} locale={locale}>

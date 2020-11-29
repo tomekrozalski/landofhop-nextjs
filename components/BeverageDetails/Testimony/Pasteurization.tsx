@@ -7,7 +7,7 @@ const Pasteurization: React.FC<{ details: Details }> = ({ details }) =>
   details.pasteurization ? (
     <>
       <dt>
-        <FormattedMessage id="global.pasteurization" />
+        <FormattedMessage id="beverage.pasteurization" />
       </dt>
       <dd>
         {isBoolean(details.pasteurization.label) && (

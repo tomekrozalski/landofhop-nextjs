@@ -6,7 +6,7 @@ const Extract: React.FC<{ details: Details }> = ({ details }) =>
   details.extract ? (
     <>
       <dt>
-        <FormattedMessage id="global.extract" />
+        <FormattedMessage id="beverage.extract" />
       </dt>
       <dd>
         {details.extract.label && (

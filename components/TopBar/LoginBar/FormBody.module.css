@@ -1,0 +1,18 @@
+.formBody {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: var(--size-container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.formBody > div {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: auto 30rem;
+  margin: 1rem;
+}

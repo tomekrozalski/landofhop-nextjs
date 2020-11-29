@@ -6,7 +6,7 @@ const Alcohol: React.FC<{ details: Details }> = ({ details }) =>
   details.alcohol ? (
     <>
       <dt>
-        <FormattedMessage id="global.alcohol" />
+        <FormattedMessage id="beverage.alcohol" />
       </dt>
       <dd>
         {details.alcohol.label && (

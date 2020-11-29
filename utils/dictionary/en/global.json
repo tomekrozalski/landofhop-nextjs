@@ -1,10 +1,6 @@
 {
   "about": "About",
   "added": "added",
-  "aged": "aged",
-  "alcohol": "alcohol",
-  "barcode": "barcode",
-  "brewed": "Brewed",
   "category": "category",
   "city": "city",
   "close": "Close",
@@ -14,16 +10,11 @@
   "container": "container",
   "country": "country",
   "denial": "no",
-  "extract": "extract",
-  "fermentation": "fermentation",
-  "filtration": "filtration",
-  "hopRate": "hop rate",
+  "login": "Log in",
+  "logout": "Log out",
   "open": "Open",
-  "pasteurization": "pasteurization",
-  "price": "price",
   "readLess": "read less",
   "readMore": "read more",
   "search": "Search",
-  "stats": "Statistics",
-  "style": "style"
+  "stats": "Statistics"
 }

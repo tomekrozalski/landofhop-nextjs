@@ -1,0 +1,22 @@
+.loginbar {
+  display: flex;
+  width: 100%;
+  height: var(--size-loginbar-height);
+  background-color: var(--color-brighter);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateY(-var(--size-loginbar-height));
+  transition: transform var(--transition-default);
+  z-index: var(--index-loginbar);
+}
+
+.loginbar.navbar {
+  transform: translateY(
+    calc(var(--size-navbar-height) - var(--size-loginbar-height))
+  );
+}
+
+.loginbar.active {
+  transform: translateY(var(--size-navbar-height));
+}

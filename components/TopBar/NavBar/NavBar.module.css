@@ -18,6 +18,38 @@
   margin: 0 auto;
 }
 
+.navbar ul {
+  display: flex;
+  margin: 0 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.navbar li {
+  display: flex;
+}
+
+.navbar a,
+.navbar button {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  transition: color var(--transition-default),
+    background-color var(--transition-default);
+}
+
+.navbar button {
+  padding: 1rem 1rem 1rem 3rem;
+  position: relative;
+}
+
+.navbar a:hover,
+.navbar button:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
 @media (min-width: 768px) {
   .navbar {
     transform: translateY(calc(var(--size-navbar-height) * -1));

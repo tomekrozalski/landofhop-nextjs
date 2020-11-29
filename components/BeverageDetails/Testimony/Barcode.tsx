@@ -6,7 +6,7 @@ const Barcode: React.FC<{ details: Details }> = ({ details }) =>
   details.barcode ? (
     <>
       <dt>
-        <FormattedMessage id="global.barcode" />
+        <FormattedMessage id="beverage.barcode" />
       </dt>
       <dd>
         <em className="label">{details.barcode}</em>

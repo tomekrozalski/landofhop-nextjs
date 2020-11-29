@@ -8,7 +8,7 @@ const Aged: React.FC<{ details: Details }> = ({ details }) =>
   details.isAged ? (
     <>
       <dt>
-        <FormattedMessage id="global.aged" />
+        <FormattedMessage id="beverage.aged" />
       </dt>
       <dd>
         {details.isAged && details.isAged.label && (

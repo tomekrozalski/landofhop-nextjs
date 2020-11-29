@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { FormattedMessage } from 'react-intl';
 
 import { TopBarContext } from 'utils/contexts';
-import styles from './ListOfLinks.module.css';
 
 const ListOfLinks: React.FC = () => {
   const router = useRouter();
@@ -19,7 +18,7 @@ const ListOfLinks: React.FC = () => {
   });
 
   return (
-    <ul className={styles.listOfLinks}>
+    <ul>
       <li>
         <Link href="/about">
           <a>

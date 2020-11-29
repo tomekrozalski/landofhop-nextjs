@@ -7,7 +7,7 @@ const Fermentation: React.FC<{ details: Details }> = ({ details }) =>
   details.fermentation ? (
     <>
       <dt>
-        <FormattedMessage id="global.fermentation" />
+        <FormattedMessage id="beverage.fermentation" />
       </dt>
       <dd>
         {details.fermentation.label && (

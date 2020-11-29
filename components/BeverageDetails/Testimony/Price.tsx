@@ -32,7 +32,7 @@ const Price: React.FC<{ details: Details }> = ({ details }) =>
   details.price ? (
     <>
       <dt>
-        <FormattedMessage id="global.price" />
+        <FormattedMessage id="beverage.price" />
       </dt>
       <dd>
         {details.price.label && (

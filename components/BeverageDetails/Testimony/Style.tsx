@@ -7,7 +7,7 @@ const Style: React.FC<{ details: Details }> = ({ details }) =>
   details.style ? (
     <>
       <dt>
-        <FormattedMessage id="global.style" />
+        <FormattedMessage id="beverage.style" />
       </dt>
       <dd>
         {details.style.label && (

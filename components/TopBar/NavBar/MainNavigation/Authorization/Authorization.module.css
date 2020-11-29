@@ -1,0 +1,21 @@
+.authorization {
+  display: flex;
+  padding: 0.5rem 0;
+}
+
+.authorization button svg {
+  width: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.authorization button svg path {
+  fill: var(--color-black);
+  transition: fill 0.2s;
+}
+
+.authorization button:hover svg path {
+  fill: var(--color-white);
+}
