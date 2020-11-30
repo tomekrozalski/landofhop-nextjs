@@ -1,4 +1,7 @@
-import LeftIcon from './LeftIcon';
-import RightIcon from './RightIcon';
+import DangerIcon from './Danger';
+import LeftIcon from './Left';
+import RightIcon from './Right';
+import SuccessIcon from './Success';
+import WarningIcon from './Warning';
 
-export { LeftIcon, RightIcon };
+export { DangerIcon, LeftIcon, RightIcon, SuccessIcon, WarningIcon };

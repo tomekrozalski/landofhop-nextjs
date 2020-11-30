@@ -10,11 +10,14 @@
   "container": "opakowanie",
   "country": "kraj",
   "denial": "nie",
+  "email": "email",
   "login": "Zaloguj",
   "logout": "Wyloguj",
   "open": "Otwórz",
+  "password": "hasło",
   "readLess": "zwiń",
   "readMore": "czytaj więcej",
   "search": "Szukaj",
-  "stats": "Statystyki"
+  "stats": "Statystyki",
+  "submit": "wyślij"
 }

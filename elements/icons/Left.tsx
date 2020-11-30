@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-const LeftIcon = ({ message }: { message?: string }) => (
+const Left = ({ message }: { message?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
     {message && (
       <title>
@@ -11,4 +11,4 @@ const LeftIcon = ({ message }: { message?: string }) => (
   </svg>
 );
 
-export default LeftIcon;
+export default Left;

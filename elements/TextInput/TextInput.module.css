@@ -1,0 +1,80 @@
+.textinput {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.textinput svg {
+  display: inline-block;
+  position: absolute;
+  top: calc(var(--size-input-height) / 2);
+  transform: translateY(-50%);
+}
+
+.dangerIcon {
+  width: 14px;
+  height: 14px;
+  right: 0.8rem;
+}
+
+.successIcon {
+  width: 14px;
+  height: 11px;
+  right: 0.6rem;
+}
+
+.warningIcon {
+  width: 14px;
+  height: 13px;
+  right: 0.8rem;
+}
+
+.textinput input,
+.textinput textarea {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--color-grey-2);
+  box-shadow: none;
+  background-color: var(--color-grey-4);
+  font: var(--font-weight-light) 1.6rem / 1 var(--font-primary);
+  color: var(--color-black);
+}
+
+.textinput input {
+  height: var(--size-input-height);
+  padding: 0 1rem;
+}
+
+.textinput textarea {
+  min-height: 12rem;
+  padding: 0.6rem 1rem;
+  line-height: 2.2rem;
+}
+
+.textinput.colorInvert input,
+.textinput.colorInvert textarea {
+  background-color: var(--color-white);
+}
+
+.textinput input:focus,
+.textinput textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-black);
+}
+
+.textinput input:disabled,
+.textinput textarea:disabled {
+  border-bottom: 1px solid var(--color-grey-3);
+  background-color: var(--color-grey-5);
+  color: var(--color-grey-1);
+  cursor: not-allowed;
+}
+
+.textinput input.touched {
+  padding: 0 25px 0 1rem;
+}
+
+.textinput textarea.touched {
+  padding: 0.6rem 25px 0.25rem 1rem;
+}

@@ -10,11 +10,14 @@
   "container": "container",
   "country": "country",
   "denial": "no",
+  "email": "email",
   "login": "Log in",
   "logout": "Log out",
   "open": "Open",
+  "password": "password",
   "readLess": "read less",
   "readMore": "read more",
   "search": "Search",
-  "stats": "Statistics"
+  "stats": "Statistics",
+  "submit": "submit"
 }

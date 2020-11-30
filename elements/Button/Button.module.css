@@ -1,0 +1,95 @@
+.button {
+  display: flex;
+  align-items: center;
+  height: var(--size-input-height);
+  padding: 0 2rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transition: background-color var(--transition-default),
+    color var(--transition-default);
+  cursor: pointer;
+}
+
+.button > span::first-letter {
+  text-transform: capitalize;
+}
+
+.button.submitting {
+  padding: 0 1rem 0 1.5rem;
+  background-color: var(--color-grey-2);
+  cursor: not-allowed;
+  position: relative;
+}
+
+.button:disabled {
+  background-color: var(--color-grey-2);
+  color: var(--color-grey-4);
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled):not(.submitting) {
+  background-color: var(--color-grey-2);
+  color: var(--color-black);
+}
+
+.button.goOn:not(:disabled):not(.submitting):hover {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.button.moveBack:not(:disabled):not(.submitting) {
+  background-color: var(--color-danger-light);
+}
+
+.button.moveBack:not(:disabled):not(.submitting):hover {
+  background-color: var(--color-danger-strong);
+  color: var(--color-white);
+}
+
+@keyframes svgAnimation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: svgAnimation 2s linear infinite;
+  margin-left: 1rem;
+}
+
+@keyframes circleAnimation {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
+
+.spinner circle {
+  animation: circleAnimation 1.4s ease-in-out infinite both;
+  display: block;
+  fill: transparent;
+  stroke: var(--color-white);
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 280;
+  stroke-width: 1rem;
+  transform-origin: 50% 50%;
+}
