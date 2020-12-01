@@ -1,16 +1,26 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+
 import { AugmentedDetails } from 'utils/types/Beverage';
+import { Endpoints, serverCall } from 'utils/helpers';
 import BeverageDetails from 'components/BeverageDetails';
+
+type Props = {
+  locale: string;
+  params: {
+    shortId: string;
+    brand: string;
+    name: string;
+  };
+};
 
 export const getStaticProps: GetStaticProps<AugmentedDetails> = async ({
   locale,
   params,
-}) => {
+}: Props) => {
   const { brand, name, shortId } = params;
-  const getDetails = await fetch(
-    `${process.env.API_SERVER}/beverage/details/${locale}/${shortId}/${brand}/${name}`,
-  );
-  const props: AugmentedDetails = await getDetails.json();
+  const props: AugmentedDetails = await serverCall(Endpoints.beverageDetails, {
+    pathParams: [locale, shortId, brand, name],
+  });
 
   return { props };
 };

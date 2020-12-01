@@ -6,26 +6,21 @@ import {
   AuthenticationStatusEnum,
   TopBarContext,
 } from 'utils/contexts';
-import { FormBody } from '.';
+import { FormBody, LoginError, LoginSuccess, TokenExpired } from '.';
 import styles from './LoginBar.module.css';
-// import { initialFormValues, validationSchema } from './utils';
-// import { FormBody, LoginError, LoginSuccess, TokenExpired } from '.';
 
 const LoginBar: React.FC = () => {
-  const { authenticationStatus, logIn } = useContext(AuthenticationContext);
+  const { authenticationStatus } = useContext(AuthenticationContext);
   const { loginbar, navbar } = useContext(TopBarContext);
 
-  const renderContent = () => {
+  const Content = () => {
     switch (authenticationStatus) {
       case AuthenticationStatusEnum.error:
-        // return <LoginError />;
-        return <div>LoginError</div>;
+        return <LoginError />;
       case AuthenticationStatusEnum.expired:
-        // return <TokenExpired />;
-        return <div>TokenExpired</div>;
+        return <TokenExpired />;
       case AuthenticationStatusEnum.success:
-        // return <LoginSuccess />;
-        return <div>LoginSuccess</div>;
+        return <LoginSuccess />;
       case AuthenticationStatusEnum.loading:
       case AuthenticationStatusEnum.idle:
       default:
@@ -41,18 +36,7 @@ const LoginBar: React.FC = () => {
         { [styles.active]: loginbar },
       )}
     >
-      {renderContent()}
-      {/* <Formik
-        initialValues={initialFormValues}
-        onSubmit={(values, { setSubmitting }) => {
-          logIn(values).then(() => {
-            setSubmitting(false);
-          });
-        }}
-        validationSchema={validationSchema}
-      >
-        {renderContent()}
-      </Formik> */}
+      <Content />
     </div>
   );
 };

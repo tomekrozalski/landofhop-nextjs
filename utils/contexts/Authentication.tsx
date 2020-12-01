@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-expressions, @typescript-eslint/no-empty-function */
 import React, { useContext, useEffect, useState } from 'react';
-// import { differenceInSeconds, fromUnixTime } from 'date-fns';
-// import jwt from 'jsonwebtoken';
-// import isObject from 'lodash/isObject';
+import { differenceInSeconds, fromUnixTime } from 'date-fns';
+import jwt from 'jsonwebtoken';
+import isObject from 'lodash/isObject';
 
+import { Endpoints, serverCall } from 'utils/helpers';
 import { TopBarContext } from './TopBar';
 
 export enum AuthenticationStatusEnum {
@@ -17,28 +18,28 @@ export enum AuthenticationStatusEnum {
 
 export const AuthenticationContext = React.createContext({
   authenticationStatus: AuthenticationStatusEnum.idle,
-  // checkTokenExpiration: (token: string) =>
-  //   new Promise(resolve => resolve(token)),
+  checkTokenExpiration: (token: string) =>
+    new Promise(resolve => resolve(token)),
   isLoggedIn: false,
   logIn: ({}: { email: string; password: string }) => new Promise(() => {}),
-  // logInAfterFailure: () => {},
+  logInAfterFailure: () => {},
   logOut: () => {},
   setAuthenticationStatus: (value: AuthenticationStatusEnum) => {
     value;
   },
-  // token: '',
-  // tokenExpirationDate: new Date(),
+  token: '',
+  tokenExpirationDate: new Date(),
 });
 
 const Authentication: React.FC = ({ children }) => {
   const [authenticationStatus, setAuthenticationStatus] = useState(
     AuthenticationStatusEnum.idle,
   );
-  // const [tokenExpirationDate, setTokenExpirationDate] = useState<Date>(
-  //   new Date(),
-  // );
+  const [tokenExpirationDate, setTokenExpirationDate] = useState<Date>(
+    new Date(),
+  );
   const [isLoggedIn, setLoggedIn] = useState(false);
-  // const [token, setToken] = useState('');
+  const [token, setToken] = useState('');
 
   const { setLoginbar, setNavbar } = useContext(TopBarContext);
 
@@ -46,9 +47,9 @@ const Authentication: React.FC = ({ children }) => {
     setLoggedIn(authenticationStatus === AuthenticationStatusEnum.success);
   }, [authenticationStatus]);
 
-  // const logInAfterFailure = () => {
-  //   setAuthenticationStatus(AuthenticationStatusEnum.retry);
-  // };
+  const logInAfterFailure = () => {
+    setAuthenticationStatus(AuthenticationStatusEnum.retry);
+  };
 
   const logOut = () => {
     if (window.localStorage.getItem('token')) {
@@ -56,67 +57,66 @@ const Authentication: React.FC = ({ children }) => {
     }
 
     setLoginbar(false);
-    // setTokenExpirationDate(new Date());
+    setTokenExpirationDate(new Date());
     setAuthenticationStatus(AuthenticationStatusEnum.idle);
   };
 
-  // const tokenExpired = () => {
-  //   setAuthenticationStatus(AuthenticationStatusEnum.expired);
-  //   setLoginbar(true);
-  //   setNavbar(true);
-  // };
+  const tokenExpired = () => {
+    setAuthenticationStatus(AuthenticationStatusEnum.expired);
+    setLoginbar(true);
+    setNavbar(true);
+  };
 
-  // const checkTokenExpiration = (value: string) =>
-  //   new Promise((resolve, reject) => {
-  //     const decodedToken = jwt.decode(value, { complete: true });
+  const checkTokenExpiration = (value: string) =>
+    new Promise((resolve, reject) => {
+      const decodedToken = jwt.decode(value, { complete: true });
 
-  //     if (isObject(decodedToken)) {
-  //       const expirationDate = fromUnixTime(decodedToken.payload.exp);
+      if (isObject(decodedToken)) {
+        const expirationDate = fromUnixTime(decodedToken.payload.exp);
 
-  //       if (differenceInSeconds(expirationDate, new Date()) > 10) {
-  //         setToken(value);
-  //         setTokenExpirationDate(expirationDate);
-  //         setAuthenticationStatus(AuthenticationStatusEnum.success);
-  //         resolve();
-  //       } else {
-  //         tokenExpired();
-  //       }
-  //     }
+        if (differenceInSeconds(expirationDate, new Date()) > 10) {
+          setToken(value);
+          setTokenExpirationDate(expirationDate);
+          setAuthenticationStatus(AuthenticationStatusEnum.success);
+          resolve();
+        } else {
+          tokenExpired();
+        }
+      }
 
-  //     reject();
-  //   });
+      reject();
+    });
 
   useEffect(() => {
     const storageToken = window.localStorage.getItem('token');
 
     if (storageToken) {
-      // checkTokenExpiration(storageToken).catch(tokenExpired);
+      checkTokenExpiration(storageToken).catch(tokenExpired);
     } else {
       setAuthenticationStatus(AuthenticationStatusEnum.idle);
     }
   }, []);
 
   const logIn = (formValues: { email: string; password: string }) => {
-    return fetch(`${process.env.API_SERVER}/auth`, {
+    return serverCall(Endpoints.login, {
       method: 'POST',
       body: JSON.stringify(formValues),
     })
-      .then(response => response.json())
       .then(response => {
         if (!response.token) {
           throw Error(response.message);
         }
 
-        // checkTokenExpiration(response.token)
-        //   .then(() => {
-        //     window.localStorage.setItem('token', response.token);
+        checkTokenExpiration(response.token)
+          .then(() => {
+            window.localStorage.setItem('token', response.token);
 
-        //     setTimeout(() => {
-        //       setLoginbar(false);
-        //       setNavbar(false);
-        //     }, 2000);
-        //   })
-        //   .catch(logOut);
+            setTimeout(() => {
+              setLoginbar(false);
+              setNavbar(false);
+            }, 2000);
+          })
+          .catch(logOut);
       })
       .catch(() => {
         setAuthenticationStatus(AuthenticationStatusEnum.error);
@@ -127,14 +127,14 @@ const Authentication: React.FC = ({ children }) => {
     <AuthenticationContext.Provider
       value={{
         authenticationStatus,
-        // checkTokenExpiration,
+        checkTokenExpiration,
         isLoggedIn,
         logIn,
-        // logInAfterFailure,
+        logInAfterFailure,
         logOut,
         setAuthenticationStatus,
-        // token,
-        // tokenExpirationDate,
+        token,
+        tokenExpirationDate,
       }}
     >
       {children}

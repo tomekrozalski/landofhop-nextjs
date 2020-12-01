@@ -1,5 +1,7 @@
 {
   "imageNotFound": "Image not found",
+  "loginFailed": "Log in failed",
   "notFound.body": "Redirecting to the home page in {seconds, plural, one {# second} other {# seconds}}",
-  "notFound.title": "404 Not Found"
+  "notFound.title": "404 Not Found",
+  "tryAgain": "Try again"
 }

@@ -1,5 +1,6 @@
-import React, { CSSProperties } from 'react';
+import { forwardRef, CSSProperties } from 'react';
 import clsx from 'clsx';
+import { useForm } from 'react-hook-form';
 
 import { DangerIcon, SuccessIcon, WarningIcon } from 'elements/icons';
 import styles from './TextInput.module.css';
@@ -11,32 +12,40 @@ type Props = {
   disabled?: boolean;
   form: string;
   name: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
+  ref: any;
   style?: CSSProperties;
   touched?: boolean;
   textarea?: boolean;
   type: 'text' | 'email' | 'password';
-  value: string;
 };
 
-const TextInput: React.FC<Props> = ({
-  colorInvert,
-  danger,
-  error,
-  form,
-  name,
-  style,
-  textarea = false,
-  touched,
-  type = 'text',
-  ...rest
-}) => {
+type SelectProps = React.DetailedHTMLProps<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  HTMLSelectElement
+> &
+  Props;
+
+const TextInput = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
+  const {
+    colorInvert,
+    danger,
+    error,
+    form,
+    name,
+    style,
+    textarea = false,
+    touched,
+    type = 'text',
+    ...rest
+  } = props;
+
   const inputProps = {
     id: `${form}-${name}`,
+    name,
     ...rest,
   };
+
+  console.log('inputProps', inputProps);
 
   return (
     <span
@@ -47,12 +56,12 @@ const TextInput: React.FC<Props> = ({
       {touched && error && <WarningIcon className={styles.warningIcon} />}
       {touched && !error && <SuccessIcon className={styles.successIcon} />}
       {textarea ? (
-        <textarea {...inputProps} />
+        <textarea {...inputProps} ref={ref} />
       ) : (
-        <input {...inputProps} type={type} />
+        <input {...inputProps} ref={ref} type={type} />
       )}
     </span>
   );
-};
+});
 
 export default TextInput;

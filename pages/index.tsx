@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 
 import { Basics } from 'utils/types/Beverage';
+import { Endpoints, serverCall } from 'utils/helpers';
 import LandingPage from 'components/LandingPage';
 
 export const getStaticProps: GetStaticProps<{
@@ -8,13 +9,10 @@ export const getStaticProps: GetStaticProps<{
   current: number;
   total: number;
 }> = async ({ locale }) => {
-  const getTotal = await fetch(`${process.env.API_SERVER}/beverage/total`);
-  const total: number = await getTotal.json();
-
-  const getBasics = await fetch(
-    `${process.env.API_SERVER}/beverage/basics/${locale}/0/60`,
-  );
-  const basics: Basics[] = await getBasics.json();
+  const total: number = await serverCall(Endpoints.beverageTotal);
+  const basics: Basics[] = await serverCall(Endpoints.beverageBasics, {
+    pathParams: [locale, 0, 60],
+  });
 
   return {
     props: {

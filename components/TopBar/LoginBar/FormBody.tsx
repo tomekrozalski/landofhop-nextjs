@@ -1,24 +1,41 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as Yup from 'yup';
 
 import { Button, Label, TextInput } from 'elements';
+import { AuthenticationContext } from 'utils/contexts';
 import styles from './FormBody.module.css';
 
+type FormData = {
+  email: string;
+  password: string;
+};
+
+const schema = Yup.object().shape({
+  email: Yup.string().email().required(),
+  password: Yup.string().min(5).required(),
+});
+
 const FormBody: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [isSubmitting, setSubmitting] = useState(false);
+  const { logIn } = useContext(AuthenticationContext);
+  const {
+    register,
+    formState,
+    handleSubmit,
+    watch,
+    errors,
+  } = useForm<FormData>({
+    mode: 'onChange',
+    resolver: yupResolver(schema),
+  });
 
-  const onSubmit = e => {
-    e.preventDefault();
-
-    setSubmitting(true);
-
-    setTimeout(() => {
-      console.log('-->', email, password);
-      setSubmitting(false);
-    }, 50000);
-  };
+  const onSubmit = handleSubmit(data => {
+    logIn(data).then(() => {
+      console.log('!');
+    });
+  });
 
   return (
     <form
@@ -33,9 +50,8 @@ const FormBody: React.FC = () => {
           colorInvert
           form="login"
           name="email"
-          onChange={e => setEmail(e.target.value)}
+          ref={register}
           type="email"
-          value={email}
         />
       </div>
       <div>
@@ -44,14 +60,13 @@ const FormBody: React.FC = () => {
           colorInvert
           form="login"
           name="password"
-          onChange={e => setPassword(e.target.value)}
+          ref={register}
           type="password"
-          value={password}
         />
       </div>
       <Button
-        disabled={email.length < 3 || password.length < 3}
-        isSubmitting={isSubmitting}
+        disabled={!formState.isValid}
+        isSubmitting={formState.isSubmitting}
         type="submit"
       >
         <FormattedMessage id="global.submit" />

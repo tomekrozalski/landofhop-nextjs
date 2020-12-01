@@ -1,5 +1,7 @@
 {
   "imageNotFound": "Nie znaleziono zdjęcia",
+  "loginFailed": "Logowanie zakończyło się niepowowdzeniem",
   "notFound.body": "Przekierowanie do strony głównej za {seconds, plural, one {# sekundę} other {# sekundy}}",
-  "notFound.title": "404 Nie znaleziono"
+  "notFound.title": "404 Nie znaleziono",
+  "tryAgain": "Spróbuj ponownie"
 }
