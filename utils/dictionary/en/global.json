@@ -12,6 +12,7 @@
   "denial": "no",
   "email": "email",
   "login": "Log in",
+  "loginSuccess": "Successfully logged in. Access token expires {expiresIn}.",
   "logout": "Log out",
   "open": "Open",
   "password": "password",

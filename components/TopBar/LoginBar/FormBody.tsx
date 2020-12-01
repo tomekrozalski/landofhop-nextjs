@@ -20,21 +20,9 @@ const schema = Yup.object().shape({
 
 const FormBody: React.FC = () => {
   const { logIn } = useContext(AuthenticationContext);
-  const {
-    register,
-    formState,
-    handleSubmit,
-    watch,
-    errors,
-  } = useForm<FormData>({
+  const { register, formState, handleSubmit } = useForm<FormData>({
     mode: 'onChange',
     resolver: yupResolver(schema),
-  });
-
-  const onSubmit = handleSubmit(data => {
-    logIn(data).then(() => {
-      console.log('!');
-    });
   });
 
   return (
@@ -42,7 +30,7 @@ const FormBody: React.FC = () => {
       className={styles.formBody}
       action="/admin"
       noValidate
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit(logIn)}
     >
       <div>
         <Label form="login" htmlFor="email" name="email" required />

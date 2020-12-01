@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
 
 import { AugmentedDetails } from 'utils/types/Beverage';
+import { AuthenticationContext } from 'utils/contexts';
 import { HeadTitle, Spinner } from 'elements';
 import {
   AdminBar,
@@ -20,6 +22,7 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
   previous,
 }) => {
   const { isFallback } = useRouter();
+  const { isLoggedIn } = useContext(AuthenticationContext);
 
   if (isFallback) {
     return <Spinner />;
@@ -33,7 +36,7 @@ const BeverageDetails: React.FC<AugmentedDetails> = ({
       <Testimony details={details} />
       <Impressions details={details} />
       <FootNotes details={details} />
-      <AdminBar details={details} />
+      {isLoggedIn && <AdminBar details={details} />}
       <Aside next={next} previous={previous} />
       <HeadTitle
         title="beverageDetails"

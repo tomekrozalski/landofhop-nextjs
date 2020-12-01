@@ -21,7 +21,6 @@ const LoginBar: React.FC = () => {
         return <TokenExpired />;
       case AuthenticationStatusEnum.success:
         return <LoginSuccess />;
-      case AuthenticationStatusEnum.loading:
       case AuthenticationStatusEnum.idle:
       default:
         return <FormBody />;

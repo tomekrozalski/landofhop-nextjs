@@ -9,8 +9,8 @@ const LoginError = () => {
   const { logInAfterFailure } = useContext(AuthenticationContext);
 
   return (
-    <div className={styles.loginerror}>
-      <WarningIcon className={styles.warningIcon} />
+    <div className={styles.infoWrapper}>
+      <WarningIcon className={styles.infoIcon} />
       <FormattedMessage id="errors.loginFailed" />
       <button className={styles.resetButton} onClick={logInAfterFailure}>
         <FormattedMessage id="errors.tryAgain" />

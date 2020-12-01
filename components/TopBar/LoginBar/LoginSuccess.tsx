@@ -11,10 +11,10 @@ const LoginSuccess = () => {
   const { tokenExpirationDate } = useContext(AuthenticationContext);
 
   return (
-    <div className={styles.loginerror}>
-      <SuccessIcon className={styles.warningIcon} />
+    <div className={styles.infoWrapper}>
+      <SuccessIcon className={styles.infoIcon} />
       <FormattedMessage
-        id="loginbar.loginSuccess"
+        id="global.loginSuccess"
         values={{
           expiresIn: formatDistanceStrict(tokenExpirationDate, new Date(), {
             addSuffix: true,

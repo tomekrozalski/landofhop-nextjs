@@ -11,9 +11,7 @@ export enum AuthenticationStatusEnum {
   idle,
   error,
   expired,
-  loading,
   success,
-  retry,
 }
 
 export const AuthenticationContext = React.createContext({
@@ -48,7 +46,7 @@ const Authentication: React.FC = ({ children }) => {
   }, [authenticationStatus]);
 
   const logInAfterFailure = () => {
-    setAuthenticationStatus(AuthenticationStatusEnum.retry);
+    setAuthenticationStatus(AuthenticationStatusEnum.idle);
   };
 
   const logOut = () => {

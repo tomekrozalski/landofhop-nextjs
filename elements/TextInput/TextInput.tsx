@@ -1,6 +1,5 @@
 import { forwardRef, CSSProperties } from 'react';
 import clsx from 'clsx';
-import { useForm } from 'react-hook-form';
 
 import { DangerIcon, SuccessIcon, WarningIcon } from 'elements/icons';
 import styles from './TextInput.module.css';
@@ -15,17 +14,16 @@ type Props = {
   ref: any;
   style?: CSSProperties;
   touched?: boolean;
-  textarea?: boolean;
-  type: 'text' | 'email' | 'password';
+  type?: 'text' | 'email' | 'password';
 };
 
-type SelectProps = React.DetailedHTMLProps<
-  React.SelectHTMLAttributes<HTMLSelectElement>,
-  HTMLSelectElement
+type InputProps = React.DetailedHTMLProps<
+  React.InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
 > &
   Props;
 
-const TextInput = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
+const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     colorInvert,
     danger,
@@ -33,7 +31,6 @@ const TextInput = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
     form,
     name,
     style,
-    textarea = false,
     touched,
     type = 'text',
     ...rest
@@ -45,8 +42,6 @@ const TextInput = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
     ...rest,
   };
 
-  console.log('inputProps', inputProps);
-
   return (
     <span
       className={clsx(styles.textinput, { [styles.colorInvert]: colorInvert })}
@@ -55,11 +50,7 @@ const TextInput = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
       {danger && <DangerIcon className={styles.dangerIcon} />}
       {touched && error && <WarningIcon className={styles.warningIcon} />}
       {touched && !error && <SuccessIcon className={styles.successIcon} />}
-      {textarea ? (
-        <textarea {...inputProps} ref={ref} />
-      ) : (
-        <input {...inputProps} ref={ref} type={type} />
-      )}
+      <input {...inputProps} ref={ref} type={type} />
     </span>
   );
 });

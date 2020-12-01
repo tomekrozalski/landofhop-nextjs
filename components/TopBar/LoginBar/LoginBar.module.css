@@ -21,7 +21,7 @@
   transform: translateY(var(--size-navbar-height));
 }
 
-.loginerror {
+.infoWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
   height: var(--size-loginbar-height);
 }
 
-.warningIcon {
+.infoIcon {
   height: var(--size-loginbar-height);
   position: absolute;
   top: -25%;
@@ -55,13 +55,13 @@
 }
 
 @media (min-width: 768px) {
-  .warningIcon {
+  .infoIcon {
     visibility: visible;
   }
 }
 
 @media (min-width: 1024px) {
-  .warningIcon {
+  .infoIcon {
     left: 15%;
   }
 }

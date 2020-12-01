@@ -12,6 +12,7 @@
   "denial": "nie",
   "email": "email",
   "login": "Zaloguj",
+  "loginSuccess": "Zalogowano poprawnie. Token dostępowy wygasa {expiresIn}.",
   "logout": "Wyloguj",
   "open": "Otwórz",
   "password": "hasło",
