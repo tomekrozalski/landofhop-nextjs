@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-import { FormattedList } from 'elements';
+import FormattedList from 'elements/FormattedList';
 import { Aged as AgedTypes } from 'utils/types/Beverage/fragments';
 
 const AgedItem: React.FC<AgedTypes> = ({

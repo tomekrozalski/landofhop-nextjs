@@ -1,19 +1,20 @@
 import { forwardRef, CSSProperties } from 'react';
+import { FieldError } from 'react-hook-form';
 import clsx from 'clsx';
 
-import { DangerIcon, SuccessIcon, WarningIcon } from 'elements/icons';
+import SuccessIcon from 'elements/icons/Success';
+import WarningIcon from 'elements/icons/Warning';
 import styles from './TextInput.module.css';
 
 type Props = {
   colorInvert?: boolean;
-  danger?: boolean;
-  error?: boolean;
+  error?: FieldError;
   disabled?: boolean;
   form: string;
   name: string;
   ref: any;
   style?: CSSProperties;
-  touched?: boolean;
+  touched: boolean;
   type?: 'text' | 'email' | 'password';
 };
 
@@ -26,7 +27,6 @@ type InputProps = React.DetailedHTMLProps<
 const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     colorInvert,
-    danger,
     error,
     form,
     name,
@@ -47,7 +47,6 @@ const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       className={clsx(styles.textinput, { [styles.colorInvert]: colorInvert })}
       style={style}
     >
-      {danger && <DangerIcon className={styles.dangerIcon} />}
       {touched && error && <WarningIcon className={styles.warningIcon} />}
       {touched && !error && <SuccessIcon className={styles.successIcon} />}
       <input {...inputProps} ref={ref} type={type} />

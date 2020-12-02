@@ -1,6 +1,6 @@
 import { FormattedMessage, useIntl } from 'react-intl';
 
-import { FormattedList } from 'elements';
+import FormattedList from 'elements/FormattedList';
 import { Details } from 'utils/types/Beverage';
 import { Price as PriceTypes } from 'utils/types/Beverage/fragments';
 

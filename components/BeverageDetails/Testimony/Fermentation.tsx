@@ -1,7 +1,7 @@
 import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
-import { FormattedList } from 'elements';
+import FormattedList from 'elements/FormattedList';
 
 const Fermentation: React.FC<{ details: Details }> = ({ details }) =>
   details.fermentation ? (

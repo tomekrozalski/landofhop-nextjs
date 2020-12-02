@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import { Basics } from 'utils/types/Beverage';
-import { LeftIcon, RightIcon } from 'elements/icons';
+import LeftIcon from 'elements/icons/Left';
+import RightIcon from 'elements/icons/Right';
 import styles from './Aside.module.css';
 
 type Props = {

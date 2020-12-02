@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useRouter } from 'next/router';
 
-import { HeadTitle } from 'elements';
+import HeadTitle from 'elements/HeadTitle';
 
 const NotFoundPage: React.FC = () => {
   const [seconds, setSeconds] = useState(3);

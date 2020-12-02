@@ -4,7 +4,7 @@ import { formatDistanceStrict } from 'date-fns';
 import pl from 'date-fns/locale/pl';
 
 import { AuthenticationContext } from 'utils/contexts';
-import { SuccessIcon } from 'elements/icons';
+import SuccessIcon from 'elements/icons/Success';
 import styles from './LoginBar.module.css';
 
 const LoginSuccess = () => {

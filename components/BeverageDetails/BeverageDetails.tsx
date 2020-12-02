@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 
 import { AugmentedDetails } from 'utils/types/Beverage';
 import { AuthenticationContext } from 'utils/contexts';
-import { HeadTitle, Spinner } from 'elements';
+import HeadTitle from 'elements/HeadTitle';
+import Spinner from 'elements/Spinner';
 import {
   AdminBar,
   Aside,

@@ -1,6 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
-import { MarkLang } from 'elements';
+import MarkLang from 'elements/MarkLang';
 import { Details } from 'utils/types/Beverage';
 
 const Contact: React.FC<{ details: Details }> = ({ details }) =>

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import { AuthenticationContext } from 'utils/contexts';
-import { WarningIcon } from 'elements/icons';
+import WarningIcon from 'elements/icons/Warning';
 import styles from './LoginBar.module.css';
 
 const LoginError = () => {

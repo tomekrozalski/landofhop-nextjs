@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic';
+
 import Header from './Header';
-import LoginBar from './LoginBar';
 import NavBar from './NavBar';
+
+const LoginBar = dynamic(() => import('./LoginBar'), { ssr: false });
 
 const TopBar: React.FC = () => (
   <>

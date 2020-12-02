@@ -1,7 +1,8 @@
 import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
-import { FormattedList, MarkLang } from 'elements';
+import FormattedList from 'elements/FormattedList';
+import MarkLang from 'elements/MarkLang';
 
 const DryHopped: React.FC<{ details: Details }> = ({ details }) =>
   details.isDryHopped ? (

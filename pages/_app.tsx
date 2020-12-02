@@ -7,7 +7,7 @@ import GlobalStateProvider from 'utils/contexts';
 import { en, pl } from 'utils/dictionary';
 import 'utils/theme/globals.css';
 
-import { GlobalHead } from 'elements';
+import GlobalHead from 'elements/GlobalHead';
 import TopBar from 'components/TopBar';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {

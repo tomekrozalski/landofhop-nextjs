@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 
 import { Basics } from 'utils/types/Beverage';
-import { Endpoints, serverCall } from 'utils/helpers';
+import serverCall, { Endpoints } from 'utils/helpers/serverCall';
 import LandingPage from 'components/LandingPage';
 
 export const getStaticProps: GetStaticProps<{

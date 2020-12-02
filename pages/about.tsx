@@ -1,4 +1,4 @@
-import { HeadTitle } from 'elements';
+import HeadTitle from 'elements/HeadTitle';
 
 const About: React.FC = () => (
   <div>

@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
 
-import { BeverageCoverImage, HeadTitle } from 'elements';
+import BeverageCoverImage from 'elements/BeverageCoverImage';
+import HeadTitle from 'elements/HeadTitle';
 import { ImageType } from 'utils/enums/Beverage';
 import { Basics } from 'utils/types/Beverage';
 import Pagination from './Pagination';

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-//import { Hop as HopIcon } from 'elements/icons';
 import styles from './Logo.module.css';
 
 const Logo: React.FC = () => (

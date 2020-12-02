@@ -1,7 +1,8 @@
 import { FormattedMessage } from 'react-intl';
 
 import { Details } from 'utils/types/Beverage';
-import { MarkLang, FormattedList } from 'elements';
+import FormattedList from 'elements/FormattedList';
+import MarkLang from 'elements/MarkLang';
 
 const Style: React.FC<{ details: Details }> = ({ details }) =>
   details.style ? (

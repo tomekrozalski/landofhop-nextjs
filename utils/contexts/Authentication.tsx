@@ -4,7 +4,7 @@ import { differenceInSeconds, fromUnixTime } from 'date-fns';
 import jwt from 'jsonwebtoken';
 import isObject from 'lodash/isObject';
 
-import { Endpoints, serverCall } from 'utils/helpers';
+import serverCall, { Endpoints } from 'utils/helpers/serverCall';
 import { TopBarContext } from './TopBar';
 
 export enum AuthenticationStatusEnum {
@@ -76,7 +76,7 @@ const Authentication: React.FC = ({ children }) => {
           setToken(value);
           setTokenExpirationDate(expirationDate);
           setAuthenticationStatus(AuthenticationStatusEnum.success);
-          resolve();
+          resolve(value);
         } else {
           tokenExpired();
         }

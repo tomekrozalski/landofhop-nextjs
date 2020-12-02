@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { AugmentedDetails } from 'utils/types/Beverage';
-import { Endpoints, serverCall } from 'utils/helpers';
+import serverCall, { Endpoints } from 'utils/helpers/serverCall';
 import BeverageDetails from 'components/BeverageDetails';
 
 type Props = {

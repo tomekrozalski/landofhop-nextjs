@@ -4,7 +4,9 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-import { Button, Label, TextInput } from 'elements';
+import Button from 'elements/Button';
+import Label from 'elements/Label';
+import TextInput from 'elements/TextInput';
 import { AuthenticationContext } from 'utils/contexts';
 import styles from './FormBody.module.css';
 
@@ -21,7 +23,11 @@ const schema = Yup.object().shape({
 const FormBody: React.FC = () => {
   const { logIn } = useContext(AuthenticationContext);
   const { register, formState, handleSubmit } = useForm<FormData>({
-    mode: 'onChange',
+    mode: 'onBlur',
+    defaultValues: {
+      email: '',
+      password: '',
+    },
     resolver: yupResolver(schema),
   });
 
@@ -36,9 +42,11 @@ const FormBody: React.FC = () => {
         <Label form="login" htmlFor="email" name="email" required />
         <TextInput
           colorInvert
+          error={formState.errors.email}
           form="login"
           name="email"
           ref={register}
+          touched={formState.touched.email}
           type="email"
         />
       </div>
@@ -46,9 +54,11 @@ const FormBody: React.FC = () => {
         <Label form="login" htmlFor="password" name="password" required />
         <TextInput
           colorInvert
+          error={formState.errors.password}
           form="login"
           name="password"
           ref={register}
+          touched={formState.touched.password}
           type="password"
         />
       </div>

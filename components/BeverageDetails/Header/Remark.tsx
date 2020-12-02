@@ -1,4 +1,4 @@
-import { MarkLang } from 'elements';
+import MarkLang from 'elements/MarkLang';
 import { Details } from 'utils/types/Beverage';
 
 const Remark: React.FC<{ details: Details }> = ({ details }) =>

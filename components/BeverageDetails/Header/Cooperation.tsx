@@ -1,6 +1,7 @@
 import { FormattedMessage } from 'react-intl';
 
-import { FormattedList, MarkLang } from 'elements';
+import FormattedList from 'elements/FormattedList';
+import MarkLang from 'elements/MarkLang';
 import { Details } from 'utils/types/Beverage';
 
 const Cooperation: React.FC<{ details: Details }> = ({ details }) =>

@@ -4,7 +4,7 @@ import { Canvas } from 'react-three-fiber';
 
 import { Details } from 'utils/types/Beverage';
 import { ImageType } from 'utils/enums/Beverage';
-import { BeverageCoverImage } from 'elements';
+import BeverageCoverImage from 'elements/BeverageCoverImage';
 import { GalleryContent, Icon360, Spinner } from '.';
 import styles from './Gallery.module.css';
 
