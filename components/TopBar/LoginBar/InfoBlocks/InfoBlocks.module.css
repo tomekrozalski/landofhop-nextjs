@@ -1,0 +1,49 @@
+.infoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--size-loginbar-height);
+  background-color: var(--color-grey-4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.infoIcon {
+  height: var(--size-loginbar-height);
+  position: absolute;
+  top: -25%;
+  left: 2rem;
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+.resetButton {
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-danger);
+  background-color: transparent;
+  color: var(--color-black);
+  transition: background-color var(--transition-default),
+    color var(--transition-default);
+  font-weight: 300;
+}
+
+.resetButton:hover {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .infoIcon {
+    visibility: visible;
+  }
+}
+
+@media (min-width: 1024px) {
+  .infoIcon {
+    left: 15%;
+  }
+}

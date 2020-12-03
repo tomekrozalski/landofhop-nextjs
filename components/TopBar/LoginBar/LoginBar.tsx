@@ -6,26 +6,13 @@ import {
   AuthenticationStatusEnum,
   TopBarContext,
 } from 'utils/contexts';
-import { FormBody, LoginError, LoginSuccess, TokenExpired } from '.';
+import { LoginError, LoginSuccess, TokenExpired } from './InfoBlocks';
+import FormBody from './FormBody';
 import styles from './LoginBar.module.css';
 
 const LoginBar: React.FC = () => {
-  const { authenticationStatus } = useContext(AuthenticationContext);
+  const { authenticationStatus: status } = useContext(AuthenticationContext);
   const { loginbar, navbar } = useContext(TopBarContext);
-
-  const Content = () => {
-    switch (authenticationStatus) {
-      case AuthenticationStatusEnum.error:
-        return <LoginError />;
-      case AuthenticationStatusEnum.expired:
-        return <TokenExpired />;
-      case AuthenticationStatusEnum.success:
-        return <LoginSuccess />;
-      case AuthenticationStatusEnum.idle:
-      default:
-        return <FormBody />;
-    }
-  };
 
   return (
     <div
@@ -35,7 +22,10 @@ const LoginBar: React.FC = () => {
         { [styles.active]: loginbar },
       )}
     >
-      <Content />
+      {status === AuthenticationStatusEnum.error && <LoginError />}
+      {status === AuthenticationStatusEnum.expired && <TokenExpired />}
+      {status === AuthenticationStatusEnum.success && <LoginSuccess />}
+      <FormBody />
     </div>
   );
 };

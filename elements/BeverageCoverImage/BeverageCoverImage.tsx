@@ -38,9 +38,12 @@ const BeverageCoverImage: React.FC<Props> = ({
   const container = useRef(null);
   const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const alt = `${name.value}, ${brand.name.value}`;
 
   useEffect(() => {
-    setLoaded(false);
+    if (type === ImageType.container) {
+      setLoaded(false);
+    }
   });
 
   const getPath = (format: 'webp' | 'jpg', size: 1 | 2) => {
@@ -105,7 +108,7 @@ const BeverageCoverImage: React.FC<Props> = ({
             })}
             srcSet={`${getPath('jpg', 1)} 1x, ${getPath('jpg', 2)} 2x`}
             src={getPath('jpg', 1)}
-            alt={loaded ? `${name.value}, ${brand.name.value}` : ''}
+            alt={loaded ? alt : ''}
             onLoad={() => setLoaded(true)}
           />
         </picture>
@@ -117,7 +120,7 @@ const BeverageCoverImage: React.FC<Props> = ({
             __html: `<picture><img src="${getPath(
               'jpg',
               1,
-            )}" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center;" /></picture>`,
+            )}" alt="${alt}" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center;" /></picture>`,
           }}
         />
       ) : null}

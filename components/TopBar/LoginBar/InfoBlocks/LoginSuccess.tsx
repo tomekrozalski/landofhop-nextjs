@@ -5,7 +5,7 @@ import pl from 'date-fns/locale/pl';
 
 import { AuthenticationContext } from 'utils/contexts';
 import SuccessIcon from 'elements/icons/Success';
-import styles from './LoginBar.module.css';
+import styles from './InfoBlocks.module.css';
 
 const LoginSuccess = () => {
   const { tokenExpirationDate } = useContext(AuthenticationContext);
