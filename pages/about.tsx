@@ -1,10 +1,3 @@
-import HeadTitle from 'elements/HeadTitle';
-
-const About: React.FC = () => (
-  <div>
-    <HeadTitle title="about" />
-    About
-  </div>
-);
+import About from 'components/About';
 
 export default About;

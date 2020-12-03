@@ -1,5 +1,6 @@
 {
   "about": "O stronie",
+  "about.body": "**Land of Hop** to aplikacja webowa, którą tworzę, by ćwiczyć programowanie (React, Next, Node, Nest, MongoDB). Jest to katalog piw, które wypiłem od października 2017. Staram się [codziennie](https://github.com/tomekrozalski) nad nim pracować. Na razie jest ubogi w funkcje, ponieważ skupiam się na aspektach technicznych budowania aplikacji, ale będę się starał dodawać mu systematycznie nowe możliwości. [Tomek Różalski](http://tomaszrozalski.pl)",
   "added": "dodano",
   "category": "kategoria",
   "city": "miasto",

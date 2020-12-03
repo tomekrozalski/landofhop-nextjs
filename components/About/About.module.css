@@ -1,0 +1,11 @@
+.about {
+  max-width: var(--size-container-max-width);
+  margin: 0 auto;
+  max-width: 70rem;
+  padding: 2rem 0 8rem 0;
+}
+
+.about h1 {
+  margin: 2rem 0;
+  text-align: center;
+}

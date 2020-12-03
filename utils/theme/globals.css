@@ -122,6 +122,16 @@ a {
   cursor: pointer;
 }
 
+a[href^='http'] {
+  color: var(--color-success);
+  border-bottom: 1px solid var(--color-white);
+  transition: border-color var(--transition-default);
+}
+
+a[href^='http']:hover {
+  border-color: var(--color-black);
+}
+
 strong,
 em {
   font-weight: var(--font-weight-regular);
