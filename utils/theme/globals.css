@@ -90,6 +90,17 @@ main {
   margin-top: var(--size-header-height);
 }
 
+article {
+  max-width: var(--size-container-max-width);
+  margin: 0 auto;
+  padding: 2rem 0 8rem 0;
+}
+
+article h1 {
+  margin: 2rem 0;
+  text-align: center;
+}
+
 h1 {
   margin: 0;
   font: var(--font-weight-medium) 3rem / 3.8rem var(--font-primary);
