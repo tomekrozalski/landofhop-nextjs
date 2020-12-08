@@ -1,3 +1,4 @@
-export * from './AugmentedDetails.type';
-export * from './Basics.type';
-export * from './Details.type';
+export * from './AugmentedDetails';
+export * from './Basics';
+export * from './Details';
+export * from './Stats';

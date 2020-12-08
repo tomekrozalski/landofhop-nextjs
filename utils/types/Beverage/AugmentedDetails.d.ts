@@ -1,5 +1,5 @@
-import { Basics } from './Basics.type';
-import { Details } from './Details.type';
+import { Basics } from './Basics';
+import { Details } from './Details';
 
 export type AugmentedDetails = {
   previous: Basics | null;

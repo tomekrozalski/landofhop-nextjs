@@ -1,0 +1,73 @@
+.chart {
+  --chart-color-one: #f94144;
+  --chart-color-two: #f3722c;
+  --chart-color-three: #f8961e;
+  --chart-color-four: #f9844a;
+  --chart-color-five: #f9c74f;
+  --chart-color-six: #90be6d;
+  --chart-color-seven: #43aa8b;
+  --chart-color-eight: #4d908e;
+  --chart-color-nine: #577590;
+  --chart-color-ten: #277da1;
+}
+
+.chart text {
+  font: var(--font-weight-light) 1.2rem / 1 var(--font-primary);
+}
+
+.chart .label {
+  fill: var(--color-black);
+  font: var(--font-weight-regular) 1.5rem / 1 var(--font-primary);
+  cursor: pointer;
+  transition: opacity var(--transition-default);
+}
+
+.chart .y-axis-group .tick:not(:first-of-type) line {
+  stroke: var(--color-grey-4);
+}
+
+.chart .line-path {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  cursor: pointer;
+  transition: opacity var(--transition-default);
+}
+
+.chart .fade-out {
+  opacity: 0.2;
+}
+
+/* -------------------------
+ * Alcohol Chart
+ */
+
+.alcohol-chart .bar {
+  fill: var(--chart-color-ten);
+  cursor: pointer;
+}
+
+.alcohol-chart .bar.average {
+  fill: var(--chart-color-four);
+}
+
+.alcohol-chart [class^='bar-label'] rect {
+  fill: var(--chart-color-ten);
+  stroke: var(--color-white);
+}
+
+.alcohol-chart [class^='bar-label'] text {
+  fill: var(--color-white);
+}
+
+@media (min-width: 700px) {
+  .alcohol-chart-wrapper {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .alcohol-chart-wrapper {
+    min-height: 600px;
+  }
+}

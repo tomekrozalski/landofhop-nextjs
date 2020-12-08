@@ -6,6 +6,7 @@ import { flatten } from 'flat';
 import GlobalStateProvider from 'utils/contexts';
 import { en, pl } from 'utils/dictionary';
 import 'utils/theme/globals.css';
+import 'utils/theme/stats.css';
 
 import GlobalHead from 'elements/GlobalHead';
 import TopBar from 'components/TopBar';

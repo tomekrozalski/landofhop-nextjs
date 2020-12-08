@@ -1,4 +1,5 @@
 {
+  "doNotLogin": "Do not login again",
   "imageNotFound": "Image not found",
   "loginAgain": "Login again",
   "loginFailed": "Log in failed",

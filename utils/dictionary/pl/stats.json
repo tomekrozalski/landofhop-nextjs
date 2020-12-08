@@ -1,3 +1,8 @@
 {
+  "alcohol": {
+    "alcohol": "Alkohol",
+    "name": "Wykres ilości alkoholu w piwach",
+    "numberOfBeverages": "Ilość piw"
+  },
   "name": "Statystyki"
 }

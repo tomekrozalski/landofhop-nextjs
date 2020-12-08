@@ -1,0 +1,24 @@
+.sectionHeader {
+  margin: 4rem 0 2rem 0;
+  position: relative;
+}
+
+.sectionHeader::before {
+  display: block;
+  width: 100%;
+  height: 1px;
+  content: '';
+  background-color: var(--color-grey-3);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+}
+
+.sectionHeader h2 {
+  display: inline-block;
+  margin: 0 4rem;
+  padding: 0 1rem;
+  font: var(--font-weight-regular) 1.5rem / 1 var(--font-primary);
+  background-color: var(--color-white);
+}

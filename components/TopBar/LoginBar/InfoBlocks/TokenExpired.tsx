@@ -6,7 +6,7 @@ import WarningIcon from 'elements/icons/Warning';
 import styles from './InfoBlocks.module.css';
 
 const TokenExpired = () => {
-  const { logInAfterFailure } = useContext(AuthenticationContext);
+  const { logInAfterFailure, logOut } = useContext(AuthenticationContext);
 
   return (
     <div className={styles.infoWrapper}>
@@ -14,6 +14,9 @@ const TokenExpired = () => {
       <FormattedMessage id="errors.tokenExpired" />
       <button className={styles.resetButton} onClick={logInAfterFailure}>
         <FormattedMessage id="errors.loginAgain" />
+      </button>
+      <button className={styles.resetButton} onClick={logOut}>
+        <FormattedMessage id="errors.doNotLogin" />
       </button>
     </div>
   );

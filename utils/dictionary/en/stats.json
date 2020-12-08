@@ -1,3 +1,8 @@
 {
+  "alcohol": {
+    "alcohol": "Alcohol",
+    "name": "Graph of alcohol quantity in beverages",
+    "numberOfBeverages": "Number of beverages"
+  },
   "name": "Statistics"
 }
