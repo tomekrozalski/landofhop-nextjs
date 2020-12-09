@@ -1,6 +1,8 @@
 {
   "alcohol": {
     "alcohol": "Alcohol",
+    "barLabel": "{value}% alcohol, {beverages} beverages",
+    "isAverage": "average amount of alcohol of all beverages",
     "name": "Graph of alcohol quantity in beverages",
     "numberOfBeverages": "Number of beverages"
   },
