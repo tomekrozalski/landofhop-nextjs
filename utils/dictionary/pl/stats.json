@@ -1,4 +1,13 @@
 {
+  "addTimeline": {
+    "bottles": "butelki",
+    "cans": "puszki",
+    "depiction": "{date}: {bottle, plural, one {# butelka} few {# butelki} other {# butelek}} i {can, plural, one {# puszka} few {# puszki} other {# puszek}}",
+    "month": "Miesiąc",
+    "name": "Ilość dodawanych piw do bazy w kolejnych miesiącach",
+    "numberOfBeverages": "Ilość piw",
+    "total": "razem"
+  },
   "alcohol": {
     "alcohol": "Alkohol",
     "barLabel": "{value}% alkoholu, {beverages, plural, one {# piwo} few {# piwa} other {# piw}}",

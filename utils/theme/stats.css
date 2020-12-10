@@ -39,6 +39,64 @@
 }
 
 /* -------------------------
+ * Add Timeline
+ */
+
+.time-chart .bar-group {
+  opacity: 0.25;
+  transition: opacity var(--transition-default);
+  cursor: pointer;
+}
+
+.time-chart .bar-group:hover {
+  opacity: 1;
+}
+
+.time-chart rect.total {
+  fill: transparent;
+}
+
+.time-chart rect.bottles {
+  fill: var(--chart-color-six);
+}
+
+.time-chart rect.cans {
+  fill: var(--chart-color-two);
+}
+
+.time-chart .line-path.total {
+  stroke: var(--chart-color-ten);
+}
+
+.time-chart .line-path.bottles {
+  stroke: var(--chart-color-six);
+}
+
+.time-chart .line-path.cans {
+  stroke: var(--chart-color-two);
+}
+
+.time-chart .legend .label {
+  font-weight: var(--font-weight-light);
+}
+
+.time-chart .depiction {
+  font: var(--font-weight-regular) 1.5rem / 1 var(--font-primary);
+}
+
+@media (min-width: 700px) {
+  .time-chart-wrapper {
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .time-chart-wrapper {
+    min-height: 670px;
+  }
+}
+
+/* -------------------------
  * Alcohol Chart
  */
 

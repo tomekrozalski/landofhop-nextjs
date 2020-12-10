@@ -98,7 +98,10 @@ const createChart = ({ average, data, intl, wrapper }: Props) => {
   // ----------------------------------------------------
   // behaviour on mouse cursor over
 
-  const handleMouseOver = (e: any, d: AlcoholChartBar) => {
+  const handleMouseOver = (
+    e: React.ChangeEvent<SVGRectElement>,
+    d: AlcoholChartBar,
+  ) => {
     const i = e.target.dataset.order;
     const directLeft = d.value > 15;
 
@@ -154,7 +157,7 @@ const createChart = ({ average, data, intl, wrapper }: Props) => {
       .each(getTextWidth);
   };
 
-  const handleMouseOut = (e: any) => {
+  const handleMouseOut = (e: React.ChangeEvent<SVGRectElement>) => {
     const i = e.target.dataset.order;
 
     d3.selectAll(`.bar-label-${i} *`)

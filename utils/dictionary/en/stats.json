@@ -1,4 +1,13 @@
 {
+  "addTimeline": {
+    "bottles": "bottles",
+    "cans": "cans",
+    "depiction": "{date}: {bottle, plural, one {# bottle} other {# bottles}} and {can, plural, one {# can} other {# cans}}",
+    "month": "Month",
+    "name": "Amount of beers added to the database in the following months",
+    "numberOfBeverages": "Number of beverages",
+    "total": "total"
+  },
   "alcohol": {
     "alcohol": "Alcohol",
     "barLabel": "{value}% alcohol, {beverages} beverages",
