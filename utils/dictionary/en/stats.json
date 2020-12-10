@@ -15,5 +15,11 @@
     "name": "Graph of alcohol quantity in beverages",
     "numberOfBeverages": "Number of beverages"
   },
+  "fermentation": {
+    "bottom": "bottom, lager",
+    "name": "Type of fermentation of beverages in time",
+    "spontaneous": "spontaneous, wild ales",
+    "top": "top, ale"
+  },
   "name": "Statistics"
 }

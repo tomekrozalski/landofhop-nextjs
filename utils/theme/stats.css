@@ -129,3 +129,31 @@
     min-height: 600px;
   }
 }
+
+/* -------------------------
+ * Fermentation Timeline
+ */
+
+.fermentation-chart .line-path.top {
+  stroke: var(--chart-color-five);
+}
+
+.fermentation-chart .line-path.bottom {
+  stroke: var(--chart-color-ten);
+}
+
+.fermentation-chart .line-path.spontaneous {
+  stroke: var(--chart-color-two);
+}
+
+@media (min-width: 700px) {
+  .fermentation-chart-wrapper {
+    min-height: 345px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .fermentation-chart-wrapper {
+    min-height: 570px;
+  }
+}

@@ -15,5 +15,11 @@
     "name": "Wykres ilości alkoholu w piwach",
     "numberOfBeverages": "Ilość piw"
   },
+  "fermentation": {
+    "bottom": "dolna, lager",
+    "name": "Rodzaj fermentacji dodawanych piw w czasie",
+    "spontaneous": "spontaniczna, piwa dzikie",
+    "top": "górna, ale"
+  },
   "name": "Statystyki"
 }
