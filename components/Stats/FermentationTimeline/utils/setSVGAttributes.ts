@@ -1,5 +1,8 @@
 import * as d3 from 'd3';
+import clsx from 'clsx';
 
+import generalStyles from 'components/Stats/Stats.module.css';
+import specificStyles from '../FermentationTimeline.module.css';
 import { Sizes } from './Sizes';
 
 type Props = {
@@ -15,7 +18,10 @@ const setSVGAttributes = ({ sizes, wrapper }: Props) => {
       'viewBox',
       `0 0 ${sizes.chart.width} ${sizes.chart.height + sizes.legend.height}`,
     )
-    .classed('chart fermentation-chart', true);
+    .classed(
+      clsx(generalStyles.chart, specificStyles.fermentationTimeline),
+      true,
+    );
 };
 
 export default setSVGAttributes;

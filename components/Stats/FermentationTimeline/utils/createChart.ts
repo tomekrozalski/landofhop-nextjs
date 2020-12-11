@@ -4,6 +4,7 @@ import { IntlShape } from 'react-intl';
 import { Fermentation as FermentationEnum } from 'utils/enums/Beverage';
 import { FermentationTimelineBar } from 'utils/types/Beverage';
 import { renderTimelineAxis } from 'components/Stats/utils';
+import specificStyles from '../FermentationTimeline.module.css';
 import { Sizes } from './Sizes';
 
 type Props = {
@@ -72,14 +73,15 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
     function isNotCurrent(this: any) {
       return this.classList[1] !== badge;
     }
-    d3.selectAll('.fermentation-chart .line-path').classed(
-      'fade-out',
-      isNotCurrent,
-    );
+    d3.selectAll(
+      `svg.${specificStyles.fermentationTimeline} .line-path`,
+    ).classed('fade-out', isNotCurrent);
   }
 
   function handleMouseOut() {
-    d3.selectAll('.fermentation-chart .fade-out').classed('fade-out', false);
+    d3.selectAll(
+      `svg.${specificStyles.fermentationTimeline} .fade-out`,
+    ).classed('fade-out', false);
   }
 
   // ----------------------------------------------------

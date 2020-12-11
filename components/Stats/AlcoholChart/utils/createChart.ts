@@ -2,32 +2,22 @@ import * as d3 from 'd3';
 import { IntlShape } from 'react-intl';
 
 import { AlcoholChartBar } from 'utils/types/Beverage';
+import { Sizes } from './Sizes';
 
 type Props = {
   average: number;
   data: AlcoholChartBar[];
   intl: IntlShape;
+  sizes: Sizes;
   wrapper: SVGSVGElement;
 };
 
-const createChart = ({ average, data, intl, wrapper }: Props) => {
+const createChart = ({ average, data, intl, sizes, wrapper }: Props) => {
   const svg = d3.select(wrapper);
 
-  const margin = {
-    top: 40,
-    right: 40,
-    bottom: 40,
-    left: 40,
-  };
-
-  const width = 1160;
+  const { height, margin, width } = sizes.chart;
   const innerWidth = width - margin.left - margin.right;
-  const height = 600;
   const innerHeight = height - margin.top - margin.bottom;
-
-  svg
-    .attr('viewBox', `0 0 ${width} ${height}`)
-    .classed('chart alcohol-chart', true);
 
   // Define horizontal scale
 

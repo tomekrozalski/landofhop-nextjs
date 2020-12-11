@@ -2,6 +2,7 @@ import * as d3 from 'd3';
 import { IntlShape } from 'react-intl';
 
 import { FermentationTimelineBar } from 'utils/types/Beverage';
+import specificStyles from '../FermentationTimeline.module.css';
 import { Sizes } from './Sizes';
 
 type Props = {
@@ -59,7 +60,7 @@ const createLegend = ({ data, intl, sizes, wrapper }: Props) => {
   );
 
   function translateLabels() {
-    d3.select('svg.fermentation-chart g.legend g.top').attr(
+    d3.select(`svg.${specificStyles.fermentationTimeline} g.legend g.top`).attr(
       'transform',
       `translate(${
         innerWidth -
@@ -69,14 +70,18 @@ const createLegend = ({ data, intl, sizes, wrapper }: Props) => {
       }, 0)`,
     );
 
-    d3.select('svg.fermentation-chart g.legend g.bottom').attr(
+    d3.select(
+      `svg.${specificStyles.fermentationTimeline} g.legend g.bottom`,
+    ).attr(
       'transform',
       `translate(${
         innerWidth - legendWidth.spontaneous - legendWidth.bottom
       }, 0)`,
     );
 
-    d3.select('svg.fermentation-chart g.legend g.spontaneous').attr(
+    d3.select(
+      `svg.${specificStyles.fermentationTimeline} g.legend g.spontaneous`,
+    ).attr(
       'transform',
       `translate(${innerWidth - legendWidth.spontaneous}, 0)`,
     );

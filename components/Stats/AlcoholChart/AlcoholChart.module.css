@@ -1,0 +1,29 @@
+.alcoholChart :global(.bar) {
+  fill: var(--color-brand-7);
+  cursor: pointer;
+}
+
+.alcoholChart :global(.bar.average) {
+  fill: var(--color-brand-5);
+}
+
+.alcoholChart :global([class^='bar-label']) rect {
+  fill: var(--color-brand-7);
+  stroke: var(--color-white);
+}
+
+.alcoholChart :global([class^='bar-label']) text {
+  fill: var(--color-white);
+}
+
+@media (min-width: 700px) {
+  .alcoholChart {
+    min-height: 400px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .alcoholChart {
+    min-height: 600px;
+  }
+}

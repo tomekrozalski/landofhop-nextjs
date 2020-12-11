@@ -1,0 +1,26 @@
+.chart text {
+  font: var(--font-weight-light) 1.2rem / 1 var(--font-primary);
+}
+
+.chart :global(.label) {
+  fill: var(--color-black);
+  font: var(--font-weight-regular) 1.5rem / 1 var(--font-primary);
+  cursor: pointer;
+  transition: opacity var(--transition-default);
+}
+
+.chart :global(.y-axis-group) :global(.tick):not(:first-of-type) line {
+  stroke: var(--color-grey-4);
+}
+
+.chart :global(.line-path) {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  cursor: pointer;
+  transition: opacity var(--transition-default);
+}
+
+.chart :global(.fade-out) {
+  opacity: 0.2;
+}

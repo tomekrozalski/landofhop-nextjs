@@ -3,15 +3,31 @@ import { FormattedMessage, useIntl } from 'react-intl';
 
 import { AlcoholChartBar } from 'utils/types/Beverage';
 import SectionHeader from 'elements/SectionHeader';
-import { createChart, getAverage } from './utils';
+import { Sizes } from './utils/Sizes';
+import { createChart, getAverage, setSVGAttributes } from './utils';
 
 const AlcoholChart: React.FC<{ data: AlcoholChartBar[] }> = ({ data }) => {
   const intl = useIntl();
   const svg = useRef<SVGSVGElement>(null!);
 
   useEffect(() => {
+    const sizes: Sizes = {
+      chart: {
+        width: 1160,
+        height: 600,
+        margin: {
+          top: 40,
+          right: 40,
+          bottom: 40,
+          left: 40,
+        },
+      },
+    };
+
     const average: number = getAverage(data);
-    createChart({ average, data, intl, wrapper: svg.current });
+
+    setSVGAttributes({ sizes, wrapper: svg.current });
+    createChart({ average, data, intl, sizes, wrapper: svg.current });
   }, []);
 
   return (
@@ -19,9 +35,7 @@ const AlcoholChart: React.FC<{ data: AlcoholChartBar[] }> = ({ data }) => {
       <SectionHeader>
         <FormattedMessage id="stats.alcohol.name" />
       </SectionHeader>
-      <div className="alcohol-chart">
-        <svg ref={svg} />
-      </div>
+      <svg ref={svg} />
     </>
   );
 };

@@ -46,9 +46,7 @@ const FermentationTimeline: React.FC<{ data: FermentationTimelineBar[] }> = ({
       <SectionHeader>
         <FormattedMessage id="stats.fermentation.name" />
       </SectionHeader>
-      <div className="fermentation-chart-wrapper">
-        <svg ref={svg} />
-      </div>
+      <svg ref={svg} />
     </>
   );
 };

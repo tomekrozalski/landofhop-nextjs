@@ -6,6 +6,7 @@ import { pl } from 'date-fns/locale';
 import { AddTimelineBar } from 'utils/types/Beverage';
 import { renderTimelineAxis } from 'components/Stats/utils';
 import { Sizes } from './Sizes';
+import styles from '../AddTimeline.module.css';
 
 type Props = {
   data: AddTimelineBar[];
@@ -68,12 +69,18 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
     function isNotCurrent(this: any) {
       return !this.classList.contains(badge);
     }
-    d3.selectAll('.time-chart .line-path').classed('fade-out', isNotCurrent);
-    d3.selectAll('.time-chart .legend > g').classed('fade-out', isNotCurrent);
+    d3.selectAll(`.${styles.addTimeline} .line-path`).classed(
+      'fade-out',
+      isNotCurrent,
+    );
+    d3.selectAll(`.${styles.addTimeline} .legend > g`).classed(
+      'fade-out',
+      isNotCurrent,
+    );
   }
 
   function handleMouseOutLine() {
-    d3.selectAll('.time-chart .fade-out').classed('fade-out', false);
+    d3.selectAll(`.${styles.addTimeline} .fade-out`).classed('fade-out', false);
   }
 
   // ----------------------------------------------------
@@ -115,7 +122,7 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
   };
 
   const handleMouseOutBar = () => {
-    d3.selectAll('.time-chart .fade-out').classed('fade-out', false);
+    d3.selectAll(`.${styles.addTimeline} .fade-out`).classed('fade-out', false);
 
     d3.selectAll('text.depiction')
       .transition()

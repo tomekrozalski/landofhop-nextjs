@@ -1,0 +1,23 @@
+.fermentationTimeline :global(.line-path.top) {
+  stroke: var(--color-brand-3);
+}
+
+.fermentationTimeline :global(.line-path.bottom) {
+  stroke: var(--color-brand-4);
+}
+
+.fermentationTimeline :global(.line-path.spontaneous) {
+  stroke: var(--color-brand-5);
+}
+
+@media (min-width: 700px) {
+  .fermentationTimeline {
+    min-height: 345px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .fermentationTimeline {
+    min-height: 570px;
+  }
+}

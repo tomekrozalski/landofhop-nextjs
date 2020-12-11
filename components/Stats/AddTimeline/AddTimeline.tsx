@@ -44,9 +44,7 @@ const AddTimeline: React.FC<{ data: AddTimelineBar[] }> = ({ data }) => {
       <SectionHeader>
         <FormattedMessage id="stats.addTimeline.name" />
       </SectionHeader>
-      <div className="time-chart-wrapper">
-        <svg ref={svg} />
-      </div>
+      <svg ref={svg} />
     </>
   );
 };

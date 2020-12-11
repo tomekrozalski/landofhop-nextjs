@@ -1,0 +1,53 @@
+.addTimeline :global(.bar-group) {
+  opacity: 0.25;
+  transition: opacity var(--transition-default);
+  cursor: pointer;
+}
+
+.addTimeline :global(.bar-group):hover {
+  opacity: 1;
+}
+
+.addTimeline :global(rect.total) {
+  fill: transparent;
+}
+
+.addTimeline :global(rect.bottles) {
+  fill: var(--color-brand-5);
+}
+
+.addTimeline :global(rect.cans) {
+  fill: var(--color-brand-3);
+}
+
+.addTimeline :global(.line-path.total) {
+  stroke: var(--color-brand-7);
+}
+
+.addTimeline :global(.line-path.bottles) {
+  stroke: var(--color-brand-5);
+}
+
+.addTimeline :global(.line-path.cans) {
+  stroke: var(--color-brand-3);
+}
+
+.addTimeline :global(.legend .label) {
+  font-weight: var(--font-weight-light);
+}
+
+.addTimeline :global(.depiction) {
+  font: var(--font-weight-regular) 1.5rem / 1 var(--font-primary);
+}
+
+@media (min-width: 700px) {
+  .addTimeline {
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .addTimeline {
+    min-height: 670px;
+  }
+}

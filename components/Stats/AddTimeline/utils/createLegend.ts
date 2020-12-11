@@ -3,6 +3,7 @@ import { IntlShape } from 'react-intl';
 
 import { AddTimelineBar } from 'utils/types/Beverage';
 import { Sizes } from './Sizes';
+import styles from '../AddTimeline.module.css';
 
 type Props = {
   data: AddTimelineBar[];
@@ -61,20 +62,24 @@ const createLegend = ({ data, intl, sizes, wrapper }: Props) => {
     {},
   );
 
+  console.log('legendWidth', legendWidth);
+
   function translateLabels() {
-    d3.select('svg.time-chart g.legend g.total').attr(
+    console.log('translateLabels', legendWidth);
+
+    d3.select(`svg.${styles.addTimeline} g.legend g.total`).attr(
       'transform',
       `translate(${
         innerWidth - legendWidth.cans - legendWidth.bottles - legendWidth.total
       }, 0)`,
     );
 
-    d3.select('svg.time-chart g.legend g.bottles').attr(
+    d3.select(`svg.${styles.addTimeline} g.legend g.bottles`).attr(
       'transform',
       `translate(${innerWidth - legendWidth.cans - legendWidth.bottles}, 0)`,
     );
 
-    d3.select('svg.time-chart g.legend g.cans').attr(
+    d3.select(`svg.${styles.addTimeline} g.legend g.cans`).attr(
       'transform',
       `translate(${innerWidth - legendWidth.cans}, 0)`,
     );
