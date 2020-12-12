@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps<AugmentedDetails> = async ({
     pathParams: [locale, shortId, brand, name],
   });
 
-  return { props };
+  return { props, revalidate: 10 };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({
