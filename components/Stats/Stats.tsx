@@ -2,12 +2,18 @@ import { FormattedMessage } from 'react-intl';
 
 import HeadTitle from 'elements/HeadTitle';
 import { Stats as StatsTypes } from 'utils/types/Beverage';
-import { AddTimeline, AlcoholChart, FermentationTimeline } from '.';
+import {
+  AddTimeline,
+  AlcoholChart,
+  FermentationTimeline,
+  TopBrandsTimeline,
+} from '.';
 
 const Stats: React.FC<StatsTypes> = ({
   addTimelineData,
   alcoholChartData,
   fermentationTimelineData,
+  topBrandsTimelineData,
 }) => (
   <article>
     <HeadTitle title="stats" />
@@ -17,7 +23,7 @@ const Stats: React.FC<StatsTypes> = ({
     <AlcoholChart data={alcoholChartData} />
     <AddTimeline data={addTimelineData} />
     <FermentationTimeline data={fermentationTimelineData} />
-    {/* <TopBrands /> */}
+    <TopBrandsTimeline data={topBrandsTimelineData} />
   </article>
 );
 

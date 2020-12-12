@@ -21,5 +21,8 @@
     "spontaneous": "spontaniczna, piwa dzikie",
     "top": "górna, ale"
   },
-  "name": "Statystyki"
+  "name": "Statystyki",
+  "topBrands": {
+    "name": "Browary o największej ilości piw"
+  }
 }

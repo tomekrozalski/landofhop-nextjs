@@ -62,11 +62,7 @@ const createLegend = ({ data, intl, sizes, wrapper }: Props) => {
     {},
   );
 
-  console.log('legendWidth', legendWidth);
-
   function translateLabels() {
-    console.log('translateLabels', legendWidth);
-
     d3.select(`svg.${styles.addTimeline} g.legend g.total`).attr(
       'transform',
       `translate(${

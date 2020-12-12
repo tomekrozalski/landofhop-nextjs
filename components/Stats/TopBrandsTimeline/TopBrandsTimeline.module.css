@@ -1,0 +1,51 @@
+.topBrandsTimeline :global(.line-path:nth-child(1)) {
+  stroke: var(--color-brand-1);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(2)) {
+  stroke: var(--color-brand-2);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(3)) {
+  stroke: var(--color-brand-3);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(4)) {
+  stroke: var(--color-brand-4);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(5)) {
+  stroke: var(--color-brand-5);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(6)) {
+  stroke: var(--color-brand-6);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(7)) {
+  stroke: var(--color-brand-7);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(8)) {
+  stroke: var(--color-brand-5);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(9)) {
+  stroke: var(--color-brand-6);
+}
+
+.topBrandsTimeline :global(.line-path:nth-child(10)) {
+  stroke: var(--color-brand-7-light);
+}
+
+@media (min-width: 700px) {
+  .topBrandsTimeline {
+    min-height: 370px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .topBrandsTimeline {
+    min-height: 600px;
+  }
+}

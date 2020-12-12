@@ -9,7 +9,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     pathParams: [locale],
   });
 
-  return { props: { ...data } };
+  return { props: { ...data }, revalidate: 10 };
 };
 
 export default Stats;

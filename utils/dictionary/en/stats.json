@@ -21,5 +21,8 @@
     "spontaneous": "spontaneous, wild ales",
     "top": "top, ale"
   },
-  "name": "Statistics"
+  "name": "Statistics",
+  "topBrands": {
+    "name": "Browary o największej ilości piw"
+  }
 }
