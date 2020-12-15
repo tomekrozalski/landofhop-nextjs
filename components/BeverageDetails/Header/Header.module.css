@@ -2,3 +2,7 @@
   grid-area: header;
   margin-top: 1rem;
 }
+
+.header h1 {
+  text-align: left;
+}

@@ -1,9 +1,17 @@
 export enum Endpoints {
+  beverageAdminDetails = 'beverage/admin/details',
   beverageBasics = 'beverage/basics',
   beverageDetails = 'beverage/details',
   beverageStats = 'beverage/stats',
   beverageTotal = 'beverage/total',
   login = 'auth',
+}
+
+export enum Status {
+  idle = 'idle',
+  pending = 'pending',
+  resolved = 'resolved',
+  rejected = 'rejected',
 }
 
 type Props = {

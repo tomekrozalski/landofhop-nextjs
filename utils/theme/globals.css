@@ -27,7 +27,7 @@
   /* --color-success-light: #beddb5; */
   --color-warning: var(--color-brand-4); /* previous: #d0be26; */
   --color-danger: var(--color-brand-1); /* previous: #be5656; */
-  /* --color-danger-light: #dec1c1; */
+  --color-danger-light: var(--color-brand-3);
   --color-label: var(--color-brand-3);
   --color-label-light: var(--color-brand-3-light);
   --color-producer: var(--color-brand-3); /* previous #c67e89; */
