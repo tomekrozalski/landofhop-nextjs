@@ -59,7 +59,7 @@ const GalleryContent: React.FC<Props> = ({ badge, brand, shortId, photos }) => {
     [galleryPath],
   );
 
-  const rawTextures = textureLinks.map(link => useLoader(TextureLoader, link));
+  const rawTextures = useLoader<any>(TextureLoader, textureLinks);
 
   const textures = useMemo(
     () =>
