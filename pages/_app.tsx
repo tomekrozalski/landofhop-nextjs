@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import { IntlProvider } from 'react-intl';
 import { flatten } from 'flat';
 
-import GlobalStateProvider from 'utils/contexts';
+import GlobalStateProvider, { TopBarContext } from 'utils/contexts';
 import { en, pl } from 'utils/dictionary';
 import 'utils/theme/globals.css';
-
 import GlobalHead from 'elements/GlobalHead';
+import SearchResults from 'components/LandingPage/SearchResults';
 import TopBar from 'components/TopBar';
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -20,7 +20,11 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         <GlobalHead />
         <TopBar />
         <main>
-          <Component {...pageProps} />
+          <TopBarContext.Consumer>
+            {({ searchbarActive }) =>
+              searchbarActive ? <SearchResults /> : <Component {...pageProps} />
+            }
+          </TopBarContext.Consumer>
         </main>
       </IntlProvider>
     </GlobalStateProvider>
