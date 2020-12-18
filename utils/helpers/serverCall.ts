@@ -2,6 +2,7 @@ export enum Endpoints {
   beverageAdminDetails = 'beverage/admin/details',
   beverageBasics = 'beverage/basics',
   beverageDetails = 'beverage/details',
+  beverageSearch = 'beverage/search',
   beverageStats = 'beverage/stats',
   beverageTotal = 'beverage/total',
   login = 'auth',

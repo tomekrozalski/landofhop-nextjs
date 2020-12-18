@@ -1,13 +1,15 @@
 import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useIntl } from 'react-intl';
 import clsx from 'clsx';
 import debounce from 'lodash/debounce';
 
 import { SearchContext, TopBarContext } from 'utils/contexts';
-import { Status } from 'utils/helpers/serverCall';
+import serverCall, { Endpoints, Status } from 'utils/helpers/serverCall';
 import Button from './Button';
 import styles from './SearchBar.module.css';
 
 const Searchbar = () => {
+  const { locale } = useIntl();
   const input = useRef(null!);
   const { setLoginbar, setNavbar, setSearchbarActive } = useContext(
     TopBarContext,
@@ -41,22 +43,16 @@ const Searchbar = () => {
     if (searchFor) {
       setStatus(Status.pending);
 
-      console.log('searchFor', searchFor);
-
-      // serverCall({
-      //   method: 'POST',
-      //   path: 'beverage/search',
-      //   body: JSON.stringify({ phrase: searchFor, language: locale }),
-      // }).then(values => {
-      //   if (!values.length) {
-      //     setNothingFound(true);
-      //   }
-
-      //   setSearchResults(values);
-      //   setLoading(false);
-      // });
+      serverCall(Endpoints.beverageSearch, {
+        method: 'POST',
+        body: JSON.stringify({ phrase: searchFor, language: locale }),
+      }).then(values => {
+        setSearchResults(values);
+        setStatus(Status.resolved);
+      });
     } else {
-      // setSearchResults([]);
+      setSearchResults([]);
+      setStatus(Status.rejected);
     }
   }, [searchFor]);
 
@@ -77,6 +73,7 @@ const Searchbar = () => {
         type="text"
         className={styles.input}
         onChange={onSearchChange}
+        placeholder="szukaj"
         ref={input}
         value={text}
       />

@@ -5,6 +5,7 @@
   "loginFailed": "Logowanie zakończyło się niepowowdzeniem",
   "notFound.body": "Przekierowanie do strony głównej za {seconds, plural, one {# sekundę} other {# sekundy}}",
   "notFound.title": "404 Nie znaleziono",
+  "search.nothingFound": "Nic nie znaleziono",
   "tokenExpired": "Wygasł token dostępowy",
   "tryAgain": "Spróbuj ponownie"
 }
