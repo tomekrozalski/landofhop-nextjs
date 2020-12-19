@@ -1,7 +1,6 @@
 import { cloneElement } from 'react';
 
 import Authentication from './Authentication';
-import Search from './Search';
 import TopBar from './TopBar';
 
 type Props = {
@@ -18,7 +17,7 @@ const ProviderComposer: React.FC<Props> = ({ contexts, children }) =>
   );
 
 const GlobalStateProvider: React.FC = ({ children }) => (
-  <ProviderComposer contexts={[<TopBar />, <Authentication />, <Search />]}>
+  <ProviderComposer contexts={[<TopBar />, <Authentication />]}>
     {children}
   </ProviderComposer>
 );

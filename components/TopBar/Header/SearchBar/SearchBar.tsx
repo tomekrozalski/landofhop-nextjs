@@ -1,70 +1,44 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import debounce from 'lodash/debounce';
+import isNil from 'lodash/isNil';
 
-import { SearchContext, TopBarContext } from 'utils/contexts';
-import serverCall, { Endpoints, Status } from 'utils/helpers/serverCall';
+import { TopBarContext } from 'utils/contexts';
 import Button from './Button';
 import styles from './SearchBar.module.css';
 
 const Searchbar = () => {
-  const { locale } = useIntl();
+  const { formatMessage } = useIntl();
+  const { pathname, push, query } = useRouter();
   const input = useRef(null!);
   const { setLoginbar, setNavbar, setSearchbarActive } = useContext(
     TopBarContext,
   );
-  const { setSearchResults, setStatus } = useContext(SearchContext);
 
-  const [isActive, setActive] = useState(false);
-  const [text, setText] = useState('');
-  const [searchFor, setSearchFor] = useState('');
+  const isActive = !isNil(query?.search);
 
   useEffect(() => {
     if (isActive) {
       setLoginbar(false);
       setNavbar(false);
+      setSearchbarActive(true);
       input.current.focus();
     } else {
       setSearchbarActive(false);
-      setText('');
-      setSearchFor('');
-      setSearchResults([]);
     }
-  }, [isActive]);
-
-  const handleChange = useCallback(debounce(setSearchFor, 1000), []);
-
-  useEffect(() => {
-    return () => handleChange.cancel();
-  }, []);
-
-  useEffect(() => {
-    if (searchFor) {
-      setStatus(Status.pending);
-
-      serverCall(Endpoints.beverageSearch, {
-        method: 'POST',
-        body: JSON.stringify({ phrase: searchFor, language: locale }),
-      }).then(values => {
-        setSearchResults(values);
-        setStatus(Status.resolved);
-      });
-    } else {
-      setSearchResults([]);
-      setStatus(Status.rejected);
-    }
-  }, [searchFor]);
+  }, [query?.search]);
 
   const onSearchChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const { value } = e.currentTarget;
+    const { value: search } = e.currentTarget;
 
-    if (value) {
+    if (search) {
       setSearchbarActive(true);
     }
 
-    handleChange(value);
-    setText(value);
+    push({ pathname, query: { ...query, search } }, undefined, {
+      shallow: true,
+    });
   };
 
   return (
@@ -73,11 +47,11 @@ const Searchbar = () => {
         type="text"
         className={styles.input}
         onChange={onSearchChange}
-        placeholder="szukaj"
+        placeholder={formatMessage({ id: 'global.search' })}
         ref={input}
-        value={text}
+        value={query?.search ?? ''}
       />
-      <Button isActive={isActive} setActive={setActive} />
+      <Button />
     </div>
   );
 };

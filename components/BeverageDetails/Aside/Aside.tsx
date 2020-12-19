@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { Basics } from 'utils/types/Beverage';
 import LeftIcon from 'elements/icons/Left';
@@ -10,33 +11,53 @@ type Props = {
   previous: Basics | null;
 };
 
-const Aside: React.FC<Props> = ({ next, previous }) => (
-  <aside className={styles.aside}>
-    {next ? (
-      <Link href={`/details/${next.shortId}/${next.brand.badge}/${next.badge}`}>
-        <a>
-          <LeftIcon message="beverage.next" />
-        </a>
-      </Link>
-    ) : (
-      <span>
-        <LeftIcon />
-      </span>
-    )}
-    {previous ? (
-      <Link
-        href={`/details/${previous.shortId}/${previous.brand.badge}/${previous.badge}`}
-      >
-        <a>
-          <RightIcon message="beverage.previous" />
-        </a>
-      </Link>
-    ) : (
-      <span>
-        <RightIcon />
-      </span>
-    )}
-  </aside>
-);
+const Aside: React.FC<Props> = ({ next, previous }) => {
+  const { pathname } = useRouter();
+
+  return (
+    <aside className={styles.aside}>
+      {next ? (
+        <Link
+          href={{
+            pathname,
+            query: {
+              brand: next.brand.badge,
+              name: next.badge,
+              shortId: next.shortId,
+            },
+          }}
+        >
+          <a>
+            <LeftIcon message="beverage.next" />
+          </a>
+        </Link>
+      ) : (
+        <span>
+          <LeftIcon />
+        </span>
+      )}
+      {previous ? (
+        <Link
+          href={{
+            pathname,
+            query: {
+              brand: previous.brand.badge,
+              name: previous.badge,
+              shortId: previous.shortId,
+            },
+          }}
+        >
+          <a>
+            <RightIcon message="beverage.previous" />
+          </a>
+        </Link>
+      ) : (
+        <span>
+          <RightIcon />
+        </span>
+      )}
+    </aside>
+  );
+};
 
 export default Aside;

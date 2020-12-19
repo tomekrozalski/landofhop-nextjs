@@ -1,17 +1,47 @@
-import { useContext } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FormattedMessage, useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
+import debounce from 'lodash/debounce';
 
-import { SearchContext } from 'utils/contexts';
-import { Status } from 'utils/helpers/serverCall';
+import serverCall, { Endpoints, Status } from 'utils/helpers/serverCall';
 import BeverageCoverImage from 'elements/BeverageCoverImage';
 import { ImageType } from 'utils/enums/Beverage';
 import Spinner from 'elements/Spinner';
 import styles from './LandingPage.module.css';
 
 const SearchResults: React.FC = () => {
-  const { searchResults, status } = useContext(SearchContext);
-  const { formatMessage } = useIntl();
+  const { formatMessage, locale } = useIntl();
+  const { query } = useRouter();
+  const [status, setStatus] = useState(Status.idle);
+  const [searchResults, setSearchResults] = useState([]);
+
+  const getResults = useCallback(
+    debounce(phrase => {
+      serverCall(Endpoints.beverageSearch, {
+        method: 'POST',
+        body: JSON.stringify({ phrase, language: locale }),
+      }).then(values => {
+        setSearchResults(values);
+        setStatus(Status.resolved);
+      });
+    }, 1000),
+    [],
+  );
+
+  useEffect(() => {
+    if (query?.search) {
+      setStatus(Status.pending);
+      getResults(query.search);
+    } else {
+      setSearchResults([]);
+      setStatus(Status.rejected);
+    }
+  }, [query?.search]);
+
+  useEffect(() => {
+    return () => getResults.cancel();
+  }, []);
 
   if (status === Status.pending) {
     return <Spinner />;
