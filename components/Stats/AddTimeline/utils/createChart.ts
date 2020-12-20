@@ -62,28 +62,6 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
   });
 
   // ----------------------------------------------------
-  // behaviour on mouse cursor over lines
-
-  function handleMouseOverLine(this: SVGPathElement | SVGTextElement) {
-    const badge = this.classList[1];
-    function isNotCurrent(this: any) {
-      return !this.classList.contains(badge);
-    }
-    d3.selectAll(`.${styles.addTimeline} .line-path`).classed(
-      'fade-out',
-      isNotCurrent,
-    );
-    d3.selectAll(`.${styles.addTimeline} .legend > g`).classed(
-      'fade-out',
-      isNotCurrent,
-    );
-  }
-
-  function handleMouseOutLine() {
-    d3.selectAll(`.${styles.addTimeline} .fade-out`).classed('fade-out', false);
-  }
-
-  // ----------------------------------------------------
   // behaviour on mouse cursor over bars
 
   const handleMouseOverBar = (
@@ -132,35 +110,26 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
   };
 
   // ----------------------------------------------------
-  // Add hidden lines
+  // behaviour on mouse cursor over lines
 
-  const lines = chart.append('g').attr('data-attr', 'lines');
-
-  const lineGenerator = (type: any) =>
-    d3
-      .line<AddTimelineBar>()
-      .x(d => xScale(xValue(d)) || 0)
-      .y(d => yScale(type(d)))
-      .curve(d3.curveBasis);
-
-  function getTotalLength(this: SVGPathElement) {
-    return this.getTotalLength();
+  function handleMouseOverLine(this: SVGPathElement | SVGTextElement) {
+    const badge = this.classList[1];
+    function isNotCurrent(this: any) {
+      return !this.classList.contains(badge);
+    }
+    d3.selectAll(`.${styles.addTimeline} .line-path`).classed(
+      'fade-out',
+      isNotCurrent,
+    );
+    d3.selectAll(`.${styles.addTimeline} .legend > g`).classed(
+      'fade-out',
+      isNotCurrent,
+    );
   }
 
-  const types = { cans, bottles, total };
-
-  Object.entries(types).forEach(([name, func]) => {
-    lines
-      .append('path')
-      .datum<any>(data)
-      .classed(`line-path ${name}`, true)
-      .attr('d', lineGenerator(func))
-      .attr('transform', `translate(${xScale.bandwidth() / 2}, 0)`)
-      .attr('stroke-dashoffset', getTotalLength)
-      .attr('stroke-dasharray', getTotalLength)
-      .on('mouseover', handleMouseOverLine)
-      .on('mouseout', handleMouseOutLine);
-  });
+  function handleMouseOutLine() {
+    d3.selectAll(`.${styles.addTimeline} .fade-out`).classed('fade-out', false);
+  }
 
   // ----------------------------------------------------
   // Add hidden bars
@@ -201,19 +170,40 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
     .attr('height', d => innerHeight - yScale(bottles(d)))
     .attr('y', d => innerHeight - yScale(cans(d)));
 
+  // ----------------------------------------------------
+  // Add hidden lines
+
+  const lines = chart.append('g').attr('data-attr', 'lines');
+
+  const lineGenerator = (type: any) =>
+    d3
+      .line<AddTimelineBar>()
+      .x(d => xScale(xValue(d)) || 0)
+      .y(d => yScale(type(d)))
+      .curve(d3.curveBasis);
+
+  function getTotalLength(this: SVGPathElement) {
+    return this.getTotalLength();
+  }
+
+  const types = { cans, bottles, total };
+
+  Object.entries(types).forEach(([name, func]) => {
+    lines
+      .append('path')
+      .datum<any>(data)
+      .classed(`line-path ${name}`, true)
+      .attr('d', lineGenerator(func))
+      .attr('transform', `translate(${xScale.bandwidth() / 2}, 0)`)
+      .attr('stroke-dashoffset', getTotalLength)
+      .attr('stroke-dasharray', getTotalLength)
+      .on('mouseover', handleMouseOverLine)
+      .on('mouseout', handleMouseOutLine);
+  });
+
   const reveal = () => {
     const duration = 3500;
     const time = duration / data.length;
-
-    Object.keys(types).forEach(name => {
-      lines
-        .select(`.line-path.${name}`)
-        .transition()
-        .duration(duration)
-        .delay(1000)
-        .ease(d3.easeSin)
-        .attr('stroke-dashoffset', 0);
-    });
 
     data.forEach((_, index) => {
       setTimeout(() => {
@@ -254,6 +244,16 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
           .attr('height', d => innerHeight - yScale(bottles(d)))
           .attr('y', d => innerHeight - yScale(cans(d)));
       }, (index + 1) * time);
+    });
+
+    Object.keys(types).forEach(name => {
+      lines
+        .select(`.line-path.${name}`)
+        .transition()
+        .duration(duration)
+        .delay(1000)
+        .ease(d3.easeSin)
+        .attr('stroke-dashoffset', 0);
     });
   };
 

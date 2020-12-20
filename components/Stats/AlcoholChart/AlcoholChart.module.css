@@ -1,14 +1,14 @@
 .alcoholChart :global(.bar) {
-  fill: var(--color-brand-7);
+  fill: var(--color-brand-10);
   cursor: pointer;
 }
 
 .alcoholChart :global(.bar.average) {
-  fill: var(--color-brand-5);
+  fill: var(--color-brand-6);
 }
 
 .alcoholChart :global([class^='bar-label']) rect {
-  fill: var(--color-brand-7);
+  fill: var(--color-brand-10);
   stroke: var(--color-white);
 }
 

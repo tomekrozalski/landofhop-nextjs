@@ -3,11 +3,11 @@
 }
 
 .fermentationTimeline :global(.line-path.bottom) {
-  stroke: var(--color-brand-4);
+  stroke: var(--color-brand-9);
 }
 
 .fermentationTimeline :global(.line-path.spontaneous) {
-  stroke: var(--color-brand-5);
+  stroke: var(--color-brand-7);
 }
 
 @media (min-width: 700px) {

@@ -25,18 +25,18 @@
 
 @keyframes smoothColor {
   0% {
-    fill: var(--color-brand-4);
-  }
-  50% {
     fill: var(--color-brand-5);
   }
+  50% {
+    fill: var(--color-brand-6);
+  }
   100% {
-    fill: var(--color-brand-4);
+    fill: var(--color-brand-5);
   }
 }
 
 .logo .o {
-  fill: var(--color-brand-4);
+  fill: var(--color-brand-5);
   animation: smoothColor 15s infinite;
 }
 

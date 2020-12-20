@@ -3,19 +3,25 @@
   --color-white: #fff;
 
   --color-brand-1: #f94144;
-  --color-brand-1-light: #fee7e7;
+  --color-brand-1-light: #fdcfd0;
   --color-brand-2: #f3722c;
-  --color-brand-2-light: #fdede4;
+  --color-brand-2-light: #fcdcca;
   --color-brand-3: #f8961e;
-  --color-brand-3-light: #fef1e2;
-  --color-brand-4: #f9c74f;
-  --color-brand-4-light: #fef8e9;
-  --color-brand-5: #90be6d;
-  --color-brand-5-light: #f1f6ec;
-  --color-brand-6: #43aa8b;
-  --color-brand-6-light: #e7f4f0;
-  --color-brand-7: #577590;
-  --color-brand-7-light: #abbac7;
+  --color-brand-3-light: #fde5c7;
+  --color-brand-4: #f9844a;
+  --color-brand-4-light: #fde0d2;
+  --color-brand-5: #f9c74f;
+  --color-brand-5-light: #fdf1d3;
+  --color-brand-6: #90be6d;
+  --color-brand-6-light: #e3efda;
+  --color-brand-7: #43aa8b;
+  --color-brand-7-light: #d0eae2;
+  --color-brand-8: #4d908e;
+  --color-brand-8-light: #d2e3e3;
+  --color-brand-9: #577590;
+  --color-brand-9-light: #c9dee7;
+  --color-brand-10: #277da1;
+  --color-brand-10-light: #d5dce3;
 
   --color-grey-1: #aaa; /* darker */
   --color-grey-2: #ccc; /* dark */
@@ -23,17 +29,17 @@
   --color-grey-4: #eee; /* brighter */
   --color-grey-5: #f5f5f5; /* brightest */
 
-  --color-success: var(--color-brand-5); /* previous: #4cb231; */
+  --color-success: var(--color-brand-6);
   /* --color-success-light: #beddb5; */
-  --color-warning: var(--color-brand-4); /* previous: #d0be26; */
-  --color-danger: var(--color-brand-1); /* previous: #be5656; */
+  --color-warning: var(--color-brand-5);
+  --color-danger: var(--color-brand-1);
   --color-danger-light: var(--color-brand-3);
-  --color-label: var(--color-brand-3);
-  --color-label-light: var(--color-brand-3-light);
-  --color-producer: var(--color-brand-3); /* previous #c67e89; */
-  --color-producer-light: var(--color-brand-3-light); /* previous #ffe6ea; */
-  --color-editorial: var(--color-brand-7); /* previous #577dc0; */
-  --color-editorial-light: var(--color-brand-7-light); /* previous  #c1d5f8; */
+  --color-label: var(--color-brand-5);
+  --color-label-light: var(--color-brand-5-light);
+  --color-producer: var(--color-brand-6);
+  --color-producer-light: var(--color-brand-6-light);
+  --color-editorial: var(--color-brand-10);
+  --color-editorial-light: var(--color-brand-10-light);
 
   /*
   --color-ingredients-hop: #2a9d8f;

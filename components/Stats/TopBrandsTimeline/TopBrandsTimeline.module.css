@@ -1,43 +1,3 @@
-.topBrandsTimeline :global(.line-path:nth-child(1)) {
-  stroke: var(--color-brand-6-light);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(2)) {
-  stroke: var(--color-brand-1-light);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(3)) {
-  stroke: var(--color-brand-7-light);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(4)) {
-  stroke: var(--color-brand-4);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(5)) {
-  stroke: var(--color-brand-5);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(6)) {
-  stroke: var(--color-brand-3);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(7)) {
-  stroke: var(--color-brand-6);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(8)) {
-  stroke: var(--color-brand-2);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(9)) {
-  stroke: var(--color-brand-7);
-}
-
-.topBrandsTimeline :global(.line-path:nth-child(10)) {
-  stroke: var(--color-brand-1);
-}
-
 .legend {
   display: flex;
   flex-wrap: wrap;
@@ -62,61 +22,11 @@
   width: var(--size-input-height);
   height: var(--size-input-height);
   border-radius: 50%;
-  border: 0.3rem solid var(--color-brand-4);
+  border: 0.3rem solid var(--color-black);
   font-weight: var(--font-weight-medium);
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.legendItem:nth-child(1)::before {
-  border-color: var(--color-brand-1);
-  color: var(--color-brand-1);
-}
-
-.legendItem:nth-child(2)::before {
-  border-color: var(--color-brand-7);
-  color: var(--color-brand-7);
-}
-
-.legendItem:nth-child(3)::before {
-  border-color: var(--color-brand-2);
-  color: var(--color-brand-2);
-}
-
-.legendItem:nth-child(4)::before {
-  border-color: var(--color-brand-6);
-  color: var(--color-brand-6);
-}
-
-.legendItem:nth-child(5)::before {
-  border-color: var(--color-brand-3);
-  color: var(--color-brand-3);
-}
-
-.legendItem:nth-child(6)::before {
-  border-color: var(--color-brand-5);
-  color: var(--color-brand-5);
-}
-
-.legendItem:nth-child(7)::before {
-  border-color: var(--color-brand-4);
-  color: var(--color-brand-4);
-}
-
-.legendItem:nth-child(8)::before {
-  border-color: var(--color-brand-7-light);
-  color: var(--color-brand-7-light);
-}
-
-.legendItem:nth-child(9)::before {
-  border-color: var(--color-brand-1-light);
-  color: var(--color-brand-1-light);
-}
-
-.legendItem:nth-child(10)::before {
-  border-color: var(--color-brand-6-light);
-  color: var(--color-brand-6-light);
 }
 
 .legendItem::after {
@@ -125,6 +35,96 @@
 
 .legend.highlighted .legendItem:not(.selected) {
   opacity: 0.1;
+}
+
+.topBrandsTimeline :global(.line-path-1) {
+  stroke: var(--color-brand-1);
+}
+
+.topBrandsLegend1::before {
+  border-color: var(--color-brand-1);
+  color: var(--color-brand-1);
+}
+
+.topBrandsTimeline :global(.line-path-2) {
+  stroke: var(--color-brand-2);
+}
+
+.topBrandsLegend2::before {
+  border-color: var(--color-brand-2);
+  color: var(--color-brand-2);
+}
+
+.topBrandsTimeline :global(.line-path-3) {
+  stroke: var(--color-brand-3);
+}
+
+.topBrandsLegend3::before {
+  border-color: var(--color-brand-3);
+  color: var(--color-brand-3);
+}
+
+.topBrandsTimeline :global(.line-path-4) {
+  stroke: var(--color-brand-4);
+}
+
+.topBrandsLegend4::before {
+  border-color: var(--color-brand-4);
+  color: var(--color-brand-4);
+}
+
+.topBrandsTimeline :global(.line-path-5) {
+  stroke: var(--color-brand-5);
+}
+
+.topBrandsLegend5::before {
+  border-color: var(--color-brand-5);
+  color: var(--color-brand-5);
+}
+
+.topBrandsTimeline :global(.line-path-6) {
+  stroke: var(--color-brand-6);
+}
+
+.topBrandsLegend6::before {
+  border-color: var(--color-brand-6);
+  color: var(--color-brand-6);
+}
+
+.topBrandsTimeline :global(.line-path-7) {
+  stroke: var(--color-brand-7);
+}
+
+.topBrandsLegend7::before {
+  border-color: var(--color-brand-7);
+  color: var(--color-brand-7);
+}
+
+.topBrandsTimeline :global(.line-path-8) {
+  stroke: var(--color-brand-8);
+}
+
+.topBrandsLegend8::before {
+  border-color: var(--color-brand-8);
+  color: var(--color-brand-8);
+}
+
+.topBrandsTimeline :global(.line-path-9) {
+  stroke: var(--color-brand-9);
+}
+
+.topBrandsLegend9::before {
+  border-color: var(--color-brand-9);
+  color: var(--color-brand-9);
+}
+
+.topBrandsTimeline :global(.line-path-10) {
+  stroke: var(--color-brand-10);
+}
+
+.topBrandsLegend10::before {
+  border-color: var(--color-brand-10);
+  color: var(--color-brand-10);
 }
 
 @media (min-width: 700px) {

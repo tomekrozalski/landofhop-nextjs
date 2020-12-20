@@ -13,23 +13,23 @@
 }
 
 .addTimeline :global(rect.bottles) {
-  fill: var(--color-brand-5);
+  fill: var(--color-brand-6);
 }
 
 .addTimeline :global(rect.cans) {
-  fill: var(--color-brand-3);
+  fill: var(--color-brand-5);
 }
 
 .addTimeline :global(.line-path.total) {
-  stroke: var(--color-brand-7);
+  stroke: var(--color-brand-8);
 }
 
 .addTimeline :global(.line-path.bottles) {
-  stroke: var(--color-brand-5);
+  stroke: var(--color-brand-6);
 }
 
 .addTimeline :global(.line-path.cans) {
-  stroke: var(--color-brand-3);
+  stroke: var(--color-brand-5);
 }
 
 .addTimeline :global(.legend .label) {

@@ -34,7 +34,7 @@ const TopBrandsTimeline: React.FC<{ data: TopBrandsTimelineBar[] }> = ({
 
   useEffect(() => {
     function isNotCurrent(this: SVGPathElement) {
-      return !!selected && this.classList[1] !== selected;
+      return !!selected && this.classList[2] !== selected;
     }
 
     d3.selectAll(`svg.${styles.topBrandsTimeline} .line-path`).classed(
@@ -55,9 +55,13 @@ const TopBrandsTimeline: React.FC<{ data: TopBrandsTimelineBar[] }> = ({
           .map(({ badge, id, name }, i) => (
             <li
               key={id}
-              className={clsx(styles.legendItem, {
-                [styles.selected]: selected === badge,
-              })}
+              className={clsx(
+                styles.legendItem,
+                styles[`topBrandsLegend${i + 1}`],
+                {
+                  [styles.selected]: selected === badge,
+                },
+              )}
               data-order={i + 1}
               onMouseEnter={() => setSelected(badge)}
               onMouseLeave={() => setSelected(null)}

@@ -64,11 +64,11 @@ const createChart = ({ data, intl, setSelected, sizes, wrapper }: Props) => {
   // behaviour on mouse cursor over
 
   function handleMouseOver(this: SVGPathElement | SVGTextElement) {
-    const badge = this.classList[1];
+    const badge = this.classList[2];
     setSelected(badge);
 
     function isNotCurrent(this: SVGPathElement) {
-      return this.classList[1] !== badge;
+      return this.classList[2] !== badge;
     }
 
     d3.selectAll(`svg.${specificStyles.topBrandsTimeline} .line-path`).classed(
@@ -108,7 +108,7 @@ const createChart = ({ data, intl, setSelected, sizes, wrapper }: Props) => {
       lines
         .append('path')
         .datum<any>(data)
-        .classed(`line-path ${badge}`, true)
+        .classed(`line-path line-path-${10 - i} ${badge}`, true)
         .attr('d', lineGenerator(id))
         .attr('transform', `translate(${xScale.bandwidth() / 2}, 0)`)
         .attr('stroke-dashoffset', getTotalLength)
