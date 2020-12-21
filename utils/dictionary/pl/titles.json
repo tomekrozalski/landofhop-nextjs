@@ -1,5 +1,6 @@
 {
   "about": "O stronie",
+  "accessDenied": "🔒 Brak dostępu",
   "beverageDetails": "🍻 {brand}, {name}",
   "main": "Land of Hop{page, plural, one {} other {, 📄 #} }",
   "ingredients": "Składniki 🔥",

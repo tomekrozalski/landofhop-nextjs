@@ -5,6 +5,7 @@
   "loginFailed": "Log in failed",
   "notFound.body": "Redirecting to the home page in {seconds, plural, one {# second} other {# seconds}}",
   "notFound.title": "404 Not Found",
+  "notLoggedIn": "Not logged in",
   "search.nothingFound": "Nothing found",
   "tokenExpired": "Access token expired",
   "tryAgain": "Try again"

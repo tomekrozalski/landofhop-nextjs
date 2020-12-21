@@ -22,9 +22,9 @@ const LoginBar: React.FC = () => {
         { [styles.active]: loginbar },
       )}
     >
-      {status === AuthenticationStatusEnum.error && <LoginError />}
+      {status === AuthenticationStatusEnum.rejected && <LoginError />}
       {status === AuthenticationStatusEnum.expired && <TokenExpired />}
-      {status === AuthenticationStatusEnum.success && <LoginSuccess />}
+      {status === AuthenticationStatusEnum.resolved && <LoginSuccess />}
       <FormBody />
     </div>
   );

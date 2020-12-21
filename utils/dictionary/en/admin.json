@@ -1,4 +1,7 @@
 {
+  "addBeverage": {
+    "title": "Add beverage"
+  },
   "confirmationToRemove": "Are you sure?",
   "lastTimeUpdated": "Last time updated",
   "removeBeverage": "Remove beverage",

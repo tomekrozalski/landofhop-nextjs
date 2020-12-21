@@ -8,10 +8,11 @@ import serverCall, { Endpoints } from 'utils/helpers/serverCall';
 import { TopBarContext } from './TopBar';
 
 export enum AuthenticationStatusEnum {
-  idle,
-  error,
   expired,
-  success,
+  idle,
+  pending,
+  resolved,
+  rejected,
 }
 
 export const AuthenticationContext = React.createContext({
@@ -42,7 +43,7 @@ const Authentication: React.FC = ({ children }) => {
   const { setLoginbar, setNavbar } = useContext(TopBarContext);
 
   useEffect(() => {
-    setLoggedIn(authenticationStatus === AuthenticationStatusEnum.success);
+    setLoggedIn(authenticationStatus === AuthenticationStatusEnum.resolved);
   }, [authenticationStatus]);
 
   const logInAfterFailure = () => {
@@ -75,7 +76,7 @@ const Authentication: React.FC = ({ children }) => {
         if (differenceInSeconds(expirationDate, new Date()) > 10) {
           setToken(value);
           setTokenExpirationDate(expirationDate);
-          setAuthenticationStatus(AuthenticationStatusEnum.success);
+          setAuthenticationStatus(AuthenticationStatusEnum.resolved);
           resolve(value);
         } else {
           tokenExpired();
@@ -96,6 +97,8 @@ const Authentication: React.FC = ({ children }) => {
   }, []);
 
   const logIn = (formValues: { email: string; password: string }) => {
+    setAuthenticationStatus(AuthenticationStatusEnum.pending);
+
     return serverCall(Endpoints.login, {
       method: 'POST',
       body: JSON.stringify(formValues),
@@ -117,7 +120,7 @@ const Authentication: React.FC = ({ children }) => {
           .catch(logOut);
       })
       .catch(() => {
-        setAuthenticationStatus(AuthenticationStatusEnum.error);
+        setAuthenticationStatus(AuthenticationStatusEnum.rejected);
       });
   };
 

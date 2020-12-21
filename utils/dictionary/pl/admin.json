@@ -1,4 +1,7 @@
 {
+  "addBeverage": {
+    "title": "Dodaj piwo"
+  },
   "confirmationToRemove": "Na pewno usunąć?",
   "lastTimeUpdated": "Ostatnim razem poprawiono",
   "removeBeverage": "Usuń piwo",
