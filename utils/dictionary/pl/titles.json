@@ -1,6 +1,7 @@
 {
   "about": "O stronie",
   "accessDenied": "🔒 Brak dostępu",
+  "addBeverage": "🔒 Dodaj nowe piwo",
   "beverageDetails": "🍻 {brand}, {name}",
   "main": "Land of Hop{page, plural, one {} other {, 📄 #} }",
   "ingredients": "Składniki 🔥",

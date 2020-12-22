@@ -1,6 +1,7 @@
 {
   "about": "About the site",
   "accessDenied": "🔒 Access denied",
+  "addBeverage": "🔒 Add new beverage",
   "beverageDetails": "🍻 {brand}, {name}",
   "main": "Land of Hop{page, plural, one {} other {, 📄 #} }",
   "ingredients": "Ingredients 🔥",

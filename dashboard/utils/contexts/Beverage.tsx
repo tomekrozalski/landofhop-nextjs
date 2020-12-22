@@ -4,10 +4,12 @@ import { Status } from 'utils/helpers/serverCall';
 // import { AuthenticationContext } from 'utils/contexts';
 // import { FormType, Subform as SubformEnum } from 'dashboard/utils/enums';
 // import { LanguageContext } from 'dashboard/utils/contexts';
-import { FormValues as FormValuesLabel } from 'dashboard/BeverageData/Label/utils';
+import {
+  FormValues as FormValuesLabel,
+  initialValues as initialLabel,
+} from 'dashboard/BeverageData/Label/utils';
 // import { FormValues as FormValuesProducer } from 'dashboard/BeverageData/Producer/utils';
 // import { FormValues as FormValuesEditorial } from 'dashboard/BeverageData/Editorial/utils';
-import { label as initialLabel } from '../initialValues/beverage';
 
 export const BeverageContext = React.createContext({
   // editorial: initialEditorialValues as FormValuesEditorial,

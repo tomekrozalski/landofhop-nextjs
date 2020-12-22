@@ -1,6 +1,23 @@
 {
-  "addBeverage": {
-    "title": "Add beverage"
+  "beverage": {
+    "add": "Add new beverage",
+    "brandInfo": "Informations connected with branding",
+    "brewingInfo": "Informations connected with brewing",
+    "editorialInfo": {
+      "description": "Final information, from the editorial office, somehow unofficial",
+      "title": "Editorial"
+    },
+    "impressionsInfo": "Informations connected with impressions",
+    "ingredientsInfo": "Informations connected with ingredients",
+    "labelInfo": {
+      "description": "Data which could be taken just from the container",
+      "title": "Label"
+    },
+    "otherInfo": "Other informations",
+    "producerInfo": {
+      "description": "Supplementary data about the product from the manufacturer's website or other promotional materials",
+      "title": "Producer"
+    }
   },
   "confirmationToRemove": "Are you sure?",
   "lastTimeUpdated": "Last time updated",

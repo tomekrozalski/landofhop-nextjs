@@ -2,6 +2,7 @@
   "about": "About",
   "about.body": "**Land of Hop** is a web application which I develop to practice programming skills (React, Next, Node, Nest, MongoDB). It is catalog of beers which I have drunk since October 2017. I work on it [almost every single day](https://github.com/tomekrozalski). For now, it is quite poor, because I focus on the technical aspects of building the application, but I will try to systematically add new functionalities to it. [Tomek Różalski](http://tomaszrozalski.pl)",
   "added": "added",
+  "badge": "Badge",
   "category": "category",
   "city": "city",
   "close": "Close",

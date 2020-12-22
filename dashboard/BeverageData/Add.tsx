@@ -1,30 +1,22 @@
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-// import { Spinner } from 'elements';
-
+import HeadTitle from 'elements/HeadTitle';
 import { DashboardWrapper } from 'dashboard/elements';
-import { BeverageContext } from 'dashboard/utils/contexts';
 // import { DashboardModal } from 'dashboard/elements';
-// import { Navigation } from './elements';
-// import { Form } from '.';
+import { ProgressList } from './elements';
+import Form from './Form';
 
-const Add: React.FC = () => {
-  const { label, status } = useContext(BeverageContext);
-
-  console.log('status', status);
-  console.log('label', label);
-
-  return (
-    <article>
-      <h1>
-        <FormattedMessage id="admin.addBeverage.title" />
-      </h1>
-      {/* <Navigation /> */}
-      {/* {beverageDataLoadStatus !== StatusEnum.idle ? <Spinner /> : <Form />} */}
-      {/* <DashboardModal /> */}
-    </article>
-  );
-};
+const Add: React.FC = () => (
+  <article>
+    <h1>
+      <FormattedMessage id="admin.beverage.add" />
+    </h1>
+    <ProgressList />
+    <Form />
+    {/* <DashboardModal /> */}
+    <HeadTitle title="addBeverage" />
+  </article>
+);
 
 export default DashboardWrapper(Add);
