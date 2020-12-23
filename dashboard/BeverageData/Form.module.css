@@ -37,6 +37,13 @@
   background: var(--color-white);
 }
 
+.form footer {
+  grid-template-columns: 22rem 1fr;
+  margin-top: 4rem;
+  margin-left: 69rem;
+}
+
+.form footer,
 .grid {
   display: grid;
   grid-gap: 1rem;
@@ -46,5 +53,11 @@
 .grid.basic {
   grid-template-columns:
     repeat(2, 45rem) repeat(2, var(--size-input-height))
+    1fr;
+}
+
+.grid.double {
+  grid-template-columns:
+    45rem repeat(2, 22rem) repeat(2, var(--size-input-height))
     1fr;
 }

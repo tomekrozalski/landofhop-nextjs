@@ -7,7 +7,7 @@ import {
 const initialValues = {
   badge: 'abc',
   // -----------
-  // name: [{ lang: { value: '' }, value: '' }],
+  name: [{ lang: { value: '' }, value: '' }],
   // series: [],
   // brand: { label: '', value: '' },
   // cooperation: null,
