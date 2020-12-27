@@ -1,0 +1,31 @@
+.add,
+.remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--size-input-height);
+  font-size: 2rem;
+  transition: color var(--transition-default),
+    background-color var(--transition-default);
+  cursor: pointer;
+}
+
+.add {
+  background-color: var(--color-grey-4);
+  color: var(--color-grey-2);
+}
+
+.add:hover {
+  background-color: var(--color-black);
+  color: var(--color-grey-3);
+}
+
+.remove {
+  background-color: var(--color-danger-light);
+  color: var(--color-white);
+}
+
+.remove:hover {
+  background-color: var(--color-danger);
+}

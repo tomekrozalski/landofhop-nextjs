@@ -4,6 +4,8 @@ import { useFieldArray, useFormContext } from 'react-hook-form';
 
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
+import { ActionButtons } from 'dashboard/BeverageData/elements';
+import { LanguageSelect } from 'dashboard/BeverageData/elements/Select';
 import styles from 'dashboard/BeverageData/Form.module.css';
 
 const Name: React.FC = () => {
@@ -15,7 +17,7 @@ const Name: React.FC = () => {
   return (
     <div className={clsx(styles.grid, styles.double)}>
       <Label form="label" htmlFor="name" name="name" required />
-      {fields.map(({ id }, index) => (
+      {fields.map(({ id, lang, value }, index) => (
         <Fragment key={id}>
           <TextInput
             error={formState.errors.name}
@@ -25,8 +27,9 @@ const Name: React.FC = () => {
             required
             style={{ gridColumn: '2/3' }}
             touched={formState.touched.name}
+            defaultValue={value}
           />
-          <TextInput
+          <LanguageSelect
             error={formState.errors.name}
             form="label"
             name={`name[${index}].lang`}
@@ -34,12 +37,14 @@ const Name: React.FC = () => {
             required
             style={{ gridColumn: '3/4' }}
             touched={formState.touched.name}
+            defaultValue={lang}
           />
           {fields.length === index + 1 && (
-            <>
-              <button onClick={() => remove(index)}>remove</button>
-              <button onClick={() => append({})}>append</button>
-            </>
+            <ActionButtons
+              append={() => append({ lang: '', value: 'test' })}
+              remove={() => remove(index)}
+              withRemove={fields.length > 1}
+            />
           )}
         </Fragment>
       ))}
