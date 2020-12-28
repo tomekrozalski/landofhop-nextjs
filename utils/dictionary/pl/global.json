@@ -14,6 +14,7 @@
   "country": "kraj",
   "denial": "nie",
   "email": "email",
+  "loading": "Ładuję…",
   "login": "Zaloguj",
   "loginSuccess": "Zalogowano poprawnie. Token dostępowy wygasa {expiresIn}.",
   "logout": "Wyloguj",

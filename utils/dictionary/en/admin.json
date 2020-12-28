@@ -20,7 +20,15 @@
     }
   },
   "confirmationToRemove": "Are you sure?",
+  "language": {
+    "group": {
+      "defaults": "Defaults",
+      "others": "Others"
+    },
+    "none": "Not applicable"
+  },
   "lastTimeUpdated": "Last time updated",
+  "loadError": "Load error",
   "removeBeverage": "Remove beverage",
   "update": "Update data",
   "updatePhotos": "Update photos"

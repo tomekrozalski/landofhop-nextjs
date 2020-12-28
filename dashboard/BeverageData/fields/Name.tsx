@@ -14,34 +14,33 @@ const Name: React.FC = () => {
     name: 'name',
   });
 
+  console.log('fields', fields, formState.errors);
+
   return (
     <div className={clsx(styles.grid, styles.double)}>
       <Label form="label" htmlFor="name" name="name" required />
       {fields.map(({ id, lang, value }, index) => (
         <Fragment key={id}>
           <TextInput
-            error={formState.errors.name}
+            error={formState.errors.name?.[index]?.value}
             form="label"
             name={`name[${index}].value`}
             ref={register()}
             required
             style={{ gridColumn: '2/3' }}
-            touched={formState.touched.name}
+            touched={formState.touched.name?.[index]?.value ?? false}
             defaultValue={value}
           />
           <LanguageSelect
-            error={formState.errors.name}
-            form="label"
+            error={formState.errors.name?.[index]?.lang}
             name={`name[${index}].lang`}
             ref={register()}
-            required
             style={{ gridColumn: '3/4' }}
-            touched={formState.touched.name}
             defaultValue={lang}
           />
           {fields.length === index + 1 && (
             <ActionButtons
-              append={() => append({ lang: '', value: 'test' })}
+              append={() => append({ lang: '', value: '' })}
               remove={() => remove(index)}
               withRemove={fields.length > 1}
             />

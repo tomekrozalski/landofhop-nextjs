@@ -1,30 +1,30 @@
-import { Lang } from 'dashboard/utils/types/form';
-import {
-  AgedPreviousContent,
-  AgedTimeUnit,
-  AgedType,
-  AgedWood,
-  AlcoholRelate,
-  AlcoholScope,
-  AlcoholUnit,
-  BeverageType,
-  ContainerColor,
-  ContainerMaterial,
-  ContainerType,
-  ContainerUnit,
-  Currency,
-  ExpirationDateUnit,
-  ExtractRelate,
-  ExtractUnit,
-  HopRateUnit,
-  IngredientType,
-  TemperatureUnit,
-} from 'utils/enums/Beverage';
+import { LanguageValue } from 'utils/types/common';
+// import {
+//   AgedPreviousContent,
+//   AgedTimeUnit,
+//   AgedType,
+//   AgedWood,
+//   AlcoholRelate,
+//   AlcoholScope,
+//   AlcoholUnit,
+//   BeverageType,
+//   ContainerColor,
+//   ContainerMaterial,
+//   ContainerType,
+//   ContainerUnit,
+//   Currency,
+//   ExpirationDateUnit,
+//   ExtractRelate,
+//   ExtractUnit,
+//   HopRateUnit,
+//   IngredientType,
+//   TemperatureUnit,
+// } from 'utils/enums/Beverage';
 
 export type FormValues = {
   badge: string;
   // -----------
-  // name: { lang: Lang; value: string }[];
+  name: { lang: LanguageValue; value: string }[];
   // series: {
   //   lang: Lang;
   //   value: string;

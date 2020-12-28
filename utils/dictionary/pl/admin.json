@@ -20,7 +20,15 @@
     }
   },
   "confirmationToRemove": "Na pewno usunąć?",
+  "language": {
+    "group": {
+      "defaults": "Najczęstsze",
+      "others": "Pozostałe"
+    },
+    "none": "nie dotyczy"
+  },
   "lastTimeUpdated": "Ostatnim razem poprawiono",
+  "loadError": "Błąd pobierania",
   "removeBeverage": "Usuń piwo",
   "update": "Popraw informacje",
   "updatePhotos": "Popraw zdjęcia"

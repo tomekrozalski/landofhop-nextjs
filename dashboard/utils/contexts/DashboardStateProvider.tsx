@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Beverage } from '.';
+import { Beverage, Language } from '.';
 
 type Props = {
   contexts: any;
@@ -16,7 +16,9 @@ const ProviderComposer: React.FC<Props> = ({ contexts, children }) =>
   );
 
 const DashboardStateProvider: React.FC = ({ children }) => (
-  <ProviderComposer contexts={[<Beverage />]}>{children}</ProviderComposer>
+  <ProviderComposer contexts={[<Language />, <Beverage />]}>
+    {children}
+  </ProviderComposer>
 );
 
 export default DashboardStateProvider;

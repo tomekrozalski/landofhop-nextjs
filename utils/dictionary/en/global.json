@@ -14,6 +14,7 @@
   "country": "country",
   "denial": "no",
   "email": "email",
+  "loading": "Loading…",
   "login": "Log in",
   "loginSuccess": "Successfully logged in. Access token expires {expiresIn}.",
   "logout": "Log out",

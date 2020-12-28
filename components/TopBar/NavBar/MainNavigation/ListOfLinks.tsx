@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FormattedMessage } from 'react-intl';
 
-import { TopBarContext } from 'utils/contexts';
+import { AuthenticationContext, TopBarContext } from 'utils/contexts';
 
 const ListOfLinks: React.FC = () => {
   const router = useRouter();
-  // const { isLoggedIn } = useContext(AuthenticationContext);
+  const { isLoggedIn } = useContext(AuthenticationContext);
   const { setLoginbar, setNavbar } = useContext(TopBarContext);
 
   useEffect(() => {
@@ -36,15 +36,15 @@ const ListOfLinks: React.FC = () => {
            <a><FormattedMessage id="beverage.ingredients" /></a>
         </Link> */}
       </li>
-      {/* {isLoggedIn && (
+      {isLoggedIn && (
         <li>
           <Link href="/add-new-beverage">
             <a>
-              <FormattedMessage id="global.addBeverage" />
+              <FormattedMessage id="admin.beverage.add" />
             </a>
           </Link>
         </li>
-      )} */}
+      )}
     </ul>
   );
 };

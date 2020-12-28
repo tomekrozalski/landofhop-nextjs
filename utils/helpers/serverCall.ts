@@ -5,6 +5,7 @@ export enum Endpoints {
   beverageSearch = 'beverage/search',
   beverageStats = 'beverage/stats',
   beverageTotal = 'beverage/total',
+  language = 'language/getAll',
   login = 'auth',
 }
 
