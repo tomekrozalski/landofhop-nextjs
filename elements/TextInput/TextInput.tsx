@@ -46,7 +46,7 @@ const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       className={clsx(styles.textinput, { [styles.colorInvert]: colorInvert })}
       style={style}
     >
-      <FieldStatusIndicator error={error} touched={touched}>
+      <FieldStatusIndicator invalid={!!error} touched={touched}>
         <input {...inputProps} ref={ref} type={type} />
       </FieldStatusIndicator>
     </span>

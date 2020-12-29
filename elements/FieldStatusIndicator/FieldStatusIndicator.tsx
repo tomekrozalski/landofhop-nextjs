@@ -1,4 +1,3 @@
-import { FieldError } from 'react-hook-form';
 import clsx from 'clsx';
 
 import SuccessIcon from 'elements/icons/Success';
@@ -6,26 +5,26 @@ import WarningIcon from 'elements/icons/Warning';
 import styles from './FieldStatusIndicator.module.css';
 
 type Props = {
-  error?: FieldError;
+  invalid?: boolean;
   touched?: boolean;
   type?: 'input' | 'select';
 };
 
 const FieldStatusIndicator: React.FC<Props> = ({
   children,
-  error,
+  invalid,
   touched = false,
   type = 'input',
 }) => (
   <>
-    {touched && error && (
+    {touched && invalid && (
       <WarningIcon
         className={clsx(styles.warningIcon, {
           [styles.select]: type === 'select',
         })}
       />
     )}
-    {touched && !error && (
+    {touched && !invalid && (
       <SuccessIcon
         className={clsx(styles.successIcon, {
           [styles.select]: type === 'select',

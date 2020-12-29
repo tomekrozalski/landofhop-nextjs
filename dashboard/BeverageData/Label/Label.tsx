@@ -48,7 +48,7 @@ const LabelBeverage: React.FC = () => {
         <Name />
         <footer>
           <Button
-            // disabled={!methods.formState.isValid}
+            disabled={!methods.formState.isValid}
             isSubmitting={methods.formState.isSubmitting}
             type="submit"
           >
