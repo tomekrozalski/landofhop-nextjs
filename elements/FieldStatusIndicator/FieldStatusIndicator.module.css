@@ -1,0 +1,27 @@
+.successIcon,
+.warningIcon {
+  display: inline-block;
+  position: absolute;
+  top: calc(var(--size-input-height) / 2);
+  transform: translateY(-50%);
+}
+
+.successIcon {
+  width: 14px;
+  height: 11px;
+  right: 0.6rem;
+}
+
+.successIcon.select {
+  right: 4.8rem;
+}
+
+.warningIcon {
+  width: 14px;
+  height: 13px;
+  right: 0.8rem;
+}
+
+.warningIcon.select {
+  right: 5rem;
+}

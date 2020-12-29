@@ -14,7 +14,7 @@ const Name: React.FC = () => {
     name: 'name',
   });
 
-  console.log('fields', fields, formState.errors);
+  console.log('fields', fields, formState.errors, formState.touched);
 
   return (
     <div className={clsx(styles.grid, styles.double)}>
@@ -32,11 +32,10 @@ const Name: React.FC = () => {
             defaultValue={value}
           />
           <LanguageSelect
-            error={formState.errors.name?.[index]?.lang}
+            defaultValue={lang}
             name={`name[${index}].lang`}
             ref={register()}
             style={{ gridColumn: '3/4' }}
-            defaultValue={lang}
           />
           {fields.length === index + 1 && (
             <ActionButtons

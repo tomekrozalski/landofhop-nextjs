@@ -4,31 +4,6 @@
   position: relative;
 }
 
-.textinput svg {
-  display: inline-block;
-  position: absolute;
-  top: calc(var(--size-input-height) / 2);
-  transform: translateY(-50%);
-}
-
-.dangerIcon {
-  width: 14px;
-  height: 14px;
-  right: 0.8rem;
-}
-
-.successIcon {
-  width: 14px;
-  height: 11px;
-  right: 0.6rem;
-}
-
-.warningIcon {
-  width: 14px;
-  height: 13px;
-  right: 0.8rem;
-}
-
 .textinput input,
 .textinput textarea {
   display: block;

@@ -23,7 +23,7 @@ const schema = Yup.object().shape({
 const FormBody: React.FC = () => {
   const { logIn } = useContext(AuthenticationContext);
   const { register, formState, handleSubmit } = useForm<FormData>({
-    mode: 'onBlur',
+    mode: 'onChange',
     defaultValues: {
       email: '',
       password: '',

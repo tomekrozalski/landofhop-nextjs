@@ -2,8 +2,7 @@ import { forwardRef, CSSProperties } from 'react';
 import { FieldError } from 'react-hook-form';
 import clsx from 'clsx';
 
-import SuccessIcon from 'elements/icons/Success';
-import WarningIcon from 'elements/icons/Warning';
+import FieldStatusIndicator from 'elements/FieldStatusIndicator';
 import styles from './TextInput.module.css';
 
 type Props = {
@@ -47,9 +46,9 @@ const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       className={clsx(styles.textinput, { [styles.colorInvert]: colorInvert })}
       style={style}
     >
-      {touched && error && <WarningIcon className={styles.warningIcon} />}
-      {touched && !error && <SuccessIcon className={styles.successIcon} />}
-      <input {...inputProps} ref={ref} type={type} />
+      <FieldStatusIndicator error={error} touched={touched}>
+        <input {...inputProps} ref={ref} type={type} />
+      </FieldStatusIndicator>
     </span>
   );
 });
