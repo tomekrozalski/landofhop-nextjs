@@ -25,10 +25,10 @@ export type FormValues = {
   badge: string;
   // -----------
   name: { lang: LanguageValue; value: string }[];
-  // series: {
-  //   lang: Lang;
-  //   value: string;
-  // }[];
+  series: {
+    lang: LanguageValue;
+    value: string;
+  }[];
   // brand: {
   //   label: string;
   //   value: string;

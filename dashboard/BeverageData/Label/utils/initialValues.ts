@@ -5,10 +5,10 @@ import {
 } from 'utils/enums/Beverage';
 
 const initialValues = {
-  badge: 'abc',
+  badge: '',
   // -----------
   name: [{ lang: '', value: '' }],
-  // series: [],
+  series: [],
   // brand: { label: '', value: '' },
   // cooperation: null,
   // contract: null,

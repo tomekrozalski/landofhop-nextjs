@@ -21,17 +21,15 @@ export default Yup.object().shape({
     )
     .required()
     .min(1),
-  // series: Yup.array().of(
-  //   Yup.object().shape({
-  //     lang: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     value: Yup.string()
-  //       .min(3)
-  //       .required(),
-  //   }),
-  // ),
+  series: Yup.array().of(
+    Yup.object().shape({
+      lang: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      value: Yup.string().min(3).required(),
+    }),
+  ),
   // brand: Yup.object()
   //   .shape({
   //     label: Yup.string().required(),
