@@ -29,10 +29,10 @@ export type FormValues = {
     lang: LanguageValue;
     value: string;
   }[];
-  // brand: {
-  //   label: string;
-  //   value: string;
-  // };
+  brand: {
+    label: string;
+    value: string;
+  };
   // cooperation:
   //   | {
   //       label: string;

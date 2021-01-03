@@ -1,0 +1,15 @@
+.plug {
+  grid-column: span 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-grey-5);
+  color: var(--color-grey-2);
+  cursor: crosshair;
+}
+
+.plug.wide {
+  grid-column: span 2;
+}

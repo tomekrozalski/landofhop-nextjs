@@ -5,6 +5,7 @@ export enum Endpoints {
   beverageSearch = 'beverage/search',
   beverageStats = 'beverage/stats',
   beverageTotal = 'beverage/total',
+  institution = 'institution/getAll',
   language = 'language/getAll',
   login = 'auth',
 }
@@ -40,7 +41,13 @@ const serverCall = (endpoint: Endpoints, props?: Props) => {
       ...(!formData && { 'Content-Type': 'application/json' }),
     },
     ...rest,
-  }).then(response => response.json());
+  }).then(response => {
+    if (response.status >= 300) {
+      throw new Error(response.statusText);
+    }
+
+    return response.json();
+  });
 };
 
 export default serverCall;

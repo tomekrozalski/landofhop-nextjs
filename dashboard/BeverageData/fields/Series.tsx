@@ -4,7 +4,7 @@ import { useFieldArray, useFormContext } from 'react-hook-form';
 
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
-import { ActionButtons } from 'dashboard/BeverageData/elements';
+import { ActionButtons, Plug } from 'dashboard/BeverageData/elements';
 import { LanguageSelect } from 'dashboard/BeverageData/elements/Select';
 import styles from 'dashboard/BeverageData/Form.module.css';
 
@@ -16,7 +16,7 @@ const Series: React.FC = () => {
 
   return (
     <div className={clsx(styles.grid, styles.double)}>
-      <Label form="label" htmlFor="series" name="series" required />
+      <Label form="label" htmlFor="series" name="series" />
       {fields.map(({ id, lang, value }, index) => (
         <Fragment key={id}>
           <TextInput
@@ -38,11 +38,14 @@ const Series: React.FC = () => {
             <ActionButtons
               append={() => append({ lang: '', value: '' })}
               remove={() => remove(index)}
-              withRemove={fields.length > 1}
+              withRemove
             />
           )}
         </Fragment>
       ))}
+      {!fields.length && (
+        <Plug append={() => append({ lang: '', value: '' })} wide />
+      )}
     </div>
   );
 };

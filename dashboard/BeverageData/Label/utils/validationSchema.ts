@@ -30,12 +30,12 @@ export default Yup.object().shape({
       value: Yup.string().min(3).required(),
     }),
   ),
-  // brand: Yup.object()
-  //   .shape({
-  //     label: Yup.string().required(),
-  //     value: Yup.string().required(),
-  //   })
-  //   .required(),
+  brand: Yup.object()
+    .shape({
+      label: Yup.string().required(),
+      value: Yup.string().required(),
+    })
+    .required(),
   // cooperation: Yup.array()
   //   .min(1)
   //   .nullable(true),

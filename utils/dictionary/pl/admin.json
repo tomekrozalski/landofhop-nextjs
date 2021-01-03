@@ -1,4 +1,5 @@
 {
+  "append": "Dodaj",
   "beverage": {
     "add": "Dodaj nowe piwo",
     "brandInfo": "Informacje dotyczące marki",
@@ -20,6 +21,8 @@
     }
   },
   "confirmationToRemove": "Na pewno usunąć?",
+  "contractUnknown": "tak, lecz nieznany",
+  "institutions": "Instytucje",
   "language": {
     "group": {
       "defaults": "Najczęstsze",

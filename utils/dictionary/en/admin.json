@@ -1,4 +1,5 @@
 {
+  "append": "Append",
   "beverage": {
     "add": "Add new beverage",
     "brandInfo": "Informations connected with branding",
@@ -20,6 +21,8 @@
     }
   },
   "confirmationToRemove": "Are you sure?",
+  "contractUnknown": "yes, but unknown",
+  "institutions": "Institutions",
   "language": {
     "group": {
       "defaults": "Defaults",
