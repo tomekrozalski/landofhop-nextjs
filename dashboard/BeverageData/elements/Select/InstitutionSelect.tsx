@@ -27,8 +27,6 @@ const InstitutionSelect: React.FC<Props> = ({ withUnknown, ...rest }) => {
     return <Loading />;
   }
 
-  console.log('values', values);
-
   return (
     <Select
       {...rest}
@@ -54,6 +52,7 @@ const InstitutionSelect: React.FC<Props> = ({ withUnknown, ...rest }) => {
               value: id,
             }))
       }
+      placeholder="selectBrand"
     />
   );
 };

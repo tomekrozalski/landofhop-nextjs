@@ -5,6 +5,7 @@ import slugify from 'slugify';
 
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
+import { OpenSubform } from 'dashboard/BeverageData/elements';
 import { InstitutionSelect } from 'dashboard/BeverageData/elements/Select';
 import styles from 'dashboard/BeverageData/Form.module.css';
 
@@ -22,6 +23,10 @@ const Brand: React.FC<Props> = ({ disabled }) => {
         defaultValue=""
         name="brand"
         style={{ gridColumn: '2/3' }}
+      />
+      <OpenSubform
+        label="admin.addNewInstitution.title"
+        onClick={() => console.log('bum')}
       />
     </div>
   );

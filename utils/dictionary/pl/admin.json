@@ -1,4 +1,7 @@
 {
+  "addNewInstitution": {
+    "title": "Dodaj nową instytucję"
+  },
   "append": "Dodaj",
   "beverage": {
     "add": "Dodaj nowe piwo",
@@ -33,6 +36,18 @@
   "lastTimeUpdated": "Ostatnim razem poprawiono",
   "loadError": "Błąd pobierania",
   "removeBeverage": "Usuń piwo",
+  "select": {
+    "noOptions": "Brak wyników",
+    "placeholder": {
+      "default": "Wybierz…",
+      "selectBrand": "Wybierz markę…",
+      "selectCountry": "Wybierz kraj…",
+      "selectIngredientType": "Wybierz typ…",
+      "selectLanguage": "Wybierz język…",
+      "selectPlace": "Wybierz miejsce…",
+      "short": "~"
+    }
+  },
   "update": "Popraw informacje",
   "updatePhotos": "Popraw zdjęcia"
 }

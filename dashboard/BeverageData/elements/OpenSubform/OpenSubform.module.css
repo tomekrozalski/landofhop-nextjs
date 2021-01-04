@@ -1,0 +1,40 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-success-light);
+  transition: background-color var(--transition-default);
+  position: relative;
+}
+
+.button:hover {
+  background-color: var(--color-success);
+}
+
+.button svg {
+  width: 1.6rem;
+  fill: var(--color-white);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  height: var(--size-input-height);
+  background-color: var(--color-black);
+  font-weight: var(--font-weight-light);
+  color: var(--color-white);
+  position: absolute;
+  top: 0;
+  left: var(--size-input-height);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-default);
+  z-index: 222;
+}
+
+.button:hover .title {
+  opacity: 1;
+}

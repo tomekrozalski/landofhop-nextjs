@@ -1,4 +1,7 @@
 {
+  "addNewInstitution": {
+    "title": "Add new institution"
+  },
   "append": "Append",
   "beverage": {
     "add": "Add new beverage",
@@ -33,6 +36,18 @@
   "lastTimeUpdated": "Last time updated",
   "loadError": "Load error",
   "removeBeverage": "Remove beverage",
+  "select": {
+    "noOptions": "No options",
+    "placeholder": {
+      "default": "Select…",
+      "selectBrand": "Select brand…",
+      "selectCountry": "Select country…",
+      "selectIngredientType": "Select type…",
+      "selectLanguage": "Select language…",
+      "selectPlace": "Select place…",
+      "short": "~"
+    }
+  },
   "update": "Update data",
   "updatePhotos": "Update photos"
 }

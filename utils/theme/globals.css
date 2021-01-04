@@ -30,7 +30,7 @@
   --color-grey-5: #f5f5f5; /* brightest */
 
   --color-success: var(--color-brand-6);
-  /* --color-success-light: #beddb5; */
+  --color-success-light: var(--color-brand-6-light);
   --color-warning: var(--color-brand-5);
   --color-danger: var(--color-brand-1);
   --color-danger-light: var(--color-brand-3);

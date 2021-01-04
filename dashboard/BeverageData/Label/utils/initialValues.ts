@@ -9,7 +9,7 @@ const initialValues = {
   // -----------
   name: [{ lang: '', value: '' }],
   series: [],
-  brand: { label: '', value: '' },
+  brand: '',
   // cooperation: null,
   // contract: null,
   // place: null,

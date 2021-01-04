@@ -57,6 +57,7 @@ const LanguageSelect: React.FC<Props> = props => {
           ],
         },
       ]}
+      placeholder="selectLanguage"
     />
   );
 };

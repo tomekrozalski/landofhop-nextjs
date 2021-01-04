@@ -1,5 +1,6 @@
 import { CSSProperties } from 'react';
 import ReactSelect from 'react-select';
+import { useIntl } from 'react-intl';
 import { useController } from 'react-hook-form';
 
 import { IngredientType } from 'utils/enums/Beverage';
@@ -16,10 +17,19 @@ type Props = {
     options?: { label: string; value: string }[];
     type?: IngredientType;
   }[];
+  placeholder?: string;
   style?: CSSProperties;
 };
 
-const Select: React.FC<Props> = ({ defaultValue, name, options, style }) => {
+const Select: React.FC<Props> = ({
+  defaultValue,
+  name,
+  options,
+  placeholder,
+  style,
+}) => {
+  const { formatMessage } = useIntl();
+
   const {
     field: { ref, ...inputProps },
     meta: { invalid, isTouched },
@@ -34,7 +44,17 @@ const Select: React.FC<Props> = ({ defaultValue, name, options, style }) => {
         <ReactSelect
           {...inputProps}
           inputRef={ref}
+          noOptionsMessage={() =>
+            formatMessage({ id: 'admin.select.noOptions' })
+          }
           options={options}
+          placeholder={
+            placeholder
+              ? formatMessage({
+                  id: `admin.select.placeholder.${placeholder}`,
+                })
+              : formatMessage({ id: 'admin.select.placeholder.default' })
+          }
           styles={selectStyles}
         />
       </FieldStatusIndicator>
