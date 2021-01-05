@@ -31,7 +31,6 @@ const Institution: React.FC = ({ children }) => {
     if (status === StatusEnum.pending) {
       serverCall(Endpoints.institution, { token })
         .then((institutions: InstitutionType[]) => {
-          console.log('1', institutions);
           setValues(institutions);
           setStatus(StatusEnum.resolved);
         })

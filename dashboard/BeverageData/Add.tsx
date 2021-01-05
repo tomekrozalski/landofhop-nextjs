@@ -1,9 +1,7 @@
-import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 import HeadTitle from 'elements/HeadTitle';
-import { DashboardWrapper } from 'dashboard/elements';
-// import { DashboardModal } from 'dashboard/elements';
+import { DashboardModal, DashboardWrapper } from 'dashboard/elements';
 import { ProgressList } from './elements';
 import Form from './Form';
 
@@ -14,7 +12,7 @@ const Add: React.FC = () => (
     </h1>
     <ProgressList />
     <Form />
-    {/* <DashboardModal /> */}
+    <DashboardModal />
     <HeadTitle title="addBeverage" />
   </article>
 );

@@ -1,0 +1,48 @@
+.backdrop {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--index-backdrop);
+}
+
+.wrapper {
+  display: block;
+  width: var(--size-container-max-width);
+  padding: 2rem 2rem 4rem 2rem;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--index-modal);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-black);
+  border-radius: 50%;
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+}
+
+.closeButton svg {
+  width: 1.5rem;
+}
+
+.closeButton svg path {
+  fill: var(--color-grey-3);
+  transition: fill var(--transition-default);
+}
+
+.closeButton:hover svg path {
+  fill: var(--color-white);
+}
