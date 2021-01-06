@@ -31,7 +31,7 @@ const Select: React.FC<Props> = ({
   const { formatMessage } = useIntl();
 
   const {
-    field: { ref, ...inputProps },
+    field: { ref, value, ...inputProps },
     meta: { invalid, isTouched },
   } = useController({
     name,
@@ -43,6 +43,7 @@ const Select: React.FC<Props> = ({
       <FieldStatusIndicator invalid={invalid} touched={isTouched} type="select">
         <ReactSelect
           {...inputProps}
+          value={value?.value === '' ? null : value}
           inputRef={ref}
           noOptionsMessage={() =>
             formatMessage({ id: 'admin.select.noOptions' })

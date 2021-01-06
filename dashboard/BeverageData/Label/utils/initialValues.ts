@@ -7,9 +7,12 @@ import {
 const initialValues = {
   badge: '',
   // -----------
-  name: [{ lang: '', value: '' }],
+  name: [{ lang: { value: '' }, value: '' }],
   series: [],
-  brand: '',
+  brand: {
+    label: '',
+    value: '',
+  },
   // cooperation: null,
   // contract: null,
   // place: null,

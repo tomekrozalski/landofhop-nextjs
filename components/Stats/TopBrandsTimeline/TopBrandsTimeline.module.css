@@ -29,7 +29,7 @@
   left: 0;
 }
 
-.legendItem::after {
+.legendItem:not(:last-of-type)::after {
   content: ',';
 }
 

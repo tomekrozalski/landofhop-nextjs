@@ -1,4 +1,8 @@
-const Subform: React.FC = () => {
+type Props = {
+  close: () => void;
+};
+
+const Subform: React.FC<Props> = () => {
   console.log('-');
 
   return <div>Subform</div>;
