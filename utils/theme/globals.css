@@ -54,7 +54,7 @@
   --index-dropdown: 4;
   --index-spinner: 9;
   --index-loginbar: 10;
-  --index-navbar: 11; /* ? */
+  --index-navbar: 11;
   --index-header: 12;
   --index-backdrop: 20;
   --index-modal: 21;
@@ -63,7 +63,7 @@
   --size-header-height: 6rem;
   --size-input-height: 3.4rem;
   --size-loginbar-height: 18rem;
-  --size-navbar-height: 10rem;
+  --size-navbar-height: 12rem;
 
   --transition-default: 0.2s cubic-bezier(0.42, 0, 1, 1);
 }

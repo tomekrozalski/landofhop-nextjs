@@ -6,7 +6,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  transform: translateY(-var(--size-loginbar-height));
+  transform: translateY(calc(var(--size-loginbar-height) * -1));
   transition: transform var(--transition-default);
   z-index: var(--index-loginbar);
 }

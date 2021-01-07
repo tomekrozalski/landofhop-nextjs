@@ -39,7 +39,7 @@
 }
 
 .closeButton svg path {
-  fill: var(--color-grey-3);
+  fill: var(--color-grey-2);
   transition: fill var(--transition-default);
 }
 
