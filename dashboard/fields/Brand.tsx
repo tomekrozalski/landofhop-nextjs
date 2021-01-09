@@ -4,8 +4,8 @@ import clsx from 'clsx';
 import { ModalContext } from 'utils/contexts';
 import { Modal as ModalEnum } from 'utils/enums';
 import Label from 'elements/Label';
-import { OpenSubform } from 'dashboard/BeverageData/elements';
-import { InstitutionSelect } from 'dashboard/BeverageData/elements/Select';
+import { OpenSubform } from 'dashboard/elements';
+import { InstitutionSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/BeverageData/Form.module.css';
 
 type Props = {

@@ -4,8 +4,8 @@ import { useFieldArray, useFormContext } from 'react-hook-form';
 
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
-import { ActionButtons, Plug } from 'dashboard/BeverageData/elements';
-import { LanguageSelect } from 'dashboard/BeverageData/elements/Select';
+import { ActionButtons, Plug } from 'dashboard/elements';
+import { LanguageSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/BeverageData/Form.module.css';
 
 const Series: React.FC = () => {

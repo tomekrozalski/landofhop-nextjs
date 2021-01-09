@@ -1,8 +1,8 @@
 import { FormattedMessage } from 'react-intl';
 
 import HeadTitle from 'elements/HeadTitle';
-import { DashboardModal, DashboardWrapper } from 'dashboard/elements';
-import { ProgressList } from './elements';
+import Modals from 'dashboard/Modals';
+import { DashboardWrapper, ProgressList } from 'dashboard/elements';
 import Form from './Form';
 
 const Add: React.FC = () => (
@@ -12,7 +12,7 @@ const Add: React.FC = () => (
     </h1>
     <ProgressList />
     <Form />
-    <DashboardModal />
+    <Modals />
     <HeadTitle title="addBeverage" />
   </article>
 );

@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { BeverageContext } from 'dashboard/utils/contexts';
 import Button from 'elements/Button';
-import { Badge, Brand, Name, Series } from 'dashboard/BeverageData/fields';
+import { Badge, Brand, Name, Series } from 'dashboard/fields';
 import { FormValues, validationSchema } from './utils';
 import styles from '../Form.module.css';
 

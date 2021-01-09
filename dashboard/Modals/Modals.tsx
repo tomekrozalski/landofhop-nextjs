@@ -5,11 +5,11 @@ import { ModalContext } from 'utils/contexts';
 import { Modal as ModalEnum } from 'utils/enums';
 // import { Subform as CountrySubform } from 'dashboard/BeverageData/fields/Country';
 // import { Subform as IngredientSubform } from 'dashboard/BeverageData/fields/IngredientsList';
-import { Subform as InstitutionSubform } from 'dashboard/BeverageData/fields/Brand';
+import { Institution } from '.';
 // import LanguageSubform from 'dashboard/BeverageData/elements/Navigation/Aside/Language';
 // import { Subform as PlaceSubform } from 'dashboard/BeverageData/fields/Place';
 
-const DashboardModal: React.FC = () => {
+const Modals: React.FC = () => {
   const { setType, type } = useContext(ModalContext);
   const close = () => setType(null);
 
@@ -32,9 +32,9 @@ const DashboardModal: React.FC = () => {
 
   return (
     <Modal close={close} isVisible={!!type}>
-      {type === ModalEnum.institution && <InstitutionSubform close={close} />}
+      {type === ModalEnum.institution && <Institution close={close} />}
     </Modal>
   );
 };
 
-export default DashboardModal;
+export default Modals;
