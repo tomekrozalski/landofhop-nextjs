@@ -80,6 +80,7 @@ const Authentication: React.FC = ({ children }) => {
           resolve(value);
         } else {
           tokenExpired();
+          reject();
         }
       }
 

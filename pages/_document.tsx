@@ -1,16 +1,16 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render() {
     return (
-      <html>
+      <Html>
         <Head />
         <body>
           <Main />
           <NextScript />
           <div id="modal-root" />
         </body>
-      </html>
+      </Html>
     );
   }
 }

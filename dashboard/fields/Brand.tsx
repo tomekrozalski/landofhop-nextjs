@@ -6,7 +6,7 @@ import { Modal as ModalEnum } from 'utils/enums';
 import Label from 'elements/Label';
 import { OpenSubform } from 'dashboard/elements';
 import { InstitutionSelect } from 'dashboard/elements/Select';
-import styles from 'dashboard/BeverageData/Form.module.css';
+import styles from 'dashboard/Dashboard.module.css';
 
 type Props = {
   disabled?: boolean;

@@ -1,20 +1,20 @@
-import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { BeverageContext } from 'dashboard/utils/contexts';
 import Button from 'elements/Button';
-import { Badge, Brand, Name, Series } from 'dashboard/fields';
+import { Badge, Name } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
-import { FormValues, validationSchema } from './utils';
+import { FormValues, initialValues, validationSchema } from './utils';
 
-const LabelBeverage: React.FC = () => {
-  const { label } = useContext(BeverageContext);
+type Props = {
+  close: () => void;
+};
 
+const Institution: React.FC<Props> = () => {
   const methods = useForm<FormValues>({
     mode: 'onBlur',
-    defaultValues: label,
+    defaultValues: initialValues,
     resolver: yupResolver(validationSchema),
   });
 
@@ -30,24 +30,11 @@ const LabelBeverage: React.FC = () => {
         noValidate
         onSubmit={methods.handleSubmit(action)}
       >
-        <header>
-          <h2>
-            <FormattedMessage id="admin.beverage.labelInfo.title" />
-          </h2>
-          <p>
-            <FormattedMessage id="admin.beverage.labelInfo.description" />
-          </p>
-        </header>
+        <h1>
+          <FormattedMessage id="admin.addNewInstitution.title" />
+        </h1>
         <Badge />
-        {/* -------------------------------- */}
-        <h3>
-          <span>
-            <FormattedMessage id="admin.beverage.brandInfo" />
-          </span>
-        </h3>
         <Name />
-        <Series />
-        <Brand />
         <footer>
           <Button
             disabled={!methods.formState.isValid}
@@ -62,4 +49,4 @@ const LabelBeverage: React.FC = () => {
   );
 };
 
-export default LabelBeverage;
+export default Institution;

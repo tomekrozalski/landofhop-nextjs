@@ -8,8 +8,9 @@ import { Modal as ModalEnum } from 'utils/enums';
 import { Institution } from '.';
 // import LanguageSubform from 'dashboard/BeverageData/elements/Navigation/Aside/Language';
 // import { Subform as PlaceSubform } from 'dashboard/BeverageData/fields/Place';
+import styles from './EditModal.module.css';
 
-const Modals: React.FC = () => {
+const EditModal: React.FC = () => {
   const { setType, type } = useContext(ModalContext);
   const close = () => setType(null);
 
@@ -31,10 +32,10 @@ const Modals: React.FC = () => {
   };
 
   return (
-    <Modal close={close} isVisible={!!type}>
+    <Modal className={styles.editModal} close={close} isVisible={!!type}>
       {type === ModalEnum.institution && <Institution close={close} />}
     </Modal>
   );
 };
 
-export default Modals;
+export default EditModal;

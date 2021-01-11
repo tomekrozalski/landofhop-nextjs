@@ -1,6 +1,6 @@
 import Institution from './Institution';
-import Modals from './Modals';
+import EditModal from './EditModal';
 
 export { Institution };
 
-export default Modals;
+export default EditModal;

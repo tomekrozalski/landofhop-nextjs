@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { TopBarContext } from 'utils/contexts';
+import { AuthenticationContext, TopBarContext } from 'utils/contexts';
 import styles from './NavigationSwitcher.module.css';
 
 const NavigationSwitcher: React.FC = () => {
+  const { checkTokenExpiration, token } = useContext(AuthenticationContext);
   const { navbar, setLoginbar, setNavbar } = useContext(TopBarContext);
 
   return (
@@ -13,6 +14,7 @@ const NavigationSwitcher: React.FC = () => {
       onClick={() => {
         setNavbar(!navbar);
         setLoginbar(false);
+        checkTokenExpiration(token).catch(() => {});
       }}
       type="button"
     >

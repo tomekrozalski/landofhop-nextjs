@@ -6,7 +6,7 @@ import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
 import { ActionButtons } from 'dashboard/elements';
 import { LanguageSelect } from 'dashboard/elements/Select';
-import styles from 'dashboard/BeverageData/Form.module.css';
+import styles from 'dashboard/Dashboard.module.css';
 
 const Name: React.FC = () => {
   const { formState, register } = useFormContext();
