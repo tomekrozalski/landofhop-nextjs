@@ -56,6 +56,15 @@
     1fr;
 }
 
+.grid.optional {
+  grid-template-columns:
+    calc(44rem - var(--size-input-height)) var(--size-input-height) 45rem repeat(
+      2,
+      var(--size-input-height)
+    )
+    1fr;
+}
+
 .grid.double {
   grid-template-columns:
     45rem repeat(2, 22rem) repeat(2, var(--size-input-height))

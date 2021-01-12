@@ -33,6 +33,12 @@ export type FormValues = {
     label: string;
     value: string;
   };
+  cooperation:
+    | {
+        label: string;
+        value: string;
+      }[]
+    | null;
   // cooperation:
   //   | {
   //       label: string;

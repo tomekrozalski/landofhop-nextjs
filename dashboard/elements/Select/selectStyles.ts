@@ -36,6 +36,7 @@ export default {
         : 'var(--color-grey-4)',
       transition: 'border-color .1s',
       font: 'var(--font-weight-light) 1.6rem / 1 var(--font-primary)',
+      pointerEvents: isDisabled ? 'none' : 'auto',
     };
   },
   dropdownIndicator: (base: any, { isFocused }: EnhancedOptions) => ({

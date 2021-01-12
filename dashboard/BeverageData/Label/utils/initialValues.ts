@@ -13,7 +13,7 @@ const initialValues = {
     label: '',
     value: '',
   },
-  // cooperation: null,
+  cooperation: null,
   // contract: null,
   // place: null,
   // remark: [],

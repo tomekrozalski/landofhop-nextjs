@@ -36,9 +36,7 @@ export default Yup.object().shape({
       value: Yup.string().required(),
     })
     .required(),
-  // cooperation: Yup.array()
-  //   .min(1)
-  //   .nullable(true),
+  cooperation: Yup.array().min(1).nullable(true),
   // contract: Yup.object()
   //   .shape({
   //     label: Yup.string().required(),

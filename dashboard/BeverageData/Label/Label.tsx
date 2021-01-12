@@ -5,7 +5,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { BeverageContext } from 'dashboard/utils/contexts';
 import Button from 'elements/Button';
-import { Badge, Brand, Name, Series } from 'dashboard/fields';
+import { Badge, Brand, Cooperation, Name, Series } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
 import { FormValues, validationSchema } from './utils';
 
@@ -48,6 +48,7 @@ const LabelBeverage: React.FC = () => {
         <Name />
         <Series />
         <Brand />
+        <Cooperation />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

@@ -28,6 +28,39 @@
   position: relative;
 }
 
+.multiValueRemove {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  position: absolute;
+  top: 0;
+  right: 0.3rem;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.multiValueRemove svg {
+  width: 1rem;
+}
+
+.multiValueRemove svg path {
+  fill: var(--color-black);
+  transition: fill var(--transition-default);
+}
+
+.multiValueRemove.ingredient svg path {
+  fill: var(--color-white);
+  transition: fill var(--transition-default);
+}
+
+.multiValueRemove:hover svg path {
+  fill: var(--color-white);
+}
+
+.multiValueRemove.ingredient:hover svg path {
+  fill: var(--color-black);
+}
+
 @keyframes move {
   0% {
     background-position: 0 0;

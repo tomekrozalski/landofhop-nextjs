@@ -6,10 +6,13 @@ import { useController } from 'react-hook-form';
 import { IngredientType } from 'utils/enums/Beverage';
 import FieldStatusIndicator from 'elements/FieldStatusIndicator';
 import selectStyles from './selectStyles';
+import MultiValueRemove from './MultiValueRemove';
 import styles from './Select.module.css';
 
 type Props = {
   defaultValue: any;
+  disabled?: boolean;
+  isMulti?: boolean;
   name: string;
   options: {
     label: string;
@@ -23,6 +26,8 @@ type Props = {
 
 const Select: React.FC<Props> = ({
   defaultValue,
+  disabled,
+  isMulti,
   name,
   options,
   placeholder,
@@ -38,13 +43,24 @@ const Select: React.FC<Props> = ({
     defaultValue,
   });
 
+  console.log('value', value);
+
   return (
     <span className={styles.select} style={style}>
-      <FieldStatusIndicator invalid={invalid} touched={isTouched} type="select">
+      <FieldStatusIndicator
+        hidden={value === null}
+        invalid={invalid}
+        touched={isTouched}
+        type="select"
+      >
         <ReactSelect
           {...inputProps}
+          components={{ MultiValueRemove }}
           value={value?.value === '' ? null : value}
           inputRef={ref}
+          isDisabled={disabled || value === null}
+          isMulti={isMulti}
+          isClearable={false}
           noOptionsMessage={() =>
             formatMessage({ id: 'admin.select.noOptions' })
           }

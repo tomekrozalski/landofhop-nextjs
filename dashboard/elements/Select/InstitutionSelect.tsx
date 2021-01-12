@@ -10,6 +10,7 @@ import Select from './Select';
 
 type Props = {
   defaultValue: any;
+  isMulti?: boolean;
   name: string;
   style?: CSSProperties;
   withUnknown?: boolean;
