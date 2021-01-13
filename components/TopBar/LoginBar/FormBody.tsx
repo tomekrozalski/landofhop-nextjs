@@ -39,7 +39,7 @@ const FormBody: React.FC = () => {
       onSubmit={handleSubmit(logIn)}
     >
       <div>
-        <Label form="login" htmlFor="email" name="email" required />
+        <Label form="login" name="email" required />
         <TextInput
           colorInvert
           error={formState.errors.email}
@@ -51,7 +51,7 @@ const FormBody: React.FC = () => {
         />
       </div>
       <div>
-        <Label form="login" htmlFor="password" name="password" required />
+        <Label form="login" name="password" required />
         <TextInput
           colorInvert
           error={formState.errors.password}

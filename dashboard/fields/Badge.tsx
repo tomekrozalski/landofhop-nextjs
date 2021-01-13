@@ -9,9 +9,10 @@ import styles from 'dashboard/Dashboard.module.css';
 
 type Props = {
   disabled?: boolean;
+  form: string;
 };
 
-const Badge: React.FC<Props> = ({ disabled }) => {
+const Badge: React.FC<Props> = ({ disabled, form }) => {
   const { formState, register, setValue, watch } = useFormContext();
   const name = watch('name');
 
@@ -26,10 +27,10 @@ const Badge: React.FC<Props> = ({ disabled }) => {
 
   return (
     <div className={clsx(styles.grid, styles.basic)}>
-      <Label form="label" htmlFor="badge" name="badge" required />
+      <Label form={form} name="badge" required />
       <TextInput
         error={formState.errors.badge}
-        form="label"
+        form={form}
         name="badge"
         ref={register}
         required

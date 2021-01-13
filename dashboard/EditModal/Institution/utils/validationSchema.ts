@@ -5,7 +5,6 @@ export default Yup.object().shape({
     .min(3)
     .matches(/^[a-z\d-]+$/)
     .required(),
-  // -----------
   name: Yup.array()
     .of(
       Yup.object().shape({
@@ -18,4 +17,14 @@ export default Yup.object().shape({
     )
     .required()
     .min(1),
+  ownedBy: Yup.object()
+    .shape({
+      label: Yup.string().required(),
+      value: Yup.string().required(),
+    })
+    .nullable(true),
+  website: Yup.string()
+    .transform(v => (v === null ? 'http://www.test.com' : v))
+    .url()
+    .required(),
 });

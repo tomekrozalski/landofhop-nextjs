@@ -8,7 +8,11 @@ import { ActionButtons } from 'dashboard/elements';
 import { LanguageSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/Dashboard.module.css';
 
-const Name: React.FC = () => {
+type Props = {
+  form: string;
+};
+
+const Name: React.FC<Props> = ({ form }) => {
   const { formState, register } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     name: 'name',
@@ -16,12 +20,12 @@ const Name: React.FC = () => {
 
   return (
     <div className={clsx(styles.grid, styles.double)}>
-      <Label form="label" htmlFor="name" name="name" required />
+      <Label form={form} htmlFor="name[0].value" name="name" required />
       {fields.map(({ id, lang, value }, index) => (
         <Fragment key={id}>
           <TextInput
             error={formState.errors.name?.[index]?.value}
-            form="label"
+            form={form}
             name={`name[${index}].value`}
             ref={register()}
             required
@@ -31,6 +35,7 @@ const Name: React.FC = () => {
           />
           <LanguageSelect
             defaultValue={lang}
+            form={form}
             name={`name[${index}].lang`}
             style={{ gridColumn: '3/4' }}
           />

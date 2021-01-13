@@ -3,7 +3,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from 'elements/Button';
-import { Badge, Name } from 'dashboard/fields';
+import { Badge, Name, OwnedBy, Website } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
 import { FormValues, initialValues, validationSchema } from './utils';
 
@@ -33,8 +33,10 @@ const Institution: React.FC<Props> = () => {
         <h1>
           <FormattedMessage id="admin.addNewInstitution.title" />
         </h1>
-        <Badge />
-        <Name />
+        <Badge form="institution" />
+        <Name form="institution" />
+        <OwnedBy form="institution" />
+        <Website form="institution" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

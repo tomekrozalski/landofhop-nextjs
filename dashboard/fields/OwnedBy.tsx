@@ -9,17 +9,12 @@ type Props = {
   form: string;
 };
 
-const Cooperation: React.FC<Props> = ({ form }) => (
+const OwnedBy: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
-    <Label form={form} name="cooperation" />
-    <Condition form={form} name="cooperation" empty={[]} />
-    <InstitutionSelect
-      defaultValue={[]}
-      form={form}
-      isMulti
-      name="cooperation"
-    />
+    <Label form={form} name="ownedBy" />
+    <Condition form={form} name="ownedBy" empty={[]} />
+    <InstitutionSelect defaultValue="" form={form} name="ownedBy" />
   </div>
 );
 
-export default Cooperation;
+export default OwnedBy;

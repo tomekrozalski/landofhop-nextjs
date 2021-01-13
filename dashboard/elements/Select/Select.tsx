@@ -12,6 +12,7 @@ import styles from './Select.module.css';
 type Props = {
   defaultValue: any;
   disabled?: boolean;
+  form: string;
   isMulti?: boolean;
   name: string;
   options: {
@@ -27,6 +28,7 @@ type Props = {
 const Select: React.FC<Props> = ({
   defaultValue,
   disabled,
+  form,
   isMulti,
   name,
   options,
@@ -43,8 +45,6 @@ const Select: React.FC<Props> = ({
     defaultValue,
   });
 
-  console.log('value', value);
-
   return (
     <span className={styles.select} style={style}>
       <FieldStatusIndicator
@@ -57,6 +57,7 @@ const Select: React.FC<Props> = ({
           {...inputProps}
           components={{ MultiValueRemove }}
           value={value?.value === '' ? null : value}
+          inputId={`${form}-${name}`}
           inputRef={ref}
           isDisabled={disabled || value === null}
           isMulti={isMulti}

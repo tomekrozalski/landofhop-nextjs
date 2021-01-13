@@ -12,6 +12,10 @@
   background-color: var(--color-grey-4);
 }
 
+.condition input {
+  display: none;
+}
+
 .condition svg {
   width: 2rem;
   position: absolute;

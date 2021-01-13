@@ -7,10 +7,11 @@ import styles from './Condition.module.css';
 
 type Props = {
   empty: any;
+  form: string;
   name: string;
 };
 
-const Condition: React.FC<Props> = ({ empty, name }) => {
+const Condition: React.FC<Props> = ({ empty, form, name }) => {
   const { setValue, watch } = useFormContext();
   const value = watch(name);
 
@@ -19,6 +20,12 @@ const Condition: React.FC<Props> = ({ empty, name }) => {
       className={clsx(styles.condition, { [styles.on]: value !== null })}
       onClick={() => setValue(name, value === null ? empty : null)}
     >
+      <input
+        type="checkbox"
+        id={value === null ? `${form}-${name}` : ''}
+        name={`${form}-${name}`}
+        checked={value !== null}
+      />
       {value !== null && <CheckmarkIcon />}
     </div>
   );

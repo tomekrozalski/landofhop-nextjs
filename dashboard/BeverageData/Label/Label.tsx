@@ -38,17 +38,17 @@ const LabelBeverage: React.FC = () => {
             <FormattedMessage id="admin.beverage.labelInfo.description" />
           </p>
         </header>
-        <Badge />
+        <Badge form="label" />
         {/* -------------------------------- */}
         <h3>
           <span>
             <FormattedMessage id="admin.beverage.brandInfo" />
           </span>
         </h3>
-        <Name />
-        <Series />
-        <Brand />
-        <Cooperation />
+        <Name form="label" />
+        <Series form="label" />
+        <Brand form="label" />
+        <Cooperation form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}
