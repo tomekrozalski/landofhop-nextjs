@@ -12,6 +12,7 @@
   "conjunction.short": "i",
   "container": "opakowanie",
   "continue": "Dalej",
+  "contract": "Kontrakt",
   "cooperation": "Kooperacja",
   "country": "kraj",
   "denial": "nie",
@@ -29,5 +30,6 @@
   "search": "Szukaj",
   "series": "Seria",
   "stats": "Statystyki",
-  "submit": "wyślij"
+  "submit": "wyślij",
+  "website": "Strona internetowa"
 }

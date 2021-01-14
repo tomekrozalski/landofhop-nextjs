@@ -39,16 +39,16 @@ export type FormValues = {
         value: string;
       }[]
     | null;
-  // cooperation:
-  //   | {
-  //       label: string;
-  //       value: string;
-  //     }[]
-  //   | null;
-  // contract: {
-  //   label: string;
-  //   value: string;
-  // } | null;
+  cooperation:
+    | {
+        label: string;
+        value: string;
+      }[]
+    | null;
+  contract: {
+    label: string;
+    value: string;
+  } | null;
   // place: {
   //   label: string;
   //   value: string;

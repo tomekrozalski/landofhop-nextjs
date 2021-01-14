@@ -37,12 +37,12 @@ export default Yup.object().shape({
     })
     .required(),
   cooperation: Yup.array().min(1).nullable(true),
-  // contract: Yup.object()
-  //   .shape({
-  //     label: Yup.string().required(),
-  //     value: Yup.string().required(),
-  //   })
-  //   .nullable(true),
+  contract: Yup.object()
+    .shape({
+      label: Yup.string().required(),
+      value: Yup.string().required(),
+    })
+    .nullable(true),
   // place: Yup.object()
   //   .shape({
   //     label: Yup.string().required(),

@@ -14,7 +14,7 @@ const initialValues = {
     value: '',
   },
   cooperation: null,
-  // contract: null,
+  contract: null,
   // place: null,
   // remark: [],
   // tale: [],

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { useForm } from 'react-hook-form';
+import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
@@ -22,7 +22,8 @@ const schema = Yup.object().shape({
 
 const FormBody: React.FC = () => {
   const { logIn } = useContext(AuthenticationContext);
-  const { register, formState, handleSubmit } = useForm<FormData>({
+
+  const methods = useForm<FormData>({
     mode: 'onChange',
     defaultValues: {
       email: '',
@@ -32,44 +33,30 @@ const FormBody: React.FC = () => {
   });
 
   return (
-    <form
-      className={styles.formBody}
-      action="/admin"
-      noValidate
-      onSubmit={handleSubmit(logIn)}
-    >
-      <div>
-        <Label form="login" name="email" required />
-        <TextInput
-          colorInvert
-          error={formState.errors.email}
-          form="login"
-          name="email"
-          ref={register}
-          touched={formState.touched.email}
-          type="email"
-        />
-      </div>
-      <div>
-        <Label form="login" name="password" required />
-        <TextInput
-          colorInvert
-          error={formState.errors.password}
-          form="login"
-          name="password"
-          ref={register}
-          touched={formState.touched.password}
-          type="password"
-        />
-      </div>
-      <Button
-        disabled={!formState.isValid}
-        isSubmitting={formState.isSubmitting}
-        type="submit"
+    <FormProvider {...methods}>
+      <form
+        className={styles.formBody}
+        action="/admin"
+        noValidate
+        onSubmit={methods.handleSubmit(logIn)}
       >
-        <FormattedMessage id="global.submit" />
-      </Button>
-    </form>
+        <div>
+          <Label form="login" name="email" required />
+          <TextInput colorInvert form="login" name="email" type="email" />
+        </div>
+        <div>
+          <Label form="login" name="password" required />
+          <TextInput colorInvert form="login" name="password" type="password" />
+        </div>
+        <Button
+          disabled={!methods.formState.isValid}
+          isSubmitting={methods.formState.isSubmitting}
+          type="submit"
+        >
+          <FormattedMessage id="global.submit" />
+        </Button>
+      </form>
+    </FormProvider>
   );
 };
 

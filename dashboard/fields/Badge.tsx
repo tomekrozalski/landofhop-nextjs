@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Badge: React.FC<Props> = ({ disabled, form }) => {
-  const { formState, register, setValue, watch } = useFormContext();
+  const { setValue, watch } = useFormContext();
   const name = watch('name');
 
   useEffect(() => {
@@ -28,14 +28,7 @@ const Badge: React.FC<Props> = ({ disabled, form }) => {
   return (
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} name="badge" required />
-      <TextInput
-        error={formState.errors.badge}
-        form={form}
-        name="badge"
-        ref={register}
-        required
-        touched={formState.touched.badge}
-      />
+      <TextInput form={form} name="badge" />
     </div>
   );
 };

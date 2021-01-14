@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import clsx from 'clsx';
-import { useFieldArray, useFormContext } from 'react-hook-form';
+import { useFieldArray } from 'react-hook-form';
 
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
@@ -13,7 +13,6 @@ type Props = {
 };
 
 const Name: React.FC<Props> = ({ form }) => {
-  const { formState, register } = useFormContext();
   const { fields, append, remove } = useFieldArray({
     name: 'name',
   });
@@ -24,14 +23,10 @@ const Name: React.FC<Props> = ({ form }) => {
       {fields.map(({ id, lang, value }, index) => (
         <Fragment key={id}>
           <TextInput
-            error={formState.errors.name?.[index]?.value}
+            defaultValue={value}
             form={form}
             name={`name[${index}].value`}
-            ref={register()}
-            required
             style={{ gridColumn: '2/3' }}
-            touched={formState.touched.name?.[index]?.value ?? false}
-            defaultValue={value}
           />
           <LanguageSelect
             defaultValue={lang}

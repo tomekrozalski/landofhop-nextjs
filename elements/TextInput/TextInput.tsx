@@ -1,5 +1,5 @@
-import { forwardRef, CSSProperties } from 'react';
-import { FieldError } from 'react-hook-form';
+import { CSSProperties } from 'react';
+import { useController } from 'react-hook-form';
 import clsx from 'clsx';
 
 import FieldStatusIndicator from 'elements/FieldStatusIndicator';
@@ -7,50 +7,52 @@ import styles from './TextInput.module.css';
 
 type Props = {
   colorInvert?: boolean;
-  error?: FieldError;
+  defaultValue?: any;
   disabled?: boolean;
   form: string;
   name: string;
-  ref: any;
   style?: CSSProperties;
-  touched: boolean;
   type?: 'text' | 'email' | 'password';
 };
 
-type InputProps = React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> &
-  Props;
-
-const TextInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+const TextInput: React.FC<Props> = ({
+  colorInvert,
+  defaultValue,
+  disabled = false,
+  form,
+  name,
+  style,
+  type = 'text',
+}) => {
   const {
-    colorInvert,
-    error,
-    form,
+    field: { ref, value, ...inputProps },
+    meta: { invalid, isTouched },
+  } = useController({
     name,
-    style,
-    touched,
-    type = 'text',
-    ...rest
-  } = props;
-
-  const inputProps = {
-    id: `${form}-${name}`,
-    name,
-    ...rest,
-  };
+    defaultValue: defaultValue || '',
+  });
 
   return (
     <span
       className={clsx(styles.textinput, { [styles.colorInvert]: colorInvert })}
       style={style}
     >
-      <FieldStatusIndicator invalid={!!error} touched={touched}>
-        <input {...inputProps} ref={ref} type={type} />
+      <FieldStatusIndicator
+        hidden={value === null}
+        invalid={invalid}
+        touched={isTouched}
+      >
+        <input
+          {...inputProps}
+          id={`${form}-${name}`}
+          ref={ref}
+          type={type}
+          disabled={disabled || value === null}
+          value={value === null ? '' : value}
+        />
       </FieldStatusIndicator>
     </span>
   );
-});
+};
 
 export default TextInput;

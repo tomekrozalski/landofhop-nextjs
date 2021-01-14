@@ -12,6 +12,7 @@
   "conjunction.short": "and",
   "container": "container",
   "continue": "Continue",
+  "contract": "Contract",
   "cooperation": "Cooperation",
   "country": "country",
   "denial": "no",
@@ -29,5 +30,6 @@
   "series": "Series",
   "search": "Search",
   "stats": "Statistics",
-  "submit": "submit"
+  "submit": "submit",
+  "website": "Website"
 }
