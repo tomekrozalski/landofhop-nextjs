@@ -2,10 +2,16 @@ import { FormattedMessage } from 'react-intl';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import serverCall, { Endpoints } from 'utils/helpers/serverCall';
 import Button from 'elements/Button';
 import { Badge, Name, OwnedBy, Website } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
-import { FormValues, initialValues, validationSchema } from './utils';
+import {
+  formatValues,
+  FormValues,
+  initialValues,
+  validationSchema,
+} from './utils';
 
 type Props = {
   close: () => void;
@@ -19,7 +25,18 @@ const Institution: React.FC<Props> = () => {
   });
 
   const action = values => {
-    console.log('!', values);
+    const formattedValues = formatValues(values);
+
+    serverCall(Endpoints.addInstitution, {
+      method: 'POST',
+      body: JSON.stringify(formattedValues),
+    })
+      .catch(e => {
+        console.log('catch', e);
+      })
+      .finally(() => {
+        console.log('end');
+      });
   };
 
   return (
