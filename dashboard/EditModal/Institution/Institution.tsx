@@ -1,9 +1,10 @@
+import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import serverCall, { Endpoints } from 'utils/helpers/serverCall';
 import Button from 'elements/Button';
+import { InstitutionContext } from 'dashboard/utils/contexts';
 import { Badge, Name, OwnedBy, Website } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
 import {
@@ -17,7 +18,9 @@ type Props = {
   close: () => void;
 };
 
-const Institution: React.FC<Props> = () => {
+const Institution: React.FC<Props> = ({ close }) => {
+  const { addNewInstitution } = useContext(InstitutionContext);
+
   const methods = useForm<FormValues>({
     mode: 'onBlur',
     defaultValues: initialValues,
@@ -27,16 +30,9 @@ const Institution: React.FC<Props> = () => {
   const action = values => {
     const formattedValues = formatValues(values);
 
-    serverCall(Endpoints.addInstitution, {
-      method: 'POST',
-      body: JSON.stringify(formattedValues),
-    })
-      .catch(e => {
-        console.log('catch', e);
-      })
-      .finally(() => {
-        console.log('end');
-      });
+    return addNewInstitution(formattedValues)
+      .then(close)
+      .catch(e => console.log('Error', e));
   };
 
   return (

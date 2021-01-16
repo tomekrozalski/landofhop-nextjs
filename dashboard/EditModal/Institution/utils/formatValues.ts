@@ -1,4 +1,4 @@
-type Input = {
+type InstitutionInput = {
   badge: string;
   name: {
     value: string;
@@ -14,7 +14,7 @@ type Input = {
   website: string;
 };
 
-type Output = {
+export type InstitutionOutput = {
   badge: string;
   name: {
     value: string;
@@ -24,7 +24,12 @@ type Output = {
   website?: string;
 };
 
-const formatValues = ({ badge, name, ownedBy, website }: Input): Output => ({
+const formatValues = ({
+  badge,
+  name,
+  ownedBy,
+  website,
+}: InstitutionInput): InstitutionOutput => ({
   badge,
   name: name.map(({ value, lang }) => ({
     value,

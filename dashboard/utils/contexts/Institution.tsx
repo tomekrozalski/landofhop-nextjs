@@ -5,12 +5,12 @@ import serverCall, {
   Status as StatusEnum,
 } from 'utils/helpers/serverCall';
 import { AuthenticationContext } from 'utils/contexts';
-// import { InstitutionOutput } from 'dashboard/utils/types/form';
+import { InstitutionOutput } from 'dashboard/EditModal/Institution/utils/formatValues';
 import { Institution as InstitutionType } from 'dashboard/utils/types';
 
 export const InstitutionContext = React.createContext({
-  // addNewInstitution: ({}: InstitutionOutput) =>
-  //   new Promise(resolve => resolve()),
+  addNewInstitution: ({}: InstitutionOutput) =>
+    new Promise(resolve => resolve(true)),
   getInstitutions: () => {},
   status: StatusEnum.idle,
   values: [] as InstitutionType[],
@@ -40,31 +40,30 @@ const Institution: React.FC = ({ children }) => {
     }
   }, [status]);
 
-  // const addNewInstitution = (request: InstitutionOutput) =>
-  //   new Promise((resolve, reject) => {
-  //     setStatus(StatusEnum.pending);
+  const addNewInstitution = (request: InstitutionOutput) =>
+    new Promise((resolve, reject) => {
+      setStatus(StatusEnum.pending);
 
-  //     serverCall({
-  //       body: JSON.stringify(request),
-  //       method: 'POST',
-  //       path: 'institution',
-  //       token,
-  //     })
-  //       .then((institutions: InstitutionType[]) => {
-  //         setValues(institutions);
-  //         setStatus(StatusEnum.fulfilled);
-  //         resolve();
-  //       })
-  //       .catch(() => {
-  //         setStatus(StatusEnum.rejected);
-  //         reject();
-  //       });
-  //   });
+      serverCall(Endpoints.addInstitution, {
+        method: 'POST',
+        body: JSON.stringify(request),
+        token,
+      })
+        .then((institutions: InstitutionType[]) => {
+          setValues(institutions);
+          setStatus(StatusEnum.resolved);
+          resolve(true);
+        })
+        .catch(() => {
+          setStatus(StatusEnum.rejected);
+          reject();
+        });
+    });
 
   return (
     <InstitutionContext.Provider
       value={{
-        // addNewInstitution,
+        addNewInstitution,
         getInstitutions,
         status,
         values,
