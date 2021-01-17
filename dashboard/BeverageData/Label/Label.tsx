@@ -52,7 +52,7 @@ const LabelBeverage: React.FC = () => {
             <FormattedMessage id="admin.beverage.brandInfo" />
           </span>
         </h3>
-        <Name form="label" />
+        <Name form="label" languageIcon />
         <Series form="label" />
         <Brand form="label" />
         <Cooperation form="label" />

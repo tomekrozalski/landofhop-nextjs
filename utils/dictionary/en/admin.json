@@ -2,6 +2,9 @@
   "addNewInstitution": {
     "title": "Add new institution"
   },
+  "addNewLanguage": {
+    "title": "Add new language"
+  },
   "append": "Append",
   "beverage": {
     "add": "Add new beverage",

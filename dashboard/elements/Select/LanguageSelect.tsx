@@ -17,7 +17,7 @@ type Props = {
 
 const LanguageSelect: React.FC<Props> = props => {
   const { formatMessage, locale } = useIntl();
-  const { status, values } = useContext(LanguageContext);
+  const { languages, status } = useContext(LanguageContext);
 
   if (status === StatusEnum.rejected) {
     return <Error />;
@@ -35,7 +35,7 @@ const LanguageSelect: React.FC<Props> = props => {
           label: formatMessage({
             id: 'admin.language.group.defaults',
           }),
-          options: values
+          options: languages
             .filter(({ code }) => code === 'en' || code === 'pl')
             .map(({ id, name }) => ({
               label: getValueByLanguage(name, locale).value,
@@ -45,7 +45,7 @@ const LanguageSelect: React.FC<Props> = props => {
         {
           label: formatMessage({ id: 'admin.language.group.others' }),
           options: [
-            ...values
+            ...languages
               .filter(({ code }) => code !== 'en' && code !== 'pl')
               .map(({ id, name }) => ({
                 label: getValueByLanguage(name, locale).value,

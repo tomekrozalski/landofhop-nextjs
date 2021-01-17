@@ -12,14 +12,14 @@ export const InstitutionContext = React.createContext({
   addNewInstitution: ({}: InstitutionOutput) =>
     new Promise(resolve => resolve(true)),
   getInstitutions: () => {},
+  institutions: [] as InstitutionType[],
   status: StatusEnum.idle,
-  values: [] as InstitutionType[],
 });
 
 const Institution: React.FC = ({ children }) => {
   const { token } = useContext(AuthenticationContext);
   const [status, setStatus] = useState(StatusEnum.idle);
-  const [values, setValues] = useState<InstitutionType[]>([]);
+  const [institutions, setInstitutions] = useState<InstitutionType[]>([]);
 
   const getInstitutions = () => {
     setStatus(StatusEnum.pending);
@@ -31,7 +31,7 @@ const Institution: React.FC = ({ children }) => {
     if (status === StatusEnum.pending) {
       serverCall(Endpoints.institution, { token })
         .then((institutions: InstitutionType[]) => {
-          setValues(institutions);
+          setInstitutions(institutions);
           setStatus(StatusEnum.resolved);
         })
         .catch(() => {
@@ -50,7 +50,7 @@ const Institution: React.FC = ({ children }) => {
         token,
       })
         .then((institutions: InstitutionType[]) => {
-          setValues(institutions);
+          setInstitutions(institutions);
           setStatus(StatusEnum.resolved);
           resolve(true);
         })
@@ -65,8 +65,8 @@ const Institution: React.FC = ({ children }) => {
       value={{
         addNewInstitution,
         getInstitutions,
+        institutions,
         status,
-        values,
       }}
     >
       {children}

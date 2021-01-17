@@ -20,7 +20,7 @@ type Props = {
 
 const InstitutionSelect: React.FC<Props> = ({ withUnknown, ...rest }) => {
   const { formatMessage, locale } = useIntl();
-  const { status, values } = useContext(InstitutionContext);
+  const { institutions, status } = useContext(InstitutionContext);
 
   if (status === StatusEnum.rejected) {
     return <Error />;
@@ -44,13 +44,13 @@ const InstitutionSelect: React.FC<Props> = ({ withUnknown, ...rest }) => {
               },
               {
                 label: formatMessage({ id: 'admin.institutions' }),
-                options: values.map(({ id, name }) => ({
+                options: institutions.map(({ id, name }) => ({
                   label: getValueByLanguage(name, locale).value,
                   value: id,
                 })),
               },
             ]
-          : values.map(({ id, name }) => ({
+          : institutions.map(({ id, name }) => ({
               label: getValueByLanguage(name, locale).value,
               value: id,
             }))

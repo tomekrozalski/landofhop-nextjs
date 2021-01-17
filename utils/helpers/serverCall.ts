@@ -1,5 +1,6 @@
 export enum Endpoints {
   addInstitution = 'institution',
+  addLanguage = 'language',
   beverageAdminDetails = 'beverage/admin/details',
   beverageBasics = 'beverage/basics',
   beverageDetails = 'beverage/details',

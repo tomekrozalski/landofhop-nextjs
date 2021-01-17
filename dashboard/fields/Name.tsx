@@ -1,18 +1,23 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import clsx from 'clsx';
 import { useFieldArray } from 'react-hook-form';
 
+import { ModalContext } from 'utils/contexts';
+import { Modal as ModalEnum } from 'utils/enums';
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
-import { ActionButtons } from 'dashboard/elements';
+import { ActionButtons, OpenSubform } from 'dashboard/elements';
 import { LanguageSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/Dashboard.module.css';
 
 type Props = {
   form: string;
+  languageIcon?: boolean;
 };
 
-const Name: React.FC<Props> = ({ form }) => {
+const Name: React.FC<Props> = ({ form, languageIcon }) => {
+  const { setType } = useContext(ModalContext);
+
   const { fields, append, remove } = useFieldArray({
     name: 'name',
   });
@@ -39,6 +44,13 @@ const Name: React.FC<Props> = ({ form }) => {
               append={() => append({ lang: '', value: '' })}
               remove={() => remove(index)}
               withRemove={fields.length > 1}
+            />
+          )}
+          {languageIcon && index === 0 && (
+            <OpenSubform
+              icon="language"
+              label="admin.addNewLanguage.title"
+              onClick={() => setType(ModalEnum.language)}
             />
           )}
         </Fragment>
