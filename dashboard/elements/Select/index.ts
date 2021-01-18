@@ -1,4 +1,5 @@
 import InstitutionSelect from './InstitutionSelect';
 import LanguageSelect from './LanguageSelect';
+import PlaceSelect from './PlaceSelect';
 
-export { InstitutionSelect, LanguageSelect };
+export { InstitutionSelect, LanguageSelect, PlaceSelect };

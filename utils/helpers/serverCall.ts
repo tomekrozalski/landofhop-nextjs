@@ -10,6 +10,7 @@ export enum Endpoints {
   institution = 'institution/getAll',
   language = 'language/getAll',
   login = 'auth',
+  place = 'place/getAll',
 }
 
 export enum Status {

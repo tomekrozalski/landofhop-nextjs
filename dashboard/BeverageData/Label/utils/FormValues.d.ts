@@ -49,10 +49,10 @@ export type FormValues = {
     label: string;
     value: string;
   } | null;
-  // place: {
-  //   label: string;
-  //   value: string;
-  // } | null;
+  place: {
+    label: string;
+    value: string;
+  } | null;
   // remark: { lang: Lang; value: string }[];
   // tale: {
   //   article: string;

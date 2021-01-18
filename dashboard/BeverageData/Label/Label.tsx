@@ -11,6 +11,7 @@ import {
   Contract,
   Cooperation,
   Name,
+  Place,
   Series,
 } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
@@ -57,6 +58,7 @@ const LabelBeverage: React.FC = () => {
         <Brand form="label" />
         <Cooperation form="label" />
         <Contract form="label" />
+        <Place form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

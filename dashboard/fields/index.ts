@@ -5,6 +5,7 @@ import Contract from './Contract';
 import Cooperation from './Cooperation';
 import Name from './Name';
 import OwnedBy from './OwnedBy';
+import Place from './Place';
 import Series from './Series';
 import Website from './Website';
 
@@ -16,6 +17,7 @@ export {
   Cooperation,
   Name,
   OwnedBy,
+  Place,
   Series,
   Website,
 };
