@@ -5,6 +5,9 @@
   "addNewLanguage": {
     "title": "Add new language"
   },
+  "addNewPlace": {
+    "title": "Add new place"
+  },
   "append": "Append",
   "beverage": {
     "add": "Add new beverage",

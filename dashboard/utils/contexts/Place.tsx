@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions, @typescript-eslint/no-empty-function */
 import React, { useContext, useEffect, useState } from 'react';
 
 import serverCall, {
@@ -6,11 +5,11 @@ import serverCall, {
   Status as StatusEnum,
 } from 'utils/helpers/serverCall';
 import { AuthenticationContext } from 'utils/contexts';
-// import { PlaceOutput } from 'dashboard/utils/types/form';
+import { PlaceOutput } from 'dashboard/EditModal/Place/utils/formatValues';
 import { Place as PlaceType } from 'dashboard/utils/types';
 
 export const PlaceContext = React.createContext({
-  // addNewPlace: ({}: PlaceOutput) => new Promise(resolve => resolve(true)),
+  addNewPlace: ({}: PlaceOutput) => new Promise(resolve => resolve(true)),
   getPlaces: () => {},
   places: [] as PlaceType[],
   status: StatusEnum.idle,
@@ -40,27 +39,30 @@ const Place: React.FC = ({ children }) => {
     }
   }, [status]);
 
-  // const addNewPlace = (request: PlaceOutput) =>
-  //   new Promise((resolve, reject) => {
-  //     setStatus(StatusEnum.pending);
+  const addNewPlace = (request: PlaceOutput) =>
+    new Promise((resolve, reject) => {
+      setStatus(StatusEnum.pending);
 
-  //     serverCall({
-  //       body: JSON.stringify(request),
-  //       method: 'POST',
-  //       path: 'place',
-  //       token,
-  //     })
-  //       .then((places: PlaceType[]) => {
-  //         setPlaces(places);
-  //         resolve(true);
-  //       })
-  //       .catch(reject);
-  //   });
+      serverCall(Endpoints.addPlace, {
+        method: 'POST',
+        body: JSON.stringify(request),
+        token,
+      })
+        .then((places: PlaceType[]) => {
+          setPlaces(places);
+          setStatus(StatusEnum.resolved);
+          resolve(true);
+        })
+        .catch(() => {
+          setStatus(StatusEnum.rejected);
+          reject();
+        });
+    });
 
   return (
     <PlaceContext.Provider
       value={{
-        // addNewPlace,
+        addNewPlace,
         getPlaces,
         places,
         status,

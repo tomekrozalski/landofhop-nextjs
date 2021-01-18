@@ -12,7 +12,7 @@ type Props = {
   form: string;
   name: string;
   style?: CSSProperties;
-  type?: 'text' | 'email' | 'password';
+  type?: 'text' | 'number' | 'email' | 'password';
 };
 
 const TextInput: React.FC<Props> = ({
@@ -34,7 +34,10 @@ const TextInput: React.FC<Props> = ({
 
   return (
     <span
-      className={clsx(styles.textinput, { [styles.colorInvert]: colorInvert })}
+      className={clsx(styles.textinput, {
+        [styles.colorInvert]: colorInvert,
+        [styles.touched]: isTouched,
+      })}
       style={style}
     >
       <FieldStatusIndicator

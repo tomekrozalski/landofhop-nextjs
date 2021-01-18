@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import Modal from 'elements/Modal';
 import { ModalContext } from 'utils/contexts';
 import { Modal as ModalEnum } from 'utils/enums';
-import { Institution, Language } from '.';
+import { Institution, Language, Place } from '.';
 import styles from './EditModal.module.css';
 
 const EditModal: React.FC = () => {
@@ -14,6 +14,7 @@ const EditModal: React.FC = () => {
     <Modal className={styles.editModal} close={close} isVisible={!!type}>
       {type === ModalEnum.institution && <Institution close={close} />}
       {type === ModalEnum.language && <Language close={close} />}
+      {type === ModalEnum.place && <Place close={close} />}
     </Modal>
   );
 };
