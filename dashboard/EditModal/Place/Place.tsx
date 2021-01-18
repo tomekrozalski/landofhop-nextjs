@@ -5,7 +5,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from 'elements/Button';
 import { PlaceContext } from 'dashboard/utils/contexts';
-import { City, Institution, Latitude, Longitude } from 'dashboard/fields';
+import {
+  City,
+  Country,
+  Institution,
+  Latitude,
+  Longitude,
+} from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
 import {
   formatValues,
@@ -47,7 +53,7 @@ const Place: React.FC<Props> = ({ close }) => {
           <FormattedMessage id="admin.addNewPlace.title" />
         </h1>
         <City form="place" />
-        {/* <Country form="place" /> */}
+        <Country form="place" />
         <Institution form="place" />
         <Longitude form="place" />
         <Latitude form="place" />

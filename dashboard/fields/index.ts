@@ -4,6 +4,7 @@ import City from './City';
 import Code from './Code';
 import Contract from './Contract';
 import Cooperation from './Cooperation';
+import Country from './Country';
 import Institution from './Institution';
 import Latitude from './Latitude';
 import Longitude from './Longitude';
@@ -20,6 +21,7 @@ export {
   Code,
   Contract,
   Cooperation,
+  Country,
   Institution,
   Latitude,
   Longitude,

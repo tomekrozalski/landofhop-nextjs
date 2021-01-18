@@ -1,4 +1,7 @@
 {
+  "addNewCountry": {
+    "title": "Dodaj nowy kraj"
+  },
   "addNewInstitution": {
     "title": "Dodaj nową instytucję"
   },

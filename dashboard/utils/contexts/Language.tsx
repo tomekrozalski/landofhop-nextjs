@@ -23,31 +23,27 @@ const Language: React.FC = ({ children }) => {
 
   const getLanguages = () => {
     setStatus(StatusEnum.pending);
+
+    serverCall(Endpoints.language, { token })
+      .then((languages: LanguageType[]) => {
+        const sorted = languages.sort((a: LanguageType, b: LanguageType) => {
+          const first =
+            a.name.find(item => item.language === locale) || a.name[0];
+          const second =
+            b.name.find(item => item.language === locale) || b.name[0];
+
+          return first.value.localeCompare(second.value);
+        });
+
+        setLanguages(sorted);
+        setStatus(StatusEnum.resolved);
+      })
+      .catch(() => {
+        setStatus(StatusEnum.rejected);
+      });
   };
 
   useEffect(getLanguages, []);
-
-  useEffect(() => {
-    if (status === StatusEnum.pending) {
-      serverCall(Endpoints.language, { token })
-        .then((languages: LanguageType[]) => {
-          const sorted = languages.sort((a: LanguageType, b: LanguageType) => {
-            const first =
-              a.name.find(item => item.language === locale) || a.name[0];
-            const second =
-              b.name.find(item => item.language === locale) || b.name[0];
-
-            return first.value.localeCompare(second.value);
-          });
-
-          setLanguages(sorted);
-          setStatus(StatusEnum.resolved);
-        })
-        .catch(() => {
-          setStatus(StatusEnum.rejected);
-        });
-    }
-  }, [status]);
 
   const addNewLanguage = (request: LanguageOutput) =>
     new Promise((resolve, reject) => {

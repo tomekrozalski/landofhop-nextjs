@@ -1,4 +1,4 @@
-import isNumber from 'lodash/isNumber';
+import isNull from 'lodash/isNull';
 
 type PlaceInput = {
   city: {
@@ -41,8 +41,8 @@ const formatValues = ({
   city: city.map(({ lang, value }) => ({ language: lang.value, value })),
   country: country.value,
   institution: institution.value,
-  ...(isNumber(latitude) && { latitude }),
-  ...(isNumber(longitude) && { longitude }),
+  ...(!isNull(latitude) && { latitude: +latitude }),
+  ...(!isNull(longitude) && { longitude: +longitude }),
 });
 
 export default formatValues;

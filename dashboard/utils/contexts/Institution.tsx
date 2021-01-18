@@ -11,7 +11,6 @@ import { Institution as InstitutionType } from 'dashboard/utils/types';
 export const InstitutionContext = React.createContext({
   addNewInstitution: ({}: InstitutionOutput) =>
     new Promise(resolve => resolve(true)),
-  getInstitutions: () => {},
   institutions: [] as InstitutionType[],
   status: StatusEnum.idle,
 });
@@ -23,22 +22,18 @@ const Institution: React.FC = ({ children }) => {
 
   const getInstitutions = () => {
     setStatus(StatusEnum.pending);
+
+    serverCall(Endpoints.institution, { token })
+      .then((institutions: InstitutionType[]) => {
+        setInstitutions(institutions);
+        setStatus(StatusEnum.resolved);
+      })
+      .catch(() => {
+        setStatus(StatusEnum.rejected);
+      });
   };
 
   useEffect(getInstitutions, []);
-
-  useEffect(() => {
-    if (status === StatusEnum.pending) {
-      serverCall(Endpoints.institution, { token })
-        .then((institutions: InstitutionType[]) => {
-          setInstitutions(institutions);
-          setStatus(StatusEnum.resolved);
-        })
-        .catch(() => {
-          setStatus(StatusEnum.rejected);
-        });
-    }
-  }, [status]);
 
   const addNewInstitution = (request: InstitutionOutput) =>
     new Promise((resolve, reject) => {
@@ -64,7 +59,6 @@ const Institution: React.FC = ({ children }) => {
     <InstitutionContext.Provider
       value={{
         addNewInstitution,
-        getInstitutions,
         institutions,
         status,
       }}

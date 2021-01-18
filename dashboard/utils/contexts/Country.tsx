@@ -5,26 +5,26 @@ import serverCall, {
   Status as StatusEnum,
 } from 'utils/helpers/serverCall';
 import { AuthenticationContext } from 'utils/contexts';
-import { PlaceOutput } from 'dashboard/EditModal/Place/utils/formatValues';
-import { Place as PlaceType } from 'dashboard/utils/types';
+import { CountryOutput } from 'dashboard/EditModal/Country/utils/formatValues';
+import { Country as CountryType } from 'dashboard/utils/types';
 
-export const PlaceContext = React.createContext({
-  addNewPlace: ({}: PlaceOutput) => new Promise(resolve => resolve(true)),
-  places: [] as PlaceType[],
+export const CountryContext = React.createContext({
+  addCountry: ({}: CountryOutput) => new Promise(resolve => resolve(true)),
+  countries: [] as CountryType[],
   status: StatusEnum.idle,
 });
 
-const Place: React.FC = ({ children }) => {
+const Country: React.FC = ({ children }) => {
   const { token } = useContext(AuthenticationContext);
   const [status, setStatus] = useState(StatusEnum.idle);
-  const [places, setPlaces] = useState<PlaceType[]>([]);
+  const [countries, setCountries] = useState<CountryType[]>([]);
 
-  const getPlaces = () => {
+  const getCountries = () => {
     setStatus(StatusEnum.pending);
 
-    serverCall(Endpoints.place, { token })
-      .then((places: PlaceType[]) => {
-        setPlaces(places);
+    serverCall(Endpoints.country, { token })
+      .then((countries: CountryType[]) => {
+        setCountries(countries);
         setStatus(StatusEnum.resolved);
       })
       .catch(() => {
@@ -32,19 +32,19 @@ const Place: React.FC = ({ children }) => {
       });
   };
 
-  useEffect(getPlaces, []);
+  useEffect(getCountries, []);
 
-  const addNewPlace = (request: PlaceOutput) =>
+  const addCountry = (request: CountryOutput) =>
     new Promise((resolve, reject) => {
       setStatus(StatusEnum.pending);
 
-      serverCall(Endpoints.addPlace, {
+      serverCall(Endpoints.addCountry, {
         method: 'POST',
         body: JSON.stringify(request),
         token,
       })
-        .then((places: PlaceType[]) => {
-          setPlaces(places);
+        .then((countries: CountryType[]) => {
+          setCountries(countries);
           setStatus(StatusEnum.resolved);
           resolve(true);
         })
@@ -55,16 +55,16 @@ const Place: React.FC = ({ children }) => {
     });
 
   return (
-    <PlaceContext.Provider
+    <CountryContext.Provider
       value={{
-        addNewPlace,
-        places,
+        addCountry,
+        countries,
         status,
       }}
     >
       {children}
-    </PlaceContext.Provider>
+    </CountryContext.Provider>
   );
 };
 
-export default Place;
+export default Country;

@@ -1,4 +1,5 @@
 export enum Endpoints {
+  addCountry = 'country',
   addInstitution = 'institution',
   addLanguage = 'language',
   addPlace = 'place',
@@ -8,6 +9,7 @@ export enum Endpoints {
   beverageSearch = 'beverage/search',
   beverageStats = 'beverage/stats',
   beverageTotal = 'beverage/total',
+  country = 'country/getAll',
   institution = 'institution/getAll',
   language = 'language/getAll',
   login = 'auth',

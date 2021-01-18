@@ -26,28 +26,20 @@ export default Yup.object().shape({
   longitude: Yup.mixed().test(
     'is-longitude',
     'is not correct longitude',
-    function test(input) {
-      const value = input === '' ? NaN : +input;
+    function test(value) {
       return (
-        (isNull(input) && isNull(this.parent.latitude)) ||
-        (isNumber(value) &&
-          !isNull(this.parent.latitude) &&
-          value >= -180 &&
-          value <= 180)
+        (isNull(value) && !isNumber(this.parent.latitude)) ||
+        (isNumber(value) && value >= -180 && value <= 180)
       );
     },
   ),
   latitude: Yup.mixed().test(
     'is-latitude',
     'is not correct latitude',
-    function test(input) {
-      const value = input === '' ? NaN : +input;
+    function test(value) {
       return (
-        (isNull(input) && isNull(this.parent.longitude)) ||
-        (isNumber(value) &&
-          !isNull(this.parent.longitude) &&
-          value >= -180 &&
-          value <= 180)
+        (isNull(value) && !isNumber(this.parent.longitude)) ||
+        (isNumber(value) && value >= -180 && value <= 180)
       );
     },
   ),
