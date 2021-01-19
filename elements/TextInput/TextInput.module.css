@@ -36,6 +36,7 @@
   min-height: 12rem;
   padding: 0.6rem 1rem;
   line-height: 2.2rem;
+  resize: vertical;
 }
 
 .textinput.colorInvert input,

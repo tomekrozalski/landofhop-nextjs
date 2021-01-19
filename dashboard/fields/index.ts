@@ -1,4 +1,5 @@
 import Badge from './Badge';
+import Barcode from './Barcode';
 import Brand from './Brand';
 import City from './City';
 import Code from './Code';
@@ -18,6 +19,7 @@ import Website from './Website';
 
 export {
   Badge,
+  Barcode,
   Brand,
   City,
   Code,

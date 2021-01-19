@@ -4,7 +4,7 @@ import { useFieldArray } from 'react-hook-form';
 
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
-import { ActionButtons, Plug } from 'dashboard/elements';
+import { ActionButtons, Markdown, Plug } from 'dashboard/elements';
 import { LanguageSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/Dashboard.module.css';
 
@@ -27,12 +27,14 @@ const Tale: React.FC<Props> = ({ form }) => {
             form={form}
             name={`tale[${index}].lead`}
             style={{ gridColumn: '2/4' }}
+            textarea
           />
           <TextInput
             defaultValue={article}
             form={form}
             name={`tale[${index}].article`}
             style={{ gridColumn: '2/4' }}
+            textarea
           />
           <LanguageSelect
             defaultValue={lang}
@@ -47,10 +49,12 @@ const Tale: React.FC<Props> = ({ form }) => {
               withRemove
             />
           )}
+          <Markdown name={`tale[${index}].lead`} />
+          <Markdown name={`tale[${index}].article`} />
         </Fragment>
       ))}
       {!fields.length && (
-        <Plug append={() => append({ lang: '', value: '' })} wide />
+        <Plug append={() => append({ article: '', lang: '', lead: '' })} wide />
       )}
     </div>
   );

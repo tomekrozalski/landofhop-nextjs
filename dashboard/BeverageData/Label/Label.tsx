@@ -7,6 +7,7 @@ import { BeverageContext } from 'dashboard/utils/contexts';
 import Button from 'elements/Button';
 import {
   Badge,
+  Barcode,
   Brand,
   Contract,
   Cooperation,
@@ -63,6 +64,7 @@ const LabelBeverage: React.FC = () => {
         <Place form="label" />
         <Remark form="label" />
         <Tale form="label" />
+        <Barcode form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

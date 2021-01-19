@@ -12,6 +12,7 @@ type Props = {
   form: string;
   name: string;
   style?: CSSProperties;
+  textarea?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
 };
 
@@ -22,6 +23,7 @@ const TextInput: React.FC<Props> = ({
   form,
   name,
   style,
+  textarea,
   type = 'text',
 }) => {
   const {
@@ -45,14 +47,24 @@ const TextInput: React.FC<Props> = ({
         invalid={invalid}
         touched={isTouched}
       >
-        <input
-          {...inputProps}
-          id={`${form}-${name}`}
-          ref={ref}
-          type={type}
-          disabled={disabled || value === null}
-          value={value === null ? '' : value}
-        />
+        {textarea ? (
+          <textarea
+            {...inputProps}
+            id={`${form}-${name}`}
+            ref={ref}
+            disabled={disabled || value === null}
+            value={value === null ? '' : value}
+          />
+        ) : (
+          <input
+            {...inputProps}
+            id={`${form}-${name}`}
+            ref={ref}
+            type={type}
+            disabled={disabled || value === null}
+            value={value === null ? '' : value}
+          />
+        )}
       </FieldStatusIndicator>
     </span>
   );

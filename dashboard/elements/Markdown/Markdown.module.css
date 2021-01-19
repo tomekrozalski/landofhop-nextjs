@@ -1,0 +1,7 @@
+.markdown {
+  grid-column: 2 / 4;
+  padding: 0 1rem;
+  max-height: 28.6rem;
+  overflow-y: scroll;
+  border: 1px solid var(--color-grey-3);
+}
