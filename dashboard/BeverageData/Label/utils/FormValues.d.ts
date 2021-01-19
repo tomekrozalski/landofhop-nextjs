@@ -53,13 +53,13 @@ export type FormValues = {
     label: string;
     value: string;
   } | null;
-  // remark: { lang: Lang; value: string }[];
-  // tale: {
-  //   article: string;
-  //   lang: Lang;
-  //   lead: string;
-  // }[];
-  // barcode: string | null;
+  remark: { lang: Lang; value: string }[];
+  tale: {
+    article: string;
+    lang: Lang;
+    lead: string;
+  }[];
+  barcode: string | null;
   // -----------
   // beverageType: BeverageType | null;
   // fermentation: string[] | null;

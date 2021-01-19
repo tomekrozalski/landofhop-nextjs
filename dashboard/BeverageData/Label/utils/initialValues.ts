@@ -16,9 +16,9 @@ const initialValues = {
   cooperation: null,
   contract: null,
   place: null,
-  // remark: [],
-  // tale: [],
-  // barcode: null,
+  remark: [],
+  tale: [],
+  barcode: null,
   // -----------
   // beverageType: null,
   // fermentation: null,

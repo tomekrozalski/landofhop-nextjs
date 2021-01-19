@@ -11,7 +11,9 @@ import Longitude from './Longitude';
 import Name from './Name';
 import OwnedBy from './OwnedBy';
 import Place from './Place';
+import Remark from './Remark';
 import Series from './Series';
+import Tale from './Tale';
 import Website from './Website';
 
 export {
@@ -28,6 +30,8 @@ export {
   Name,
   OwnedBy,
   Place,
+  Remark,
   Series,
+  Tale,
   Website,
 };

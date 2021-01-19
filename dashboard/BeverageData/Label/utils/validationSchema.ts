@@ -49,34 +49,30 @@ export default Yup.object().shape({
       value: Yup.string().required(),
     })
     .nullable(true),
-  // remark: Yup.array().of(
-  //   Yup.object().shape({
-  //     lang: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     value: Yup.string()
-  //       .min(3)
-  //       .required(),
-  //   }),
-  // ),
-  // tale: Yup.array().of(
-  //   Yup.object().shape({
-  //     article: Yup.string(),
-  //     lang: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     lead: Yup.string()
-  //       .min(12)
-  //       .required(),
-  //   }),
-  // ),
-  // barcode: Yup.string()
-  //   // null should be treated as correct option
-  //   .transform(v => (v === null ? 'abdef' : v))
-  //   .min(5)
-  //   .required(),
+  remark: Yup.array().of(
+    Yup.object().shape({
+      lang: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      value: Yup.string().min(3).required(),
+    }),
+  ),
+  tale: Yup.array().of(
+    Yup.object().shape({
+      article: Yup.string(),
+      lang: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      lead: Yup.string().min(12).required(),
+    }),
+  ),
+  barcode: Yup.string()
+    // null should be treated as correct option
+    .transform(v => (v === null ? 'abdef' : v))
+    .min(5)
+    .required(),
   // -----------
   // fermentation: Yup.array()
   //   .of(Yup.mixed().oneOf(Object.values(FermentationEnum)))

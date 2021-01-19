@@ -12,14 +12,14 @@ type CountryInput = {
 export type CountryOutput = {
   code: string;
   name: {
-    lang: string;
     value: string;
+    language: string;
   }[];
 };
 
 const formatValues = ({ code, name }: CountryInput): CountryOutput => ({
   code,
-  name: name.map(({ lang, value }) => ({ lang: lang.value, value })),
+  name: name.map(({ lang, value }) => ({ language: lang.value, value })),
 });
 
 export default formatValues;

@@ -1,14 +1,6 @@
 const initialValues = {
-  city: [
-    {
-      lang: '',
-      value: '',
-    },
-  ],
-  country: '',
-  institution: '',
-  longitude: null,
-  latitude: null,
+  code: '',
+  name: [{ lang: { value: '' }, value: '' }],
 };
 
 export default initialValues;

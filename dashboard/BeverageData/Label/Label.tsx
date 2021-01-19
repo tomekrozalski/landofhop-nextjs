@@ -12,7 +12,9 @@ import {
   Cooperation,
   Name,
   Place,
+  Remark,
   Series,
+  Tale,
 } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
 import { FormValues, validationSchema } from './utils';
@@ -59,6 +61,8 @@ const LabelBeverage: React.FC = () => {
         <Cooperation form="label" />
         <Contract form="label" />
         <Place form="label" />
+        <Remark form="label" />
+        <Tale form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}
