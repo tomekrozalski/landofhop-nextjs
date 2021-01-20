@@ -6,6 +6,7 @@ import Code from './Code';
 import Contract from './Contract';
 import Cooperation from './Cooperation';
 import Country from './Country';
+import Fermentation from './Fermentation';
 import Institution from './Institution';
 import Latitude from './Latitude';
 import Longitude from './Longitude';
@@ -26,6 +27,7 @@ export {
   Contract,
   Cooperation,
   Country,
+  Fermentation,
   Institution,
   Latitude,
   Longitude,

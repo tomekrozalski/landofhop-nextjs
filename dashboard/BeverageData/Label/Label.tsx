@@ -11,6 +11,7 @@ import {
   Brand,
   Contract,
   Cooperation,
+  Fermentation,
   Name,
   Place,
   Remark,
@@ -65,6 +66,13 @@ const LabelBeverage: React.FC = () => {
         <Remark form="label" />
         <Tale form="label" />
         <Barcode form="label" />
+        {/* -------------------------------- */}
+        <h3>
+          <span>
+            <FormattedMessage id="admin.beverage.brewingInfo" />
+          </span>
+        </h3>
+        <Fermentation form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

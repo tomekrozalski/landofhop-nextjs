@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
 
 // import { isValidDate } from 'dashboard/utils/helpers';
-// import { Fermentation as FermentationEnum } from 'components/BeverageDetails/utils/enums';
+import { Fermentation as FermentationEnum } from 'utils/enums/Beverage';
 
 export default Yup.object().shape({
   badge: Yup.string()
@@ -74,10 +74,10 @@ export default Yup.object().shape({
     .min(5)
     .required(),
   // -----------
-  // fermentation: Yup.array()
-  //   .of(Yup.mixed().oneOf(Object.values(FermentationEnum)))
-  //   .min(1)
-  //   .nullable(true),
+  fermentation: Yup.array()
+    .of(Yup.mixed().oneOf(Object.values(FermentationEnum)))
+    .min(1)
+    .nullable(true),
   // style: Yup.array().of(
   //   Yup.object().shape({
   //     lang: Yup.object().shape({

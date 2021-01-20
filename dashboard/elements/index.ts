@@ -1,4 +1,5 @@
 import ActionButtons from './ActionButtons';
+import CheckboxGroup from './CheckboxGroup';
 import Condition from './Condition';
 import DashboardWrapper from './DashboardWrapper';
 import Markdown from './Markdown';
@@ -8,6 +9,7 @@ import ProgressList from './ProgressList';
 
 export {
   ActionButtons,
+  CheckboxGroup,
   Condition,
   DashboardWrapper,
   Markdown,

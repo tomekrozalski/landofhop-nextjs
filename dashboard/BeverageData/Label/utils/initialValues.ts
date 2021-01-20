@@ -20,8 +20,7 @@ const initialValues = {
   tale: [],
   barcode: null,
   // -----------
-  // beverageType: null,
-  // fermentation: null,
+  fermentation: null,
   // style: [],
   // extract: null,
   // alcohol: null,

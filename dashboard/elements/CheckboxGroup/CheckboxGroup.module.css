@@ -1,0 +1,50 @@
+.checkboxGroup {
+  display: flex;
+  width: 100%;
+  height: var(--size-input-height);
+}
+
+.listOption {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-grey-2);
+  background-color: var(--color-grey-4);
+}
+
+.listOption + .listOption {
+  border-left: none;
+}
+
+.disabled .listOption {
+  border-color: var(--color-grey-3);
+  background-color: var(--color-grey-5);
+}
+
+.label {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--size-input-height);
+  color: var(--color-grey-1);
+  cursor: pointer;
+}
+
+.disabled .label {
+  color: var(--color-grey-2);
+  cursor: not-allowed;
+}
+
+.input {
+  display: none;
+}
+
+.input:checked + .label {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}

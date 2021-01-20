@@ -61,8 +61,7 @@ export type FormValues = {
   }[];
   barcode: string | null;
   // -----------
-  // beverageType: BeverageType | null;
-  // fermentation: string[] | null;
+  fermentation: string[] | null;
   // style: { lang: Lang; value: string }[];
   // extract: {
   //   relate: {
