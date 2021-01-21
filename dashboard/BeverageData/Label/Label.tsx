@@ -11,11 +11,13 @@ import {
   Brand,
   Contract,
   Cooperation,
+  Extract,
   Fermentation,
   Name,
   Place,
   Remark,
   Series,
+  Style,
   Tale,
 } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
@@ -73,6 +75,8 @@ const LabelBeverage: React.FC = () => {
           </span>
         </h3>
         <Fermentation form="label" />
+        <Style form="label" />
+        <Extract form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

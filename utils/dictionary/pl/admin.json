@@ -20,6 +20,17 @@
       "description": "Informacje końcowe, od redakcji, niejako nieoficjalne",
       "title": "Redakcyjne"
     },
+    "extract": {
+      "relate": {
+        "weight": "wag.",
+        "blg": "BLG",
+        "plato": "Plato"
+      },
+      "unit": {
+        "degree": "°",
+        "percent": "%"
+      }
+    },
     "impressionsInfo": "Informacje dotyczące odczuć",
     "ingredientsInfo": "Informacje dotyczące składników",
     "labelInfo": {

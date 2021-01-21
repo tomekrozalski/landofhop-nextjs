@@ -20,6 +20,17 @@
       "description": "Final information, from the editorial office, somehow unofficial",
       "title": "Editorial"
     },
+    "extract": {
+      "relate": {
+        "weight": "weight",
+        "blg": "BLG",
+        "plato": "Plato"
+      },
+      "unit": {
+        "degree": "°",
+        "percent": "%"
+      }
+    },
     "impressionsInfo": "Informations connected with impressions",
     "ingredientsInfo": "Informations connected with ingredients",
     "labelInfo": {

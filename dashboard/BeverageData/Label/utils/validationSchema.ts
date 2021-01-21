@@ -78,33 +78,28 @@ export default Yup.object().shape({
     .of(Yup.mixed().oneOf(Object.values(FermentationEnum)))
     .min(1)
     .nullable(true),
-  // style: Yup.array().of(
-  //   Yup.object().shape({
-  //     lang: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     value: Yup.string()
-  //       .min(3)
-  //       .required(),
-  //   }),
-  // ),
-  // extract: Yup.object()
-  //   .shape({
-  //     value: Yup.number()
-  //       .min(0)
-  //       .max(100)
-  //       .required(),
-  //     unit: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     relate: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //   })
-  //   .nullable(true),
+  style: Yup.array().of(
+    Yup.object().shape({
+      lang: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      value: Yup.string().min(3).required(),
+    }),
+  ),
+  extract: Yup.object()
+    .shape({
+      value: Yup.number().min(0).max(100).required(),
+      unit: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      relate: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+    })
+    .nullable(true),
   // alcohol: Yup.object()
   //   .shape({
   //     value: Yup.number()

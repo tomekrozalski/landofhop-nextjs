@@ -62,18 +62,18 @@ export type FormValues = {
   barcode: string | null;
   // -----------
   fermentation: string[] | null;
-  // style: { lang: Lang; value: string }[];
-  // extract: {
-  //   relate: {
-  //     label: string;
-  //     value: ExtractRelate;
-  //   };
-  //   unit: {
-  //     label: string;
-  //     value: ExtractUnit;
-  //   };
-  //   value: number;
-  // } | null;
+  style: { lang: Lang; value: string }[];
+  extract: {
+    relate: {
+      label: string;
+      value: ExtractRelate;
+    };
+    unit: {
+      label: string;
+      value: ExtractUnit;
+    };
+    value: number;
+  } | null;
   // alcohol: {
   //   relate: {
   //     label: string;

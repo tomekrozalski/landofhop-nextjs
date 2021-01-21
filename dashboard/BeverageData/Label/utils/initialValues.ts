@@ -21,8 +21,8 @@ const initialValues = {
   barcode: null,
   // -----------
   fermentation: null,
-  // style: [],
-  // extract: null,
+  style: [],
+  extract: null,
   // alcohol: null,
   // filtration: null,
   // pasteurization: null,
