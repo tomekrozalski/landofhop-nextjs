@@ -9,6 +9,7 @@ import Loading from './Loading';
 import Select from './Select';
 
 type Props = {
+  defaultValue: any;
   form: string;
   disabled?: boolean;
   isMulti?: boolean;
@@ -32,7 +33,6 @@ const InstitutionSelect: React.FC<Props> = ({ withUnknown, ...rest }) => {
   return (
     <Select
       {...rest}
-      defaultValue=""
       options={
         withUnknown
           ? [

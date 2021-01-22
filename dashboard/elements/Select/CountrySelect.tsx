@@ -9,6 +9,7 @@ import Loading from './Loading';
 import Select from './Select';
 
 type Props = {
+  defaultValue: any;
   form: string;
   disabled?: boolean;
   isMulti?: boolean;
@@ -31,7 +32,6 @@ const CountrySelect: React.FC<Props> = props => {
   return (
     <Select
       {...props}
-      defaultValue=""
       options={countries.map(({ id, name }) => ({
         label: getValueByLanguage(name, locale).value,
         value: id,

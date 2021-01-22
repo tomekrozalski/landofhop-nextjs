@@ -1,48 +1,34 @@
 import clsx from 'clsx';
 import { useFormContext } from 'react-hook-form';
-import isArray from 'lodash/isArray';
 
 import CheckmarkIcon from 'elements/icons/Success';
 import styles from './Condition.module.css';
 
 type Props = {
-  fields: {
-    name: string;
-    empty: any;
-  }[];
+  empty: any;
   form: string;
-  label?: string;
+  name: string;
 };
 
-const Condition: React.FC<Props> = ({ fields, form, label }) => {
+const Condition: React.FC<Props> = ({ empty, form, name }) => {
   const { setValue, watch } = useFormContext();
-  const rawValues = watch(fields.map(({ name }) => name));
-  const values = isArray(rawValues) ? rawValues : [rawValues];
-  const isDisabled = values[0][fields[0].name] === null;
+  const value = watch(name);
 
   return (
     <div
-      className={clsx(styles.condition, { [styles.on]: !isDisabled })}
+      className={clsx(styles.condition, { [styles.on]: value !== null })}
       onClick={() =>
-        fields.forEach(({ name, empty }) => {
-          setValue(name, isDisabled ? empty : null, {
-            shouldValidate: true,
-          });
-        })
+        setValue(name, value === null ? empty : null, { shouldValidate: true })
       }
     >
       <input
         type="checkbox"
-        id={
-          isDisabled
-            ? `${form}-${fields.length === 1 ? fields[0].name : label}`
-            : ''
-        }
-        name={`${form}-${fields[0].name}`}
-        checked={!isDisabled}
+        id={value === null ? `${form}-${name}` : ''}
+        name={`${form}-${name}`}
+        checked={value !== null}
         readOnly
       />
-      {!isDisabled && <CheckmarkIcon />}
+      {value !== null && <CheckmarkIcon />}
     </div>
   );
 };

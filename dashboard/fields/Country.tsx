@@ -18,7 +18,7 @@ const Country: React.FC<Props> = ({ form }) => {
   return (
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} name="country" required />
-      <CountrySelect form={form} name="country" />
+      <CountrySelect defaultValue="" form={form} name="country" />
       <OpenSubform
         label="admin.addNewCountry.title"
         onClick={() => setType(ModalEnum.country)}

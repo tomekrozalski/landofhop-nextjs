@@ -12,15 +12,7 @@ type Props = {
 const Website: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="website" />
-    <Condition
-      fields={[
-        {
-          name: 'website',
-          empty: 'https://',
-        },
-      ]}
-      form={form}
-    />
+    <Condition empty="https://" form={form} name="website" />
     <TextInput form={form} name="website" />
   </div>
 );

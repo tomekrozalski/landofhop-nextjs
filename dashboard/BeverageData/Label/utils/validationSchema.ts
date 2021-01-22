@@ -87,17 +87,17 @@ export default Yup.object().shape({
       value: Yup.string().min(3).required(),
     }),
   ),
-  extractValue: Yup.number().min(0).max(100).nullable(true),
-  extractUnit: Yup.object()
+  extract: Yup.object()
     .shape({
-      label: Yup.string().required(),
-      value: Yup.string().required(),
-    })
-    .nullable(true),
-  extractRelate: Yup.object()
-    .shape({
-      label: Yup.string().required(),
-      value: Yup.string().required(),
+      value: Yup.number().min(0).max(100).required(),
+      unit: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      relate: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
     })
     .nullable(true),
   // alcohol: Yup.object()

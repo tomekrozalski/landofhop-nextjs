@@ -20,6 +20,7 @@ const Brand: React.FC<Props> = ({ disabled = false, form }) => {
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} name="brand" required />
       <InstitutionSelect
+        defaultValue=""
         disabled={disabled}
         form={form}
         name="brand"

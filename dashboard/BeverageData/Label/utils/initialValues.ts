@@ -22,9 +22,7 @@ const initialValues = {
   // -----------
   fermentation: null,
   style: [],
-  extractValue: null,
-  extractUnit: null,
-  extractRelate: null,
+  extract: null,
   // alcohol: null,
   // filtration: null,
   // pasteurization: null,

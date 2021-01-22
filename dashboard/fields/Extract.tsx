@@ -5,10 +5,6 @@ import { ExtractRelate, ExtractUnit } from 'utils/enums/Beverage';
 import Label from 'elements/Label';
 import TextInput from 'elements/TextInput';
 import { Condition } from 'dashboard/elements';
-import {
-  ExtractRelateSelect,
-  ExtractUnitSelect,
-} from 'dashboard/elements/Select';
 import styles from 'dashboard/Dashboard.module.css';
 
 type Props = {
@@ -18,59 +14,29 @@ type Props = {
 const Extract: React.FC<Props> = ({ form }) => {
   const { formatMessage } = useIntl();
 
-  const initialValues = {
-    relate: {
-      label: formatMessage({
-        id: `admin.beverage.extract.relate.${ExtractRelate.weight}`,
-      }),
-      value: ExtractRelate.weight,
-    },
-    unit: {
-      label: formatMessage({
-        id: `admin.beverage.extract.unit.${ExtractUnit.percent}`,
-      }),
-      value: ExtractUnit.percent,
-    },
-    value: 0,
-  };
-
   return (
     <div className={clsx(styles.grid, styles.conditionalFour)}>
       <Label form={form} name="extract" />
       <Condition
-        fields={[
-          {
-            empty: initialValues.value,
-            name: 'extractValue',
+        form={form}
+        name="extract"
+        empty={{
+          relate: {
+            label: formatMessage({
+              id: `admin.beverage.extract.relate.${ExtractRelate.weight}`,
+            }),
+            value: ExtractRelate.weight,
           },
-          {
-            empty: initialValues.unit,
-            name: 'extractUnit',
+          unit: {
+            label: formatMessage({
+              id: `admin.beverage.extract.unit.${ExtractUnit.percent}`,
+            }),
+            value: ExtractUnit.percent,
           },
-          {
-            empty: initialValues.relate,
-            name: 'extractRelate',
-          },
-        ]}
-        form={form}
-        label="extract"
+          value: 0,
+        }}
       />
-      <TextInput
-        form={form}
-        label="extract"
-        name="extractValue"
-        type="number"
-      />
-      <ExtractUnitSelect
-        defaultValue={initialValues.unit}
-        form={form}
-        name="extractUnit"
-      />
-      <ExtractRelateSelect
-        defaultValue={initialValues.relate}
-        form={form}
-        name="extractRelate"
-      />
+      <TextInput form={form} name="extract" subname="value" type="number" />
     </div>
   );
 };

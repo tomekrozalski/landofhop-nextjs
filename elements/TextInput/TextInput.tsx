@@ -10,9 +10,9 @@ type Props = {
   defaultValue?: any;
   disabled?: boolean;
   form: string;
-  label?: string;
   name: string;
   style?: CSSProperties;
+  subname?: string;
   textarea?: boolean;
   type?: 'text' | 'number' | 'email' | 'password';
 };
@@ -22,19 +22,24 @@ const TextInput: React.FC<Props> = ({
   defaultValue,
   disabled = false,
   form,
-  label,
   name,
   style,
+  subname,
   textarea,
   type = 'text',
 }) => {
   const {
-    field: { ref, value, ...inputProps },
+    field: { ref, value: rawValue, onChange, ...inputProps },
     meta: { invalid, isTouched },
   } = useController({
     name,
     defaultValue: defaultValue || '',
   });
+
+  const id = subname ? `${form}-${name}-${subname}` : `${form}-${name}`;
+  const value = subname ? rawValue?.[subname] ?? null : rawValue;
+  const onNestedChange = e =>
+    onChange({ ...rawValue, [subname]: e.target.value });
 
   return (
     <span
@@ -52,7 +57,8 @@ const TextInput: React.FC<Props> = ({
         {textarea ? (
           <textarea
             {...inputProps}
-            id={`${form}-${label || name}`}
+            id={id}
+            onChange={subname ? onNestedChange : onChange}
             ref={ref}
             disabled={disabled || value === null}
             value={value === null ? '' : value}
@@ -60,7 +66,8 @@ const TextInput: React.FC<Props> = ({
         ) : (
           <input
             {...inputProps}
-            id={`${form}-${label || name}`}
+            id={id}
+            onChange={subname ? onNestedChange : onChange}
             ref={ref}
             type={type}
             disabled={disabled || value === null}

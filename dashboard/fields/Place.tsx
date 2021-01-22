@@ -18,16 +18,8 @@ const Place: React.FC<Props> = ({ form }) => {
   return (
     <div className={clsx(styles.grid, styles.optional)}>
       <Label form={form} name="place" />
-      <Condition
-        fields={[
-          {
-            name: 'place',
-            empty: { value: { value: '' } },
-          },
-        ]}
-        form={form}
-      />
-      <PlaceSelect form={form} name="place" />
+      <Condition form={form} name="place" empty={{ value: { value: '' } }} />
+      <PlaceSelect defaultValue="" form={form} name="place" />
       <OpenSubform
         label="admin.addNewPlace.title"
         onClick={() => setType(ModalEnum.place)}

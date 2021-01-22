@@ -12,16 +12,8 @@ type Props = {
 const OwnedBy: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="ownedBy" />
-    <Condition
-      fields={[
-        {
-          name: 'ownedBy',
-          empty: [],
-        },
-      ]}
-      form={form}
-    />
-    <InstitutionSelect form={form} name="ownedBy" />
+    <Condition empty={[]} form={form} name="ownedBy" />
+    <InstitutionSelect defaultValue="" form={form} name="ownedBy" />
   </div>
 );
 
