@@ -12,13 +12,16 @@ type Props = {
 const Cooperation: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="cooperation" />
-    <Condition form={form} name="cooperation" empty={[]} />
-    <InstitutionSelect
-      defaultValue={[]}
+    <Condition
+      fields={[
+        {
+          name: 'cooperation',
+          empty: [],
+        },
+      ]}
       form={form}
-      isMulti
-      name="cooperation"
     />
+    <InstitutionSelect form={form} isMulti name="cooperation" />
   </div>
 );
 

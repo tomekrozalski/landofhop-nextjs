@@ -12,7 +12,15 @@ type Props = {
 const Fermentation: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="fermentation" />
-    <Condition form={form} name="fermentation" empty={[FermentationEnum.top]} />
+    <Condition
+      fields={[
+        {
+          name: 'fermentation',
+          empty: [FermentationEnum.top],
+        },
+      ]}
+      form={form}
+    />
     <CheckboxGroup
       data={[
         {

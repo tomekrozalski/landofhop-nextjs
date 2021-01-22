@@ -19,7 +19,6 @@ const Institution: React.FC<Props> = ({ form }) => {
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} name="institution" required />
       <InstitutionSelect
-        defaultValue=""
         form={form}
         name="institution"
         style={{ gridColumn: '2/3' }}

@@ -63,17 +63,15 @@ export type FormValues = {
   // -----------
   fermentation: string[] | null;
   style: { lang: Lang; value: string }[];
-  extract: {
-    relate: {
-      label: string;
-      value: ExtractRelate;
-    };
-    unit: {
-      label: string;
-      value: ExtractUnit;
-    };
-    value: number;
+  extractRelate: {
+    label: string;
+    value: ExtractRelate;
   } | null;
+  extractUnit: {
+    label: string;
+    value: ExtractUnit;
+  } | null;
+  extractValue: number | null;
   // alcohol: {
   //   relate: {
   //     label: string;

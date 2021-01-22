@@ -12,7 +12,15 @@ type Props = {
 const Latitude: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="latitude" />
-    <Condition form={form} name="latitude" empty={0} />
+    <Condition
+      fields={[
+        {
+          name: 'latitude',
+          empty: 0,
+        },
+      ]}
+      form={form}
+    />
     <TextInput form={form} name="latitude" type="number" />
   </div>
 );
