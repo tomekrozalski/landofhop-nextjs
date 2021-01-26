@@ -14,6 +14,21 @@
   "append": "Dodaj",
   "beverage": {
     "add": "Dodaj nowe piwo",
+    "alcohol": {
+      "relate": {
+        "abv": "Abv",
+        "capacity": "obj."
+      },
+      "scope": {
+        "m500": "~ <0.5%",
+        "pm500": "~ ±0.5%",
+        "pm1000": "~ ±1.0%"
+      },
+      "unit": {
+        "degree": "°",
+        "percent": "%"
+      }
+    },
     "brandInfo": "Informacje dotyczące marki",
     "brewingInfo": "Informacje dotyczące warzenia",
     "editorialInfo": {

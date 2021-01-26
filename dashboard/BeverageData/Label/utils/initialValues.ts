@@ -27,7 +27,12 @@ const initialValues = {
     unit: null,
     relate: null,
   },
-  // alcohol: null,
+  alcohol: {
+    value: null,
+    unit: null,
+    relate: null,
+    scope: null,
+  },
   // filtration: null,
   // pasteurization: null,
   // aged: [],

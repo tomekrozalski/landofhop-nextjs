@@ -74,21 +74,21 @@ export type FormValues = {
     } | null;
     value: number | null;
   };
-  // alcohol: {
-  //   relate: {
-  //     label: string;
-  //     value: AlcoholRelate;
-  //   };
-  //   scope: {
-  //     label: string;
-  //     value: AlcoholScope | string;
-  //   };
-  //   unit: {
-  //     label: string;
-  //     value: AlcoholUnit;
-  //   };
-  //   value: number;
-  // } | null;
+  alcohol: {
+    relate: {
+      label: string;
+      value: AlcoholRelate;
+    } | null;
+    scope: {
+      label: string;
+      value: AlcoholScope | string;
+    } | null;
+    unit: {
+      label: string;
+      value: AlcoholUnit;
+    } | null;
+    value: number | null;
+  };
   // filtration: boolean | null;
   // pasteurization: boolean | null;
   // aged: {

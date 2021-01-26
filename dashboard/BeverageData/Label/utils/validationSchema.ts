@@ -102,26 +102,27 @@ export default Yup.object().shape({
       })
       .nullable(true),
   }),
-  // alcohol: Yup.object()
-  //   .shape({
-  //     value: Yup.number()
-  //       .min(0)
-  //       .max(100)
-  //       .required(),
-  //     unit: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     relate: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     scope: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //   })
-  //   .nullable(true),
+  alcohol: Yup.object().shape({
+    value: Yup.number().min(0).max(100).nullable(true),
+    unit: Yup.object()
+      .shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      })
+      .nullable(true),
+    relate: Yup.object()
+      .shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      })
+      .nullable(true),
+    scope: Yup.object()
+      .shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      })
+      .nullable(true),
+  }),
   // aged: Yup.array().of(
   //   Yup.object().shape({
   //     type: Yup.string()
