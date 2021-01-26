@@ -5,30 +5,56 @@ import CheckmarkIcon from 'elements/icons/Success';
 import styles from './Condition.module.css';
 
 type Props = {
+  clearWith?: any;
   empty: any;
   form: string;
   name: string;
 };
 
-const Condition: React.FC<Props> = ({ empty, form, name }) => {
+const Condition: React.FC<Props> = ({
+  clearWith = null,
+  empty,
+  form,
+  name,
+}) => {
   const { setValue, watch } = useFormContext();
   const value = watch(name);
+  const isDisabled =
+    clearWith && clearWith !== null
+      ? Object.values(value).includes(null)
+      : value === null;
+
+  const ss = () => {
+    if (clearWith) {
+      Object.keys(clearWith).forEach(field => {
+        setValue(
+          `${name}.${field}`,
+          isDisabled ? empty[field] : clearWith[field],
+          {
+            shouldValidate: true,
+          },
+        );
+      });
+    } else {
+      setValue(name, isDisabled ? empty : clearWith, {
+        shouldValidate: true,
+      });
+    }
+  };
 
   return (
     <div
-      className={clsx(styles.condition, { [styles.on]: value !== null })}
-      onClick={() =>
-        setValue(name, value === null ? empty : null, { shouldValidate: true })
-      }
+      className={clsx(styles.condition, { [styles.on]: !isDisabled })}
+      onClick={ss}
     >
       <input
         type="checkbox"
-        id={value === null ? `${form}-${name}` : ''}
+        id={isDisabled ? `${form}-${name}` : ''}
         name={`${form}-${name}`}
-        checked={value !== null}
+        checked={!isDisabled}
         readOnly
       />
-      {value !== null && <CheckmarkIcon />}
+      {!isDisabled && <CheckmarkIcon />}
     </div>
   );
 };

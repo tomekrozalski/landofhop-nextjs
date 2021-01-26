@@ -67,13 +67,13 @@ export type FormValues = {
     relate: {
       label: string;
       value: ExtractRelate;
-    };
+    } | null;
     unit: {
       label: string;
       value: ExtractUnit;
-    };
-    value: number;
-  } | null;
+    } | null;
+    value: number | null;
+  };
   // alcohol: {
   //   relate: {
   //     label: string;
