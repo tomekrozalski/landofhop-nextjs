@@ -14,7 +14,9 @@ import {
   Cooperation,
   Extract,
   Fermentation,
+  Filtration,
   Name,
+  Pasteurization,
   Place,
   Remark,
   Series,
@@ -79,6 +81,8 @@ const LabelBeverage: React.FC = () => {
         <Style form="label" />
         <Extract form="label" />
         <Alcohol form="label" />
+        <Filtration form="label" />
+        <Pasteurization form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

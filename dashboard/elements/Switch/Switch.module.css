@@ -1,0 +1,4 @@
+.switch :global(.react-switch-bg),
+.switch :global(.react-switch-handle) {
+  border-radius: 0 !important;
+}

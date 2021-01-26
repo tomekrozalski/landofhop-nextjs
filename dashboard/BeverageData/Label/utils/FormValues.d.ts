@@ -89,8 +89,8 @@ export type FormValues = {
     } | null;
     value: number | null;
   };
-  // filtration: boolean | null;
-  // pasteurization: boolean | null;
+  filtration: boolean | null;
+  pasteurization: boolean | null;
   // aged: {
   //   type: AgedType | null;
   //   wood: AgedWood | null;

@@ -6,6 +6,7 @@ import Markdown from './Markdown';
 import OpenSubform from './OpenSubform';
 import Plug from './Plug';
 import ProgressList from './ProgressList';
+import Switch from './Switch';
 
 export {
   ActionButtons,
@@ -16,4 +17,5 @@ export {
   OpenSubform,
   Plug,
   ProgressList,
+  Switch,
 };
