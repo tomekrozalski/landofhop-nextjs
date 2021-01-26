@@ -12,7 +12,7 @@ type Props = {
 const Barcode: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="barcode" />
-    <Condition form={form} name="barcode" empty="" />
+    <Condition form={form} initialValue="" name="barcode" />
     <TextInput form={form} name="barcode" />
   </div>
 );

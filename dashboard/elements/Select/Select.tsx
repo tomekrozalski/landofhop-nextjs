@@ -13,6 +13,7 @@ type Props = {
   defaultValue: any;
   disabled?: boolean;
   form: string;
+  hiddenFieldIndicator?: boolean;
   isMulti?: boolean;
   name: string;
   options: {
@@ -29,6 +30,7 @@ const Select: React.FC<Props> = ({
   defaultValue,
   disabled,
   form,
+  hiddenFieldIndicator,
   isMulti,
   name,
   options,
@@ -48,7 +50,7 @@ const Select: React.FC<Props> = ({
   return (
     <span className={styles.select} style={style}>
       <FieldStatusIndicator
-        hidden={value === null}
+        hidden={hiddenFieldIndicator || value === null}
         invalid={invalid}
         touched={isTouched}
         type="select"

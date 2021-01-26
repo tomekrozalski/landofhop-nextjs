@@ -1,51 +1,53 @@
 import clsx from 'clsx';
 import { useFormContext } from 'react-hook-form';
+import isObject from 'lodash/isObject';
 
 import CheckmarkIcon from 'elements/icons/Success';
 import styles from './Condition.module.css';
 
 type Props = {
-  clearWith?: any;
-  empty: any;
+  emptyValue?: any;
   form: string;
+  initialValue: any;
   name: string;
 };
 
 const Condition: React.FC<Props> = ({
-  clearWith = null,
-  empty,
+  emptyValue = null,
   form,
+  initialValue,
   name,
 }) => {
   const { setValue, watch } = useFormContext();
   const value = watch(name);
-  const isDisabled =
-    clearWith && clearWith !== null
-      ? Object.values(value).includes(null)
-      : value === null;
+  const isDisabled = isObject(emptyValue)
+    ? Object.values(value).includes(null)
+    : value === null;
 
-  const ss = () => {
-    if (clearWith) {
-      Object.keys(clearWith).forEach(field => {
-        setValue(
+  const setFieldValue = (fieldName, initial, empty) => {
+    setValue(fieldName, isDisabled ? initial : empty, {
+      shouldValidate: true,
+    });
+  };
+
+  const onInputClick = () => {
+    if (isObject(emptyValue)) {
+      Object.keys(emptyValue).forEach(field => {
+        setFieldValue(
           `${name}.${field}`,
-          isDisabled ? empty[field] : clearWith[field],
-          {
-            shouldValidate: true,
-          },
+          initialValue[field],
+          emptyValue[field],
         );
       });
     } else {
-      setValue(name, isDisabled ? empty : clearWith, {
-        shouldValidate: true,
-      });
+      setFieldValue(name, initialValue, emptyValue);
     }
   };
 
   return (
     <div
       className={clsx(styles.condition, { [styles.on]: !isDisabled })}
-      onClick={ss}
+      onClick={onInputClick}
     >
       <input
         type="checkbox"

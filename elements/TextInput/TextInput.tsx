@@ -50,7 +50,7 @@ const TextInput: React.FC<Props> = ({
         {textarea ? (
           <textarea
             {...inputProps}
-            id={`${form}-${name}`}
+            id={`${form}-${name.replace('.', '-')}`}
             ref={ref}
             disabled={disabled || value === null}
             value={value === null ? '' : value}
@@ -58,7 +58,7 @@ const TextInput: React.FC<Props> = ({
         ) : (
           <input
             {...inputProps}
-            id={`${form}-${name}`}
+            id={`${form}-${name.replace('.', '-')}`}
             ref={ref}
             type={type}
             disabled={disabled || value === null}

@@ -18,7 +18,11 @@ const Place: React.FC<Props> = ({ form }) => {
   return (
     <div className={clsx(styles.grid, styles.optional)}>
       <Label form={form} name="place" />
-      <Condition form={form} name="place" empty={{ value: { value: '' } }} />
+      <Condition
+        form={form}
+        initialValue={{ value: { value: '' } }}
+        name="place"
+      />
       <PlaceSelect defaultValue="" form={form} name="place" />
       <OpenSubform
         label="admin.addNewPlace.title"

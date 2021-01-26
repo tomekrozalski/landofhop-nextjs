@@ -88,27 +88,19 @@ export default Yup.object().shape({
     }),
   ),
   extract: Yup.object().shape({
-    value: Yup.number()
-      .transform(v => {
-        console.log('v', v, +v);
-
-        return v;
-      })
-      .min(0)
-      .max(100)
-      .nullable(true),
+    value: Yup.number().min(0).max(100).nullable(true),
     unit: Yup.object()
       .shape({
         label: Yup.string().required(),
         value: Yup.string().required(),
       })
       .nullable(true),
-    // relate: Yup.object()
-    //   .shape({
-    //     label: Yup.string().required(),
-    //     value: Yup.string().required(),
-    //   })
-    //   .nullable(true),
+    relate: Yup.object()
+      .shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      })
+      .nullable(true),
   }),
   // alcohol: Yup.object()
   //   .shape({

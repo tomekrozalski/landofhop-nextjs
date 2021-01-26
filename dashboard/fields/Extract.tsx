@@ -18,7 +18,7 @@ type Props = {
 const Extract: React.FC<Props> = ({ form }) => {
   const { formatMessage } = useIntl();
 
-  const empty = {
+  const initialValue = {
     relate: {
       label: formatMessage({
         id: `admin.beverage.extract.relate.${ExtractRelate.weight}`,
@@ -39,22 +39,22 @@ const Extract: React.FC<Props> = ({ form }) => {
       <Label form={form} name="extract" />
       <Condition
         form={form}
-        name="extract"
-        empty={empty}
-        clearWith={{
+        emptyValue={{
           value: null,
           unit: null,
           relate: null,
         }}
+        initialValue={initialValue}
+        name="extract"
       />
       <TextInput form={form} name="extract.value" type="number" />
       <ExtractUnitSelect
-        defaultValue={empty.unit}
+        defaultValue={initialValue.unit}
         form={form}
         name="extract.unit"
       />
       <ExtractRelateSelect
-        defaultValue={empty.relate}
+        defaultValue={initialValue.relate}
         form={form}
         name="extract.relate"
       />

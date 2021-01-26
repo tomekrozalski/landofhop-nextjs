@@ -18,6 +18,7 @@ const ExtractRelateSelect: React.FC<Props> = props => {
   return (
     <Select
       {...props}
+      hiddenFieldIndicator
       options={Object.keys(ExtractRelate).map(value => ({
         label: formatMessage({ id: `admin.beverage.extract.relate.${value}` }),
         value,

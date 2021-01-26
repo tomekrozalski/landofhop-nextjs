@@ -18,6 +18,7 @@ const ExtractUnitSelect: React.FC<Props> = props => {
   return (
     <Select
       {...props}
+      hiddenFieldIndicator
       options={Object.keys(ExtractUnit).map(value => ({
         label: formatMessage({ id: `admin.beverage.extract.unit.${value}` }),
         value,

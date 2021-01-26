@@ -12,7 +12,11 @@ type Props = {
 const Contract: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="contract" />
-    <Condition form={form} name="contract" empty={{ value: { value: '' } }} />
+    <Condition
+      form={form}
+      initialValue={{ value: { value: '' } }}
+      name="contract"
+    />
     <InstitutionSelect
       defaultValue=""
       form={form}
