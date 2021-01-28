@@ -14,6 +14,13 @@
   "append": "Append",
   "beverage": {
     "add": "Add new beverage",
+    "aged": {
+      "title": "Way of aged {order}",
+      "type": {
+        "barrel": "barrel",
+        "wood": "wood"
+      }
+    },
     "alcohol": {
       "relate": {
         "abv": "Abv",

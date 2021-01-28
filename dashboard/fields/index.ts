@@ -1,3 +1,4 @@
+import Aged from './Aged';
 import Alcohol from './Alcohol';
 import Badge from './Badge';
 import Barcode from './Barcode';
@@ -24,6 +25,7 @@ import Tale from './Tale';
 import Website from './Website';
 
 export {
+  Aged,
   Alcohol,
   Badge,
   Barcode,

@@ -1,5 +1,6 @@
-.checkboxGroup {
+.optionGroup {
   display: flex;
+  gap: 1rem;
   width: 100%;
   height: var(--size-input-height);
 }
@@ -12,10 +13,6 @@
   align-items: center;
   border: 1px solid var(--color-grey-2);
   background-color: var(--color-grey-4);
-}
-
-.listOption + .listOption {
-  border-left: none;
 }
 
 .disabled .listOption {

@@ -1,4 +1,5 @@
 .condition {
+  flex-shrink: 0;
   display: inline-block;
   width: var(--size-input-height);
   height: var(--size-input-height);

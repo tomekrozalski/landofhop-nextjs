@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { BeverageContext } from 'dashboard/utils/contexts';
 import Button from 'elements/Button';
 import {
+  Aged,
   Alcohol,
   Badge,
   Barcode,
@@ -83,6 +84,7 @@ const LabelBeverage: React.FC = () => {
         <Alcohol form="label" />
         <Filtration form="label" />
         <Pasteurization form="label" />
+        <Aged form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

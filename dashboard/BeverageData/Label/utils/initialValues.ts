@@ -35,7 +35,7 @@ const initialValues = {
   },
   filtration: null,
   pasteurization: null,
-  // aged: [],
+  aged: [],
   // dryHopped: null,
   // hopRate: null,
   // expirationDate: null,

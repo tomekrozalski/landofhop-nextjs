@@ -91,23 +91,23 @@ export type FormValues = {
   };
   filtration: boolean | null;
   pasteurization: boolean | null;
-  // aged: {
-  //   type: AgedType | null;
-  //   wood: AgedWood | null;
-  //   time: {
-  //     unit: {
-  //       label: string;
-  //       value: AgedTimeUnit;
-  //     };
-  //     value: number;
-  //   } | null;
-  //   previousContent:
-  //     | {
-  //         label: string;
-  //         value: AgedPreviousContent;
-  //       }[]
-  //     | null;
-  // }[];
+  aged: {
+    type: AgedType | null;
+    wood: AgedWood | null;
+    time: {
+      unit: {
+        label: string;
+        value: AgedTimeUnit;
+      };
+      value: number;
+    } | null;
+    previousContent:
+      | {
+          label: string;
+          value: AgedPreviousContent;
+        }[]
+      | null;
+  }[];
   // dryHopped:
   //   | {
   //       label: string;

@@ -14,6 +14,13 @@
   "append": "Dodaj",
   "beverage": {
     "add": "Dodaj nowe piwo",
+    "aged": {
+      "title": "Sposób leżakowania {order}",
+      "type": {
+        "barrel": "w beczce",
+        "wood": "z drewnem"
+      }
+    },
     "alcohol": {
       "relate": {
         "abv": "Abv",
