@@ -48,5 +48,10 @@
   "style": "styl",
   "submit": "wyślij",
   "tale": "Opis",
+  "timeUnit": {
+    "day": "dzień",
+    "month": "miesiąc",
+    "year": "rok"
+  },
   "website": "Strona internetowa"
 }

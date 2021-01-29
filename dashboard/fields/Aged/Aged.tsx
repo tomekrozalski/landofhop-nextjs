@@ -4,12 +4,10 @@ import { useFieldArray } from 'react-hook-form';
 import { FormattedMessage } from 'react-intl';
 
 import Label from 'elements/Label';
-import TextInput from 'elements/TextInput';
 import { ActionButtons, Plug } from 'dashboard/elements';
-import { LanguageSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/Dashboard.module.css';
 import agedStyles from './Aged.module.css';
-import { AgedType } from '.';
+import { AgedTime, AgedType, AgedWood } from '.';
 
 type Props = {
   form: string;
@@ -22,15 +20,20 @@ const Aged: React.FC<Props> = ({ form }) => {
 
   const emptyAged = {
     previousContent: null,
-    time: null,
+    time: {
+      value: null,
+      unit: null,
+    },
     type: null,
     wood: null,
   };
 
+  console.log('fields', fields);
+
   return (
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} htmlFor="aged[0].value" name="aged" />
-      {fields.map(({ id, type }, index) => (
+      {fields.map(({ id, time, type, wood }, index) => (
         <Fragment key={id}>
           <fieldset className={agedStyles.aged}>
             <h4 className={agedStyles.title}>
@@ -39,27 +42,11 @@ const Aged: React.FC<Props> = ({ form }) => {
                 values={{ order: index + 1 }}
               />
             </h4>
-            <AgedType
-              defaultValue={type}
-              form={form}
-              name={`aged[${index}].type`}
-            />
-            {/* <AgedWood index={index} /> */}
-            {/* <AgedTime formName={formName} index={index} /> */}
+            <AgedType defaultValue={type} form={form} index={index} />
+            <AgedWood defaultValue={wood} form={form} index={index} />
+            <AgedTime defaultValue={time} form={form} index={index} />
             {/* <PreviousContent formName={formName} index={index} /> */}
           </fieldset>
-          {/* <TextInput
-            defaultValue={value}
-            form={form}
-            name={`aged[${index}].value`}
-            style={{ gridColumn: '2/3' }}
-          /> */}
-          {/* <LanguageSelect
-            defaultValue={lang}
-            form={form}
-            name={`aged[${index}].lang`}
-            style={{ gridColumn: '3/4' }}
-          /> */}
           {fields.length === index + 1 && (
             <ActionButtons
               append={() => append(emptyAged)}
@@ -69,7 +56,7 @@ const Aged: React.FC<Props> = ({ form }) => {
           )}
         </Fragment>
       ))}
-      {!fields.length && <Plug append={() => append(emptyAged)} wide />}
+      {!fields.length && <Plug append={() => append(emptyAged)} />}
     </div>
   );
 };

@@ -48,5 +48,10 @@
   "style": "style",
   "submit": "submit",
   "tale": "Tale",
+  "timeUnit": {
+    "day": "day",
+    "month": "month",
+    "year": "year"
+  },
   "website": "Website"
 }

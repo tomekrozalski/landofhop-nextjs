@@ -15,10 +15,15 @@
   "beverage": {
     "add": "Add new beverage",
     "aged": {
+      "timeOfAged": "Time of aged",
       "title": "Way of aged {order}",
       "type": {
         "barrel": "barrel",
         "wood": "wood"
+      },
+      "wood": {
+        "beech": "beech",
+        "oak": "oak"
       }
     },
     "alcohol": {

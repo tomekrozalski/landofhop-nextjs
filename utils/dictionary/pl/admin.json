@@ -15,10 +15,15 @@
   "beverage": {
     "add": "Dodaj nowe piwo",
     "aged": {
+      "timeOfAged": "Czas leżakowania",
       "title": "Sposób leżakowania {order}",
       "type": {
         "barrel": "w beczce",
         "wood": "z drewnem"
+      },
+      "wood": {
+        "beech": "buk",
+        "oak": "dąb"
       }
     },
     "alcohol": {

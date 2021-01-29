@@ -2,26 +2,30 @@ import clsx from 'clsx';
 import { FormattedMessage } from 'react-intl';
 import { useController } from 'react-hook-form';
 
-import { AgedType as AgedTypeEnum } from 'utils/enums/Beverage';
+import {
+  AgedType as AgedTypeEnum,
+  AgedWood as AgedWoodEnum,
+} from 'utils/enums/Beverage';
 import styles from './OptionGroup.module.css';
 
 type Props = {
   data: {
     id: string;
     label: string;
-    option: AgedTypeEnum;
+    option: AgedTypeEnum | AgedWoodEnum;
   }[];
-  form: string;
   name: string;
 };
 
-const OptionGroup: React.FC<Props> = ({ data, form, name }) => {
+const OptionGroup: React.FC<Props> = ({ data, name }) => {
   const {
     field: { value, onChange },
   } = useController({
     name,
     defaultValue: null,
   });
+
+  console.log('OptionGroup', name, value);
 
   return (
     <ul
@@ -38,6 +42,7 @@ const OptionGroup: React.FC<Props> = ({ data, form, name }) => {
             id={id}
             onChange={() => onChange(option)}
             type="radio"
+            value={option}
           />
           <label className={styles.label} htmlFor={id}>
             <FormattedMessage id={label} />

@@ -20,11 +20,14 @@ const Condition: React.FC<Props> = ({
 }) => {
   const { setValue, watch } = useFormContext();
   const value = watch(name);
-  const isDisabled = isObject(emptyValue)
-    ? Object.values(value).includes(null)
-    : value === null;
+
+  const isDisabled =
+    isObject(value) && isObject(emptyValue)
+      ? Object.values(value).includes(null)
+      : value === null;
 
   const setFieldValue = (fieldName, initial, empty) => {
+    console.log('->', fieldName, initial, empty);
     setValue(fieldName, isDisabled ? initial : empty, {
       shouldValidate: true,
     });
