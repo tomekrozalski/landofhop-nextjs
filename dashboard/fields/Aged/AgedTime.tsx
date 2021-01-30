@@ -28,7 +28,10 @@ const AgedTime: React.FC<Props> = ({ defaultValue, form, index }) => {
       </label>
       <div className={styles.timeContent}>
         <Condition
-          emptyValue={defaultValue}
+          emptyValue={{
+            value: null,
+            unit: null,
+          }}
           form={form}
           initialValue={{
             value: 0,

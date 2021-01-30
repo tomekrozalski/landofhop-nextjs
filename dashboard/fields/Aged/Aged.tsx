@@ -7,7 +7,7 @@ import Label from 'elements/Label';
 import { ActionButtons, Plug } from 'dashboard/elements';
 import styles from 'dashboard/Dashboard.module.css';
 import agedStyles from './Aged.module.css';
-import { AgedTime, AgedType, AgedWood } from '.';
+import { AgedTime, AgedType, AgedWood, PreviousContent } from '.';
 
 type Props = {
   form: string;
@@ -28,12 +28,10 @@ const Aged: React.FC<Props> = ({ form }) => {
     wood: null,
   };
 
-  console.log('fields', fields);
-
   return (
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} htmlFor="aged[0].value" name="aged" />
-      {fields.map(({ id, time, type, wood }, index) => (
+      {fields.map(({ id, previousContent, time, type, wood }, index) => (
         <Fragment key={id}>
           <fieldset className={agedStyles.aged}>
             <h4 className={agedStyles.title}>
@@ -45,7 +43,11 @@ const Aged: React.FC<Props> = ({ form }) => {
             <AgedType defaultValue={type} form={form} index={index} />
             <AgedWood defaultValue={wood} form={form} index={index} />
             <AgedTime defaultValue={time} form={form} index={index} />
-            {/* <PreviousContent formName={formName} index={index} /> */}
+            <PreviousContent
+              defaultValue={previousContent}
+              form={form}
+              index={index}
+            />
           </fieldset>
           {fields.length === index + 1 && (
             <ActionButtons

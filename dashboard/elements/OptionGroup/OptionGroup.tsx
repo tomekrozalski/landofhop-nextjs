@@ -25,8 +25,6 @@ const OptionGroup: React.FC<Props> = ({ data, name }) => {
     defaultValue: null,
   });
 
-  console.log('OptionGroup', name, value);
-
   return (
     <ul
       className={clsx(styles.optionGroup, {
@@ -42,7 +40,6 @@ const OptionGroup: React.FC<Props> = ({ data, name }) => {
             id={id}
             onChange={() => onChange(option)}
             type="radio"
-            value={option}
           />
           <label className={styles.label} htmlFor={id}>
             <FormattedMessage id={label} />

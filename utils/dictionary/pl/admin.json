@@ -15,6 +15,14 @@
   "beverage": {
     "add": "Dodaj nowe piwo",
     "aged": {
+      "previousContent": {
+        "bourbon": "bourbon",
+        "cognac": "koniak",
+        "porto": "porto",
+        "redWine": "czerwone wino",
+        "rum": "rum",
+        "whisky": "whisky"
+      },
       "timeOfAged": "Czas leżakowania",
       "title": "Sposób leżakowania {order}",
       "type": {

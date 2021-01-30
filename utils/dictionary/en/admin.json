@@ -15,6 +15,14 @@
   "beverage": {
     "add": "Add new beverage",
     "aged": {
+      "previousContent": {
+        "bourbon": "bourbon",
+        "cognac": "cognac",
+        "porto": "porto",
+        "redWine": "red wine",
+        "rum": "rum",
+        "whisky": "whisky"
+      },
       "timeOfAged": "Time of aged",
       "title": "Way of aged {order}",
       "type": {

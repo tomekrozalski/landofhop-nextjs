@@ -27,7 +27,6 @@ const Condition: React.FC<Props> = ({
       : value === null;
 
   const setFieldValue = (fieldName, initial, empty) => {
-    console.log('->', fieldName, initial, empty);
     setValue(fieldName, isDisabled ? initial : empty, {
       shouldValidate: true,
     });

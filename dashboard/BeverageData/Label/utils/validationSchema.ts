@@ -1,7 +1,11 @@
 import * as Yup from 'yup';
 
 // import { isValidDate } from 'dashboard/utils/helpers';
-import { Fermentation as FermentationEnum } from 'utils/enums/Beverage';
+import {
+  AgedType as AgedTypeEnum,
+  AgedWood as AgedWoodEnum,
+  Fermentation as FermentationEnum,
+} from 'utils/enums/Beverage';
 
 export default Yup.object().shape({
   badge: Yup.string()
@@ -125,23 +129,19 @@ export default Yup.object().shape({
   }),
   aged: Yup.array().of(
     Yup.object().shape({
-      type: Yup.string()
-        // null should be treated as correct option
-        .transform(v => (v === null ? 'ok' : v))
-        .required(),
-      wood: Yup.string()
-        // null should be treated as correct option
-        .transform(v => (v === null ? 'ok' : v))
-        .required(),
+      type: Yup.mixed().oneOf([...Object.values(AgedTypeEnum), null]),
+      wood: Yup.mixed().oneOf([...Object.values(AgedWoodEnum), null]),
       time: Yup.object()
         .shape({
-          unit: Yup.object().shape({
-            label: Yup.string().required(),
-            value: Yup.string().required(),
-          }),
-          value: Yup.number().min(1).required(),
+          unit: Yup.object()
+            .shape({
+              label: Yup.string().required(),
+              value: Yup.string().required(),
+            })
+            .nullable(true),
+          value: Yup.number().min(1).nullable(true),
         })
-        .nullable(true),
+        .required(),
       previousContent: Yup.array()
         .of(
           Yup.object().shape({
