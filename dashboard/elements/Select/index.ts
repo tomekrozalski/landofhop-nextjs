@@ -6,6 +6,7 @@ import AlcoholUnitSelect from './AlcoholUnitSelect';
 import CountrySelect from './CountrySelect';
 import ExtractRelateSelect from './ExtractRelateSelect';
 import ExtractUnitSelect from './ExtractUnitSelect';
+import IngredientSelect from './IngredientSelect';
 import InstitutionSelect from './InstitutionSelect';
 import LanguageSelect from './LanguageSelect';
 import PlaceSelect from './PlaceSelect';
@@ -19,6 +20,7 @@ export {
   CountrySelect,
   ExtractRelateSelect,
   ExtractUnitSelect,
+  IngredientSelect,
   InstitutionSelect,
   LanguageSelect,
   PlaceSelect,

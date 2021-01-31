@@ -108,12 +108,12 @@ export type FormValues = {
         }[]
       | null;
   }[];
-  // dryHopped:
-  //   | {
-  //       label: string;
-  //       value: string;
-  //     }[]
-  //   | null;
+  dryHopped:
+    | {
+        label: string;
+        value: string;
+      }[]
+    | null;
   // hopRate: {
   //   unit: {
   //     label: string;

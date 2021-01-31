@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Beverage, Country, Institution, Language, Place } from '.';
+import { Beverage, Country, Ingredient, Institution, Language, Place } from '.';
 
 type Props = {
   contexts: any;
@@ -22,6 +22,7 @@ const DashboardStateProvider: React.FC = ({ children }) => (
       <Institution />,
       <Country />,
       <Place />,
+      <Ingredient />,
       <Beverage />,
     ]}
   >

@@ -8,6 +8,7 @@ import Code from './Code';
 import Contract from './Contract';
 import Cooperation from './Cooperation';
 import Country from './Country';
+import DryHopped from './DryHopped';
 import Extract from './Extract';
 import Fermentation from './Fermentation';
 import Filtration from './Filtration';
@@ -35,6 +36,7 @@ export {
   Contract,
   Cooperation,
   Country,
+  DryHopped,
   Extract,
   Fermentation,
   Filtration,

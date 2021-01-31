@@ -13,6 +13,7 @@ import {
   Brand,
   Contract,
   Cooperation,
+  DryHopped,
   Extract,
   Fermentation,
   Filtration,
@@ -85,6 +86,7 @@ const LabelBeverage: React.FC = () => {
         <Filtration form="label" />
         <Pasteurization form="label" />
         <Aged form="label" />
+        <DryHopped form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

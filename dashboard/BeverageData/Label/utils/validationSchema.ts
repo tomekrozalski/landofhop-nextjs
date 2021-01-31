@@ -153,6 +153,7 @@ export default Yup.object().shape({
         .nullable(true),
     }),
   ),
+  dryHopped: Yup.array().min(1).nullable(true),
   // expirationDate: Yup.object()
   //   .shape({
   //     value: Yup.number()

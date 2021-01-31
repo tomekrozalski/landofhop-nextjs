@@ -6,6 +6,7 @@ import { useController } from 'react-hook-form';
 import { IngredientType } from 'utils/enums/Beverage';
 import FieldStatusIndicator from 'elements/FieldStatusIndicator';
 import selectStyles from './selectStyles';
+import Option from './Option';
 import MultiValueRemove from './MultiValueRemove';
 import styles from './Select.module.css';
 
@@ -57,7 +58,7 @@ const Select: React.FC<Props> = ({
       >
         <ReactSelect
           {...inputProps}
-          components={{ MultiValueRemove }}
+          components={{ MultiValueRemove, Option }}
           value={value?.value === '' ? null : value}
           inputId={`${form}-${name}`}
           inputRef={ref}

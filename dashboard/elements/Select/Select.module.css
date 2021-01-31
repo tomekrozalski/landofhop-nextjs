@@ -90,3 +90,35 @@
   bottom: 0;
   right: 0;
 }
+
+.markType {
+  position: relative;
+}
+
+.markType::after {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+.markType.malt::after {
+  background: var(--color-ingredients-malt);
+}
+
+.markType.hop::after {
+  background: var(--color-ingredients-hop);
+}
+
+.markType.appendix::after {
+  background: var(--color-ingredients-appendix);
+}
+
+.markType.yeast::after {
+  background: var(--color-ingredients-yeast);
+}
