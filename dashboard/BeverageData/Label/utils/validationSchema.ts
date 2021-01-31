@@ -154,18 +154,28 @@ export default Yup.object().shape({
     }),
   ),
   dryHopped: Yup.array().min(1).nullable(true),
-  // expirationDate: Yup.object()
-  //   .shape({
-  //     value: Yup.number()
-  //       .min(1)
-  //       .max(500)
-  //       .required(),
-  //     unit: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //   })
-  //   .nullable(true),
+  hopRate: Yup.object()
+    .shape({
+      value: Yup.number().min(1).max(100).nullable(true),
+      unit: Yup.object()
+        .shape({
+          label: Yup.string().required(),
+          value: Yup.string().required(),
+        })
+        .nullable(true),
+    })
+    .required(),
+  expirationDate: Yup.object()
+    .shape({
+      value: Yup.number().min(1).max(500).nullable(true),
+      unit: Yup.object()
+        .shape({
+          label: Yup.string().required(),
+          value: Yup.string().required(),
+        })
+        .nullable(true),
+    })
+    .required(),
   // // -----------
   // ingredientsDescription: Yup.array().of(
   //   Yup.object().shape({

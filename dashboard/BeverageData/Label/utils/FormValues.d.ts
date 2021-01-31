@@ -1,25 +1,25 @@
 import { LanguageValue } from 'utils/types/common';
-// import {
-//   AgedPreviousContent,
-//   AgedTimeUnit,
-//   AgedType,
-//   AgedWood,
-//   AlcoholRelate,
-//   AlcoholScope,
-//   AlcoholUnit,
-//   BeverageType,
-//   ContainerColor,
-//   ContainerMaterial,
-//   ContainerType,
-//   ContainerUnit,
-//   Currency,
-//   ExpirationDateUnit,
-//   ExtractRelate,
-//   ExtractUnit,
-//   HopRateUnit,
-//   IngredientType,
-//   TemperatureUnit,
-// } from 'utils/enums/Beverage';
+import {
+  //   AgedPreviousContent,
+  //   AgedTimeUnit,
+  //   AgedType,
+  //   AgedWood,
+  //   AlcoholRelate,
+  //   AlcoholScope,
+  //   AlcoholUnit,
+  //   BeverageType,
+  //   ContainerColor,
+  //   ContainerMaterial,
+  //   ContainerType,
+  //   ContainerUnit,
+  //   Currency,
+  //   ExpirationDateUnit,
+  //   ExtractRelate,
+  //   ExtractUnit,
+  HopRateUnit,
+  //   IngredientType,
+  //   TemperatureUnit,
+} from 'utils/enums/Beverage';
 
 export type FormValues = {
   badge: string;
@@ -114,20 +114,20 @@ export type FormValues = {
         value: string;
       }[]
     | null;
-  // hopRate: {
-  //   unit: {
-  //     label: string;
-  //     value: HopRateUnit;
-  //   };
-  //   value: number;
-  // } | null;
-  // expirationDate: {
-  //   unit: {
-  //     label: string;
-  //     value: ExpirationDateUnit;
-  //   };
-  //   value: number;
-  // } | null;
+  hopRate: {
+    unit: {
+      label: string;
+      value: HopRateUnit;
+    } | null;
+    value: number | null;
+  };
+  expirationDate: {
+    unit: {
+      label: string;
+      value: ExpirationDateUnit;
+    } | null;
+    value: number | null;
+  };
   // // -----------
   // ingredientsDescription: {
   //   language: {

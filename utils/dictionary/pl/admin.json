@@ -66,6 +66,11 @@
         "percent": "%"
       }
     },
+    "hopRate": {
+      "unit": {
+        "gl": "g/l"
+      }
+    },
     "impressionsInfo": "Informacje dotyczące odczuć",
     "ingredientsInfo": "Informacje dotyczące składników",
     "labelInfo": {

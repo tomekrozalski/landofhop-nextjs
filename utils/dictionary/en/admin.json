@@ -66,6 +66,11 @@
         "percent": "%"
       }
     },
+    "hopRate": {
+      "unit": {
+        "gl": "g/l"
+      }
+    },
     "impressionsInfo": "Informations connected with impressions",
     "ingredientsInfo": "Informations connected with ingredients",
     "labelInfo": {

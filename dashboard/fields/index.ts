@@ -9,9 +9,11 @@ import Contract from './Contract';
 import Cooperation from './Cooperation';
 import Country from './Country';
 import DryHopped from './DryHopped';
+import ExpirationDate from './ExpirationDate';
 import Extract from './Extract';
 import Fermentation from './Fermentation';
 import Filtration from './Filtration';
+import HopRate from './HopRate';
 import Institution from './Institution';
 import Latitude from './Latitude';
 import Longitude from './Longitude';
@@ -37,9 +39,11 @@ export {
   Cooperation,
   Country,
   DryHopped,
+  ExpirationDate,
   Extract,
   Fermentation,
   Filtration,
+  HopRate,
   Institution,
   Latitude,
   Longitude,

@@ -4,8 +4,10 @@ import AlcoholRelateSelect from './AlcoholRelateSelect';
 import AlcoholScopeSelect from './AlcoholScopeSelect';
 import AlcoholUnitSelect from './AlcoholUnitSelect';
 import CountrySelect from './CountrySelect';
+import ExpirationDateUnitSelect from './ExpirationDateUnitSelect';
 import ExtractRelateSelect from './ExtractRelateSelect';
 import ExtractUnitSelect from './ExtractUnitSelect';
+import HopRateUnitSelect from './HopRateUnitSelect';
 import IngredientSelect from './IngredientSelect';
 import InstitutionSelect from './InstitutionSelect';
 import LanguageSelect from './LanguageSelect';
@@ -18,8 +20,10 @@ export {
   AlcoholScopeSelect,
   AlcoholUnitSelect,
   CountrySelect,
+  ExpirationDateUnitSelect,
   ExtractRelateSelect,
   ExtractUnitSelect,
+  HopRateUnitSelect,
   IngredientSelect,
   InstitutionSelect,
   LanguageSelect,
