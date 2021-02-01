@@ -102,8 +102,8 @@ const createChart = ({ data, intl, setSelected, sizes, wrapper }: Props) => {
     return this.getTotalLength() + 10;
   }
 
-  [...data[data.length - 1].brands]
-    .sort((a, b) => (a.amount < b.amount ? 0 : 1))
+  data[data.length - 1].brands
+    .sort((a, b) => (a.amount > b.amount ? 1 : -1))
     .forEach(({ badge, id }, i) => {
       lines
         .append('path')

@@ -50,8 +50,8 @@ const TopBrandsTimeline: React.FC<{ data: TopBrandsTimelineBar[] }> = ({
       </SectionHeader>
       <svg ref={svg} />
       <ol className={clsx(styles.legend, { [styles.highlighted]: !!selected })}>
-        {[...data[data.length - 1].brands]
-          .sort((a, b) => (a.amount < b.amount ? 1 : 0))
+        {data[data.length - 1].brands
+          .sort((a, b) => (a.amount < b.amount ? 1 : -1))
           .map(({ badge, id, name }, i) => (
             <li
               key={id}

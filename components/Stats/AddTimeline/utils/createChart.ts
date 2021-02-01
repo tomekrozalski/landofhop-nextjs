@@ -183,7 +183,7 @@ const createChart = ({ data, intl, sizes, wrapper }: Props) => {
       .curve(d3.curveBasis);
 
   function getTotalLength(this: SVGPathElement) {
-    return this.getTotalLength();
+    return +this.getTotalLength().toFixed(0) + 50;
   }
 
   const types = { cans, bottles, total };
