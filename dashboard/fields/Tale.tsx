@@ -18,7 +18,7 @@ const Tale: React.FC<Props> = ({ form }) => {
   });
 
   return (
-    <div className={clsx(styles.grid, styles.double)}>
+    <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} htmlFor="tale[0].value" name="tale" />
       {fields.map(({ article, id, lang, lead }, index) => (
         <Fragment key={id}>
@@ -26,21 +26,21 @@ const Tale: React.FC<Props> = ({ form }) => {
             defaultValue={lead}
             form={form}
             name={`tale[${index}].lead`}
-            style={{ gridColumn: '2/4' }}
+            style={{ gridColumn: '2/3' }}
             textarea
           />
           <TextInput
             defaultValue={article}
             form={form}
             name={`tale[${index}].article`}
-            style={{ gridColumn: '2/4' }}
+            style={{ gridColumn: '2/3' }}
             textarea
           />
           <LanguageSelect
             defaultValue={lang}
             form={form}
             name={`tale[${index}].lang`}
-            style={{ gridColumn: '2/4' }}
+            style={{ gridColumn: '2/3' }}
           />
           {fields.length === index + 1 && (
             <ActionButtons
@@ -54,7 +54,7 @@ const Tale: React.FC<Props> = ({ form }) => {
         </Fragment>
       ))}
       {!fields.length && (
-        <Plug append={() => append({ article: '', lang: '', lead: '' })} wide />
+        <Plug append={() => append({ article: '', lang: '', lead: '' })} />
       )}
     </div>
   );

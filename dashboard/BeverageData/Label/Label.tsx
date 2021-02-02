@@ -19,6 +19,7 @@ import {
   Fermentation,
   Filtration,
   HopRate,
+  IngredientsDescription,
   Name,
   Pasteurization,
   Place,
@@ -91,6 +92,13 @@ const LabelBeverage: React.FC = () => {
         <DryHopped form="label" />
         <HopRate form="label" />
         <ExpirationDate form="label" />
+        {/* -------------------------------- */}
+        <h3>
+          <span>
+            <FormattedMessage id="admin.beverage.ingredientsInfo" />
+          </span>
+        </h3>
+        <IngredientsDescription form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

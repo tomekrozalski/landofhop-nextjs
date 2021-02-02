@@ -129,14 +129,14 @@ export type FormValues = {
     value: number | null;
   };
   // // -----------
-  // ingredientsDescription: {
-  //   language: {
-  //     label: string;
-  //     value: string;
-  //   };
-  //   value: string;
-  //   complete: boolean;
-  // }[];
+  ingredientsDescription: {
+    language: {
+      label: string;
+      value: string;
+    };
+    value: string;
+    complete: boolean;
+  }[];
   // ingredientsList:
   //   | {
   //       label: string;

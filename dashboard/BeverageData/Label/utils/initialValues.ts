@@ -46,7 +46,7 @@ const initialValues = {
     unit: null,
   },
   // -----------
-  // ingredientsDescription: [],
+  ingredientsDescription: [],
   // ingredientsList: null,
   // smokedMalt: null,
   // -----------
