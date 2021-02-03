@@ -17,6 +17,12 @@ const IngredientsDescription: React.FC<Props> = ({ form }) => {
     name: 'ingredientsDescription',
   });
 
+  const emptyIngredientsDescription = {
+    complete: true,
+    lang: '',
+    value: '• , • , • ',
+  };
+
   return (
     <div className={clsx(styles.grid, styles.basic)}>
       <Label
@@ -39,25 +45,21 @@ const IngredientsDescription: React.FC<Props> = ({ form }) => {
             name={`ingredientsDescription[${index}].lang`}
             style={{ gridColumn: '2/3' }}
           />
-          <div
-            style={{
-              'grid-column': '1 / 3',
-              display: 'grid',
-            }}
-          >
+          <div className={styles.ingredientsCompleteWrapper}>
             <Label
               form={form}
               htmlFor={`ingredientsDescription[${index}].complete`}
               name="areIngredientsComplete"
             />
             <Switch
+              defaultValue={complete}
               form={form}
               name={`ingredientsDescription[${index}].complete`}
             />
           </div>
           {fields.length === index + 1 && (
             <ActionButtons
-              append={() => append({ article: '', lang: '', lead: '' })}
+              append={() => append(emptyIngredientsDescription)}
               remove={() => remove(index)}
               withRemove
             />
@@ -66,12 +68,7 @@ const IngredientsDescription: React.FC<Props> = ({ form }) => {
         </Fragment>
       ))}
       {!fields.length && (
-        <Plug
-          append={() =>
-            append({ complete: true, lang: '', value: '• , • , • ' })
-          }
-          wide
-        />
+        <Plug append={() => append(emptyIngredientsDescription)} />
       )}
     </div>
   );

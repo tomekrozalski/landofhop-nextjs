@@ -50,6 +50,14 @@
   margin-bottom: 1rem;
 }
 
+.ingredientsCompleteWrapper {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-gap: 1rem;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(2, 45rem) repeat(2, var(--size-input-height)) 1fr;
+}
+
 .grid.basic {
   grid-template-columns:
     repeat(2, 45rem) repeat(2, var(--size-input-height))
@@ -72,9 +80,9 @@
 }
 
 .grid.conditionalDouble {
-  grid-template-columns: calc(44rem - var(--size-input-height)) var(
-      --size-input-height
-    ) repeat(2, 22rem) 1fr;
+  grid-template-columns:
+    calc(44rem - var(--size-input-height)) var(--size-input-height)
+    repeat(2, 22rem) 1fr;
 }
 
 .grid.conditionalFour {

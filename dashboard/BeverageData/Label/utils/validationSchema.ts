@@ -179,7 +179,7 @@ export default Yup.object().shape({
   // -----------
   ingredientsDescription: Yup.array().of(
     Yup.object().shape({
-      language: Yup.object().shape({
+      lang: Yup.object().shape({
         label: Yup.string().required(),
         value: Yup.string().required(),
       }),

@@ -4,14 +4,15 @@ import ReactSwitch from 'react-switch';
 import styles from './Switch.module.css';
 
 type Props = {
+  defaultValue?: boolean;
   name: string;
   form: string;
 };
 
-const Switch: React.FC<Props> = ({ name, form }) => {
+const Switch: React.FC<Props> = ({ defaultValue = false, name, form }) => {
   const { field } = useController({
     name,
-    defaultValue: false,
+    defaultValue,
   });
 
   return (
