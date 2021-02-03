@@ -44,7 +44,7 @@ const Country: React.FC<Props> = ({ close }) => {
         onSubmit={methods.handleSubmit(action)}
       >
         <h1>
-          <FormattedMessage id="admin.addNewCountry.title" />
+          <FormattedMessage id="admin.addNewCountry" />
         </h1>
         <Code form="country" />
         <Name form="country" />

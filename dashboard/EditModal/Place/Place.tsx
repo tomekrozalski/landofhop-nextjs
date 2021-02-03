@@ -50,7 +50,7 @@ const Place: React.FC<Props> = ({ close }) => {
         onSubmit={methods.handleSubmit(action)}
       >
         <h1>
-          <FormattedMessage id="admin.addNewPlace.title" />
+          <FormattedMessage id="admin.addNewPlace" />
         </h1>
         <City form="place" />
         <Country form="place" />

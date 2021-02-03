@@ -49,7 +49,7 @@ const Name: React.FC<Props> = ({ form, languageIcon }) => {
           {languageIcon && index === 0 && (
             <OpenSubform
               icon="language"
-              label="admin.addNewLanguage.title"
+              label="admin.addNewLanguage"
               onClick={() => setType(ModalEnum.language)}
             />
           )}

@@ -20,7 +20,7 @@ const Country: React.FC<Props> = ({ form }) => {
       <Label form={form} name="country" required />
       <CountrySelect defaultValue="" form={form} name="country" />
       <OpenSubform
-        label="admin.addNewCountry.title"
+        label="admin.addNewCountry"
         onClick={() => setType(ModalEnum.country)}
       />
     </div>

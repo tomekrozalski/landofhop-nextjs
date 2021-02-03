@@ -8,12 +8,12 @@ type Props = {
   form: string;
 };
 
-const Filtration: React.FC<Props> = ({ form }) => (
+const SmokedMalt: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
-    <Label form={form} name="filtration" />
-    <Condition form={form} initialValue={false} name="filtration" />
-    <Switch form={form} name="filtration" />
+    <Label form={form} name="smokedMalt" />
+    <Condition form={form} initialValue={false} name="smokedMalt" />
+    <Switch form={form} name="smokedMalt" />
   </div>
 );
 
-export default Filtration;
+export default SmokedMalt;

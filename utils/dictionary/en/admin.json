@@ -1,16 +1,9 @@
 {
-  "addNewCountry": {
-    "title": "Add new country"
-  },
-  "addNewInstitution": {
-    "title": "Add new institution"
-  },
-  "addNewLanguage": {
-    "title": "Add new language"
-  },
-  "addNewPlace": {
-    "title": "Add new place"
-  },
+  "addNewCountry": "Add new country",
+  "addNewIngredient": "Add new ingredient",
+  "addNewInstitution": "Add new institution",
+  "addNewLanguage": "Add new language",
+  "addNewPlace": "Add new place",
   "append": "Append",
   "beverage": {
     "add": "Add new beverage",

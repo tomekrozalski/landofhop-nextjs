@@ -27,7 +27,7 @@ const Brand: React.FC<Props> = ({ disabled = false, form }) => {
         style={{ gridColumn: '2/3' }}
       />
       <OpenSubform
-        label="admin.addNewInstitution.title"
+        label="admin.addNewInstitution"
         onClick={() => setType(ModalEnum.institution)}
       />
     </div>

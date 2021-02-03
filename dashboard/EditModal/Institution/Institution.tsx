@@ -44,7 +44,7 @@ const Institution: React.FC<Props> = ({ close }) => {
         onSubmit={methods.handleSubmit(action)}
       >
         <h1>
-          <FormattedMessage id="admin.addNewInstitution.title" />
+          <FormattedMessage id="admin.addNewInstitution" />
         </h1>
         <Badge form="institution" />
         <Name form="institution" />

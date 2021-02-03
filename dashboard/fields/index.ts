@@ -15,6 +15,7 @@ import Fermentation from './Fermentation';
 import Filtration from './Filtration';
 import HopRate from './HopRate';
 import IngredientsDescription from './IngredientsDescription';
+import IngredientsList from './IngredientsList';
 import Institution from './Institution';
 import Latitude from './Latitude';
 import Longitude from './Longitude';
@@ -24,6 +25,7 @@ import Pasteurization from './Pasteurization';
 import Place from './Place';
 import Remark from './Remark';
 import Series from './Series';
+import SmokedMalt from './SmokedMalt';
 import Style from './Style';
 import Tale from './Tale';
 import Website from './Website';
@@ -46,6 +48,7 @@ export {
   Filtration,
   HopRate,
   IngredientsDescription,
+  IngredientsList,
   Institution,
   Latitude,
   Longitude,
@@ -55,6 +58,7 @@ export {
   Place,
   Remark,
   Series,
+  SmokedMalt,
   Style,
   Tale,
   Website,

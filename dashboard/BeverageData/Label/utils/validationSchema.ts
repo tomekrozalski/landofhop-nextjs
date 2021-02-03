@@ -187,9 +187,7 @@ export default Yup.object().shape({
       complete: Yup.boolean().required(),
     }),
   ),
-  // ingredientsList: Yup.array()
-  //   .min(1)
-  //   .nullable(true),
+  ingredientsList: Yup.array().min(1).nullable(true),
   // -----------
   // bitterness: Yup.number()
   //   .min(0)

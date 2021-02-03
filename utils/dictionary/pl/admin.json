@@ -1,16 +1,9 @@
 {
-  "addNewCountry": {
-    "title": "Dodaj nowy kraj"
-  },
-  "addNewInstitution": {
-    "title": "Dodaj nową instytucję"
-  },
-  "addNewLanguage": {
-    "title": "Dodaj nowy język "
-  },
-  "addNewPlace": {
-    "title": "Dodaj nowe miejsce"
-  },
+  "addNewCountry": "Dodaj nowy kraj",
+  "addNewIngredient": "Dodaj nowy składnik",
+  "addNewInstitution": "Dodaj nową instytucję",
+  "addNewLanguage": "Dodaj nowy język",
+  "addNewPlace": "Dodaj nowe miejsce",
   "append": "Dodaj",
   "beverage": {
     "add": "Dodaj nowe piwo",

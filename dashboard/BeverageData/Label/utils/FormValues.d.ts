@@ -137,14 +137,14 @@ export type FormValues = {
     value: string;
     complete: boolean;
   }[];
-  // ingredientsList:
-  //   | {
-  //       label: string;
-  //       value: string;
-  //       type: IngredientType;
-  //     }[]
-  //   | null;
-  // smokedMalt: boolean | null;
+  ingredientsList:
+    | {
+        label: string;
+        value: string;
+        type: IngredientType;
+      }[]
+    | null;
+  smokedMalt: boolean | null;
   // -----------
   // bitterness: number | null;
   // sweetness: number | null;

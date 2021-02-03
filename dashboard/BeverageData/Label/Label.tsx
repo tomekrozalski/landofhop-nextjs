@@ -20,11 +20,13 @@ import {
   Filtration,
   HopRate,
   IngredientsDescription,
+  IngredientsList,
   Name,
   Pasteurization,
   Place,
   Remark,
   Series,
+  SmokedMalt,
   Style,
   Tale,
 } from 'dashboard/fields';
@@ -99,6 +101,8 @@ const LabelBeverage: React.FC = () => {
           </span>
         </h3>
         <IngredientsDescription form="label" />
+        <IngredientsList form="label" />
+        <SmokedMalt from="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

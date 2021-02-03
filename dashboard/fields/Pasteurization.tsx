@@ -11,7 +11,7 @@ type Props = {
 const Pasteurization: React.FC<Props> = ({ form }) => (
   <div className={clsx(styles.grid, styles.optional)}>
     <Label form={form} name="pasteurization" />
-    <Condition form={form} initialValue="" name="pasteurization" />
+    <Condition form={form} initialValue={false} name="pasteurization" />
     <Switch form={form} name="pasteurization" />
   </div>
 );

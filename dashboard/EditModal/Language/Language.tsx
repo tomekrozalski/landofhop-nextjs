@@ -44,7 +44,7 @@ const Language: React.FC<Props> = ({ close }) => {
         onSubmit={methods.handleSubmit(action)}
       >
         <h1>
-          <FormattedMessage id="admin.addNewLanguage.title" />
+          <FormattedMessage id="admin.addNewLanguage" />
         </h1>
         <Code form="language" />
         <Name form="language" />

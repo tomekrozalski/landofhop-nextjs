@@ -5,31 +5,27 @@ import { ModalContext } from 'utils/contexts';
 import { Modal as ModalEnum } from 'utils/enums';
 import Label from 'elements/Label';
 import { Condition, OpenSubform } from 'dashboard/elements';
-import { PlaceSelect } from 'dashboard/elements/Select';
+import { IngredientSelect } from 'dashboard/elements/Select';
 import styles from 'dashboard/Dashboard.module.css';
 
 type Props = {
   form: string;
 };
 
-const Place: React.FC<Props> = ({ form }) => {
+const IngredientsList: React.FC<Props> = ({ form }) => {
   const { setType } = useContext(ModalContext);
 
   return (
     <div className={clsx(styles.grid, styles.optional)}>
-      <Label form={form} name="place" />
-      <Condition
-        form={form}
-        initialValue={{ value: { value: '' } }}
-        name="place"
-      />
-      <PlaceSelect defaultValue="" form={form} name="place" />
+      <Label form={form} name="ingredientsList" />
+      <Condition form={form} initialValue={[]} name="ingredientsList" />
+      <IngredientSelect defaultValue={[]} form={form} name="ingredientsList" />
       <OpenSubform
-        label="admin.addNewPlace"
-        onClick={() => setType(ModalEnum.place)}
+        label="admin.addNewIngredient"
+        onClick={() => setType(ModalEnum.ingredient)}
       />
     </div>
   );
 };
 
-export default Place;
+export default IngredientsList;

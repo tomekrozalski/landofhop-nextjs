@@ -47,8 +47,8 @@ const initialValues = {
   },
   // -----------
   ingredientsDescription: [],
-  // ingredientsList: null,
-  // smokedMalt: null,
+  ingredientsList: null,
+  smokedMalt: null,
   // -----------
   // bitterness: null,
   // sweetness: null,
