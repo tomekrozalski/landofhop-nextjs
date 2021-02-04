@@ -18,11 +18,19 @@ export const getStaticProps: GetStaticProps<AugmentedDetails> = async ({
   params,
 }: Props) => {
   const { brand, name, shortId } = params;
+
   const props: AugmentedDetails = await serverCall(Endpoints.beverageDetails, {
     pathParams: [locale, shortId, brand, name],
-  });
+  }).catch(() => false);
 
-  return { props, revalidate: 10 };
+  return props
+    ? { props, revalidate: 10 }
+    : {
+        redirect: {
+          destination: '/404',
+          permanent: false,
+        },
+      };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => ({
