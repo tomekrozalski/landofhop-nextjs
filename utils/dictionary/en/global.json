@@ -42,6 +42,7 @@
   "name": "Name",
   "open": "Open",
   "ownedBy": "Owned by",
+  "parent": "Parent",
   "password": "password",
   "pasteurization": "pasteryzacja",
   "place": "Place",
@@ -60,5 +61,6 @@
     "month": "month",
     "year": "year"
   },
+  "type": "Type",
   "website": "Website"
 }

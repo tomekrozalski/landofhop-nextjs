@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import Modal from 'elements/Modal';
 import { ModalContext } from 'utils/contexts';
 import { Modal as ModalEnum } from 'utils/enums';
-import { Country, Institution, Language, Place } from '.';
+import { Country, Ingredient, Institution, Language, Place } from '.';
 import styles from './EditModal.module.css';
 
 const EditModal: React.FC = () => {
@@ -16,6 +16,7 @@ const EditModal: React.FC = () => {
       {type === ModalEnum.language && <Language close={close} />}
       {type === ModalEnum.place && <Place close={close} />}
       {type === ModalEnum.country && <Country close={close} />}
+      {type === ModalEnum.ingredient && <Ingredient close={close} />}
     </Modal>
   );
 };

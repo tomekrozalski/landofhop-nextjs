@@ -24,7 +24,7 @@ const FormBody: React.FC = () => {
   const { logIn } = useContext(AuthenticationContext);
 
   const methods = useForm<FormData>({
-    mode: 'onChange',
+    mode: 'onTouched',
     defaultValues: {
       email: '',
       password: '',

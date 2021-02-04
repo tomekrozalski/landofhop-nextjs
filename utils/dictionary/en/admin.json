@@ -78,6 +78,14 @@
   },
   "confirmationToRemove": "Are you sure?",
   "contractUnknown": "yes, but unknown",
+  "ingredient": {
+    "type": {
+      "appendix": "appendix",
+      "hop": "hop",
+      "malt": "malt",
+      "yeast": "yeast"
+    }
+  },
   "institutions": "Institutions",
   "language": {
     "group": {

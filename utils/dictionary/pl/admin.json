@@ -78,6 +78,14 @@
   },
   "confirmationToRemove": "Na pewno usunąć?",
   "contractUnknown": "tak, lecz nieznany",
+  "ingredient": {
+    "type": {
+      "appendix": "dodatek",
+      "hop": "chmiel",
+      "malt": "słód",
+      "yeast": "drożdże"
+    }
+  },
   "institutions": "Instytucje",
   "language": {
     "group": {

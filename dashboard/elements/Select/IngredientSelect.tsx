@@ -11,8 +11,10 @@ import Select from './Select';
 
 type Props = {
   defaultValue: any;
+  disabled?: boolean;
   form: string;
   filterByType?: IngredientType;
+  isMulti?: boolean;
   name: string;
 };
 
@@ -31,7 +33,6 @@ const IngredientSelect: React.FC<Props> = ({ filterByType, ...rest }) => {
   return (
     <Select
       {...rest}
-      isMulti
       options={ingredients
         .filter(({ type }) => (filterByType ? type === filterByType : true))
         .map(({ id, name, type }) => ({

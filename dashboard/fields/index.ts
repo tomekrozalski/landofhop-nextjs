@@ -16,6 +16,8 @@ import Filtration from './Filtration';
 import HopRate from './HopRate';
 import IngredientsDescription from './IngredientsDescription';
 import IngredientsList from './IngredientsList';
+import IngredientParent from './IngredientParent';
+import IngredientType from './IngredientType';
 import Institution from './Institution';
 import Latitude from './Latitude';
 import Longitude from './Longitude';
@@ -47,8 +49,10 @@ export {
   Fermentation,
   Filtration,
   HopRate,
+  IngredientParent,
   IngredientsDescription,
   IngredientsList,
+  IngredientType,
   Institution,
   Latitude,
   Longitude,

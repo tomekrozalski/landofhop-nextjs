@@ -19,7 +19,12 @@ const IngredientsList: React.FC<Props> = ({ form }) => {
     <div className={clsx(styles.grid, styles.optional)}>
       <Label form={form} name="ingredientsList" />
       <Condition form={form} initialValue={[]} name="ingredientsList" />
-      <IngredientSelect defaultValue={[]} form={form} name="ingredientsList" />
+      <IngredientSelect
+        defaultValue={[]}
+        form={form}
+        isMulti
+        name="ingredientsList"
+      />
       <OpenSubform
         label="admin.addNewIngredient"
         onClick={() => setType(ModalEnum.ingredient)}

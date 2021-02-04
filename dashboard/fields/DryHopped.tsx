@@ -18,6 +18,7 @@ const DryHopped: React.FC<Props> = ({ form }) => (
       defaultValue={[]}
       form={form}
       filterByType={IngredientType.hop}
+      isMulti
       name="dryHopped"
     />
   </div>

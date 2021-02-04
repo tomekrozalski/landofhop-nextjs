@@ -56,6 +56,7 @@ const Authentication: React.FC = ({ children }) => {
     }
 
     setLoginbar(false);
+    setToken('');
     setTokenExpirationDate(new Date());
     setAuthenticationStatus(AuthenticationStatusEnum.idle);
   };

@@ -42,6 +42,7 @@
   "name": "Nazwa",
   "open": "Otwórz",
   "ownedBy": "Należący/a do",
+  "parent": "Rodzic",
   "password": "hasło",
   "pasteurization": "pasteryzacja",
   "place": "Miejsce",
@@ -60,5 +61,6 @@
     "month": "miesiąc",
     "year": "rok"
   },
+  "type": "Typ",
   "website": "Strona internetowa"
 }

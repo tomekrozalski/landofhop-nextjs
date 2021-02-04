@@ -9,6 +9,7 @@ import ExtractRelateSelect from './ExtractRelateSelect';
 import ExtractUnitSelect from './ExtractUnitSelect';
 import HopRateUnitSelect from './HopRateUnitSelect';
 import IngredientSelect from './IngredientSelect';
+import IngredientTypeSelect from './IngredientTypeSelect';
 import InstitutionSelect from './InstitutionSelect';
 import LanguageSelect from './LanguageSelect';
 import PlaceSelect from './PlaceSelect';
@@ -25,6 +26,7 @@ export {
   ExtractUnitSelect,
   HopRateUnitSelect,
   IngredientSelect,
+  IngredientTypeSelect,
   InstitutionSelect,
   LanguageSelect,
   PlaceSelect,
