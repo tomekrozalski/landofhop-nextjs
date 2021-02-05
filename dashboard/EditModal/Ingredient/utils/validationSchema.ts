@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-const validationSchema = (codes: string[]) =>
+const validationSchema = () =>
   Yup.object().shape({
     badge: Yup.string()
       .min(3)

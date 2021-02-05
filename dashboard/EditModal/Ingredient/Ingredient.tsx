@@ -4,7 +4,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from 'elements/Button';
-import { CountryContext } from 'dashboard/utils/contexts';
+import { IngredientContext } from 'dashboard/utils/contexts';
 import {
   Badge,
   IngredientParent,
@@ -24,18 +24,18 @@ type Props = {
 };
 
 const Ingredient: React.FC<Props> = ({ close }) => {
-  const { addCountry, countries } = useContext(CountryContext);
+  const { addNewIngredient } = useContext(IngredientContext);
 
   const methods = useForm<FormValues>({
     mode: 'onBlur',
     defaultValues: initialValues,
-    resolver: yupResolver(validationSchema(countries.map(({ code }) => code))),
+    resolver: yupResolver(validationSchema()),
   });
 
   const action = values => {
     const formattedValues = formatValues(values);
 
-    return addCountry(formattedValues)
+    return addNewIngredient(formattedValues)
       .then(close)
       .catch(e => console.log('Error', e));
   };

@@ -5,11 +5,12 @@ import serverCall, {
   Status as StatusEnum,
 } from 'utils/helpers/serverCall';
 import { AuthenticationContext } from 'utils/contexts';
-// import { PlaceOutput } from 'dashboard/EditModal/Place/utils/formatValues';
+import { IngredientOutput } from 'dashboard/EditModal/Ingredient/utils/formatValues';
 import { Ingredient as IngredientType } from 'dashboard/utils/types';
 
 export const IngredientContext = React.createContext({
-  // addNewPlace: ({}: PlaceOutput) => new Promise(resolve => resolve(true)),
+  addNewIngredient: ({}: IngredientOutput) =>
+    new Promise(resolve => resolve(true)),
   ingredients: [] as IngredientType[],
   status: StatusEnum.idle,
 });
@@ -34,30 +35,30 @@ const Ingredient: React.FC = ({ children }) => {
 
   useEffect(getIngredients, []);
 
-  // const addNewPlace = (request: PlaceOutput) =>
-  //   new Promise((resolve, reject) => {
-  //     setStatus(StatusEnum.pending);
+  const addNewIngredient = (request: IngredientOutput) =>
+    new Promise((resolve, reject) => {
+      setStatus(StatusEnum.pending);
 
-  //     serverCall(Endpoints.addPlace, {
-  //       method: 'POST',
-  //       body: JSON.stringify(request),
-  //       token,
-  //     })
-  //       .then((places: PlaceType[]) => {
-  //         setPlaces(places);
-  //         setStatus(StatusEnum.resolved);
-  //         resolve(true);
-  //       })
-  //       .catch(() => {
-  //         setStatus(StatusEnum.rejected);
-  //         reject();
-  //       });
-  //   });
+      serverCall(Endpoints.addIngredient, {
+        method: 'POST',
+        body: JSON.stringify(request),
+        token,
+      })
+        .then((ingredients: IngredientType[]) => {
+          setIngredients(ingredients);
+          setStatus(StatusEnum.resolved);
+          resolve(true);
+        })
+        .catch(() => {
+          setStatus(StatusEnum.rejected);
+          reject();
+        });
+    });
 
   return (
     <IngredientContext.Provider
       value={{
-        // addNewPlace,
+        addNewIngredient,
         ingredients,
         status,
       }}

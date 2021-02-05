@@ -1,5 +1,6 @@
 export enum Endpoints {
   addCountry = 'country',
+  addIngredient = 'ingredient',
   addInstitution = 'institution',
   addLanguage = 'language',
   addPlace = 'place',
