@@ -146,11 +146,11 @@ export type FormValues = {
     | null;
   smokedMalt: boolean | null;
   // -----------
-  // bitterness: number | null;
-  // sweetness: number | null;
-  // fullness: number | null;
-  // power: number | null;
-  // hoppyness: number | null;
+  bitterness: number | null;
+  sweetness: number | null;
+  fullness: number | null;
+  power: number | null;
+  hoppyness: number | null;
   // temperature: {
   //   from: number;
   //   to: number;

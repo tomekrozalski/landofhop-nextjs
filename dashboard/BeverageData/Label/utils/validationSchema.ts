@@ -189,26 +189,11 @@ export default Yup.object().shape({
   ),
   ingredientsList: Yup.array().min(1).nullable(true),
   // -----------
-  // bitterness: Yup.number()
-  //   .min(0)
-  //   .max(100)
-  //   .nullable(true),
-  // sweetness: Yup.number()
-  //   .min(0)
-  //   .max(100)
-  //   .nullable(true),
-  // fullness: Yup.number()
-  //   .min(0)
-  //   .max(100)
-  //   .nullable(true),
-  // power: Yup.number()
-  //   .min(0)
-  //   .max(100)
-  //   .nullable(true),
-  // hoppyness: Yup.number()
-  //   .min(0)
-  //   .max(100)
-  //   .nullable(true),
+  bitterness: Yup.number().min(0).max(100).integer().nullable(true),
+  sweetness: Yup.number().min(0).max(100).integer().nullable(true),
+  fullness: Yup.number().min(0).max(100).integer().nullable(true),
+  power: Yup.number().min(0).max(100).integer().nullable(true),
+  hoppyness: Yup.number().min(0).max(100).integer().nullable(true),
   // temperature: Yup.object()
   //   .shape({
   //     from: Yup.number()

@@ -85,6 +85,12 @@
     repeat(2, 22rem) 1fr;
 }
 
+.grid.conditionalThree {
+  grid-template-columns: calc(44rem - var(--size-input-height)) var(
+      --size-input-height
+    ) repeat(3, 14.333rem) 1fr;
+}
+
 .grid.conditionalFour {
   grid-template-columns:
     calc(44rem - var(--size-input-height)) var(--size-input-height)

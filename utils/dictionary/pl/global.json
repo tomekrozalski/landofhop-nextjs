@@ -7,6 +7,7 @@
   "areIngredientsComplete": "Skład jest kompletny",
   "badge": "Identyfikator",
   "barcode": "kod kreskowy",
+  "bitterness": "gorycz",
   "brand": "Marka",
   "category": "kategoria",
   "city": "miejscowość",
@@ -46,6 +47,7 @@
   "password": "hasło",
   "pasteurization": "pasteryzacja",
   "place": "Miejsce",
+  "power": "moc",
   "readLess": "zwiń",
   "readMore": "czytaj więcej",
   "remark": "Komentarz",
@@ -55,6 +57,7 @@
   "stats": "Statystyki",
   "style": "styl",
   "submit": "wyślij",
+  "sweetness": "słodycz",
   "tale": "Opis",
   "timeUnit": {
     "day": "dzień",

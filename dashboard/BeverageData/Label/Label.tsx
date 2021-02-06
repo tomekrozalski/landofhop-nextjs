@@ -10,6 +10,7 @@ import {
   Alcohol,
   Badge,
   Barcode,
+  Bitterness,
   Brand,
   Contract,
   Cooperation,
@@ -18,16 +19,20 @@ import {
   Extract,
   Fermentation,
   Filtration,
+  Fullness,
+  Hoppyness,
   HopRate,
   IngredientsDescription,
   IngredientsList,
   Name,
   Pasteurization,
   Place,
+  Power,
   Remark,
   Series,
   SmokedMalt,
   Style,
+  Sweetness,
   Tale,
 } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
@@ -102,7 +107,18 @@ const LabelBeverage: React.FC = () => {
         </h3>
         <IngredientsDescription form="label" />
         <IngredientsList form="label" />
-        <SmokedMalt from="label" />
+        <SmokedMalt form="label" />
+        {/* -------------------------------- */}
+        <h3>
+          <span>
+            <FormattedMessage id="admin.beverage.impressionsInfo" />
+          </span>
+        </h3>
+        <Bitterness form="label" />
+        <Sweetness form="label" />
+        <Fullness form="label" />
+        <Power form="label" />
+        <Hoppyness form="hoppyness" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

@@ -50,11 +50,11 @@ const initialValues = {
   ingredientsList: null,
   smokedMalt: null,
   // -----------
-  // bitterness: null,
-  // sweetness: null,
-  // fullness: null,
-  // power: null,
-  // hoppyness: null,
+  bitterness: null,
+  sweetness: null,
+  fullness: null,
+  power: null,
+  hoppyness: null,
   // temperature: null,
   // -----------
   // container: {

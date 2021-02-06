@@ -7,6 +7,7 @@
   "areIngredientsComplete": "Are ingredients complete",
   "badge": "Badge",
   "barcode": "barcode",
+  "bitterness": "bitterness",
   "brand": "Brand",
   "category": "category",
   "city": "city",
@@ -46,6 +47,7 @@
   "password": "password",
   "pasteurization": "pasteryzacja",
   "place": "Place",
+  "power": "power",
   "readLess": "read less",
   "readMore": "read more",
   "remark": "Remark",
@@ -55,6 +57,7 @@
   "stats": "Statistics",
   "style": "style",
   "submit": "submit",
+  "sweetness": "sweetness",
   "tale": "Tale",
   "timeUnit": {
     "day": "day",
