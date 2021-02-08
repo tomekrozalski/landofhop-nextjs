@@ -59,6 +59,10 @@
   "submit": "submit",
   "sweetness": "sweetness",
   "tale": "Tale",
+  "temperature": "Recommended serving temperature",
+  "temperatureUnit": {
+    "celcius": "°C"
+  },
   "timeUnit": {
     "day": "day",
     "month": "month",

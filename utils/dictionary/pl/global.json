@@ -59,6 +59,10 @@
   "submit": "wyślij",
   "sweetness": "słodycz",
   "tale": "Opis",
+  "temperature": "Zalecana temperatura podawania",
+  "temperatureUnit": {
+    "celcius": "°C"
+  },
   "timeUnit": {
     "day": "dzień",
     "month": "miesiąc",

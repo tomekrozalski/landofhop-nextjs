@@ -35,6 +35,7 @@ import SmokedMalt from './SmokedMalt';
 import Style from './Style';
 import Sweetness from './Sweetness';
 import Tale from './Tale';
+import Temperature from './Temperature';
 import Website from './Website';
 
 export {
@@ -75,5 +76,6 @@ export {
   Style,
   Sweetness,
   Tale,
+  Temperature,
   Website,
 };

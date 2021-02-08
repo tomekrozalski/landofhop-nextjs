@@ -151,14 +151,14 @@ export type FormValues = {
   fullness: number | null;
   power: number | null;
   hoppyness: number | null;
-  // temperature: {
-  //   from: number;
-  //   to: number;
-  //   unit: {
-  //     label: string;
-  //     value: TemperatureUnit;
-  //   };
-  // } | null;
+  temperature: {
+    from: number | null;
+    to: number | null;
+    unit: {
+      label: string;
+      value: TemperatureUnit;
+    } | null;
+  };
   // -----------
   // container: {
   //   color: {

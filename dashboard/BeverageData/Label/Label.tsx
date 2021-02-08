@@ -34,6 +34,7 @@ import {
   Style,
   Sweetness,
   Tale,
+  Temperature,
 } from 'dashboard/fields';
 import styles from 'dashboard/Dashboard.module.css';
 import { FormValues, validationSchema } from './utils';
@@ -118,7 +119,8 @@ const LabelBeverage: React.FC = () => {
         <Sweetness form="label" />
         <Fullness form="label" />
         <Power form="label" />
-        <Hoppyness form="hoppyness" />
+        <Hoppyness form="label" />
+        <Temperature form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

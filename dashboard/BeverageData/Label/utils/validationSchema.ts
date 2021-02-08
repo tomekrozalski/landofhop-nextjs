@@ -194,22 +194,18 @@ export default Yup.object().shape({
   fullness: Yup.number().min(0).max(100).integer().nullable(true),
   power: Yup.number().min(0).max(100).integer().nullable(true),
   hoppyness: Yup.number().min(0).max(100).integer().nullable(true),
-  // temperature: Yup.object()
-  //   .shape({
-  //     from: Yup.number()
-  //       .min(0)
-  //       .max(Yup.ref('to'))
-  //       .required(),
-  //     to: Yup.number()
-  //       .min(Yup.ref('from'))
-  //       .max(100)
-  //       .required(),
-  //     unit: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //   })
-  //   .nullable(true),
+  temperature: Yup.object()
+    .shape({
+      from: Yup.number().min(0).max(Yup.ref('to')).nullable(true),
+      to: Yup.number().min(Yup.ref('from')).max(100).nullable(true),
+      unit: Yup.object()
+        .shape({
+          label: Yup.string().required(),
+          value: Yup.string().required(),
+        })
+        .nullable(true),
+    })
+    .required(),
   // // -----------
   // container: Yup.object().shape({
   //   type: Yup.object().shape({

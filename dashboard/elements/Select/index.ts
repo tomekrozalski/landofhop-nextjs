@@ -13,6 +13,7 @@ import IngredientTypeSelect from './IngredientTypeSelect';
 import InstitutionSelect from './InstitutionSelect';
 import LanguageSelect from './LanguageSelect';
 import PlaceSelect from './PlaceSelect';
+import TemperatureUnitSelect from './TemperatureUnitSelect';
 
 export {
   AgedPreviousContentSelect,
@@ -30,4 +31,5 @@ export {
   InstitutionSelect,
   LanguageSelect,
   PlaceSelect,
+  TemperatureUnitSelect,
 };

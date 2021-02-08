@@ -55,7 +55,11 @@ const initialValues = {
   fullness: null,
   power: null,
   hoppyness: null,
-  // temperature: null,
+  temperature: {
+    from: null,
+    to: null,
+    unit: null,
+  },
   // -----------
   // container: {
   //   color: { label: '', value: ContainerColor.brown },
