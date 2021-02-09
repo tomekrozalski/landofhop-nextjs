@@ -1,4 +1,5 @@
 import createChart from './createChart';
 import setSVGAttributes from './setSVGAttributes';
+import sortData from './sortData';
 
-export { createChart, setSVGAttributes };
+export { createChart, setSVGAttributes, sortData };

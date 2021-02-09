@@ -4,6 +4,7 @@ import { IntlShape } from 'react-intl';
 import { TopBrandsTimelineBar } from 'utils/types/Beverage';
 import { renderTimelineAxis } from '../../utils';
 import { Sizes } from './Sizes';
+import sortData from './sortData';
 import specificStyles from '../TopBrandsTimeline.module.css';
 
 type Props = {
@@ -102,8 +103,8 @@ const createChart = ({ data, intl, setSelected, sizes, wrapper }: Props) => {
     return this.getTotalLength() + 10;
   }
 
-  data[data.length - 1].brands
-    .sort((a, b) => (a.amount > b.amount ? 1 : -1))
+  sortData(data)
+    .reverse()
     .forEach(({ badge, id }, i) => {
       lines
         .append('path')

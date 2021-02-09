@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { TopBrandsTimelineBar } from 'utils/types/Beverage';
 import SectionHeader from 'elements/SectionHeader';
 import { Sizes } from './utils/Sizes';
-import { createChart, setSVGAttributes } from './utils';
+import { createChart, setSVGAttributes, sortData } from './utils';
 import styles from './TopBrandsTimeline.module.css';
 
 const TopBrandsTimeline: React.FC<{ data: TopBrandsTimelineBar[] }> = ({
@@ -50,25 +50,23 @@ const TopBrandsTimeline: React.FC<{ data: TopBrandsTimelineBar[] }> = ({
       </SectionHeader>
       <svg ref={svg} />
       <ol className={clsx(styles.legend, { [styles.highlighted]: !!selected })}>
-        {data[data.length - 1].brands
-          .sort((a, b) => (a.amount < b.amount ? 1 : -1))
-          .map(({ badge, id, name }, i) => (
-            <li
-              key={id}
-              className={clsx(
-                styles.legendItem,
-                styles[`topBrandsLegend${i + 1}`],
-                {
-                  [styles.selected]: selected === badge,
-                },
-              )}
-              data-order={i + 1}
-              onMouseEnter={() => setSelected(badge)}
-              onMouseLeave={() => setSelected(null)}
-            >
-              {name.value}
-            </li>
-          ))}
+        {sortData(data).map(({ badge, id, name }, i) => (
+          <li
+            key={id}
+            className={clsx(
+              styles.legendItem,
+              styles[`topBrandsLegend${i + 1}`],
+              {
+                [styles.selected]: selected === badge,
+              },
+            )}
+            data-order={i + 1}
+            onMouseEnter={() => setSelected(badge)}
+            onMouseLeave={() => setSelected(null)}
+          >
+            {name.value}
+          </li>
+        ))}
       </ol>
     </>
   );
