@@ -44,6 +44,27 @@
     },
     "brandInfo": "Informacje dotyczące marki",
     "brewingInfo": "Informacje dotyczące warzenia",
+    "container": {
+      "color": {
+        "brown": "brązowa",
+        "golden": "złota",
+        "green": "zielona",
+        "black": "czarna",
+        "silver": "srebrna",
+        "transparent": "przezroczysta"
+      },
+      "material": {
+        "glass": "szklana",
+        "aluminum": "aluminiowa"
+      },
+      "type": {
+        "bottle": "butelka",
+        "can": "puszka"
+      },
+      "unit": {
+        "ml": "ml"
+      }
+    },
     "editorialInfo": {
       "description": "Informacje końcowe, od redakcji, niejako nieoficjalne",
       "title": "Redakcyjne"

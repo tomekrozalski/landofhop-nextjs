@@ -1,8 +1,8 @@
-// import {
-//   ContainerColor,
-//   ContainerMaterial,
-//   ContainerUnit,
-// } from 'utils/enums/Beverage';
+import {
+  ContainerColor,
+  ContainerMaterial,
+  ContainerUnit,
+} from 'utils/enums/Beverage';
 
 const initialValues = {
   badge: '',
@@ -61,15 +61,15 @@ const initialValues = {
     unit: null,
   },
   // -----------
-  // container: {
-  //   color: { label: '', value: ContainerColor.brown },
-  //   material: { label: '', value: ContainerMaterial.glass },
-  //   unit: { label: '', value: ContainerUnit.ml },
-  //   type: { label: '', value: undefined },
-  //   value: 0,
-  //   hasCork: false,
-  //   hasCapWireFlip: false,
-  // },
+  container: {
+    color: { label: '', value: ContainerColor.brown },
+    material: { label: '', value: ContainerMaterial.glass },
+    unit: { label: '', value: ContainerUnit.ml },
+    type: { label: '', value: undefined },
+    value: 0,
+    hasCork: false,
+    hasCapWireFlip: false,
+  },
   // price: [],
 };
 

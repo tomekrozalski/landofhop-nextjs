@@ -44,6 +44,27 @@
     },
     "brandInfo": "Informations connected with branding",
     "brewingInfo": "Informations connected with brewing",
+    "container": {
+      "color": {
+        "brown": "brown",
+        "golden": "golden",
+        "green": "green",
+        "black": "black",
+        "silver": "silver",
+        "transparent": "transparent"
+      },
+      "material": {
+        "glass": "glass",
+        "aluminum": "aluminum"
+      },
+      "type": {
+        "bottle": "bottle",
+        "can": "can"
+      },
+      "unit": {
+        "ml": "ml"
+      }
+    },
     "editorialInfo": {
       "description": "Final information, from the editorial office, somehow unofficial",
       "title": "Editorial"

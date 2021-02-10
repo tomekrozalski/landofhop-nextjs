@@ -12,6 +12,7 @@ import {
   Barcode,
   Bitterness,
   Brand,
+  Container,
   Contract,
   Cooperation,
   DryHopped,
@@ -121,6 +122,13 @@ const LabelBeverage: React.FC = () => {
         <Power form="label" />
         <Hoppyness form="label" />
         <Temperature form="label" />
+        {/* -------------------------------- */}
+        <h3>
+          <span>
+            <FormattedMessage id="admin.beverage.otherInfo" />
+          </span>
+        </h3>
+        <Container form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

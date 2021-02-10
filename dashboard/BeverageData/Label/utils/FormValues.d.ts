@@ -160,27 +160,27 @@ export type FormValues = {
     } | null;
   };
   // -----------
-  // container: {
-  //   color: {
-  //     label: string;
-  //     value: ContainerColor;
-  //   };
-  //   hasCapWireFlip: boolean;
-  //   hasCork: boolean;
-  //   material: {
-  //     label: string;
-  //     value: ContainerMaterial;
-  //   };
-  //   type: {
-  //     label: string;
-  //     value: ContainerType;
-  //   };
-  //   unit: {
-  //     label: string;
-  //     value: ContainerUnit;
-  //   };
-  //   value: number;
-  // };
+  container: {
+    color: {
+      label: string;
+      value: ContainerColor;
+    };
+    hasCapWireFlip: boolean;
+    hasCork: boolean;
+    material: {
+      label: string;
+      value: ContainerMaterial;
+    };
+    type: {
+      label: string;
+      value: ContainerType;
+    };
+    unit: {
+      label: string;
+      value: ContainerUnit;
+    };
+    value: number;
+  };
   // price: {
   //   currency: {
   //     label: string;

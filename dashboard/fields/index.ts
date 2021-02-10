@@ -6,6 +6,7 @@ import Bitterness from './Bitterness';
 import Brand from './Brand';
 import City from './City';
 import Code from './Code';
+import Container from './Container';
 import Contract from './Contract';
 import Cooperation from './Cooperation';
 import Country from './Country';
@@ -47,6 +48,7 @@ export {
   Brand,
   City,
   Code,
+  Container,
   Contract,
   Cooperation,
   Country,

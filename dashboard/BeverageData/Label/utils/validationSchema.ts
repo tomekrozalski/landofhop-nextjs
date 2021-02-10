@@ -206,34 +206,31 @@ export default Yup.object().shape({
         .nullable(true),
     })
     .required(),
-  // // -----------
-  // container: Yup.object().shape({
-  //   type: Yup.object().shape({
-  //     label: Yup.string().required(),
-  //     value: Yup.string().required(),
-  //   }),
-  //   color: Yup.object()
-  //     .shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     })
-  //     .nullable(true),
-  //   material: Yup.object()
-  //     .shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     })
-  //     .nullable(true),
-  //   value: Yup.number()
-  //     .min(1)
-  //     .max(5000)
-  //     .required(),
-  //   unit: Yup.object().shape({
-  //     label: Yup.string().required(),
-  //     value: Yup.string().required(),
-  //   }),
-  //   hasCapWireFlip: Yup.boolean(),
-  // }),
+  // -----------
+  container: Yup.object().shape({
+    type: Yup.object().shape({
+      label: Yup.string().required(),
+      value: Yup.string().required(),
+    }),
+    color: Yup.object()
+      .shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      })
+      .nullable(true),
+    material: Yup.object()
+      .shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      })
+      .nullable(true),
+    value: Yup.number().min(1).max(5000).required(),
+    unit: Yup.object().shape({
+      label: Yup.string().required(),
+      value: Yup.string().required(),
+    }),
+    hasCapWireFlip: Yup.boolean(),
+  }),
   // price: Yup.array().of(
   //   Yup.object().shape({
   //     currency: Yup.object().shape({
