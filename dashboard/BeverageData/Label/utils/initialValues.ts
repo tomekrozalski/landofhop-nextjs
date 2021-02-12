@@ -1,9 +1,3 @@
-import {
-  ContainerColor,
-  ContainerMaterial,
-  ContainerUnit,
-} from 'utils/enums/Beverage';
-
 const initialValues = {
   badge: '',
   // -----------
@@ -62,10 +56,10 @@ const initialValues = {
   },
   // -----------
   container: {
-    color: { label: '', value: ContainerColor.brown },
-    material: { label: '', value: ContainerMaterial.glass },
-    unit: { label: '', value: ContainerUnit.ml },
-    type: { label: '', value: undefined },
+    color: { label: '' },
+    material: { label: '' },
+    unit: { label: '' },
+    type: { label: '' },
     value: 0,
     hasCork: false,
     hasCapWireFlip: false,

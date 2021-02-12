@@ -1,6 +1,14 @@
-enum ContainerMaterial {
-	glass = 'glass',
-	aluminum = 'aluminum'
+enum ContainerMaterialBottle {
+  glass = 'glass',
 }
 
-export default ContainerMaterial;
+enum ContainerMaterialCan {
+  aluminum = 'aluminum',
+}
+
+enum ContainerMaterial {
+  glass = 'glass',
+  aluminum = 'aluminum',
+}
+
+export { ContainerMaterial, ContainerMaterialBottle, ContainerMaterialCan };

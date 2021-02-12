@@ -8,7 +8,7 @@ import Select from './Select';
 type Props = {
   defaultValue: {
     label: string;
-    value: string;
+    value?: string;
   };
   form: string;
   name: string;

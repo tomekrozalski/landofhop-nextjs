@@ -1,9 +1,23 @@
-enum ContainerColor {
-	brown = 'brown',
-	green = 'green',
-	black = 'black',
-	silver = 'silver',
-	transparent = 'transparent',
+enum ContainerColorBottle {
+  brown = 'brown',
+  black = 'black',
+  green = 'green',
+  transparent = 'transparent',
 }
 
-export default ContainerColor;
+enum ContainerColorCan {
+  black = 'black',
+  golden = 'golden',
+  silver = 'silver',
+}
+
+enum ContainerColor {
+  brown = 'brown',
+  black = 'black',
+  golden = 'golden',
+  green = 'green',
+  silver = 'silver',
+  transparent = 'transparent',
+}
+
+export { ContainerColor, ContainerColorBottle, ContainerColorCan };
