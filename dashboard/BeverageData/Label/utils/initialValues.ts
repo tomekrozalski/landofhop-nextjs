@@ -64,7 +64,7 @@ const initialValues = {
     hasCork: false,
     hasCapWireFlip: false,
   },
-  // price: [],
+  price: [],
 };
 
 export default initialValues;

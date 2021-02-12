@@ -21,6 +21,10 @@
   "contract": "Kontrakt",
   "cooperation": "Kooperacja",
   "country": "kraj",
+  "currency": {
+    "EUR": "€",
+    "PLN": "zł"
+  },
   "denial": "nie",
   "dryHopped": "chmielone na zimno",
   "email": "email",
@@ -48,6 +52,7 @@
   "pasteurization": "pasteryzacja",
   "place": "Miejsce",
   "power": "moc",
+  "price": "cena",
   "readLess": "zwiń",
   "readMore": "czytaj więcej",
   "remark": "Komentarz",

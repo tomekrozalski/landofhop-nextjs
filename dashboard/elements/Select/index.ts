@@ -8,6 +8,7 @@ import ContainerMaterialSelect from './ContainerMaterialSelect';
 import ContainerTypeSelect from './ContainerTypeSelect';
 import ContainerUnitSelect from './ContainerUnitSelect';
 import CountrySelect from './CountrySelect';
+import CurrencySelect from './CurrencySelect';
 import ExpirationDateUnitSelect from './ExpirationDateUnitSelect';
 import ExtractRelateSelect from './ExtractRelateSelect';
 import ExtractUnitSelect from './ExtractUnitSelect';
@@ -30,6 +31,7 @@ export {
   ContainerTypeSelect,
   ContainerUnitSelect,
   CountrySelect,
+  CurrencySelect,
   ExpirationDateUnitSelect,
   ExtractRelateSelect,
   ExtractUnitSelect,

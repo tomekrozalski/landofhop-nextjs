@@ -1,3 +1,4 @@
 import getValueByLanguage from './getValueByLanguage';
+import isValidDate from './isValidDate';
 
-export { getValueByLanguage };
+export { getValueByLanguage, isValidDate };

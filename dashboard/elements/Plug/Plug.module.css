@@ -13,3 +13,7 @@
 .plug.wide {
   grid-column: span 2;
 }
+
+.plug.wider {
+  grid-column: span 3;
+}

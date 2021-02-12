@@ -29,6 +29,7 @@ import {
   Pasteurization,
   Place,
   Power,
+  Price,
   Remark,
   Series,
   SmokedMalt,
@@ -129,6 +130,7 @@ const LabelBeverage: React.FC = () => {
           </span>
         </h3>
         <Container form="label" />
+        <Price form="label" />
         <footer>
           <Button
             disabled={!methods.formState.isValid}

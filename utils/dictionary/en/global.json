@@ -21,6 +21,10 @@
   "contract": "Contract",
   "cooperation": "Cooperation",
   "country": "country",
+  "currency": {
+    "EUR": "€",
+    "PLN": "zł"
+  },
   "denial": "no",
   "dryHopped": "Dry hopped",
   "email": "email",
@@ -48,6 +52,7 @@
   "pasteurization": "pasteryzacja",
   "place": "Place",
   "power": "power",
+  "price": "price",
   "readLess": "read less",
   "readMore": "read more",
   "remark": "Remark",

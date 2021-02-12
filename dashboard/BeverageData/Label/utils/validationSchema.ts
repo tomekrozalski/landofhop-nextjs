@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-// import { isValidDate } from 'dashboard/utils/helpers';
+import { isValidDate } from 'dashboard/utils/helpers';
 import {
   AgedType as AgedTypeEnum,
   AgedWood as AgedWoodEnum,
@@ -231,18 +231,16 @@ export default Yup.object().shape({
     }),
     hasCapWireFlip: Yup.boolean(),
   }),
-  // price: Yup.array().of(
-  //   Yup.object().shape({
-  //     currency: Yup.object().shape({
-  //       label: Yup.string().required(),
-  //       value: Yup.string().required(),
-  //     }),
-  //     date: Yup.mixed().test('isCorrectDate', 'wrong date value', value =>
-  //       isValidDate(value),
-  //     ),
-  //     value: Yup.number()
-  //       .min(0)
-  //       .required(),
-  //   }),
-  // ),
+  price: Yup.array().of(
+    Yup.object().shape({
+      currency: Yup.object().shape({
+        label: Yup.string().required(),
+        value: Yup.string().required(),
+      }),
+      date: Yup.mixed().test('isCorrectDate', 'wrong date value', value =>
+        isValidDate(value),
+      ),
+      value: Yup.number().min(0).required(),
+    }),
+  ),
 });
