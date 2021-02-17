@@ -16,6 +16,9 @@ export const BeverageContext = React.createContext({
   editorial: {},
   label: initialLabel as FormValuesLabel,
   producer: {},
+  setLabel: (value: FormValuesLabel) => {
+    value;
+  },
   status: Status.idle,
 });
 
@@ -44,6 +47,7 @@ const Beverage: React.FC = ({ children }) => {
         editorial,
         label,
         producer,
+        setLabel,
         status,
       }}
     >

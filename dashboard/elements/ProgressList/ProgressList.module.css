@@ -5,19 +5,13 @@
 .progressList li {
   flex: 1;
   display: flex;
-}
-
-.progressList button {
-  display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 8rem;
-  padding: 0;
   position: relative;
 }
 
-.progressList button.active::before {
+.progressList li.active::before {
   display: inline-block;
   width: 6rem;
   height: 6rem;

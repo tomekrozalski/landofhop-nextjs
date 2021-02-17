@@ -8,23 +8,6 @@ import {
 } from 'utils/enums/Beverage';
 
 export default Yup.object().shape({
-  badge: Yup.string()
-    .min(3)
-    .matches(/^[a-z\d-]+$/)
-    .required(),
-  // -----------
-  name: Yup.array()
-    .of(
-      Yup.object().shape({
-        lang: Yup.object().shape({
-          label: Yup.string().required(),
-          value: Yup.string().required(),
-        }),
-        value: Yup.string().min(1).required(),
-      }),
-    )
-    .required()
-    .min(1),
   series: Yup.array().of(
     Yup.object().shape({
       lang: Yup.object().shape({
@@ -34,12 +17,6 @@ export default Yup.object().shape({
       value: Yup.string().min(3).required(),
     }),
   ),
-  brand: Yup.object()
-    .shape({
-      label: Yup.string().required(),
-      value: Yup.string().required(),
-    })
-    .required(),
   cooperation: Yup.array().min(1).nullable(true),
   contract: Yup.object()
     .shape({
@@ -71,11 +48,6 @@ export default Yup.object().shape({
       }),
       lead: Yup.string().min(12).required(),
     }),
-  ),
-  barcode: Yup.mixed().test(
-    'is-barcode',
-    'incorrect barcode',
-    value => value === null || value.length,
   ),
   // -----------
   fermentation: Yup.array()
@@ -207,30 +179,6 @@ export default Yup.object().shape({
     })
     .required(),
   // -----------
-  container: Yup.object().shape({
-    type: Yup.object().shape({
-      label: Yup.string().required(),
-      value: Yup.string().required(),
-    }),
-    color: Yup.object()
-      .shape({
-        label: Yup.string().required(),
-        value: Yup.string().required(),
-      })
-      .nullable(true),
-    material: Yup.object()
-      .shape({
-        label: Yup.string().required(),
-        value: Yup.string().required(),
-      })
-      .nullable(true),
-    value: Yup.number().min(1).max(5000).required(),
-    unit: Yup.object().shape({
-      label: Yup.string().required(),
-      value: Yup.string().required(),
-    }),
-    hasCapWireFlip: Yup.boolean(),
-  }),
   price: Yup.array().of(
     Yup.object().shape({
       currency: Yup.object().shape({

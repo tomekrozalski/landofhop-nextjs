@@ -118,6 +118,7 @@
   "lastTimeUpdated": "Ostatnim razem poprawiono",
   "loadError": "Błąd pobierania",
   "removeBeverage": "Usuń piwo",
+  "saveAndMoveBack": "Zapisz i cofnij",
   "select": {
     "noOptions": "Brak wyników",
     "placeholder": {

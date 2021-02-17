@@ -2,17 +2,10 @@ import { LanguageValue } from 'utils/types/common';
 import { Currency, HopRateUnit } from 'utils/enums/Beverage';
 
 export type FormValues = {
-  badge: string;
-  // -----------
-  name: { lang: LanguageValue; value: string }[];
   series: {
     lang: LanguageValue;
     value: string;
   }[];
-  brand: {
-    label: string;
-    value: string;
-  };
   cooperation:
     | {
         label: string;
@@ -39,7 +32,6 @@ export type FormValues = {
     lang: Lang;
     lead: string;
   }[];
-  barcode: string | null;
   // -----------
   fermentation: string[] | null;
   style: { lang: Lang; value: string }[];
@@ -140,27 +132,6 @@ export type FormValues = {
     } | null;
   };
   // -----------
-  container: {
-    color: {
-      label: string;
-      value?: ContainerColor;
-    };
-    hasCapWireFlip: boolean;
-    hasCork: boolean;
-    material: {
-      label: string;
-      value?: ContainerMaterial;
-    };
-    type: {
-      label: string;
-      value?: ContainerType;
-    };
-    unit: {
-      label: string;
-      value?: ContainerUnit;
-    };
-    value: number;
-  };
   price: {
     currency: {
       label: string;

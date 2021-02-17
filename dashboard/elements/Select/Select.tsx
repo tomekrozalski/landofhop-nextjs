@@ -59,7 +59,7 @@ const Select: React.FC<Props> = ({
         <ReactSelect
           {...inputProps}
           components={{ MultiValueRemove, Option }}
-          value={value?.label === '' ? null : value}
+          value={value?.label === '' || value?.value === '' ? null : value}
           inputId={`${form}-${name}`}
           inputRef={ref}
           isDisabled={disabled || value === null}
