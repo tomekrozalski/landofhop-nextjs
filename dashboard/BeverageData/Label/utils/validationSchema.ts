@@ -240,7 +240,7 @@ export default Yup.object().shape({
       date: Yup.mixed().test('isCorrectDate', 'wrong date value', value =>
         isValidDate(value),
       ),
-      value: Yup.number().min(0).required(),
+      value: Yup.number().min(0.1).required(),
     }),
   ),
 });

@@ -33,6 +33,8 @@
   "fermentation": "fermentation",
   "filtration": "filtration",
   "fullness": "fullness",
+  "hasCapWireFlip": "Has cap wire flip",
+  "hasCork": "Has cork",
   "hopRate": "HopRate",
   "hoppyness": "hoppyness",
   "ingredientsDescription": "Ingredients",

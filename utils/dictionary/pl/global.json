@@ -33,6 +33,8 @@
   "fermentation": "fermentacja",
   "filtration": "filtracja",
   "fullness": "pełnia",
+  "hasCapWireFlip": "Butelka z drucianym korkiem",
+  "hasCork": "Butelka ze zwykłym korkiem",
   "hoppyness": "chmielowość",
   "hopRate": "HopRate",
   "ingredientsDescription": "Składniki",
