@@ -4,10 +4,7 @@ import { AlcoholScope } from 'utils/enums/Beverage';
 import Select from './Select';
 
 type Props = {
-  defaultValue: {
-    label: string;
-    value: string;
-  };
+  defaultValue: any;
   form: string;
   name: string;
 };

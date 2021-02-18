@@ -9,23 +9,19 @@ type Props = {
   form: string;
 };
 
-const AlcoholScope: React.FC<Props> = ({ form }) => {
-  const initialValue = {
-    label: '--',
-    value: '-',
-  };
-
-  return (
-    <div className={clsx(styles.grid, styles.conditionalFour)}>
-      <Label form={form} name="alcoholScope" />
-      <Condition form={form} initialValue={initialValue} name="alcoholScope" />
-      <AlcoholScopeSelect
-        defaultValue={initialValue}
-        form={form}
-        name="alcoholScope"
-      />
-    </div>
-  );
-};
+const AlcoholScope: React.FC<Props> = ({ form }) => (
+  <div className={clsx(styles.grid, styles.conditionalFour)}>
+    <Label form={form} name="alcoholScope" />
+    <Condition
+      form={form}
+      initialValue={{
+        label: '--',
+        value: '-',
+      }}
+      name="alcoholScope"
+    />
+    <AlcoholScopeSelect defaultValue="" form={form} name="alcoholScope" />
+  </div>
+);
 
 export default AlcoholScope;

@@ -50,6 +50,7 @@
   "loginSuccess": "Zalogowano poprawnie. Token dostępowy wygasa {expiresIn}.",
   "logout": "Wyloguj",
   "name": "Nazwa",
+  "notes": "Notatki",
   "open": "Otwórz",
   "ownedBy": "Należący/a do",
   "parent": "Rodzic",
@@ -79,5 +80,6 @@
     "year": "rok"
   },
   "type": "Typ",
+  "updated": "Ostatnio poprawiono",
   "website": "Strona internetowa"
 }

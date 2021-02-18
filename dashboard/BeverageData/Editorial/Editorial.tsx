@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Button, { ButtonStyle } from 'elements/Button';
 import { BeverageContext } from 'dashboard/utils/contexts';
 import {
+  Added,
   Aged,
   AlcoholScope,
   Clarity,
@@ -16,11 +17,13 @@ import {
   DryHopped,
   Fermentation,
   Filtration,
+  Notes,
   Pasteurization,
   Place,
   Price,
   Remark,
   Style,
+  Updated,
 } from 'dashboard/fields';
 import moveTo, { Page } from 'dashboard/BeverageData/utils/moveTo';
 import styles from 'dashboard/Dashboard.module.css';
@@ -68,41 +71,41 @@ const EditorialBeverage: React.FC = () => {
             <FormattedMessage id="admin.beverage.brandInfo" />
           </span>
         </h3>
-        <Cooperation form="producer" />
-        <Contract form="producer" />
-        <Place form="producer" />
-        <Remark form="producer" />
+        <Cooperation form="editorial" />
+        <Contract form="editorial" />
+        <Place form="editorial" />
+        <Remark form="editorial" />
         {/* -------------------------------- */}
         <h3>
           <span>
             <FormattedMessage id="admin.beverage.brewingInfo" />
           </span>
         </h3>
-        <Fermentation form="producer" />
-        <Style form="producer" />
-        <AlcoholScope form="producer" />
-        <Filtration form="producer" />
-        <Pasteurization form="producer" />
-        <Aged form="producer" />
-        <DryHopped form="producer" />
+        <Fermentation form="editorial" />
+        <Style form="editorial" />
+        <AlcoholScope form="editorial" />
+        <Filtration form="editorial" />
+        <Pasteurization form="editorial" />
+        <Aged form="editorial" />
+        <DryHopped form="editorial" />
         {/* -------------------------------- */}
         <h3>
           <span>
             <FormattedMessage id="admin.beverage.impressionsInfo" />
           </span>
         </h3>
-        <Color form="producer" />
-        <Clarity form="producer" />
+        <Color form="editorial" />
+        <Clarity form="editorial" />
         {/* -------------------------------- */}
         <h3>
           <span>
             <FormattedMessage id="admin.beverage.otherInfo" />
           </span>
         </h3>
-        <Price form="producer" />
-        {/* <Added form="producer" /> */}
-        {/* <Updated form="producer" /> */}
-        {/* <Notes form="producer" /> */}
+        <Price form="editorial" />
+        <Added form="editorial" />
+        <Updated form="editorial" />
+        <Notes form="editorial" />
         <footer>
           <Button
             appearance={ButtonStyle.reset}

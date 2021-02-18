@@ -1,3 +1,4 @@
+import Added from './Added';
 import Aged from './Aged';
 import Alcohol from './Alcohol';
 import AlcoholScope from './AlcoholScope';
@@ -29,6 +30,7 @@ import Institution from './Institution';
 import Latitude from './Latitude';
 import Longitude from './Longitude';
 import Name from './Name';
+import Notes from './Notes';
 import OwnedBy from './OwnedBy';
 import Pasteurization from './Pasteurization';
 import Place from './Place';
@@ -41,9 +43,11 @@ import Style from './Style';
 import Sweetness from './Sweetness';
 import Tale from './Tale';
 import Temperature from './Temperature';
+import Updated from './Updated';
 import Website from './Website';
 
 export {
+  Added,
   Aged,
   Alcohol,
   AlcoholScope,
@@ -75,6 +79,7 @@ export {
   Latitude,
   Longitude,
   Name,
+  Notes,
   OwnedBy,
   Pasteurization,
   Place,
@@ -87,5 +92,6 @@ export {
   Sweetness,
   Tale,
   Temperature,
+  Updated,
   Website,
 };

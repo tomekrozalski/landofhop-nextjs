@@ -50,6 +50,7 @@
   "loginSuccess": "Successfully logged in. Access token expires {expiresIn}.",
   "logout": "Log out",
   "name": "Name",
+  "notes": "Notes",
   "open": "Open",
   "ownedBy": "Owned by",
   "parent": "Parent",
@@ -79,5 +80,6 @@
     "year": "year"
   },
   "type": "Type",
+  "updated": "Last time updated",
   "website": "Website"
 }

@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-import { isValidDate } from 'dashboard/utils/helpers';
+import { isValidDate, isValidDateTime } from 'dashboard/utils/helpers';
 import {
   AgedType as AgedTypeEnum,
   AgedWood as AgedWoodEnum,
@@ -104,15 +104,11 @@ export default Yup.object().shape({
       value: Yup.number().min(0.1).required(),
     }),
   ),
-  // added: Yup.mixed().test(
-  //   'isCorrectDate',
-  //   'wrong datetime value',
-  //   value => isValidDateTime(value, { nullable: true }),
-  // ),
-  // updated: Yup.mixed().test(
-  //   'isCorrectDate',
-  //   'wrong datetime value',
-  //   value => isValidDateTime(value, { nullable: true }),
-  // ),
+  added: Yup.mixed().test('isCorrectDate', 'wrong datetime value', value =>
+    isValidDateTime(value, { nullable: true }),
+  ),
+  updated: Yup.mixed().test('isCorrectDate', 'wrong datetime value', value =>
+    isValidDateTime(value, { nullable: true }),
+  ),
   notes: Yup.string().min(3).nullable(true),
 });

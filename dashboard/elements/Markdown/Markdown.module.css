@@ -5,3 +5,7 @@
   overflow-y: scroll;
   border: 1px solid var(--color-grey-3);
 }
+
+.markdown.shift {
+  grid-column: 3 / 4;
+}
