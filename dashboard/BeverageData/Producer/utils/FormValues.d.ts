@@ -100,7 +100,7 @@ export type FormValues = {
     } | null;
     value: number | null;
   };
-  // // -----------
+  // -----------
   ingredientsDescription: {
     language: {
       label: string;
