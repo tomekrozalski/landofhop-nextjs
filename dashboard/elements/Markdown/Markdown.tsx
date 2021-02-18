@@ -1,7 +1,7 @@
-import MarkdownToJSX from 'markdown-to-jsx';
 import { useFormContext } from 'react-hook-form';
 import clsx from 'clsx';
 
+import MarkdownElement from 'elements/Markdown';
 import styles from './Markdown.module.css';
 
 type Props = {
@@ -14,12 +14,11 @@ const Markdown: React.FC<Props> = ({ name, shift }) => {
   const text = watch(name);
 
   return text ? (
-    <MarkdownToJSX
-      options={{ forceBlock: true }}
+    <MarkdownElement
       className={clsx(styles.markdown, { [styles.shift]: shift })}
     >
       {text}
-    </MarkdownToJSX>
+    </MarkdownElement>
   ) : null;
 };
 

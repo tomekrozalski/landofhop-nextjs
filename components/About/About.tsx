@@ -1,7 +1,7 @@
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { IntlShape } from 'react-intl';
-import Markdown from 'markdown-to-jsx';
 
+import Markdown from 'elements/Markdown';
 import HeadTitle from 'elements/HeadTitle';
 import styles from './About.module.css';
 
@@ -11,9 +11,7 @@ const About: React.FC<{ intl: IntlShape }> = ({ intl }) => (
     <h1>
       <FormattedMessage id="global.about" />
     </h1>
-    <Markdown options={{ forceBlock: true }}>
-      {intl.formatMessage({ id: 'global.about.body' })}
-    </Markdown>
+    <Markdown>{intl.formatMessage({ id: 'global.about.body' })}</Markdown>
   </article>
 );
 

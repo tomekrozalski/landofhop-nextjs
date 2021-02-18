@@ -1,8 +1,8 @@
 import { useIntl } from 'react-intl';
 import clsx from 'clsx';
-import Markdown from 'markdown-to-jsx';
 
 import { Details } from 'utils/types/Beverage';
+import Markdown from 'elements/Markdown';
 import Article from './Article';
 import styles from './Tale.module.css';
 

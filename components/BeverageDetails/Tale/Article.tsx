@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
-import Markdown from 'markdown-to-jsx';
 import { FormattedMessage } from 'react-intl';
+
+import Markdown from 'elements/Markdown';
 import styles from './Article.module.css';
 
 type Props = {
