@@ -28,6 +28,14 @@
   "bitterness": "bitterness",
   "brand": " {prefix, select, contract {for} isContract {for} other {by}} {brand}",
   "brewed": "Brewed",
+  "clarity": {
+    "clear": "clear",
+    "crystalline": "crystalline",
+    "hazy": "hazy",
+    "misty": "misty",
+    "muddy": "muddy",
+    "opalescent": "opalescent"
+  },
   "contains": "contains",
   "contract": "by {brands}",
   "container.color.brown": "brown",

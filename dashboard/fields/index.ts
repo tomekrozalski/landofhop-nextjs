@@ -1,11 +1,14 @@
 import Aged from './Aged';
 import Alcohol from './Alcohol';
+import AlcoholScope from './AlcoholScope';
 import Badge from './Badge';
 import Barcode from './Barcode';
 import Bitterness from './Bitterness';
 import Brand from './Brand';
 import City from './City';
+import Clarity from './Clarity';
 import Code from './Code';
+import Color from './Color';
 import Container from './Container';
 import Contract from './Contract';
 import Cooperation from './Cooperation';
@@ -43,12 +46,15 @@ import Website from './Website';
 export {
   Aged,
   Alcohol,
+  AlcoholScope,
   Badge,
   Barcode,
   Bitterness,
   Brand,
   City,
+  Clarity,
   Code,
+  Color,
   Container,
   Contract,
   Cooperation,

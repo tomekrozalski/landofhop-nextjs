@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { Status } from 'utils/helpers/serverCall';
-// import { AuthenticationContext } from 'utils/contexts';
-// import { FormType, Subform as SubformEnum } from 'dashboard/utils/enums';
-// import { LanguageContext } from 'dashboard/utils/contexts';
 import {
   FormValues as FormValuesLabel,
   initialValues as initialLabel,
@@ -12,14 +9,18 @@ import {
   FormValues as FormValuesProducer,
   initialValues as initialProducer,
 } from 'dashboard/BeverageData/Producer/utils';
-// import { FormValues as FormValuesProducer } from 'dashboard/BeverageData/Producer/utils';
-// import { FormValues as FormValuesEditorial } from 'dashboard/BeverageData/Editorial/utils';
+import {
+  FormValues as FormValuesEditorial,
+  initialValues as initialEditorial,
+} from 'dashboard/BeverageData/Editorial/utils';
 
 export const BeverageContext = React.createContext({
-  // editorial: initialEditorialValues as FormValuesEditorial,
-  editorial: {},
+  editorial: initialEditorial as FormValuesEditorial,
   label: initialLabel as FormValuesLabel,
   producer: initialProducer as FormValuesProducer,
+  setEditorial: (value: FormValuesEditorial) => {
+    value;
+  },
   setLabel: (value: FormValuesLabel) => {
     value;
   },
@@ -30,9 +31,11 @@ export const BeverageContext = React.createContext({
 });
 
 const Beverage: React.FC = ({ children }) => {
-  const [editorial, setEditorial] = useState({});
+  const [editorial, setEditorial] = useState<FormValuesEditorial>(
+    initialEditorial,
+  );
   const [label, setLabel] = useState<FormValuesLabel>(initialLabel);
-  const [producer, setProducer] = useState(initialProducer);
+  const [producer, setProducer] = useState<FormValuesProducer>(initialProducer);
   const [status, setStatus] = useState(Status.idle);
 
   const preventClose = (e: Event) => {
@@ -54,6 +57,7 @@ const Beverage: React.FC = ({ children }) => {
         editorial,
         label,
         producer,
+        setEditorial,
         setLabel,
         setProducer,
         status,

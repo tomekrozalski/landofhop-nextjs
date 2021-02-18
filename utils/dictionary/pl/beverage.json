@@ -28,6 +28,14 @@
   "bitterness": "gorycz",
   "brand": " {prefix, select, contract {dla} other {przez}} {brand}",
   "brewed": "Uwarzono",
+  "clarity": {
+    "clear": "czyste",
+    "crystalline": "krystaliczne",
+    "hazy": "hazy",
+    "misty": "zamglone",
+    "muddy": "błotniste",
+    "opalescent": "opalizujące"
+  },
   "contains": "zawiera",
   "contract": "przez {brands}",
   "container.color.brown": "brązowa",

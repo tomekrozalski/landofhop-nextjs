@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import HeadTitle from 'elements/HeadTitle';
 import EditModal from 'dashboard/EditModal';
 import { DashboardWrapper, ProgressList } from 'dashboard/elements';
-import { Label, Producer } from '.';
+import { Editorial, Label, Producer } from '.';
 
 const Add: React.FC = () => {
   const { query } = useRouter();
@@ -18,7 +18,7 @@ const Add: React.FC = () => {
       <ProgressList />
       {page === 'label' && <Label />}
       {page === 'producer' && <Producer />}
-      {page === 'editorial' && <div>editorial</div>}
+      {page === 'editorial' && <Editorial />}
       <EditModal />
       <HeadTitle title="addBeverage" />
     </article>
