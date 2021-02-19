@@ -1,7 +1,7 @@
 const initialValues = {
   badge: '',
   // -----------
-  name: [{ lang: { value: '' }, value: '' }],
+  name: [{ lang: { label: '', value: '' }, value: '' }],
   series: [],
   brand: {
     label: '',

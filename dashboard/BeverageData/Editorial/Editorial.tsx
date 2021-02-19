@@ -31,7 +31,7 @@ import { FormValues, validationSchema } from './utils';
 
 const EditorialBeverage: React.FC = () => {
   const router = useRouter();
-  const { editorial, setEditorial } = useContext(BeverageContext);
+  const { editorial, saveBeverage, setEditorial } = useContext(BeverageContext);
 
   const methods = useForm<FormValues>({
     mode: 'onBlur',
@@ -40,12 +40,13 @@ const EditorialBeverage: React.FC = () => {
   });
 
   const action = (values, e) => {
-    setEditorial(values);
-
     if (e.nativeEvent.submitter.dataset?.type === 'moveBack') {
+      setEditorial(values);
       moveTo(router, Page.producer);
     } else {
-      console.log('send data', values);
+      return saveBeverage(values).then(() => {
+        console.log('success!');
+      });
     }
   };
 
@@ -110,8 +111,9 @@ const EditorialBeverage: React.FC = () => {
           <Button
             appearance={ButtonStyle.reset}
             data-type="moveBack"
-            disabled={!methods.formState.isValid}
-            isSubmitting={methods.formState.isSubmitting}
+            disabled={
+              !methods.formState.isValid || methods.formState.isSubmitting
+            }
             type="submit"
           >
             <FormattedMessage id="admin.saveAndMoveBack" />

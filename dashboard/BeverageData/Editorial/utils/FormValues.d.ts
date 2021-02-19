@@ -1,4 +1,3 @@
-import { LanguageValue } from 'utils/types/common';
 import { Clarity, Currency, HopRateUnit } from 'utils/enums/Beverage';
 
 export type FormValues = {
@@ -56,7 +55,7 @@ export type FormValues = {
       }[]
     | null;
   // -----------
-  bitterness: color | null;
+  color: string | null;
   clarity: {
     label: string;
     value: Clarity;

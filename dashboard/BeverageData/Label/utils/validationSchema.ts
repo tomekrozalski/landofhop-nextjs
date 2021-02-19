@@ -153,7 +153,6 @@ export default Yup.object().shape({
         .nullable(true),
     }),
   ),
-  dryHopped: Yup.array().min(1).nullable(true),
   hopRate: Yup.object()
     .shape({
       value: Yup.number().min(1).max(100).nullable(true),

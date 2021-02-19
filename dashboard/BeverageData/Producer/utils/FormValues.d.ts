@@ -1,9 +1,8 @@
-import { LanguageValue } from 'utils/types/common';
 import { Currency, HopRateUnit } from 'utils/enums/Beverage';
 
 export type FormValues = {
   series: {
-    lang: LanguageValue;
+    lang: { label: string; value: string };
     value: string;
   }[];
   cooperation:

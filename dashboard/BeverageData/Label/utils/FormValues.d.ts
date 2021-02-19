@@ -1,12 +1,11 @@
-import { LanguageValue } from 'utils/types/common';
 import { Currency, HopRateUnit } from 'utils/enums/Beverage';
 
 export type FormValues = {
   badge: string;
   // -----------
-  name: { lang: LanguageValue; value: string }[];
+  name: { lang: { label: string; value: string }; value: string }[];
   series: {
-    lang: LanguageValue;
+    lang: { label: string; value: string };
     value: string;
   }[];
   brand: {
@@ -33,16 +32,16 @@ export type FormValues = {
     label: string;
     value: string;
   } | null;
-  remark: { lang: Lang; value: string }[];
+  remark: { lang: { label: string; value: string }; value: string }[];
   tale: {
     article: string;
-    lang: Lang;
+    lang: { label: string; value: string };
     lead: string;
   }[];
   barcode: string | null;
   // -----------
   fermentation: string[] | null;
-  style: { lang: Lang; value: string }[];
+  style: { lang: { label: string; value: string }; value: string }[];
   extract: {
     relate: {
       label: string;
