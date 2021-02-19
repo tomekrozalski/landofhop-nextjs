@@ -117,7 +117,10 @@
   },
   "lastTimeUpdated": "Last time updated",
   "loadError": "Load error",
-  "removeBeverage": "Remove beverage",
+  "removeBeverage": {
+    "confirm": "Are you sure?",
+    "remove": "Remove beverage"
+  },
   "saveAndMoveBack": "Save and move back",
   "select": {
     "noOptions": "No options",
