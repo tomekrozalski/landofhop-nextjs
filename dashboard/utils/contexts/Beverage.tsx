@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
-import { Status } from 'utils/helpers/serverCall';
+import serverCall, {
+  Endpoints,
+  Status as StatusEnum,
+} from 'utils/helpers/serverCall';
+import { AuthenticationContext } from 'utils/contexts';
 import {
   FormValues as FormValuesLabel,
   initialValues as initialLabel,
@@ -32,17 +36,18 @@ export const BeverageContext = React.createContext({
   setProducer: (value: FormValuesProducer) => {
     value;
   },
-  status: Status.idle,
+  status: StatusEnum.idle,
 });
 
 const Beverage: React.FC = ({ children }) => {
+  const { checkTokenExpiration, token } = useContext(AuthenticationContext);
   const [id, setId] = useState<string | null>(null);
   const [editorial, setEditorial] = useState<FormValuesEditorial>(
     initialEditorial,
   );
   const [label, setLabel] = useState<FormValuesLabel>(initialLabel);
   const [producer, setProducer] = useState<FormValuesProducer>(initialProducer);
-  const [status, setStatus] = useState(Status.idle);
+  const [status, setStatus] = useState(StatusEnum.idle);
 
   const preventClose = (e: Event) => {
     e.preventDefault();
@@ -65,38 +70,25 @@ const Beverage: React.FC = ({ children }) => {
       editorial: values,
     });
 
-    console.log('saveBeverage -->', normalizedData);
+    return checkTokenExpiration(token).then(() => {
+      return serverCall(Endpoints.saveBeverage, {
+        method: 'POST',
+        body: JSON.stringify(normalizedData),
+        token,
+      })
+        .then(async ({ badge, brand, shortId }) => {
+          await window.removeEventListener('beforeunload', preventClose);
 
-    return new Promise(resolve => {
-      setTimeout(() => {
-        resolve('abc');
-      }, 2000);
+          console.log('-->', badge, brand, shortId);
+
+          // navigate('/pl/update-beverage-images', {
+          //   state: { badge, brand, shortId },
+          // });
+        })
+        .catch(error => {
+          console.log({ error });
+        });
     });
-
-    // return checkTokenExpiration(token)
-    //   .then(() => {
-    //     return serverCall({
-    //       path: 'beverage',
-    //       method: beverageFormType === FormType.add ? 'POST' : 'PUT',
-    //       body: JSON.stringify(normalizedData),
-    //       token,
-    //     })
-    //       .then(async ({ badge, brand, shortId }) => {
-    //         await window.removeEventListener('beforeunload', preventClose);
-
-    //         navigate('/pl/update-beverage-images', {
-    //           state: { badge, brand, shortId },
-    //         });
-    //       })
-    //       .catch((e: any) => {
-    //         // eslint-disable-next-line no-console
-    //         console.error('Error:', e);
-    //       });
-    //   })
-    //   .catch(() => {
-    //     // eslint-disable-next-line no-console
-    //     console.warn('Save beverage failed. Token is expired');
-    //   });
   };
 
   return (

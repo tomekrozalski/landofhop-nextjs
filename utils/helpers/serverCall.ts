@@ -17,6 +17,7 @@ export enum Endpoints {
   login = 'auth',
   place = 'place/getAll',
   removeBeverage = 'beverage',
+  saveBeverage = 'beverage',
 }
 
 export enum Status {
