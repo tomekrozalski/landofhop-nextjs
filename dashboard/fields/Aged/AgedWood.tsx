@@ -28,6 +28,7 @@ const AgedWood: React.FC<Props> = ({ defaultValue, form, index }) => (
           option: AgedWoodEnum.beech,
         },
       ]}
+      defaultValue={defaultValue}
       name={`aged[${index}].wood`}
     />
   </div>

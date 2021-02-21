@@ -28,7 +28,7 @@ export type FormValues = {
   remark: { lang: Lang; value: string }[];
   tale: {
     article: string;
-    lang: Lang;
+    language: Lang;
     lead: string;
   }[];
   // -----------

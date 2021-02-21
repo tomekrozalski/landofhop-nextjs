@@ -19,7 +19,7 @@ const IngredientsDescription: React.FC<Props> = ({ form }) => {
 
   const emptyIngredientsDescription = {
     complete: true,
-    lang: '',
+    language: '',
     value: '• , • , • ',
   };
 
@@ -30,7 +30,7 @@ const IngredientsDescription: React.FC<Props> = ({ form }) => {
         htmlFor="ingredientsDescription[0].value"
         name="ingredientsDescription"
       />
-      {fields.map(({ complete, id, lang, value }, index) => (
+      {fields.map(({ complete, id, language, value }, index) => (
         <Fragment key={id}>
           <TextInput
             defaultValue={value}
@@ -40,9 +40,9 @@ const IngredientsDescription: React.FC<Props> = ({ form }) => {
             textarea
           />
           <LanguageSelect
-            defaultValue={lang}
+            defaultValue={language}
             form={form}
-            name={`ingredientsDescription[${index}].lang`}
+            name={`ingredientsDescription[${index}].language`}
             style={{ gridColumn: '2/3' }}
           />
           <div className={styles.ingredientsCompleteWrapper}>

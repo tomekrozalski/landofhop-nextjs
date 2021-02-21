@@ -27,15 +27,15 @@ const beverageFormToAPI = ({ id, label, producer, editorial }: Props) => {
 
   const normalizeTale = ({
     article,
-    lang,
+    language,
     lead,
   }: {
     article: string;
-    lang: { label: string; value: string };
+    language: { label: string; value: string };
     lead: string;
   }) => ({
     ...(article && { article }),
-    ...(lang.value !== 'none' && { language: lang.value }),
+    ...(language.value !== 'none' && { language: language.value }),
     lead,
   });
 
@@ -247,7 +247,7 @@ const beverageFormToAPI = ({ id, label, producer, editorial }: Props) => {
           label: label.aged.map(({ type, wood, time, previousContent }) => ({
             ...(type && { type }),
             ...(wood && { wood }),
-            ...(time && {
+            ...(time.value && {
               time: {
                 unit: time.unit.value,
                 value: time.value,
@@ -263,7 +263,7 @@ const beverageFormToAPI = ({ id, label, producer, editorial }: Props) => {
             ({ type, wood, time, previousContent }) => ({
               ...(type && { type }),
               ...(wood && { wood }),
-              ...(time && {
+              ...(time.value && {
                 time: {
                   unit: time.unit.value,
                   value: time.value,
@@ -280,7 +280,7 @@ const beverageFormToAPI = ({ id, label, producer, editorial }: Props) => {
             ({ type, wood, time, previousContent }) => ({
               ...(type && { type }),
               ...(wood && { wood }),
-              ...(time && {
+              ...(time.value && {
                 time: {
                   unit: time.unit.value,
                   value: time.value,

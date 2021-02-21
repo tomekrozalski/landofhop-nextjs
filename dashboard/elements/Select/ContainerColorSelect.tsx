@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useFormContext } from 'react-hook-form';
 
@@ -21,6 +21,7 @@ type Props = {
 const ContainerColorSelect: React.FC<Props> = props => {
   const { formatMessage } = useIntl();
   const { setValue, watch } = useFormContext();
+  const [loaded, setLoaded] = useState(false);
   const type = watch('container.type');
 
   const enums = useMemo(() => {
@@ -38,7 +39,7 @@ const ContainerColorSelect: React.FC<Props> = props => {
   }, [type.value]);
 
   useEffect(() => {
-    if (type.value) {
+    if (loaded) {
       if (type.value === ContainerType.bottle) {
         setValue('container.color', {
           label: formatMessage({
@@ -57,6 +58,8 @@ const ContainerColorSelect: React.FC<Props> = props => {
         });
       }
     }
+
+    setLoaded(true);
   }, [type.value]);
 
   return (

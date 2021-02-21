@@ -17,10 +17,12 @@ const Tale: React.FC<Props> = ({ form }) => {
     name: 'tale',
   });
 
+  const emptyTale = { article: '', language: '', lead: '' };
+
   return (
     <div className={clsx(styles.grid, styles.basic)}>
       <Label form={form} htmlFor="tale[0].value" name="tale" />
-      {fields.map(({ article, id, lang, lead }, index) => (
+      {fields.map(({ article, id, language, lead }, index) => (
         <Fragment key={id}>
           <TextInput
             defaultValue={lead}
@@ -37,14 +39,14 @@ const Tale: React.FC<Props> = ({ form }) => {
             textarea
           />
           <LanguageSelect
-            defaultValue={lang}
+            defaultValue={language}
             form={form}
-            name={`tale[${index}].lang`}
+            name={`tale[${index}].language`}
             style={{ gridColumn: '2/3' }}
           />
           {fields.length === index + 1 && (
             <ActionButtons
-              append={() => append({ article: '', lang: '', lead: '' })}
+              append={() => append(emptyTale)}
               remove={() => remove(index)}
               withRemove
             />
@@ -53,9 +55,7 @@ const Tale: React.FC<Props> = ({ form }) => {
           <Markdown name={`tale[${index}].article`} />
         </Fragment>
       ))}
-      {!fields.length && (
-        <Plug append={() => append({ article: '', lang: '', lead: '' })} />
-      )}
+      {!fields.length && <Plug append={() => append(emptyTale)} />}
     </div>
   );
 };

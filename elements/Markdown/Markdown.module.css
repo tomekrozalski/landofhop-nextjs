@@ -1,3 +1,7 @@
+.markdown {
+  margin: 0;
+}
+
 .markdown li {
   margin-left: 2rem;
   list-style-type: circle;

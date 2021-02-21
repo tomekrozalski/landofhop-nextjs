@@ -35,7 +35,7 @@ export type FormValues = {
   remark: { lang: { label: string; value: string }; value: string }[];
   tale: {
     article: string;
-    lang: { label: string; value: string };
+    language: { label: string; value: string };
     lead: string;
   }[];
   barcode: string | null;

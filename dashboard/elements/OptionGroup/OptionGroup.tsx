@@ -14,15 +14,16 @@ type Props = {
     label: string;
     option: AgedTypeEnum | AgedWoodEnum;
   }[];
+  defaultValue: AgedTypeEnum | AgedWoodEnum | null;
   name: string;
 };
 
-const OptionGroup: React.FC<Props> = ({ data, name }) => {
+const OptionGroup: React.FC<Props> = ({ data, defaultValue, name }) => {
   const {
     field: { value, onChange },
   } = useController({
     name,
-    defaultValue: null,
+    defaultValue,
   });
 
   return (
