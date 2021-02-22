@@ -78,7 +78,6 @@ export default Yup.object().shape({
         .nullable(true),
     }),
   ),
-  dryHopped: Yup.array().min(1).nullable(true),
   // -----------
   color: Yup.mixed().test(
     'is-color',
