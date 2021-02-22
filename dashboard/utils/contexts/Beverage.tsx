@@ -21,6 +21,9 @@ import beverageFormToAPI from 'dashboard/utils/normalizers/beverageFormToAPI';
 
 export const BeverageContext = React.createContext({
   editorial: initialEditorial as FormValuesEditorial,
+  getBeverageDetails: (id: string) => {
+    id;
+  },
   label: initialLabel as FormValuesLabel,
   producer: initialProducer as FormValuesProducer,
   saveBeverage: (values: FormValuesEditorial) =>
@@ -62,6 +65,50 @@ const Beverage: React.FC = ({ children }) => {
     };
   }, []);
 
+  const getBeverageDetails = (id: string) => {
+    setStatus(StatusEnum.pending);
+
+    return serverCall(Endpoints.beverageDashboardDetails, {
+      pathParams: [id],
+      token,
+    })
+      .then(value => {
+        console.log('value', value);
+        setStatus(StatusEnum.resolved);
+      })
+      .catch(error => {
+        console.log({ error });
+        setStatus(StatusEnum.rejected);
+      });
+
+    // serverCall({
+    //   path: `beverage/${shortId}/${brand}/${badge}`,
+    // })
+    //   .then((beverageDetails: BeverageType) => {
+    //     const {
+    //       normalizedLabel,
+    //       normalizedProducer,
+    //       normalizedEditorial,
+    //     } = dataToForm({
+    //       data: beverageDetails,
+    //       intl,
+    //       languages,
+    //     });
+
+    //     setId(beverageDetails.id);
+    //     setLabel(normalizedLabel);
+    //     setProducer(normalizedProducer);
+    //     setEditorial(normalizedEditorial);
+    //     setBeverageDataLoadStatus(StatusEnum.fulfilled);
+    //     setLink(
+    //       `/details/${beverageDetails.shortId}/${beverageDetails.brand.badge}/${beverageDetails.badge}`,
+    //     );
+    //   })
+    //   .catch(() => {
+    //     setBeverageDataLoadStatus(StatusEnum.rejected);
+    //   });
+  };
+
   const saveBeverage = (values: FormValuesEditorial) => {
     const normalizedData = beverageFormToAPI({
       id,
@@ -95,6 +142,7 @@ const Beverage: React.FC = ({ children }) => {
     <BeverageContext.Provider
       value={{
         editorial,
+        getBeverageDetails,
         label,
         producer,
         saveBeverage,

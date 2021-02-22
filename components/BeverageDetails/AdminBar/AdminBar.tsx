@@ -13,7 +13,14 @@ const AdminBar: React.FC<{ details: Details }> = ({ details }) => {
   return (
     <>
       <div className={styles.buttonsWrapper}>
-        <Button onClick={() => push('/add-new-beverage')}>
+        <Button
+          onClick={() =>
+            push({
+              pathname: '/update-beverage',
+              query: { id: details.id },
+            })
+          }
+        >
           <FormattedMessage id="admin.update" />
         </Button>
         <Button onClick={() => push('/update-beverage-images')}>
