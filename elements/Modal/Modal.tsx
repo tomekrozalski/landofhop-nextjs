@@ -13,15 +13,7 @@ type Props = {
 
 const Modal: React.FC<Props> = ({ children, className, close, isVisible }) => {
   useEffect(() => {
-    const classList = document.querySelector('body').classList;
-
-    if (classList) {
-      if (isVisible) {
-        classList.add('scroll-lock');
-      } else {
-        classList.remove('scroll-lock');
-      }
-    }
+    document.querySelector('body').classList.toggle('scroll-lock', isVisible);
   }, [isVisible]);
 
   return isVisible

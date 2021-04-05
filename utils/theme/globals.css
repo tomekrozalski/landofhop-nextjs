@@ -87,6 +87,7 @@ body {
 }
 
 body.scroll-lock {
+  position: relative;
   overflow: hidden;
 }
 
