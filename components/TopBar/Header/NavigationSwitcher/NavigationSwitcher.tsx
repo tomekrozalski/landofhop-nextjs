@@ -8,6 +8,10 @@ const NavigationSwitcher: React.FC = () => {
   const { checkTokenExpiration, token } = useContext(AuthenticationContext);
   const { navbar, setLoginbar, setNavbar } = useContext(TopBarContext);
 
+  const abc = () => {
+    document.cookie = 'isVisited=true';
+  };
+
   return (
     <button
       className={styles.navigationSwitcher}
@@ -15,6 +19,7 @@ const NavigationSwitcher: React.FC = () => {
         setNavbar(!navbar);
         setLoginbar(false);
         checkTokenExpiration(token).catch(() => {});
+        abc();
       }}
       type="button"
     >

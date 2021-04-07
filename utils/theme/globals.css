@@ -91,6 +91,14 @@ body.scroll-lock {
   overflow: hidden;
 }
 
+body.non-active {
+  border: 10px solid #999;
+}
+
+body.active-cookie-bar {
+  border: 10px solid green;
+}
+
 main {
   margin-top: var(--size-header-height);
 }
