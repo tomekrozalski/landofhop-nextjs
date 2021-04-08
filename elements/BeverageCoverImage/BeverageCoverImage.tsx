@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
 import clsx from 'clsx';
 
 import { ImageType } from 'utils/enums/Beverage';
@@ -19,13 +19,6 @@ type Props = {
   type: ImageType;
 };
 
-function isCached(src) {
-  var image = new Image();
-  image.src = src;
-
-  return image.complete;
-}
-
 const BeverageCoverImage: React.FC<Props> = ({
   badge,
   brand,
@@ -36,7 +29,6 @@ const BeverageCoverImage: React.FC<Props> = ({
   type,
 }) => {
   const container = useRef(null);
-  const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const alt = `${name.value}, ${brand.name.value}`;
 
@@ -46,41 +38,16 @@ const BeverageCoverImage: React.FC<Props> = ({
     }
   });
 
-  const getPath = (format: 'webp' | 'jpg', size: 1 | 2) => {
-    const basicPath = `${process.env.NEXT_PUBLIC_PHOTO_SERVER}/${brand.badge}/${badge}/${shortId}`;
-
-    return type === ImageType.cover
-      ? `${basicPath}/${type}/${format}/${size}x.${format}`
-      : `${basicPath}/${type}/${format}/${size}x/01.${format}`;
-  };
-
-  const seenBefore = () =>
-    isCached(getPath('webp', 2)) ||
-    isCached(getPath('webp', 1)) ||
-    isCached(getPath('jpg', 2)) ||
-    isCached(getPath('jpg', 1));
-
   const enhanceOutlineWithStyles = (value: string) =>
     value.replace(
       '<svg',
       `<svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 1; transition: var(--transition-default);"`,
     );
 
-  useEffect(() => {
-    const io = new IntersectionObserver(
-      ([entry], observer) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0 },
-    );
-
-    if (container.current) {
-      io.observe(container.current!);
-    }
-  }, []);
+  const myloader = ({ src }) => {
+    const base = 'https://land-of-hop-images.s3.eu-central-1.amazonaws.com';
+    return `${base}/${src}/webp/2x.webp`;
+  };
 
   return (
     <div
@@ -95,35 +62,12 @@ const BeverageCoverImage: React.FC<Props> = ({
           __html: outline ? enhanceOutlineWithStyles(outline) : '',
         }}
       />
-      {process.browser && visible && (
-        <picture>
-          <source
-            type="image/webp"
-            srcSet={`${getPath('webp', 1)} 1x, ${getPath('webp', 2)} 2x`}
-          />
-          <source srcSet={`${getPath('jpg', 1)} 1x, ${getPath('jpg', 2)} 2x`} />
-          <img
-            className={clsx(styles.cover, {
-              [styles.coverLoaded]: seenBefore() || loaded,
-            })}
-            srcSet={`${getPath('jpg', 1)} 1x, ${getPath('jpg', 2)} 2x`}
-            src={getPath('jpg', 1)}
-            alt={loaded ? alt : ''}
-            onLoad={() => setLoaded(true)}
-          />
-        </picture>
-      )}
-      {!process.browser ? (
-        <noscript
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `<picture><img src="${getPath(
-              'jpg',
-              1,
-            )}" alt="${alt}" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center;" /></picture>`,
-          }}
-        />
-      ) : null}
+      <Image
+        alt={alt}
+        layout="fill"
+        loader={myloader}
+        src="browar-nepomucen/forest-black-dipa/tdzf21/cover"
+      />
     </div>
   );
 };

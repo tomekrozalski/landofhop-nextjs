@@ -8,4 +8,8 @@ module.exports = withBundleAnalyzer({
     locales: ['en', 'pl'],
     defaultLocale: 'pl',
   },
+  images: {
+    domains: ['land-of-hop-images.s3.eu-central-1.amazonaws.com'],
+    imageSizes: [220],
+  },
 });

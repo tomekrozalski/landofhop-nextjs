@@ -21,8 +21,9 @@ const LandingPage: React.FC<Props> = ({ basics, current, total }) => {
     <>
       <ul className={styles.list}>
         <HeadTitle title="main" values={{ page: current }} />
-        {basics.map(
-          ({ badge, brand, container, id, name, photos, shortId }) => (
+        {basics
+          .slice(0, 1)
+          .map(({ badge, brand, container, id, name, photos, shortId }) => (
             <li key={id}>
               <Link href={`/details/${shortId}/${brand.badge}/${badge}`}>
                 <a>
@@ -48,8 +49,7 @@ const LandingPage: React.FC<Props> = ({ basics, current, total }) => {
                 </a>
               </Link>
             </li>
-          ),
-        )}
+          ))}
       </ul>
       <Pagination current={current} pages={Math.ceil(total / 60)} />
     </>
